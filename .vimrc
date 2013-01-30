@@ -14,6 +14,8 @@ set ignorecase		" ignore case when searching
 set title			" show title in console title bar
 set ttyfast			" smoother changes
 set cursorline		" highlight current line
+set splitright 		" Open new vertical split windows to the right of the current one, not the left.
+set splitbelow 		" See above description. Opens new windows below, not above.
 
 "ruby
 let g:ruby_path = '/usr/bin/ruby'
@@ -24,4 +26,15 @@ if has('autocmd')
 	autocmd filetype ruby let g:RCT_ri_cmd = "ri -T -f plain "
     autocmd filetype text colorscheme endif
 endif
+
+"Installed plugins
+
+" Supertab
+" http://www.vim.org/scripts/script.php?script_id=1643
+" Supertab allows you to use <Tab> for all your insert completion needs 
+" (:help ins-completion). 
+
+" <tab> to autocomplete
+" control-N to cycle through autocomplete popup downwards
+" control-P to cycle through autocomplete popup upwards
 
