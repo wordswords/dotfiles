@@ -16,6 +16,7 @@ set ttyfast			" smoother changes
 set cursorline		" highlight current line
 set splitright 		" Open new vertical split windows to the right of the current one, not the left.
 set splitbelow 		" See above description. Opens new windows below, not above.
+colorscheme tir_black " Set colorscheme to a black/grey theme
 
 "ruby
 let g:ruby_path = '/usr/bin/ruby'
