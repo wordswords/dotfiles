@@ -1,6 +1,3 @@
-
-<!-- saved from url=(0070)https://raw.github.com/pbjorklund/vimfiles/master/colors/tir_black.vim -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;">" tir_black color scheme
 " Based on ir_black from: http://blog.infinitered.com/entries/show/8
 " adds 256 color console support
 " changed WildMenu color to be the same as PMenuSel
@@ -40,7 +37,7 @@ hi WarningMsg guifg=white guibg=#FF6C60 gui=bold ctermfg=white ctermbg=203 cterm
 
 hi ModeMsg guifg=black guibg=#C6C5FE gui=bold ctermfg=0 ctermbg=189 cterm=bold
 
-if version &gt;= 700 " Vim 7.x specific colors
+if version >= 700 " Vim 7.x specific colors
  hi CursorLine guibg=#121212 gui=none ctermbg=234 cterm=none
  hi CursorColumn guibg=#121212 gui=none ctermbg=234 cterm=none
  hi MatchParen guifg=#f6f3e8 guibg=#857b6f gui=bold ctermfg=white ctermbg=darkgray 
@@ -130,4 +127,3 @@ hi link javaScriptNumber Number
 
 " Special for CSharp
 hi link csXmlTag Keyword 
-</pre></body></html>
