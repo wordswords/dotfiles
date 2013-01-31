@@ -16,7 +16,15 @@ set ttyfast			" smoother changes
 set cursorline		" highlight current line
 set splitright 		" Open new vertical split windows to the right of the current one, not the left.
 set splitbelow 		" See above description. Opens new windows below, not above.
+set visualbell		" flashing bell instead of beep
+set history=1000	" 1000 previous commands remembered
+set laststatus=2
+set list
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+
+
 colorscheme tir_black " Set colorscheme to a black/grey theme
+
 
 "ruby
 let g:ruby_path = '/usr/bin/ruby'
