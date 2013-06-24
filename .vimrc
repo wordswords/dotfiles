@@ -22,7 +22,7 @@ set history=1000    " 1000 previous commands remembered
 set laststatus=2
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
-
+set t_Co=256        " force 256 colour mode
 
 colorscheme tir_black " Set colorscheme to a black/grey theme
 
@@ -50,3 +50,6 @@ endif
 
 ":retab is a useful command to fix tabs, changes them into spaces..
 
+" This is necessary under crunchbang/debian
+set t_Sf=[3%dm
+set t_Sb=[4%dm
