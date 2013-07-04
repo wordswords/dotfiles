@@ -1,2 +1,2 @@
-line1\nline2
-line3
+line1
+line2
