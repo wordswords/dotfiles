@@ -80,3 +80,9 @@ function! s:RunShellCommand(cmdline)
   silent execute '$read !'. expanded_cmdline
   1
 endfunction
+
+"" added nerdtree plugin
+"" activate with :NERDTree !
+autocmd VimEnter * NERDTree
+autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
