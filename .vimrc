@@ -17,7 +17,6 @@ set ttyfast         " smoother changes
 set cursorline      " highlight current line
 set splitright      " Open new vertical split windows to the right of the current one, not the left.
 set splitbelow      " See above description. Opens new windows below, not above.
-set visualbell      " flashing bell instead of beep
 set history=1000    " 1000 previous commands remembered
 set laststatus=2
 set list
@@ -36,6 +35,10 @@ if has('autocmd')
     autocmd filetype ruby let g:RCT_ri_cmd = "ri -T -f plain "
     autocmd filetype text colorscheme endif
 endif
+
+" Turn off visual and audio bell
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 "Installed plugins
 
