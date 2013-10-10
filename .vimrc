@@ -56,6 +56,7 @@ set t_Sb=[4%dm
 
 " Shell command to display output of shell commands in new window
 " http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+" activate with :Shell
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 function! s:RunShellCommand(cmdline)
   let isfirst = 1
@@ -86,3 +87,8 @@ endfunction
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"" added ConqueTerm pluging
+"" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
