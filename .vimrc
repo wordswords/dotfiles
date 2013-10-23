@@ -20,7 +20,7 @@ set splitbelow      " See above description. Opens new windows below, not above.
 set history=1000    " 1000 previous commands remembered
 set laststatus=2
 " show nonprintable characters such as tab and newlines
-set list            
+set list
 " .. and use these characters to display them
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮  
 set t_Co=256        " force 256 colour mode
