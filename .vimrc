@@ -19,14 +19,14 @@ set splitright      " Open new vertical split windows to the right of the curren
 set splitbelow      " See above description. Opens new windows below, not above.
 set history=1000    " 1000 previous commands remembered
 set laststatus=2
-set list
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set list            " show nonprintable characters such as tab and newlines
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮  " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
 
 colorscheme tir_black " Set colorscheme to a black/grey theme
 
 
-"ruby
+" ruby-specific commands only executed when we load a ruby file
 let g:ruby_path = '/usr/bin/ruby'
 if has('autocmd')
     autocmd filetype ruby set omnifunc=rubycomplete#Complete
@@ -40,7 +40,7 @@ endif
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-"Installed plugins
+" Installed plugins
 
 " Supertab
 " http://www.vim.org/scripts/script.php?script_id=1643
@@ -85,13 +85,16 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
-"" added nerdtree plugin
+"" NERDtree plugin
 "" activate with :NERDTree !
+
+" start NERDTree up when starting up VIM
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
 
+" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-"" added ConqueTerm pluging
+"" ConqueTerm plugin
 "" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
