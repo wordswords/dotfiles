@@ -19,14 +19,16 @@ set splitright      " Open new vertical split windows to the right of the curren
 set splitbelow      " See above description. Opens new windows below, not above.
 set history=1000    " 1000 previous commands remembered
 set laststatus=2
-set list            " show nonprintable characters such as tab and newlines
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮  " .. and use these characters to display them
+" show nonprintable characters such as tab and newlines
+set list            
+" .. and use these characters to display them
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮  
 set t_Co=256        " force 256 colour mode
 
 colorscheme tir_black " Set colorscheme to a black/grey theme
 
 
-" ruby-specific commands only executed when we load a ruby file
+"" ruby-specific commands only executed when we load a ruby file
 let g:ruby_path = '/usr/bin/ruby'
 if has('autocmd')
     autocmd filetype ruby set omnifunc=rubycomplete#Complete
@@ -36,30 +38,30 @@ if has('autocmd')
     autocmd filetype text colorscheme endif
 endif
 
-" Turn off visual and audio bell
+"" Turn off visual and audio bell
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
-" Installed plugins
+""" Installed plugins
 
-" Supertab
-" http://www.vim.org/scripts/script.php?script_id=1643
-" Supertab allows you to use <Tab> for all your insert completion needs 
+"" Supertab
+"" http://www.vim.org/scripts/script.php?script_id=1643
+"" Supertab allows you to use <Tab> for all your insert completion needs 
 " (:help ins-completion). 
 
-" <tab> to autocomplete
-" control-N to cycle through autocomplete popup downwards
-" control-P to cycle through autocomplete popup upwards
+"" <tab> to autocomplete
+"" control-N to cycle through autocomplete popup downwards
+"" control-P to cycle through autocomplete popup upwards
 
-":retab is a useful command to fix tabs, changes them into spaces..
+"" :retab is a useful command to fix tabs, changes them into spaces..
 
-" This is necessary under crunchbang/debian
+"" This is necessary under crunchbang/debian
 set t_Sf=[3%dm
 set t_Sb=[4%dm
 
-" Shell command to display output of shell commands in new window
-" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
-" activate with :Shell
+"" Shell command to display output of shell commands in new window
+"" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+"" activate with :Shell
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 function! s:RunShellCommand(cmdline)
   let isfirst = 1
@@ -88,12 +90,12 @@ endfunction
 "" NERDtree plugin
 "" activate with :NERDTree !
 
-" start NERDTree up when starting up VIM
+"" start NERDTree up when starting up VIM
 autocmd VimEnter * NERDTree
 autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
 
-" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
+"" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "" ConqueTerm plugin
