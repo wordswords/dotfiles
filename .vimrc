@@ -1,3 +1,6 @@
+" Pathogen plugin manager
+execute pathogen#infect()
+
 syntax on
 set backspace=2     " backspace back up a line
 set ts=2            " each tab is four spaces
@@ -22,21 +25,9 @@ set laststatus=2
 " show nonprintable characters such as tab and newlines
 set list
 " .. and use these characters to display them
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮  
 set t_Co=256        " force 256 colour mode
 
 colorscheme tir_black " Set colorscheme to a black/grey theme
-
-
-"" ruby-specific commands only executed when we load a ruby file
-let g:ruby_path = '/usr/bin/ruby'
-if has('autocmd')
-    autocmd filetype ruby set omnifunc=rubycomplete#Complete
-    autocmd filetype ruby let g:rubycomplete_buffer_loading = 1
-    autocmd filetype ruby let g:rubycomplete_classes_in_global = 1
-    autocmd filetype ruby let g:RCT_ri_cmd = "ri -T -f plain "
-    autocmd filetype text colorscheme endif
-endif
 
 "" Turn off visual and audio bell
 set noerrorbells visualbell t_vb=
@@ -58,7 +49,9 @@ autocmd GUIEnter * set visualbell t_vb=
 "" This is necessary under crunchbang/debian
 set t_Sf=[3%dm
 set t_Sb=[4%dm
-
+highlight CursorLine term=bold cterm=bold guibg=Grey40
+highlight CursorColumn term=bold cterm=bold guibg=Grey40
+set cursorline cursorcolumn
 "" Shell command to display output of shell commands in new window
 "" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
 "" activate with :Shell
@@ -100,3 +93,4 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 "" ConqueTerm plugin
 "" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
+
