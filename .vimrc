@@ -84,7 +84,13 @@ endfunction
 "" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
 "" Start conqueterm on startup
 
-autocmd VimEnter * ConqueTermSplit bash
+"" Prefer fish, default to bash
+if !empty(glob("/usr/local/bin/fish"))
+  autocmd VimEnter * ConqueTermSplit fish
+elseif
+  autocmd VimEnter * ConqueTermSplit bash
+endif
+
 autocmd VimEnter * wincmd w
 autocmd VimEnter * wincmd +
 autocmd VimEnter * wincmd +
