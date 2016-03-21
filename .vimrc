@@ -80,6 +80,28 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
+"" ConqueTerm plugin
+"" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
+"" Start conqueterm on startup
+
+autocmd VimEnter * ConqueTermSplit bash
+autocmd VimEnter * wincmd w
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * wincmd +
+autocmd VimEnter * stopinsert
+
+
 "" NERDtree plugin
 "" activate with :NERDTree !
 
@@ -91,8 +113,4 @@ autocmd VimEnter * wincmd w
 "" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-"" ConqueTerm plugin
-"" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
-
-autocmd VimEnter * ConqueTermSplit bash
 
