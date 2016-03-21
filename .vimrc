@@ -94,3 +94,5 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "" ConqueTerm plugin
 "" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
 
+autocmd VimEnter * ConqueTermSplit bash
+
