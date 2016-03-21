@@ -32,6 +32,9 @@ colorscheme tir_black " Set colorscheme to a black/grey theme
 "" Turn off visual and audio bell
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
+"
+"" Turn off recording
+map q <Nop>
 
 """ Installed plugins
 
@@ -92,19 +95,7 @@ elseif
 endif
 
 autocmd VimEnter * wincmd w
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
-autocmd VimEnter * wincmd +
+autocmd VimEnter * 10 wincmd +
 autocmd VimEnter * stopinsert
 
 
