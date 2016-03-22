@@ -1,3 +1,8 @@
+" Fish shell is not POSXI compatiable, so VIM should use sh instead interally
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+
 " Pathogen plugin manager
 execute pathogen#infect()
 
