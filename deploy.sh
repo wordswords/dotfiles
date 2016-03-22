@@ -20,6 +20,7 @@ rm -f ~/.config/fish/config.fish
 
 # deploy
 if [ -e "/usr/local/bin/fish" ]; then
+  mkdir -p ~/.dotfiles/config.fish 
   ln -s ~/.dotfiles/config.fish ~/.config/fish/config.fish
 fi
 
