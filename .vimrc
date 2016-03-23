@@ -5,6 +5,7 @@ endif
 
 " Pathogen plugin manager
 execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
+execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
 execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
 execute pathogen#infect()
 
@@ -46,6 +47,7 @@ map q <Nop>
 
 "" Vim fonts
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+ let g:airline_powerline_fonts = 1
 """ Installed plugins
 
 "" Supertab
@@ -95,8 +97,8 @@ endfunction
 
 "" ConqueTerm plugin
 "" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
-"" Start conqueterm on startup
 
+let g:ConqueTerm_StartMessages = 0
 "" Prefer fish, default to bash
 if !empty(glob("/usr/local/bin/fish"))
   autocmd VimEnter * ConqueTermSplit fish
