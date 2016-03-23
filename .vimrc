@@ -4,8 +4,11 @@ if &shell =~# 'fish$'
 endif
 
 " Pathogen plugin manager
+execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
+execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
 execute pathogen#infect()
 
+set encoding=utf8
 syntax on
 set backspace=2     " backspace back up a line
 set ts=2            " each tab is four spaces
@@ -37,10 +40,12 @@ colorscheme tir_black " Set colorscheme to a black/grey theme
 "" Turn off visual and audio bell
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
-"
+
 "" Turn off recording
 map q <Nop>
 
+"" Vim fonts
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 """ Installed plugins
 
 "" Supertab
@@ -114,5 +119,6 @@ autocmd VimEnter * wincmd w
 
 "" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:ConqueTermType") && b:ConqueTermType == "primary") | q | endif
 
 
