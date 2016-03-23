@@ -21,8 +21,8 @@ function fish_user_key_bindings
 end
 
 function chrome
-  /usr/bin/open -a '/Applications/Google Chrome.app' $argv[1]
+  /usr/bin/open -a '/Applications/Google Chrome.app' $argv[1..-1]
 end
 function google
-  /usr/bin/open -a '/Applications/Google Chrome.app' "https://www.google.co.uk/search?q=$argv[1]"
+  /usr/bin/open -a '/Applications/Google Chrome.app' "https://www.google.co.uk/search?q=$argv[1..-1]"
 end
