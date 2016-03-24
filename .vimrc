@@ -47,7 +47,8 @@ map q <Nop>
 
 "" Vim fonts
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
- let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
+let g:powerline_symbols = 'fancy'
 """ Installed plugins
 
 "" Supertab
@@ -67,33 +68,6 @@ set t_Sb=[4%dm
 highlight CursorLine term=bold cterm=bold guibg=Grey40
 highlight CursorColumn term=bold cterm=bold guibg=Grey40
 set cursorline cursorcolumn
-"" Shell command to display output of shell commands in new window
-"" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
-"" activate with :Shell
-command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
-function! s:RunShellCommand(cmdline)
-  let isfirst = 1
-  let words = []
-  for word in split(a:cmdline)
-    if isfirst
-      let isfirst = 0  " don't change first word (shell command)
-    else
-      if word[0] =~ '\v[%#<]'
-        let word = expand(word)
-      endif
-      let word = shellescape(word, 1)
-    endif
-    call add(words, word)
-  endfor
-  let expanded_cmdline = join(words)
-  botright new
-  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  call setline(1, 'You entered:  ' . a:cmdline)
-  call setline(2, 'Expanded to:  ' . expanded_cmdline)
-  call append(line('$'), substitute(getline(2), '.', '=', 'g'))
-  silent execute '$read !'. expanded_cmdline
-  1
-endfunction
 
 "" ConqueTerm plugin
 "" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
@@ -101,15 +75,14 @@ endfunction
 let g:ConqueTerm_StartMessages = 0
 "" Prefer fish, default to bash
 if !empty(glob("/usr/local/bin/fish"))
-  autocmd VimEnter * ConqueTermSplit fish
-elseif
-  autocmd VimEnter * ConqueTermSplit bash
+    autocmd VimEnter * ConqueTermTab fish
+  elseif
+    autocmd VimEnter * ConqueTermTab bash
 endif
-
 autocmd VimEnter * wincmd w
 autocmd VimEnter * 10 wincmd +
 autocmd VimEnter * stopinsert
-
+autocmd VimEnter * bprevious
 "" Buffers
 
 " Enable the list of buffers
@@ -149,6 +122,6 @@ autocmd VimEnter * wincmd w
 
 "" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:ConqueTermType") && b:ConqueTermType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:fish") && b:fish == "primary") | q | endif
 
 
