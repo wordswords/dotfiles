@@ -1,4 +1,4 @@
-" Fish shell is not POSXI compatiable, so VIM should use sh instead interally
+" Fish shell is not POSIX compatiable, so VIM should use sh instead interally
 if &shell =~# 'fish$'
     set shell=sh
 endif
