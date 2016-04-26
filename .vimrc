@@ -24,7 +24,6 @@ set incsearch       " do incremental searching
 set ruler           " show the cursor position all the time
 set number          " show line numbers
 set ignorecase      " ignore case when searching 
-set title           " show title in console title bar
 set ttyfast         " smoother changes
 set cursorline      " highlight current line
 set splitright      " Open new vertical split windows to the right of the current one, not the left.
@@ -72,17 +71,6 @@ set cursorline cursorcolumn
 "" ConqueTerm plugin
 "" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
 
-let g:ConqueTerm_StartMessages = 0
-"" Prefer fish, default to bash
-if !empty(glob("/usr/local/bin/fish"))
-    autocmd VimEnter * ConqueTermTab fish
-  elseif
-    autocmd VimEnter * ConqueTermTab bash
-endif
-autocmd VimEnter * wincmd w
-autocmd VimEnter * 10 wincmd +
-autocmd VimEnter * stopinsert
-autocmd VimEnter * bprevious
 "" Buffers
 
 " Enable the list of buffers
@@ -116,12 +104,15 @@ nmap <Space>bl :ls<CR>
 "" activate with :NERDTree !
 
 "" start NERDTree up when starting up VIM
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
-autocmd VimEnter * wincmd w
+"" if a file to open is provided, open that as well in NERDTree
+if (expand("%")) 
+  autocmd VimEnter * NERDTree % 
+else
+  autocmd VimEnter * NERDTree
+endif
+
+autocmd VimEnter * wincmd p
 
 "" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:fish") && b:fish == "primary") | q | endif
-
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif 
 
