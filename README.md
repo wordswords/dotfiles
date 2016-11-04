@@ -2,7 +2,7 @@
 
 # Features
 
-• 'Good' vIM setup
+* 'Good' vIM setup
 * 'Good' bash setup (if needed)
 * 'Good' oh-my-zsh (if needed)
 
