@@ -32,7 +32,6 @@ git clone git@github.com:vim-scripts/Conque-Shell.git
 git clone git@github.com:ryanoasis/vim-devicons.git
 git clone git://github.com/tpope/vim-rails.git
 git clone git://github.com/tpope/vim-bundler.git
-git clone git@github.com:dag/vim-fish.git
 git clone https://github.com/vim-airline/vim-airline
 git clone git@github.com:scrooloose/nerdtree.git
 
