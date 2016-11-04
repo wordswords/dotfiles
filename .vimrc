@@ -1,8 +1,3 @@
-" Fish shell is not POSIX compatiable, so VIM should use sh instead interally
-if &shell =~# 'fish$'
-    set shell=sh
-endif
-
 " Pathogen plugin manager
 execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
 execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
@@ -34,8 +29,9 @@ set laststatus=2
 set list
 " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
+set noswapfile      " Don't drop swap files 
 
-colorscheme tir_black " Set colorscheme to a black/grey theme
+colorscheme solarized " Set colorscheme to a black/grey theme
 
 "" Turn off visual and audio bell
 set noerrorbells visualbell t_vb=
@@ -115,4 +111,25 @@ autocmd VimEnter * wincmd p
 
 "" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif 
+"" Syntaxic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
+
+"let g:syntastic_error_symbol = '❌'
+"let g:syntastic_style_error_symbol = '⁉️'
+"let g:syntastic_warning_symbol = '⚠️'
+"let g:syntastic_style_warning_symbol = '💩'
+
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 
