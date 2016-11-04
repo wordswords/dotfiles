@@ -29,7 +29,3 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 alias httpd="launchctl load /Users/david/Library/LaunchAgents/homebrew.mxcl.httpd24.plist"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
-eval "$(rbenv init -)"
-#if [ ! -z "$PS1" ]; then
-#        /usr/local/bin/fish
-#fi
