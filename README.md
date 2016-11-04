@@ -2,9 +2,9 @@
 
 # Features
 
-* 'Good' vIM setup
-* 'Good' bash setup (if needed)
-* 'Good' oh-my-zsh (if needed)
+1. 'Good' vIM setup
+2. 'Good' bash setup (if needed)
+3. 'Good' oh-my-zsh (if needed)
 
 # Requirements
 
