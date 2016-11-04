@@ -10,7 +10,7 @@ I use iterm2 on OSX, this setup will only work for that.
 
 # Install
 
-1. git clone git@github.com:/wordswords/- ./dotfiles/
+1. git clone git@github.com:/wordswords/dotfiles ./dotfiles/
 2. cd ~/.dotfiles/
 3. ./deploy.sh
 4. Profit.
