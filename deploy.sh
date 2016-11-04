@@ -6,14 +6,20 @@ mkdir -p ~/.olddotfiles
 cp -R ~/.vim ~/.olddotfiles/
 cp ~/.vimrc ~/.olddotfiles/.vimrc
 cp ~/.bash_profile ~/.olddotfiles/.bash_profile
+cp ~/.zshrc* ~/.olddotfiles/
+cp -R ~/.oh-my-zsh ~/.olddotfiles/.oh-my-zsh
 
 # remove
 
+rm -rf ~/.zshrc
+rm -rf ~/.oh-my-zsh
 rm -rf ~/.vim
 rm -f ~/.vimrc
 rm -f ~/.bash_profile
 rm -f ~/.config/fish/config.fish
 
+ln -s ~/.dotfiles/.oh-my-zsh ~/.oh-my-zsh
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
