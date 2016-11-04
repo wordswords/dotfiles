@@ -2,9 +2,7 @@
 
 # Features
 
-  'Good' vIM setup
-  'Good' bash setup (if needed)
-  'Good' oh-my-zsh (if needed)
+My setup with custom settings for bash, zsh and vim.
 
 # Requirements
 
