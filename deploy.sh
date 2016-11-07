@@ -17,7 +17,6 @@ rm -rf ~/.vim
 rm -f ~/.vimrc
 rm -f ~/.bash_profile
 
-ln -s ~/.dotfiles/.oh-my-zsh ~/.oh-my-zsh
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
