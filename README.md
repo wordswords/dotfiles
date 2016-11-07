@@ -4,10 +4,10 @@
 
 My setup with custom settings for bash, zsh and vim.
 
-Shell:
+Vim:
 * http://i.imgur.com/ghAavTh.png
 
-Vim:
+Shell:
 * http://i.imgur.com/aMrGjDy.png
 
 # Requirements
