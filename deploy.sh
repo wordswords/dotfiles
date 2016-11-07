@@ -27,12 +27,12 @@ ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
 
 rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/
-git clone git@github.com:vim-scripts/Conque-Shell.git
-git clone git@github.com:ryanoasis/vim-devicons.git
-git clone git://github.com/tpope/vim-rails.git
-git clone git://github.com/tpope/vim-bundler.git
-git clone https://github.com/vim-airline/vim-airline
-git clone git@github.com:scrooloose/nerdtree.git
+git clone git@github.com:/vim-scripts/Conque-Shell.git
+git clone git@github.com:/ryanoasis/vim-devicons.git
+git clone git@github.com:/tpope/vim-rails.git
+git clone git@github.com:/tpope/vim-bundler.git
+git clone git@github.com:/vim-airline/vim-airline
+git clone git@github.com:/scrooloose/nerdtree.git
 
 # install font for vim-fonts
 cd ~/Library/Fonts
