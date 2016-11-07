@@ -16,7 +16,6 @@ rm -rf ~/.oh-my-zsh
 rm -rf ~/.vim
 rm -f ~/.vimrc
 rm -f ~/.bash_profile
-rm -f ~/.config/fish/config.fish
 
 ln -s ~/.dotfiles/.oh-my-zsh ~/.oh-my-zsh
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
