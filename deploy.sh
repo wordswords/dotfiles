@@ -27,6 +27,7 @@ ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
 
 rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/
+git clone git@github.com:/altercation/vim-colors-solarized.git
 git clone git@github.com:/vim-scripts/Conque-Shell.git
 git clone git@github.com:/ryanoasis/vim-devicons.git
 git clone git@github.com:/tpope/vim-rails.git
