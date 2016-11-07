@@ -2,10 +2,11 @@
 execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
 execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
 execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
+execute pathogen#infect('~/.vim/bundle/vim-colors-solarized/{}')
 execute pathogen#infect()
 
 set encoding=utf8
-syntax on
+syntax enable
 set backspace=2     " backspace back up a line
 set ts=2            " each tab is four spaces
 set background=dark " dark background, light foreground
@@ -31,6 +32,7 @@ set list
 set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files 
 
+let g:solarized_termcolors=256
 colorscheme solarized " Set colorscheme to a black/grey theme
 
 "" Turn off visual and audio bell
