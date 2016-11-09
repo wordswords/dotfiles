@@ -1,21 +1,8 @@
 #!/bin/bash
 
-# backup
-rm -rf ~/.olddotfiles
-mkdir -p ~/.olddotfiles
-cp -R ~/.vim ~/.olddotfiles/
-cp ~/.vimrc ~/.olddotfiles/.vimrc
-cp ~/.bash_profile ~/.olddotfiles/.bash_profile
-cp ~/.zshrc* ~/.olddotfiles/
-cp -R ~/.oh-my-zsh ~/.olddotfiles/.oh-my-zsh
+# To be run after installation of zsh
 
-# remove
-
-rm -rf ~/.zshrc
-rm -rf ~/.oh-my-zsh
-rm -rf ~/.vim
-rm -f ~/.vimrc
-rm -f ~/.bash_profile
+rm -rf ~/.zshrc # remove the default .zshrc 
 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.vim ~/.vim
@@ -33,9 +20,11 @@ git clone git@github.com:/tpope/vim-rails.git
 git clone git@github.com:/tpope/vim-bundler.git
 git clone git@github.com:/vim-airline/vim-airline
 git clone git@github.com:/scrooloose/nerdtree.git
+git clone git@github.com:vim-syntastic/syntastic.git
 
 # install font for vim-fonts
 cd ~/Library/Fonts
 curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
 cd -
 echo "If using iterm2, remember to now manually set your font in iterm2 settings to Droid Sans Mono for Powerline both for ASCII and non-ASCII font types!"
+
