@@ -5,10 +5,11 @@
 My setup with custom settings for bash, zsh and vim.
 
 Vim:
-* http://i.imgur.com/ghAavTh.png
-
+![Alt text](http://i.imgur.com/ghAavTh.png "My vim setup")
+* 
 Shell:
-* http://i.imgur.com/aMrGjDy.png
+* 
+![Alt text](http://i.imgur.com/aMrGjDy.png "My zsh setup")
 
 # Requirements
 
@@ -25,8 +26,6 @@ Shell:
 3. ./deploy-part-1.sh
 4. ./deploy-part-2.sh
 5. Profit.
-
-
 
 If you want, you can fork this repo and base your config on this. If you have any problems using these dotfiles please let me know and I can help you.
 
