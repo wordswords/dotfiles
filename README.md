@@ -4,19 +4,22 @@
 
 My setup with custom settings for bash, zsh and vim.
 
-Vim:
+## Vim:
+
 ![Alt text](http://i.imgur.com/ghAavTh.png "My vim setup")
-* 
-Shell:
-* 
+
+## Shell:
+
 ![Alt text](http://i.imgur.com/aMrGjDy.png "My zsh setup")
 
 # Requirements
 
 1. I use iterm2 on OSX, this setup will only work for that.
-2. oh-my-zsh must be installed
-3. vim must be installed
-4. git must be installed and setup with ssh for github
+2. vim must be installed, I highly recommend you install it view homebrew with 'brew install vim'
+3. git must be installed and setup with ssh for github
+4. eslint must be installed for JavaScript linting
+
+As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it.
 
 
 # Install
