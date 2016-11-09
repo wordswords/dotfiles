@@ -22,8 +22,9 @@ Shell:
 
 1. git clone git@github.com:/wordswords/dotfiles ./dotfiles/
 2. cd ~/.dotfiles/
-3. ./deploy.sh
-4. Profit.
+3. ./deploy-part-1.sh
+4. ./deploy-part-2.sh
+5. Profit.
 
 
 
