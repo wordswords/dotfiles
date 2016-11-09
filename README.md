@@ -4,11 +4,12 @@
 
 My setup with custom settings for bash, zsh and vim.
 
-Vim:
+## Vim:
+
 ![Alt text](http://i.imgur.com/ghAavTh.png "My vim setup")
-* 
-Shell:
-* 
+
+## Shell:
+
 ![Alt text](http://i.imgur.com/aMrGjDy.png "My zsh setup")
 
 # Requirements
