@@ -21,7 +21,7 @@ git clone git@github.com:/tpope/vim-bundler.git
 git clone git@github.com:/vim-airline/vim-airline
 git clone git@github.com:/scrooloose/nerdtree.git
 git clone git@github.com:vim-syntastic/syntastic.git
-git clone https://github.com/jelera/vim-javascript-syntax.git 
+git clone git@github.com:/jelera/vim-javascript-syntax.git 
 
 # install font for vim-fonts
 cd ~/Library/Fonts
