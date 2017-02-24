@@ -77,7 +77,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-plugins=(git bundler osx rake ruby zsh-nvm)
+plugins=(git bundler osx rake ruby zsh-nvm zsh-syntax-highlighting)
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
@@ -85,3 +85,9 @@ export NVM_DIR="/Users/craddd01/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+source /Users/craddd01/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
