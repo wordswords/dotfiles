@@ -32,13 +32,24 @@ git clone git@github.com:/godlygeek/tabular.git
 cd ~/Library/Fonts
 curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
 cd -
-echo " -!-!-!- "
-echo "STOP - If using iterm2, remember to now manually install the font to OSX, and then set your font in iterm2 settings to Droid Sans Mono for Powerline both for ASCII and non-ASCII font types!"
-
 # install oh-my-zsh plugins
 cd ~/.oh-my-zsh/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git 
 
-# load new config
-source ~/.zshrc
-
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo " -!-!-!- "
+echo "STOP - If using iterm2, remember to now manually install the font to OSX, and then set your font in iterm2 settings to Droid Sans Mono for Powerline both for ASCII and non-ASCII font types!"
+echo " -!-!-!- "
+echo "ONCE DONE - open new terminal and you're complete"
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
