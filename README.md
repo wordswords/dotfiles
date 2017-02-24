@@ -27,8 +27,11 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 1. git clone git@github.com:/wordswords/dotfiles ./dotfiles/
 2. cd ~/.dotfiles/
 3. ./deploy-part-1.sh
+3. Press control-D to drop out of oh-my-zsh
 4. ./deploy-part-2.sh
-5. Profit.
+5. Install Powerline Nerd font if you are using iterm
+6. Open a new terminal to load everything in
+7. You're good to go.
 
 If you want, you can fork this repo and base your config on this. If you have any problems using these dotfiles please let me know and I can help you.
 
