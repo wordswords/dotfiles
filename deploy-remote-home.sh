@@ -5,9 +5,14 @@
 ### and setup an alias in ~/.bash_aliases for quick keyed login
 ## 
 
+source ~/.bash_aliases
 echo "Hostname or IP address of machine to deploy to. (Must have a user account named ${USER} already setup):"
 read HOST_TO_DEPLOY
-echo "Short memorable unique bash alias for this host:"
+echo "Current list of aliases:"
+echo
+alias
+echo
+echo "Pick a short memorable unique bash alias for this new host:"
 read ALIAS
 echo "Shall we go ahead deploying to ${USER}@${HOST_TO_DEPLOY} and memorable alias: ${ALIAS}? (y/N)"
 read answer
@@ -25,6 +30,8 @@ echo "alias ${ALIAS}='ssh ${USER}@${HOST_TO_DEPLOY}'" >> ~/.bash_aliases
 echo -n >> ~/.bash_aliases
 source ~/.bash_aliases
 echo "New list of your aliases:"
+echo
 alias
+echo
 echo "Completed. Ready to try new alias: ${ALIAS}"
 
