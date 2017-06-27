@@ -26,5 +26,5 @@ echo -n >> ~/.bash_aliases
 source ~/.bash_aliases
 echo "New list of your aliases:"
 alias
-echo "Ready to try new alias: ${ALIAS}"
+echo "Completed. Ready to try new alias: ${ALIAS}"
 
