@@ -13,7 +13,8 @@ ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/.bash_profile_remote ~/.bash_profile_remote
-ln -s ~/.dotfiles/deploy-remote-home.sh ~/deploy-remote-home.sh
+mkdir -p ~/bin/
+ln -s ~/.dotfiles/deploy-remote-home.sh ~/bin/deploy-remote-home.sh
 
 # install vim plugins latest version
 
