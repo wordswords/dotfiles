@@ -1,4 +1,4 @@
-alias ls="ls -Ga"
+alias ls="ls --color -a"
 alias grep="grep --color"
 alias cp="cp -av"
 if [ -f ~/.bash_aliases ]; then
