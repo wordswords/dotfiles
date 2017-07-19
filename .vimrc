@@ -110,18 +110,23 @@ endif
 
 autocmd VimEnter * wincmd p
 
+"" stop NERDTree buffers being lost by disabling buffer next and buffer previous
+autocmd FileType nerdtree noremap <buffer> <c-h> <nop>
+autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
+
 "" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif
+
 "" Syntaxic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 let g:syntastic_error_symbol = '❌'
