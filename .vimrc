@@ -19,18 +19,17 @@ set hlsearch        " highlight searches
 set incsearch       " do incremental searching
 set ruler           " show the cursor position all the time
 set number          " show line numbers
-set ignorecase      " ignore case when searching 
+set ignorecase      " ignore case when searching
 set ttyfast         " smoother changes
 set cursorline      " highlight current line
 set splitright      " Open new vertical split windows to the right of the current one, not the left.
-set splitbelow      " See above description. Opens new windows below, not above.
-set history=1000    " 1000 previous commands remembered
+set splitbelow      " See above description. Opens new windows below, not above.  set history=1000    " 1000 previous commands remembered
 set laststatus=2
 " show nonprintable characters such as tab and newlines
 set list
 " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
-set noswapfile      " Don't drop swap files 
+set noswapfile      " Don't drop swap files
 
 let g:solarized_termcolors=256
 colorscheme solarized " Set colorscheme to a black/grey theme
@@ -50,8 +49,8 @@ let g:powerline_symbols = 'fancy'
 
 "" Supertab
 "" http://www.vim.org/scripts/script.php?script_id=1643
-"" Supertab allows you to use <Tab> for all your insert completion needs 
-" (:help ins-completion). 
+"" Supertab allows you to use <Tab> for all your insert completion needs
+" (:help ins-completion).
 
 "" <tab> to autocomplete
 "" control-N to cycle through autocomplete popup downwards
@@ -103,10 +102,10 @@ nmap <Space>bl :ls<CR>
 
 "" start NERDTree up when starting up VIM
 "" if a file to open is provided, open that as well in NERDTree
-if (expand("%")) 
-  autocmd VimEnter * NERDTree % 
+if (expand("%"))
+  autocmd VimEnter * silent NERDTree %
 else
-  autocmd VimEnter * NERDTree
+  autocmd VimEnter * silent NERDTree
 endif
 
 autocmd VimEnter * wincmd p
@@ -116,8 +115,9 @@ autocmd FileType nerdtree noremap <buffer> <c-h> <nop>
 autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
 
 "" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif 
-"
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif
+
 "" Syntaxic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -139,3 +139,13 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
+" Removes trailing spaces
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+
+nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()
