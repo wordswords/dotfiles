@@ -37,23 +37,6 @@ git clone git@github.com:/godlygeek/tabular.git
 cd ~/.oh-my-zsh/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo " -!-!-!- "
-echo "STOP - If using iterm2, remember to now manually install the font to OSX, and then set your font in iterm2 settings to Droid Sans Mono for Powerline both for ASCII and non-ASCII font types!"
-echo " -!-!-!- "
-echo "ONCE DONE - open new terminal and you're complete"
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
 
 # install font for vim-fonts
 git clone https://github.com/powerline/fonts.git
@@ -61,4 +44,14 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
+
+echo ""
+echo ""
+echo " -!-!-!- "
+echo "STOP - If using iterm2, set your font in iterm2 settings to a Powerline font both for ASCII and non-ASCII font types!"
+echo " -!-!-!- "
+echo "ONCE DONE - open new terminal and you're complete"
+echo ""
+echo ""
+
 
