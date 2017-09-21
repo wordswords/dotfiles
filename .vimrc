@@ -30,6 +30,7 @@ set list
 " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files
+set clipboard=unnamed "Share clipboard with host OS!
 
 let g:solarized_termcolors=256
 colorscheme solarized " Set colorscheme to a black/grey theme
