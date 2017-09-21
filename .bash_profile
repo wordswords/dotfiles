@@ -1,6 +1,7 @@
 alias ls="ls -Ga"
 alias grep="grep --color"
 alias cp="cp -av"
+alias please='sudo $(fc -ln -1)'
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi

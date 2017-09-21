@@ -1,6 +1,7 @@
 alias ls="ls --color -a"
 alias grep="grep --color"
 alias cp="cp -av"
+alias please='sudo $(fc -ln -1)'
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
@@ -23,4 +24,5 @@ shopt -s checkwinsize
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
+export GIT_EDITOR=vim
 
