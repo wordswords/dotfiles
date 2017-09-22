@@ -12,6 +12,7 @@ ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.bash_aliases ~/.zsh_aliases
 ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/.vim ~/.vim
+ln -s ~/.dotfiles/bin ~/bin
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/.bash_profile_remote ~/.bash_profile_remote
@@ -44,6 +45,8 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
+
+./configure-osx.sh
 
 echo ""
 echo ""
