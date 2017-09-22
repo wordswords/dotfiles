@@ -2,7 +2,7 @@
 
 ##
 ### Script to copy local public ssh key and ~/.bash_profile_remote file to a given host
-### and setup an alias in ~/.bash_aliases for quick keyed login
+### and setup an alias in ~/.zsh_aliases and ~/.bash_aliases for quick keyed login
 ##
 
 source ~/.bash_aliases
@@ -12,7 +12,7 @@ echo "Current list of aliases:"
 echo
 alias
 echo
-echo "Pick a short memorable unique bash alias for this new host:"
+echo "Pick a short memorable unique bash and zsh alias for this new host:"
 read ALIAS
 echo "Shall we go ahead deploying to ${USER}@${HOST_TO_DEPLOY} and memorable alias: ${ALIAS}? (y/N)"
 read answer
