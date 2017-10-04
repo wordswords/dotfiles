@@ -24,6 +24,8 @@ else
 fi
 ssh "${USER}@${HOST_TO_DEPLOY}" "mkdir -p ~/.ssh"
 scp ~/.bash_profile_remote "${USER}@${HOST_TO_DEPLOY}:~/.bash_profile"
+scp ~/.vimrc "${USER}@${HOST_TO_DEPLOY}:~/"
+rsync -ave ssh ~/.vim "${USER}@${HOST_TO_DEPLOY}:~/"
 cat ~/.ssh/id_rsa.pub | ssh "${USER}@${HOST_TO_DEPLOY}" 'cat >> .ssh/authorized_keys'
 ssh "${USER}@${HOST_TO_DEPLOY}" "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 echo "alias ${ALIAS}='ssh ${USER}@${HOST_TO_DEPLOY}'" >> /tmp/new_aliases
