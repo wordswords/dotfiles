@@ -4,7 +4,6 @@
 ### Script to copy local public ssh key and ~/.bash_profile_remote file to a given host
 ### and setup an alias in ~/.zsh_aliases and ~/.bash_aliases for quick keyed login
 ##
-source ~/.bash_aliases
 if [ $# -eq 2 ]; then
   HOST_TO_DEPLOY=$1
   ALIAS=$2
@@ -27,15 +26,20 @@ else
   fi
 fi
 
+# keyed ssh login
 ssh "${USER}@${HOST_TO_DEPLOY}" "mkdir -p ~/.ssh"
+cat ~/.ssh/id_rsa.pub | ssh "${USER}@${HOST_TO_DEPLOY}" 'cat >> .ssh/authorized_keys'
+
+# setup .dotfiles
 rsync -ave ssh ~/.dotfiles "${USER}@${HOST_TO_DEPLOY}:~/"
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vim ${HOME}/.vim'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/bin ${HOME}/bin'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bash_profile_remote ${HOME}/.bash_profile'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bashrc_remote ${HOME}/.bashrc'
-cat ~/.ssh/id_rsa.pub | ssh "${USER}@${HOST_TO_DEPLOY}" 'cat >> .ssh/authorized_keys'
 ssh "${USER}@${HOST_TO_DEPLOY}" "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+
+# update aliases
 echo "alias ${ALIAS}='ssh ${USER}@${HOST_TO_DEPLOY}'" >> /tmp/new_aliases
 echo -n >> /tmp/new_aliases
 cat /tmp/new_aliases >> ~/.zsh_aliases
@@ -43,10 +47,14 @@ cat /tmp/new_aliases >> ~/.bash_aliases
 rm /tmp/new_aliases
 sort -u ~/.bash_aliases
 sort -u ~/.zsh_aliases
-. ~/.zsh_aliases
+source ~/.zsh_aliases
 echo "New list of your aliases:"
 echo
 alias
 echo
-echo "Completed. Ready to try new alias: ${ALIAS}"
+
+# clean up
+echo "Completed. Ready to try new alias: ${ALIAS} . Press any key to continue.."
+read answer
+exec zsh
 
