@@ -5,7 +5,7 @@
 ### and setup an alias in ~/.zsh_aliases and ~/.bash_aliases for quick keyed login
 ##
 source ~/.bash_aliases
-if [ $# -gt 0 ]; then
+if [ $# -eq 2 ]; then
   HOST_TO_DEPLOY=$1
   ALIAS=$2
 else
@@ -41,8 +41,8 @@ echo -n >> /tmp/new_aliases
 cat /tmp/new_aliases >> ~/.zsh_aliases
 cat /tmp/new_aliases >> ~/.bash_aliases
 rm /tmp/new_aliases
-sort -u ~/.bash_aliases > ~/.bash_aliases
-sort -u ~/.zsh_aliases > ~/.zsh_aliases
+sort -u ~/.bash_aliases
+sort -u ~/.zsh_aliases
 . ~/.zsh_aliases
 echo "New list of your aliases:"
 echo
