@@ -4,7 +4,7 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="sunrise"
+ZSH_THEME="fishy"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -77,7 +77,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-plugins=(git bundler osx rake ruby zsh-nvm zsh-syntax-highlighting)
+plugins=(git bundler osx python sh-nvm zsh-syntax-highlighting)
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
