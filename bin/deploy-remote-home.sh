@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##
-### Script to copy local public ssh key and ~/.bash_profile_remote file to a given host
+### Script to copy local public ssh key and remote dotfiles to a given host
 ### and setup an alias in ~/.zsh_aliases and ~/.bash_aliases for quick keyed login
 ##
 if [ $# -eq 2 ]; then
