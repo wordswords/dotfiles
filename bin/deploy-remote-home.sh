@@ -3,6 +3,7 @@
 ##
 ### Script to copy local public ssh key and ~/.bash_profile_remote file to a given host
 ### and setup an alias in ~/.zsh_aliases and ~/.bash_aliases for quick keyed login
+### and dotfiles
 ##
 
 # get parameters
@@ -48,15 +49,16 @@ echo -n >> /tmp/new_aliases
 cat /tmp/new_aliases >> ~/.zsh_aliases
 cat /tmp/new_aliases >> ~/.bash_aliases
 rm /tmp/new_aliases
-sort -u ~/.bash_aliases
-sort -u ~/.zsh_aliases
+sort -u ~/.bash_aliases >/dev/null
+sort -u ~/.zsh_aliases >/dev/null
 source ~/.zsh_aliases
+
+# clean up
+echo
 echo "New list of your aliases:"
 echo
 alias
 echo
-
-# clean up
 echo "Completed. Ready to try new alias: ${ALIAS} . Press any key to continue.."
 read answer
 exec zsh
