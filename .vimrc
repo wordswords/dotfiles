@@ -8,7 +8,7 @@ execute pathogen#infect()
 set encoding=utf8
 syntax enable
 set backspace=2     " backspace back up a line
-set ts=2            " each tab is four spaces
+set ts=2            " each tab is two spaces
 set background=dark " dark background, light foreground
 set ls=2            " always show status line
 set expandtab       " always expand tabs
