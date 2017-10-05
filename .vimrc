@@ -8,7 +8,7 @@ execute pathogen#infect()
 set encoding=utf8
 syntax enable
 set backspace=2     " backspace back up a line
-set ts=2            " each tab is four spaces
+set ts=2            " each tab is two spaces
 set background=dark " dark background, light foreground
 set ls=2            " always show status line
 set expandtab       " always expand tabs
@@ -23,7 +23,8 @@ set ignorecase      " ignore case when searching
 set ttyfast         " smoother changes
 set cursorline      " highlight current line
 set splitright      " Open new vertical split windows to the right of the current one, not the left.
-set splitbelow      " See above description. Opens new windows below, not above.  set history=1000    " 1000 previous commands remembered
+set splitbelow      " See above description. Opens new windows below, not above.  
+set history=1000    " 1000 previous commands remembered
 set laststatus=2
 " show nonprintable characters such as tab and newlines
 set list
