@@ -23,7 +23,7 @@ set ignorecase      " ignore case when searching
 set ttyfast         " smoother changes
 set cursorline      " highlight current line
 set splitright      " Open new vertical split windows to the right of the current one, not the left.
-set splitbelow      " See above description. Opens new windows below, not above.  
+set splitbelow      " See above description. Opens new windows below, not above.
 set history=1000    " 1000 previous commands remembered
 set laststatus=2
 " show nonprintable characters such as tab and newlines
@@ -130,6 +130,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_python_checkers = ['flake8']
 
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
@@ -151,3 +152,4 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
