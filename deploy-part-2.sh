@@ -20,19 +20,31 @@ mkdir -p ~/bin/
 ln -s ~/.dotfiles/deploy-remote-home.sh ~/bin/deploy-remote-home.sh
 
 # install vim plugins latest version
-
+#Conque-Shell
+#nerdtree
+#syntastic
+#tabular
+#vim-airline
+#vim-bundler
+#vim-colors-solarized
+#vim-devicons
+#vim-git
+#vim-javascript-syntax
+#vim-multiple-cursors
+#vim-rails
 rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/
 git clone git@github.com:/altercation/vim-colors-solarized.git
-git clone git@github.com:/vim-scripts/Conque-Shell.git
-git clone git@github.com:/ryanoasis/vim-devicons.git
-git clone git@github.com:/tpope/vim-rails.git
-git clone git@github.com:/tpope/vim-bundler.git
-git clone git@github.com:/vim-airline/vim-airline
-git clone git@github.com:/scrooloose/nerdtree.git
-git clone git@github.com:vim-syntastic/syntastic.git
-git clone git@github.com:jelera/vim-javascript-syntax.git
 git clone git@github.com:/godlygeek/tabular.git
+git clone git@github.com:/ryanoasis/vim-devicons.git
+git clone git@github.com:/scrooloose/nerdtree.git
+git clone git@github.com:/tpope/vim-bundler.git
+git clone git@github.com:/tpope/vim-git
+git clone git@github.com:/tpope/vim-rails.git
+git clone git@github.com:/vim-airline/vim-airline
+git clone git@github.com:/vim-scripts/Conque-Shell.git
+git clone git@github.com:jelera/vim-javascript-syntax.git
+git clone git@github.com:vim-syntastic/syntastic.git
 
 # install oh-my-zsh plugins
 cd ~/.oh-my-zsh/plugins
