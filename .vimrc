@@ -44,7 +44,7 @@ autocmd GUIEnter * set visualbell t_vb=
 map q <Nop>
 
 "" Vim fonts
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+set guifont=Droid\ Sans\ Mono\ For\ Powerline\ Nerd\ Font\ Complete:h18
 let g:airline_powerline_fonts = 1
 let g:powerline_symbols = 'fancy'
 """ Installed plugins
