@@ -34,7 +34,7 @@ set noswapfile      " Don't drop swap files
 set clipboard=unnamed "Share clipboard with host OS!
 
 let g:solarized_termcolors=256
-colorscheme solarized " Set colorscheme to a black/grey theme
+colorscheme desert " Set colorscheme to a black/grey theme
 
 "" Turn off visual and audio bell
 set noerrorbells visualbell t_vb=
@@ -152,4 +152,8 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
+" Use Tab and Shift-Tab to indent large blocks of text
+vnoremap <silent> <tab> ><cr>gv
+vnoremap <silent> <s-tab> <<cr>gv
 
