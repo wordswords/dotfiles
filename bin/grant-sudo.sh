@@ -1,13 +1,16 @@
 #!/bin/bash -ex
+
+# This requires a machine-alias already setup by deploy-remote-home.sh in the same directory.
+
 shopt -s expand_aliases
 source ~/.zsh_aliases
 if [ $# -eq 2 ]; then
-  # parameters passed on command line
+  # parameters
   MACHINE_ALIAS=$1
   USERNAME_TO_GRANT=$2
   USER=${USER}
 else
-  echo "grant-sudo.sh <machine-alias> <username-to-grant>"
+  echo "grant-sudo.sh <machine-alias> <username-on-machine-alias-to-grant-sudo-to>"
 fi
 rm /tmp/grant-sudo-tmp-file.txt || echo ""
 ${MACHINE_ALIAS} sudo -S whoami | tee /tmp/grant-sudo-tmp-file.txt
