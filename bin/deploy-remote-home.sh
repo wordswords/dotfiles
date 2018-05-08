@@ -44,7 +44,7 @@ ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bash_profile_remote $
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bashrc_remote ${HOME}/.bashrc'
 
 # update aliases.. we use functions as aliases so we can expand in scripts
-echo "${ALIAS} () { /usr/bin/env ssh ${USER}@${HOST_TO_DEPLOY} \"\$@\"; }" >> /tmp/new_aliases
+echo "${ALIAS} () { /usr/bin/env ssh -t ${USER}@${HOST_TO_DEPLOY} \"\$@\"; }" >> /tmp/new_aliases
 
 echo -n >> /tmp/new_aliases
 cat /tmp/new_aliases >> ~/.zsh_aliases
