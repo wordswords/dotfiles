@@ -24,7 +24,7 @@ if grep -q root /tmp/grant-sudo-tmp-file.txt ; then
   grep -q sudo /tmp/grant-sudo-tmp-file.txt && ${MACHINE_ALIAS} sudo -S usermod -aG sudo ${USERNAME_TO_GRANT}
 
   # if the sudo group is called 'wheel'
-  grep -q wheel /tmp/grant-sudo-tmp-file.txt && ${MACHINE_ALIAS} sudo -s usermod -aG wheel ${USERNAME_TO_GRANT}
+  grep -q wheel /tmp/grant-sudo-tmp-file.txt && ${MACHINE_ALIAS} sudo -S usermod -aG wheel ${USERNAME_TO_GRANT}
 
   rm /tmp/grant-sudo-tmp-file.txt
   exit 0
