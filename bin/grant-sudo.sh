@@ -29,8 +29,6 @@ if grep -q root /tmp/grant-sudo-tmp-file.txt ; then
   rm /tmp/grant-sudo-tmp-file.txt
   exit 0
 else
-  echo "we are not root on ${machine_alias}. exiting.."
+  echo "We are not root on ${MACHINE_ALIAS}. exiting.."
   exit 1
 fi
-${machine_alias} sudo -s usermod -ag whoami | tee /tmp/grant-sudo-tmp-file.txt
-rm /tmp/grant-sudo-tmp-file.txt
