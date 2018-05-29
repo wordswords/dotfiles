@@ -11,6 +11,7 @@ if [ $# -eq 2 ]; then
   USER=${USER}
 else
   echo "grant-sudo.sh <machine-alias> <username-on-machine-to-grant-sudo-to>"
+  exit 1
 fi
 rm /tmp/grant-sudo-tmp-file.txt || echo ""
 ${MACHINE_ALIAS} sudo -S whoami | tee /tmp/grant-sudo-tmp-file.txt
