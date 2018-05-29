@@ -10,7 +10,7 @@ if [ $# -eq 2 ]; then
   USERNAME_TO_GRANT=$2
   USER=${USER}
 else
-  echo "grant-sudo.sh <machine-alias> <username-on-machine-to-grant-sudo-to>"
+  echo "grant-sudo-remote.sh <machine-alias> <username-on-machine-to-grant-sudo-to>"
   exit 1
 fi
 rm /tmp/grant-sudo-tmp-file.txt || echo ""

@@ -8,7 +8,7 @@ if [ $# -eq 3 ]; then
   GROUP_TO_REMOVE=$3
   USER=${USER}
 else
-  echo "remove-from-group.sh <machine-alias> <username-to-process> <group-to-remove>"
+  echo "remove-from-group-remote.sh <machine-alias> <username-to-process> <group-to-remove>"
   exit 1
 fi
 rm /tmp/grant-sudo-tmp-file.txt || echo ""

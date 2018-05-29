@@ -8,7 +8,7 @@ if [ $# -eq 3 ]; then
   GROUP_TO_GRANT=$3
   USER=${USER}
 else
-  echo "add-to-group.sh <machine-alias> <username-to-grant> <group-to-grant>"
+  echo "add-to-group-remote.sh <machine-alias> <username-to-grant> <group-to-grant>"
   exit 1
 fi
 rm /tmp/grant-sudo-tmp-file.txt || echo ""
