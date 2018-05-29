@@ -50,8 +50,10 @@ echo -n >> /tmp/new_aliases
 cat /tmp/new_aliases >> ~/.zsh_aliases
 cat /tmp/new_aliases >> ~/.bash_aliases
 rm /tmp/new_aliases
-sort -u ~/.bash_aliases >/dev/null
-sort -u ~/.zsh_aliases >/dev/null
+sort ~/.bash_aliases | uniq -u > ~/.bash_aliases.tmp
+mv ~/.bash_aliases.tmp ~/.bash_aliases
+sort ~/.zsh_aliases | uniq -u > ~/.zsh_aliases.tmp
+mv ~/.zsh_aliases.tmp ~/.zsh_aliases
 source ~/.zsh_aliases
 
 # clean up
@@ -62,5 +64,6 @@ cat ~/.zsh_aliases
 echo
 echo "Completed. Ready to try new alias: ${ALIAS} . Press any key to continue.."
 read answer
-exec zsh
+source ~/.zsh_aliases
+
 
