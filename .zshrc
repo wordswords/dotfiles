@@ -95,7 +95,7 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-alias vim="/Applications/MacVim.app/Contents/bin/mvim -f"
+#alias vim="/Applications/MacVim.app/Contents/bin/mvim -f"
 source ~/.zsh_aliases
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" || curl -L https://iterm2.com/misc/install_shell_integration.sh | bash

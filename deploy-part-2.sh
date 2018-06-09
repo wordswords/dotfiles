@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Configure OSX
+./configure-osx.sh
+
 # To be run after installation of oh-my-zsh
 
 # install oh-my-zsh plugins
@@ -56,7 +59,6 @@ cd fonts
 cd ..
 rm -rf fonts
 
-./configure-osx.sh
 
 echo ""
 echo ""

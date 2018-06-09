@@ -3,6 +3,7 @@ execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
 execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
 execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
 execute pathogen#infect('~/.vim/bundle/vim-colors-solarized/{}')
+execute pathogen#infect('~/.vim/bundle/riv.vim/{}')
 execute pathogen#infect()
 
 set encoding=utf8
@@ -32,7 +33,6 @@ set list
 set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files
 set clipboard=unnamed "Share clipboard with host OS!
-
 let g:solarized_termcolors=256
 colorscheme desert " Set colorscheme to a black/grey theme
 
@@ -196,7 +196,7 @@ augroup END
 function SetRestructuredTextOptions()
   au BufRead,BufNewFile *.rst setlocal textwidth=80
   autocmd FileType gitcommit setlocal spell
-  setlocal spell spelllang=en_us
+  setlocal spell spelllang=en_gb
 endfunction
 
 function SetMarkdownOptions()
@@ -208,3 +208,22 @@ function SetMakefileOptions()
   colorscheme Tomorrow-Night
   set noexpandtab shiftwidth=4 softtabstop=0
 endfunction
+
+let g:wordy#ring = [
+  \ 'weak',
+  \ ['being', 'passive-voice', ],
+  \ 'business-jargon',
+  \ 'weasel',
+  \ 'puffery',
+  \ ['problematic', 'redundant', ],
+  \ ['colloquial', 'idiomatic', 'similies', ],
+  \ 'art-jargon',
+  \ ['contractions', 'opinion', 'vague-time', 'said-synonyms', ],
+  \ 'adjectives',
+  \ 'adverbs',
+  \ ]
+
+" for riv
+let proj1 = { 'path': '~/rstnotes', }
+let g:riv_projects = [proj1]
+filetype plugin indent on
