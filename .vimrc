@@ -157,3 +157,54 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 vnoremap <silent> <tab> ><cr>gv
 vnoremap <silent> <s-tab> <<cr>gv
 
+" vim-pencil configuration
+augroup pencil
+  autocmd!
+  "
+  " Apply for Markdown and reStructuredText
+  autocmd FileType markdown,mkd,md,rst,asciidoc call pencil#init({'wrap': 'soft'})
+                              \ | call lexical#init()
+                              \ | call litecorrect#init()
+                              \ | call textobj#quote#init()
+                              \ | call textobj#sentence#init()
+  autocmd FileType markdown,mkd,md call SetMarkdownOptions()
+  autocmd FileType rst call SetRestructuredTextOptions()
+
+  autocmd FileType c,h call SetCOptions()
+  autocmd FileType Makefile call SetMakefileOptions()
+  autocmd FileType text            call pencil#init({'wrap': 'soft'})
+
+
+  " Highlight words to avoid in tech writing
+  " =======================================
+  "
+  "   obviously, basically, simply, of course, clearly,
+  "   just, everyone knows, However, So, easy
+
+  "   http://css-tricks.com/words-avoid-educational-writing/
+
+  highlight TechWordsToAvoid ctermbg=red ctermfg=white
+  function! MatchTechWordsToAvoid()
+      match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
+  endfunction
+  autocmd BufWinEnter * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
+  autocmd InsertEnter * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
+  autocmd InsertLeave * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
+  autocmd BufWinLeave * call clearmatches()
+augroup END
+
+function SetRestructuredTextOptions()
+  au BufRead,BufNewFile *.rst setlocal textwidth=80
+  autocmd FileType gitcommit setlocal spell
+  setlocal spell spelllang=en_us
+endfunction
+
+function SetMarkdownOptions()
+  setlocal spell spelllang=en_us
+  nmap <leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
+endfunction
+
+function SetMakefileOptions()
+  colorscheme Tomorrow-Night
+  set noexpandtab shiftwidth=4 softtabstop=0
+endfunction

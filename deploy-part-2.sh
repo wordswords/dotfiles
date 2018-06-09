@@ -20,18 +20,6 @@ mkdir -p ~/bin/
 ln -s ~/.dotfiles/deploy-remote-home.sh ~/bin/deploy-remote-home.sh
 
 # install vim plugins latest version
-#Conque-Shell
-#nerdtree
-#syntastic
-#tabular
-#vim-airline
-#vim-bundler
-#vim-colors-solarized
-#vim-devicons
-#vim-git
-#vim-javascript-syntax
-#vim-multiple-cursors
-#vim-rails
 rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/
 git clone git@github.com:/altercation/vim-colors-solarized.git
@@ -45,12 +33,22 @@ git clone git@github.com:/vim-airline/vim-airline
 git clone git@github.com:/vim-scripts/Conque-Shell.git
 git clone git@github.com:jelera/vim-javascript-syntax.git
 git clone git@github.com:vim-syntastic/syntastic.git
+git clone git@github.com:reedes/vim-pencil
+git clone git@github.com:reedes/vim-lexical
+git clone git@github.com:rhysd/vim-grammarous
+git clone git@github.com:dpelle/vim-LanguageTool
+git clone git@github.com:reedes/vim-litecorrect
+git clone git@github.com:reedes/vim-textobj-quote
+git clone git@github.com:reedes/vim-textobj-sentence
+git clone git@github.com:reedes/vim-litecorrect
+git clone git@github.com:kana/vim-textobj-user
 
 # install oh-my-zsh plugins
 cd ~/.oh-my-zsh/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 
+# this font works for putty on windows: https://github.com/daagar/powerline-fonts/blob/36b04a7b08f820b4379d3fce098866880b5ba31c/DroidSansMono/Droid%20Sans%20Mono%20for%20Powerline.ttf
 # install font for vim-fonts
 git clone https://github.com/powerline/fonts.git
 cd fonts
