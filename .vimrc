@@ -3,11 +3,10 @@ execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
 execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
 execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
 execute pathogen#infect('~/.vim/bundle/vim-colors-solarized/{}')
-execute pathogen#infect('~/.vim/bundle/riv.vim/{}')
 execute pathogen#infect()
 
-set encoding=utf8
 syntax enable
+set encoding=utf8
 set backspace=2     " backspace back up a line
 set ts=2            " each tab is two spaces
 set background=dark " dark background, light foreground
@@ -26,18 +25,18 @@ set cursorline      " highlight current line
 set splitright      " Open new vertical split windows to the right of the current one, not the left.
 set splitbelow      " See above description. Opens new windows below, not above.
 set history=1000    " 1000 previous commands remembered
-set laststatus=2
-" show nonprintable characters such as tab and newlines
-set list
-" .. and use these characters to display them
+set laststatus=2    " show nonprintable characters such as tab and newlines
+set list            " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files
 set clipboard=unnamed "Share clipboard with host OS!
+set noerrorbells visualbell t_vb= "turn off all bells
+filetype plugin indent on " for writing plugins
+
 let g:solarized_termcolors=256
 colorscheme desert " Set colorscheme to a black/grey theme
 
 "" Turn off visual and audio bell
-set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
 "" Turn off recording
@@ -131,7 +130,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8']
-
 let g:syntastic_error_symbol = '❌'
 let g:syntastic_style_error_symbol = '⁉️'
 let g:syntastic_warning_symbol = '⚠️'
@@ -162,17 +160,12 @@ augroup pencil
   autocmd!
   "
   " Apply for Markdown and reStructuredText
-  autocmd FileType markdown,mkd,md,rst,asciidoc call pencil#init({'wrap': 'soft'})
-                              \ | call lexical#init()
-                              \ | call litecorrect#init()
-                              \ | call textobj#quote#init()
-                              \ | call textobj#sentence#init()
+  autocmd FileType markdown,mkd,md,rst,text,asciidoc call pencil#init({'wrap': 'soft'}) | call lexical#init() | call litecorrect#init() | call textobj#quote#init() | call textobj#sentence#init()
   autocmd FileType markdown,mkd,md call SetMarkdownOptions()
-  autocmd FileType rst call SetRestructuredTextOptions()
+  autocmd FileType rst,text call SetRestructuredTextOptions()
 
   autocmd FileType c,h call SetCOptions()
   autocmd FileType Makefile call SetMakefileOptions()
-  autocmd FileType text            call pencil#init({'wrap': 'soft'})
 
 
   " Highlight words to avoid in tech writing
@@ -200,7 +193,7 @@ function SetRestructuredTextOptions()
 endfunction
 
 function SetMarkdownOptions()
-  setlocal spell spelllang=en_us
+  setlocal spell spelllang=en_gb
   nmap <leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
 endfunction
 
@@ -223,7 +216,3 @@ let g:wordy#ring = [
   \ 'adverbs',
   \ ]
 
-" for riv
-let proj1 = { 'path': '~/rstnotes', }
-let g:riv_projects = [proj1]
-filetype plugin indent on
