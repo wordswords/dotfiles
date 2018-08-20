@@ -8,7 +8,7 @@ execute pathogen#infect()
 syntax enable
 set encoding=utf8
 set backspace=2     " backspace back up a line
-set ts=2            " each tab is two spaces
+set ts=4            " each tab is two spaces
 set background=dark " dark background, light foreground
 set ls=2            " always show status line
 set expandtab       " always expand tabs
@@ -31,10 +31,14 @@ set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files
 set clipboard=unnamed "Share clipboard with host OS!
 set noerrorbells visualbell t_vb= "turn off all bells
+set listchars=eol:$,tab:··,trail:␠,nbsp:⎵
+hi SpecialKey ctermfg=grey guifg=grey70
 filetype plugin indent on " for writing plugins
 
 let g:solarized_termcolors=256
 colorscheme desert " Set colorscheme to a black/grey theme
+hi SpecialKey ctermfg=grey guifg=grey70
+hi NonText ctermfg=grey guifg=grey70
 
 "" Turn off visual and audio bell
 autocmd GUIEnter * set visualbell t_vb=
