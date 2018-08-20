@@ -50,18 +50,6 @@ map q <Nop>
 set guifont=Droid\ Sans\ Mono\ For\ Powerline\ Nerd\ Font\ Complete:h18
 let g:airline_powerline_fonts = 1
 let g:powerline_symbols = 'fancy'
-""" Installed plugins
-
-"" Supertab
-"" http://www.vim.org/scripts/script.php?script_id=1643
-"" Supertab allows you to use <Tab> for all your insert completion needs
-" (:help ins-completion).
-
-"" <tab> to autocomplete
-"" control-N to cycle through autocomplete popup downwards
-"" control-P to cycle through autocomplete popup upwards
-
-"" :retab is a useful command to fix tabs, changes them into spaces..
 
 "" This is necessary under crunchbang/debian
 set t_Sf=[3%dm
@@ -86,7 +74,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 set hidden
 
 " To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
 nmap <C-T> :enew<cr>
 
 " Move to the next buffer
@@ -149,15 +136,16 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 
+function! SetTSVMode()
+    set ts=4
+    set noexpandtab
+endfunction
+
 nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
-
-" Use Tab and Shift-Tab to indent large blocks of text
-vnoremap <silent> <tab> ><cr>gv
-vnoremap <silent> <s-tab> <<cr>gv
 
 " vim-pencil configuration
 augroup pencil
