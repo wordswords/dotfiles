@@ -16,7 +16,7 @@ else
   read HOST_TO_DEPLOY
   echo "Current list of aliases:"
   echo
-  alias
+  cat ~/.bash_aliases
   echo
   echo "Pick a short memorable unique bash and zsh alias for this new host:"
   read ALIAS
