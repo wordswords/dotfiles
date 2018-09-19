@@ -135,10 +135,8 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 
-function! SetTSVMode()
-    set ts=4
-    set noexpandtab
-endfunction
+" Tab stopped file use
+au BufRead,BufNewFile *.robot setlocal noexpandtab
 
 nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 autocmd FileWritePre    * :call TrimWhiteSpace()
