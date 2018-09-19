@@ -39,12 +39,11 @@ ssh "${USER}@${HOST_TO_DEPLOY}" "mkdir -p ~/.ssh"
 cat ~/.ssh/id_rsa.pub | ssh "${USER}@${HOST_TO_DEPLOY}" 'cat >> .ssh/authorized_keys'
 ssh "${USER}@${HOST_TO_DEPLOY}" "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 
-
 # setup .dotfiles
 rsync -ave ssh ~/.dotfiles "${USER}@${HOST_TO_DEPLOY}:~/"
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vim ${HOME}/.vim'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc'
-ssh "${USER}@${HOST_TO_DEPLOY}" 'unlink ${HOME}/bin'
+ssh "${USER}@${HOST_TO_DEPLOY}" 'rm -rf ${HOME}/.dotfiles/bin'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/bin ${HOME}/bin'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bash_profile_remote ${HOME}/.bash_profile'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bashrc_remote ${HOME}/.bashrc'
@@ -58,11 +57,10 @@ cat /tmp/new_aliases >> ~/.zsh_aliases
 cat /tmp/new_aliases >> ~/.bash_aliases
 rm /tmp/new_aliases
 sort -u ~/.bash_aliases -o ~/.bash_aliases.tmp
-mv ~/.bash_aliases.tmp ~/.bash_aliases
 sort -u ~/.zsh_aliases -o ~/.zsh_aliases.tmp
+mv ~/.bash_aliases.tmp ~/.bash_aliases
 mv ~/.zsh_aliases.tmp ~/.zsh_aliases
 source ~/.zsh_aliases
-
 
 # clean up
 echo
