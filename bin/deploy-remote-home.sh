@@ -42,9 +42,10 @@ ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/bin ${HOME}/bin'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bash_profile_remote ${HOME}/.bash_profile'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bashrc_remote ${HOME}/.bashrc'
+ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf'
 
 # update aliases.. we use functions as aliases so we can expand in scripts
-echo "${ALIAS} () { /usr/bin/env mosh ${USER}@${HOST_TO_DEPLOY} \"\$@\"; }" >> /tmp/new_aliases
+echo "${ALIAS} () { /usr/bin/env ssh ${USER}@${HOST_TO_DEPLOY} \"\$@\"; }" >> /tmp/new_aliases
 
 echo -n >> /tmp/new_aliases
 cat /tmp/new_aliases >> ~/.zsh_aliases

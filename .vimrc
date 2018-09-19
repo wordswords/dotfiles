@@ -29,7 +29,6 @@ set laststatus=2    " show nonprintable characters such as tab and newlines
 set list            " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files
-set clipboard=unnamed "Share clipboard with host OS!
 set noerrorbells visualbell t_vb= "turn off all bells
 set listchars=eol:$,tab:··,trail:␠,nbsp:⎵
 hi SpecialKey ctermfg=grey guifg=grey70

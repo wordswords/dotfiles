@@ -15,6 +15,7 @@ ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/.bash_aliases ~/.zsh_aliases
 ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/.bash_profile_remote ~/.bash_profile_remote
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
@@ -51,7 +52,6 @@ git clone git@github.com:vim-syntastic/syntastic.git
 # install oh-my-zsh plugins
 cd ~/.oh-my-zsh/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-
 
 # this font works for putty on windows: https://github.com/daagar/powerline-fonts/blob/36b04a7b08f820b4379d3fce098866880b5ba31c/DroidSansMono/Droid%20Sans%20Mono%20for%20Powerline.ttf
 # install font for vim-fonts
