@@ -5,10 +5,9 @@
 ##
 
 # get parameters
-if [ $# -eq 2 ]; then
+if [ $# -eq 1 ]; then
   # parameters passed on command line
   HOST_TO_DEPLOY=$1
-  ALIAS=$2
 else
   echo "Hostname or IP address of machine to sync to. (Must have a user account named ${USER} already setup):"
   read HOST_TO_DEPLOY

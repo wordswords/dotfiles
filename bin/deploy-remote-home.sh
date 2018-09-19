@@ -30,10 +30,15 @@ else
   fi
 fi
 
+# deploy ssh keys
+rsync -ave ssh ~/.ssh "${USER}@${HOST_TO_DEPLOY}:~/"
+rsync -ave ssh ~/.bash_aliases "${USER}@${HOST_TO_DEPLOY}:~/"
+
 # keyed ssh login
 ssh "${USER}@${HOST_TO_DEPLOY}" "mkdir -p ~/.ssh"
 cat ~/.ssh/id_rsa.pub | ssh "${USER}@${HOST_TO_DEPLOY}" 'cat >> .ssh/authorized_keys'
 ssh "${USER}@${HOST_TO_DEPLOY}" "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+
 
 # setup .dotfiles
 rsync -ave ssh ~/.dotfiles "${USER}@${HOST_TO_DEPLOY}:~/"
@@ -56,6 +61,7 @@ mv ~/.bash_aliases.tmp ~/.bash_aliases
 sort ~/.zsh_aliases | uniq -u > ~/.zsh_aliases.tmp
 mv ~/.zsh_aliases.tmp ~/.zsh_aliases
 source ~/.zsh_aliases
+
 
 # clean up
 echo
