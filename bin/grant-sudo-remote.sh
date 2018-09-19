@@ -34,6 +34,6 @@ if grep -q root /tmp/grant-sudo-tmp-file.txt ; then
   exit 0
 else
   echo "We are not root on ${MACHINE_ALIAS}. exiting.."
-  rm /tmp/grant-sudo-tmp-file.txt
+  rm /tmp/grant-sudo-tmp-file.txt || echo ""
   exit 1
 fi
