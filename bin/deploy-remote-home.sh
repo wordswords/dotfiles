@@ -50,15 +50,15 @@ ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bashrc_remote ${HOME}
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf'
 
 # update aliases.. we use functions as aliases so we can expand in scripts
-echo "${ALIAS} () { /usr/bin/env ssh -t ${USER}@${HOST_TO_DEPLOY} \"\$@\"; }" >> /tmp/new_aliases
+echo "${ALIAS} () { /usr/bin/env ssh -t ${USER}@${HOST_TO_DEPLOY} \"\$@\" ;}" >> /tmp/new_aliases
 
 echo -n >> /tmp/new_aliases
 cat /tmp/new_aliases >> ~/.zsh_aliases
 cat /tmp/new_aliases >> ~/.bash_aliases
 rm /tmp/new_aliases
-sort ~/.bash_aliases | uniq -u > ~/.bash_aliases.tmp
+sort -u ~/.bash_aliases -o ~/.bash_aliases.tmp
 mv ~/.bash_aliases.tmp ~/.bash_aliases
-sort ~/.zsh_aliases | uniq -u > ~/.zsh_aliases.tmp
+sort -u ~/.zsh_aliases -o ~/.zsh_aliases.tmp
 mv ~/.zsh_aliases.tmp ~/.zsh_aliases
 source ~/.zsh_aliases
 
