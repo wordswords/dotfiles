@@ -1,4 +1,5 @@
-" Pathogen plugin manager
+"" Pathogen plugin manager
+
 execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
 execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
 execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
@@ -6,38 +7,40 @@ execute pathogen#infect('~/.vim/bundle/vim-colors-solarized/{}')
 execute pathogen#infect()
 
 syntax enable
-set encoding=utf8
-set backspace=2     " backspace back up a line
-set ts=4            " each tab is two spaces
-set background=dark " dark background, light foreground
-set ls=2            " always show status line
-set expandtab       " always expand tabs
-set shiftwidth=2    " numbers of spaces to (auto)indent
-set scrolloff=3     " keep 3 lines when scrolling
-set showcmd         " display incomplete commands
-set hlsearch        " highlight searches
-set incsearch       " do incremental searching
-set ruler           " show the cursor position all the time
-set number          " show line numbers
-set ignorecase      " ignore case when searching
-set ttyfast         " smoother changes
-set cursorline      " highlight current line
-set splitright      " Open new vertical split windows to the right of the current one, not the left.
-set splitbelow      " See above description. Opens new windows below, not above.
-set history=1000    " 1000 previous commands remembered
-set laststatus=2    " show nonprintable characters such as tab and newlines
-set list            " .. and use these characters to display them
-set t_Co=256        " force 256 colour mode
-set noswapfile      " Don't drop swap files
-set noerrorbells visualbell t_vb= "turn off all bells
+set updatetime=250                " these two lines are required for devicons to work
+set encoding=UTF-8                " ..
+set backspace=2                   " backspace back up a line
+set ts=4                          " each tab is two spaces
+set background=dark               " dark background, light foreground
+set ls=2                          " always show status line
+set expandtab                     " always expand tabs
+set shiftwidth=2                  " numbers of spaces to (auto)indent
+set scrolloff=3                   " keep 3 lines when scrolling
+set showcmd                       " display incomplete commands
+set hlsearch                      " highlight searches
+set incsearch                     " do incremental searching
+set ruler                         " show the cursor position all the time
+set number                        " show line numbers
+set ignorecase                    " ignore case when searching
+set ttyfast                       " smoother changes
+set cursorline                    " highlight current line
+set splitright                    " Open new vertical split windows to the right of the current one, not the left.
+set splitbelow                    " See above description. Opens new windows below, not above.
+set history=1000                  " 1000 previous commands remembered
+set laststatus=2                  " show nonprintable characters such as tab and newlines
+set list                          " .. and use these characters to display them
+set t_Co=256                      " force 256 colour mode
+set noswapfile                    " Don't drop swap files
+set noerrorbells visualbell t_vb= " turn off all bells
 set listchars=eol:$,tab:··,trail:␠,nbsp:⎵
 hi SpecialKey ctermfg=grey guifg=grey70
-filetype plugin indent on " for writing plugins
+filetype plugin indent on         " for writing plugins
 
 let g:solarized_termcolors=256
-colorscheme desert " Set colorscheme to a black/grey theme
+colorscheme desert                " Set colorscheme to a black/grey theme
 hi SpecialKey ctermfg=grey guifg=grey70
 hi NonText ctermfg=grey guifg=grey70
+set macligatures
 
 "" Turn off visual and audio bell
 autocmd GUIEnter * set visualbell t_vb=
@@ -58,7 +61,7 @@ highlight CursorColumn term=bold cterm=bold guibg=Grey40
 set cursorline cursorcolumn
 
 "" ConqueTerm plugin
-"" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
+" Activate with :ConqueTermSplit or :ConqueTerm (current buffer)
 
 "" Buffers
 
@@ -89,10 +92,10 @@ nmap <Space>bq :bp <BAR> bd #<CR>
 nmap <Space>bl :ls<CR>
 
 "" NERDtree plugin
-"" activate with :NERDTree !
+" activate with :NERDTree !
 
-"" start NERDTree up when starting up VIM
-"" if a file to open is provided, open that as well in NERDTree
+" start NERDTree up when starting up VIM
+" if a file to open is provided, open that as well in NERDTree
 if (expand("%"))
   autocmd VimEnter * silent NERDTree %
 else
@@ -101,11 +104,11 @@ endif
 
 autocmd VimEnter * wincmd p
 
-"" stop NERDTree buffers being lost by disabling buffer next and buffer previous
+" stop NERDTree buffers being lost by disabling buffer next and buffer previous
 autocmd FileType nerdtree noremap <buffer> <c-h> <nop>
 autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
 
-"" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
+" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif
 
@@ -147,7 +150,6 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 " vim-pencil configuration
 augroup pencil
   autocmd!
-  "
   " Apply for Markdown and reStructuredText
   autocmd FileType markdown,mkd,md,rst,text,asciidoc call pencil#init({'wrap': 'soft'}) | call lexical#init() | call litecorrect#init() | call textobj#quote#init() | call textobj#sentence#init()
   autocmd FileType markdown,mkd,md call SetMarkdownOptions()
@@ -156,14 +158,11 @@ augroup pencil
   autocmd FileType c,h call SetCOptions()
   autocmd FileType Makefile call SetMakefileOptions()
 
-
-  " Highlight words to avoid in tech writing
-  " =======================================
-  "
-  "   obviously, basically, simply, of course, clearly,
-  "   just, everyone knows, However, So, easy
-
-  "   http://css-tricks.com/words-avoid-educational-writing/
+"" Highlight words to avoid in tech writing
+"  =======================================
+"  obviously, basically, simply, of course, clearly,
+"  just, everyone knows, However, So, easy
+"  http://css-tricks.com/words-avoid-educational-writing/
 
   highlight TechWordsToAvoid ctermbg=red ctermfg=white
   function! MatchTechWordsToAvoid()
