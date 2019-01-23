@@ -147,6 +147,13 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
+" Arrow keys map to cnext cprev for :grep
+let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
+noremap <silent> <Right> :cnext <CR>
+noremap <silent> <Left> :cprev <CR>
+noremap <silent> <Up> :clist <CR>
+map <Down> :grep <REGEX> <PATH>
+
 " vim-pencil configuration
 augroup pencil
   autocmd!
