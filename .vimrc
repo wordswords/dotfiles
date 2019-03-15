@@ -31,7 +31,7 @@ set list            " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files
 set noerrorbells visualbell t_vb= "turn off all bells
-set listchars=eol:$,trail:␠,nbsp:⎵
+set listchars=eol:$,tab:^T,trail:␠,nbsp:⎵
 hi SpecialKey ctermfg=grey guifg=grey70
 filetype plugin indent on         " for writing plugins
 
