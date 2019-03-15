@@ -30,7 +30,7 @@ set list            " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files
 set noerrorbells visualbell t_vb= "turn off all bells
-set listchars=eol:$,tab:··,trail:␠,nbsp:⎵
+set listchars=eol:$,trail:␠,nbsp:⎵
 hi SpecialKey ctermfg=grey guifg=grey70
 filetype plugin indent on " for writing plugins
 
@@ -89,7 +89,6 @@ nmap <Space>bq :bp <BAR> bd #<CR>
 nmap <Space>bl :ls<CR>
 
 "" NERDtree plugin
-"" activate with :NERDTree !
 
 "" start NERDTree up when starting up VIM
 "" if a file to open is provided, open that as well in NERDTree
@@ -156,7 +155,6 @@ augroup pencil
   autocmd FileType c,h call SetCOptions()
   autocmd FileType Makefile call SetMakefileOptions()
 
-
   " Highlight words to avoid in tech writing
   " =======================================
   "
@@ -188,7 +186,7 @@ endfunction
 
 function SetMakefileOptions()
   colorscheme Tomorrow-Night
-  set noexpandtab shiftwidth=4 softtabstop=0
+  set noexpandtab tabstop=4 shiftwidth=4 softtabstop=0
 endfunction
 
 let g:wordy#ring = [
