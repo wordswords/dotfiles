@@ -285,41 +285,43 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 165 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1115 392 796 473 0 0 2560 1417 </string>
+	<string>11 791 918 401 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1236 621 915 452 0 0 2560 1417 </string>
+	<string>0 865 1155 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>620 826 915 452 0 0 2560 1417 </string>
+	<string>293 17 2079 510 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
-	<string>436 606 810 502 0 0 1920 1177 </string>
+	<string>169 78 915 452 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
-	<string>262 578 1550 597 0 0 1920 1177 </string>
+	<string>763 659 915 758 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 12</key>
-	<string>478 560 810 502 0 0 1920 1177 </string>
+	<string>1005 510 1612 452 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 13</key>
 	<string>499 537 810 502 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 14</key>
 	<string>1159 84 810 502 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>658 644 1081 571 0 0 2560 1417 </string>
+	<string>1085 414 1518 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>286 435 1089 452 0 0 2560 1417 </string>
+	<string>102 445 2079 972 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>579 442 665 452 0 0 2560 1417 </string>
+	<string>0 0 1155 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>137 550 1065 333 0 0 2560 1417 </string>
+	<string>1679 965 881 452 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>1043 877 1329 503 0 0 2560 1417 </string>
+	<string>1159 0 1395 656 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
-	<string>0 965 665 452 0 0 2560 1417 </string>
+	<string>2 659 1019 758 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 8</key>
-	<string>650 702 665 452 0 0 2560 1417 </string>
+	<string>1027 659 915 758 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 9</key>
-	<string>30 675 810 502 0 0 1920 1177 </string>
+	<string>0 224 915 435 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
 			<key>ASCII Anti Aliased</key>
+			<true/>
+			<key>ASCII Ligatures</key>
 			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
@@ -880,11 +882,13 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>DroidSansMonoForPowerlineNerdFontC- 14</string>
+			<string>MesloLGMDZForPowerline-Regular 18</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
+			<key>Non-ASCII Ligatures</key>
+			<false/>
 			<key>Normal Font</key>
-			<string>DroidSansMonoForPowerlineNerdFontC- 14</string>
+			<string>HackNerdFontComplete-Bold 18</string>
 			<key>Open Toolbelt</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -900,7 +904,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -952,6 +956,10 @@
 					<string>[e|E]rror</string>
 				</dict>
 			</array>
+			<key>Unicode Normalization</key>
+			<integer>0</integer>
+			<key>Unicode Version</key>
+			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -961,7 +969,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<true/>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -969,10 +977,12 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/davcra01</string>
+			<string>/Users/DavidCraddock</string>
 		</dict>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
+	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
@@ -1027,6 +1037,8 @@
 	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>SUEnableAutomaticChecks</key>
+	<false/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
@@ -1035,11 +1047,10 @@
 	<true/>
 	<key>SULastCheckTime</key>
 	<date>2017-09-21T14:23:27Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Command History</string>
-		<string>Captured Output</string>
-		<string>Jobs</string>
 		<string>Paste History</string>
 	</array>
 	<key>WordCharacters</key>

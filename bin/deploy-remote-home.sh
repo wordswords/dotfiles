@@ -43,7 +43,7 @@ ssh "${USER}@${HOST_TO_DEPLOY}" "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 rsync -ave ssh ~/.dotfiles "${USER}@${HOST_TO_DEPLOY}:~/"
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vim ${HOME}/.vim'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc'
-ssh "${USER}@${HOST_TO_DEPLOY}" 'rm -rf ${HOME}/.dotfiles/bin'
+ssh "${USER}@${HOST_TO_DEPLOY}" 'rm -rf ${HOME}/bin'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/bin ${HOME}/bin'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bash_profile_remote ${HOME}/.bash_profile'
 ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bashrc_remote ${HOME}/.bashrc'

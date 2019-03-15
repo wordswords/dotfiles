@@ -32,6 +32,7 @@ git clone git@github.com:/godlygeek/tabular.git
 git clone git@github.com:/ryanoasis/vim-devicons.git
 git clone git@github.com:/scrooloose/nerdtree.git
 git clone git@github.com:/tpope/vim-bundler.git
+git clone git@github.com:/tpope/vim-fugitive.git
 git clone git@github.com:/tpope/vim-git
 git clone git@github.com:/tpope/vim-rails.git
 git clone git@github.com:/vim-airline/vim-airline
@@ -53,14 +54,9 @@ git clone git@github.com:vim-syntastic/syntastic.git
 cd ~/.oh-my-zsh/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
-# this font works for putty on windows: https://github.com/daagar/powerline-fonts/blob/36b04a7b08f820b4379d3fce098866880b5ba31c/DroidSansMono/Droid%20Sans%20Mono%20for%20Powerline.ttf
 # install font for vim-fonts
-git clone https://github.com/powerline/fonts.git
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
-
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
 
 echo ""
 echo ""

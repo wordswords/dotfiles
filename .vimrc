@@ -1,4 +1,5 @@
-" Pathogen plugin manager
+"" Pathogen plugin manager
+
 execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
 execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
 execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
@@ -32,12 +33,13 @@ set noswapfile      " Don't drop swap files
 set noerrorbells visualbell t_vb= "turn off all bells
 set listchars=eol:$,trail:␠,nbsp:⎵
 hi SpecialKey ctermfg=grey guifg=grey70
-filetype plugin indent on " for writing plugins
+filetype plugin indent on         " for writing plugins
 
 let g:solarized_termcolors=256
-colorscheme desert " Set colorscheme to a black/grey theme
+colorscheme desert                " Set colorscheme to a black/grey theme
 hi SpecialKey ctermfg=grey guifg=grey70
 hi NonText ctermfg=grey guifg=grey70
+set macligatures
 
 "" Turn off visual and audio bell
 autocmd GUIEnter * set visualbell t_vb=
@@ -58,7 +60,7 @@ highlight CursorColumn term=bold cterm=bold guibg=Grey40
 set cursorline cursorcolumn
 
 "" ConqueTerm plugin
-"" activate with :ConqueTermSplit or :ConqueTerm (current buffer)
+" Activate with :ConqueTermSplit or :ConqueTerm (current buffer)
 
 "" Buffers
 
@@ -90,8 +92,8 @@ nmap <Space>bl :ls<CR>
 
 "" NERDtree plugin
 
-"" start NERDTree up when starting up VIM
-"" if a file to open is provided, open that as well in NERDTree
+" start NERDTree up when starting up VIM
+" if a file to open is provided, open that as well in NERDTree
 if (expand("%"))
   autocmd VimEnter * silent NERDTree %
 else
@@ -100,11 +102,11 @@ endif
 
 autocmd VimEnter * wincmd p
 
-"" stop NERDTree buffers being lost by disabling buffer next and buffer previous
+" stop NERDTree buffers being lost by disabling buffer next and buffer previous
 autocmd FileType nerdtree noremap <buffer> <c-h> <nop>
 autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
 
-"" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
+" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif
 
@@ -143,10 +145,16 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
+" Arrow keys map to cnext cprev for :grep
+let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
+noremap <silent> <Right> :cnext <CR>
+noremap <silent> <Left> :cprev <CR>
+noremap <silent> <Up> :clist <CR>
+map <Down> :grep <REGEX> <PATH>
+
 " vim-pencil configuration
 augroup pencil
   autocmd!
-  "
   " Apply for Markdown and reStructuredText
   autocmd FileType markdown,mkd,md,rst,text,asciidoc call pencil#init({'wrap': 'soft'}) | call lexical#init() | call litecorrect#init() | call textobj#quote#init() | call textobj#sentence#init()
   autocmd FileType markdown,mkd,md call SetMarkdownOptions()
