@@ -38,7 +38,6 @@ let g:rehash256 = 1
 colorscheme molokai
 hi SpecialKey ctermfg=grey guifg=grey70
 hi NonText ctermfg=grey guifg=grey70
-set macligatures
 
 "" Turn off visual and audio bell
 autocmd GUIEnter * set visualbell t_vb=
