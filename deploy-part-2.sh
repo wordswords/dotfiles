@@ -59,7 +59,6 @@ git clone git@github.com:LucHermitte/mu-template.git
 git clone git@github.com:tomtom/stakeholders_vim.git
 git clone git@github.com:LucHermitte/alternate-lite.git
 git clone git@github.com:LucHermitte/lh-cpp.git
-git clone git@github.com:tpope/vim-fugitive.git
 
 # update docs
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
