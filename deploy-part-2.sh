@@ -48,6 +48,23 @@ git clone git@github.com:reedes/vim-textobj-quote
 git clone git@github.com:reedes/vim-textobj-sentence
 git clone git@github.com:rhysd/vim-grammarous
 git clone git@github.com:vim-syntastic/syntastic.git
+git clone git@github.com:LucHermitte/lh-vim-lib.git~
+git clone git@github.com:LucHermitte/lh-vim-lib.git
+git clone git@github.com:LucHermitte/lh-style.git
+git clone git@github.com:LucHermitte/lh-tags.git
+git clone git@github.com:LucHermitte/lh-dev.git
+git clone git@github.com:LucHermitte/lh-brackets.git
+git clone git@github.com:LucHermitte/searchInRuntime.git
+git clone git@github.com:LucHermitte/mu-template.git
+git clone git@github.com:tomtom/stakeholders_vim.git
+git clone git@github.com:LucHermitte/alternate-lite.git
+git clone git@github.com:LucHermitte/lh-cpp.git
+git clone git@github.com:tpope/vim-fugitive.git
+
+# update docs
+vim -u NONE -c "helptags vim-fugitive/doc" -c q
+vim -u NONE -c "helptags lh-cpp/doc" -c q
+
 
 # install oh-my-zsh plugins
 cd ~/.oh-my-zsh/plugins
