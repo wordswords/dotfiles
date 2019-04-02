@@ -27,7 +27,6 @@ ln -s ~/.dotfiles/deploy-remote-home.sh ~/bin/deploy-remote-home.sh
 rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/
 
-git clone git@github.com:/altercation/vim-colors-solarized.git
 git clone git@github.com:/godlygeek/tabular.git
 git clone git@github.com:/ryanoasis/vim-devicons.git
 git clone git@github.com:/scrooloose/nerdtree.git
@@ -65,7 +64,6 @@ git clone git@github.com:tpope/vim-fugitive.git
 # update docs
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 vim -u NONE -c "helptags lh-cpp/doc" -c q
-
 
 # install oh-my-zsh plugins
 cd ~/.oh-my-zsh/plugins

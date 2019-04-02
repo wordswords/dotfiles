@@ -3,7 +3,6 @@
 execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
 execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
 execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
-execute pathogen#infect('~/.vim/bundle/vim-colors-solarized/{}')
 execute pathogen#infect()
 
 syntax enable
@@ -35,8 +34,8 @@ set listchars=eol:$,tab:^T,trail:␠,nbsp:⎵
 hi SpecialKey ctermfg=grey guifg=grey70
 filetype plugin indent on         " for writing plugins
 
-let g:solarized_termcolors=256
-colorscheme desert                " Set colorscheme to a black/grey theme
+let g:rehash256 = 1
+colorscheme molokai
 hi SpecialKey ctermfg=grey guifg=grey70
 hi NonText ctermfg=grey guifg=grey70
 set macligatures
