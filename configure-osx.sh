@@ -250,4 +250,12 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "SystemUIServer" "Terminal" "iCal"; do
   killall "${app}" &> /dev/null
 done
+
+echo "Installing brew packages"
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+brew install shellcheck
+brew install vim
+brew link vim
+
 echo "Done. Note that some of these changes require a logout/restart to take effect."
