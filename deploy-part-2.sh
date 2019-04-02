@@ -32,6 +32,7 @@ git clone git@github.com:/godlygeek/tabular.git
 git clone git@github.com:/ryanoasis/vim-devicons.git
 git clone git@github.com:/scrooloose/nerdtree.git
 git clone git@github.com:/tpope/vim-bundler.git
+git clone git@github.com:/tpope/vim-fugitive.git
 git clone git@github.com:/tpope/vim-git
 git clone git@github.com:/tpope/vim-rails.git
 git clone git@github.com:/vim-airline/vim-airline

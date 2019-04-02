@@ -7,32 +7,31 @@ execute pathogen#infect('~/.vim/bundle/vim-colors-solarized/{}')
 execute pathogen#infect()
 
 syntax enable
-set updatetime=250                " these two lines are required for devicons to work
-set encoding=UTF-8                " ..
-set backspace=2                   " backspace back up a line
-set ts=4                          " each tab is two spaces
-set background=dark               " dark background, light foreground
-set ls=2                          " always show status line
-set expandtab                     " always expand tabs
-set shiftwidth=2                  " numbers of spaces to (auto)indent
-set scrolloff=3                   " keep 3 lines when scrolling
-set showcmd                       " display incomplete commands
-set hlsearch                      " highlight searches
-set incsearch                     " do incremental searching
-set ruler                         " show the cursor position all the time
-set number                        " show line numbers
-set ignorecase                    " ignore case when searching
-set ttyfast                       " smoother changes
-set cursorline                    " highlight current line
-set splitright                    " Open new vertical split windows to the right of the current one, not the left.
-set splitbelow                    " See above description. Opens new windows below, not above.
-set history=1000                  " 1000 previous commands remembered
-set laststatus=2                  " show nonprintable characters such as tab and newlines
-set list                          " .. and use these characters to display them
-set t_Co=256                      " force 256 colour mode
-set noswapfile                    " Don't drop swap files
-set noerrorbells visualbell t_vb= " turn off all bells
-set listchars=eol:$,tab:··,trail:␠,nbsp:⎵
+set encoding=utf8
+set backspace=2     " backspace back up a line
+set ts=4            " each tab is two spaces
+set background=dark " dark background, light foreground
+set ls=2            " always show status line
+set expandtab       " always expand tabs
+set shiftwidth=2    " numbers of spaces to (auto)indent
+set scrolloff=3     " keep 3 lines when scrolling
+set showcmd         " display incomplete commands
+set hlsearch        " highlight searches
+set incsearch       " do incremental searching
+set ruler           " show the cursor position all the time
+set number          " show line numbers
+set ignorecase      " ignore case when searching
+set ttyfast         " smoother changes
+set cursorline      " highlight current line
+set splitright      " Open new vertical split windows to the right of the current one, not the left.
+set splitbelow      " See above description. Opens new windows below, not above.
+set history=1000    " 1000 previous commands remembered
+set laststatus=2    " show nonprintable characters such as tab and newlines
+set list            " .. and use these characters to display them
+set t_Co=256        " force 256 colour mode
+set noswapfile      " Don't drop swap files
+set noerrorbells visualbell t_vb= "turn off all bells
+set listchars=eol:$,tab:^T,trail:␠,nbsp:⎵
 hi SpecialKey ctermfg=grey guifg=grey70
 filetype plugin indent on         " for writing plugins
 
@@ -92,7 +91,6 @@ nmap <Space>bq :bp <BAR> bd #<CR>
 nmap <Space>bl :ls<CR>
 
 "" NERDtree plugin
-" activate with :NERDTree !
 
 " start NERDTree up when starting up VIM
 " if a file to open is provided, open that as well in NERDTree
@@ -147,6 +145,13 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
+" Arrow keys map to cnext cprev for :grep
+let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
+noremap <silent> <Right> :cnext <CR>
+noremap <silent> <Left> :cprev <CR>
+noremap <silent> <Up> :clist <CR>
+map <Down> :grep <REGEX> <PATH>
+
 " vim-pencil configuration
 augroup pencil
   autocmd!
@@ -158,11 +163,13 @@ augroup pencil
   autocmd FileType c,h call SetCOptions()
   autocmd FileType Makefile call SetMakefileOptions()
 
-"" Highlight words to avoid in tech writing
-"  =======================================
-"  obviously, basically, simply, of course, clearly,
-"  just, everyone knows, However, So, easy
-"  http://css-tricks.com/words-avoid-educational-writing/
+  " Highlight words to avoid in tech writing
+  " =======================================
+  "
+  "   obviously, basically, simply, of course, clearly,
+  "   just, everyone knows, However, So, easy
+
+  "   http://css-tricks.com/words-avoid-educational-writing/
 
   highlight TechWordsToAvoid ctermbg=red ctermfg=white
   function! MatchTechWordsToAvoid()
@@ -187,7 +194,7 @@ endfunction
 
 function SetMakefileOptions()
   colorscheme Tomorrow-Night
-  set noexpandtab shiftwidth=4 softtabstop=0
+  set noexpandtab tabstop=4 shiftwidth=4 softtabstop=0
 endfunction
 
 let g:wordy#ring = [
