@@ -4,7 +4,7 @@
 
 My setup with custom settings for bash, zsh and vim.
 
-## Vim:
+## Vim:
 
 ![Alt text](https://i.imgur.com/LsisDfP.png "My vim setup")
 
