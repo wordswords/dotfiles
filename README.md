@@ -14,7 +14,7 @@ My setup with custom settings for bash, zsh and vim.
 
 # Requirements
 
-1. I use iterm2 on OSX, this setup will only work for that. i
+1. I use iterm2 on OSX, this setup will only work for that. 
 2. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim.
 ![Alt text](https://i.imgur.com/TOMXk1o.png "iTerm 2 setup")
 3. vim must be installed via homebrew
