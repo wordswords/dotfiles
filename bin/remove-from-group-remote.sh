@@ -1,5 +1,6 @@
 #!/bin/bash -ex
 shopt -s expand_aliases
+# shellcheck source=/dev/null
 source ~/.zsh_aliases
 if [ $# -eq 3 ]; then
   # parameters passed on command line
@@ -17,7 +18,7 @@ if grep -q root /tmp/grant-sudo-tmp-file.txt ; then
   echo "We have root on ${MACHINE_ALIAS}."
   rm /tmp/grant-sudo-tmp-file.txt
 
-  ${MACHINE_ALIAS} sudo -S  gpasswd -d ${USERNAME_TO_PROCESS} ${GROUP_TO_REMOVE}
+  ${MACHINE_ALIAS} sudo -S  gpasswd -d "${USERNAME_TO_PROCESS}" "${GROUP_TO_REMOVE}"
 
   exit 0
 else

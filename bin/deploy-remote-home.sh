@@ -13,15 +13,15 @@ if [ $# -eq 2 ]; then
   ALIAS=$2
 else
   echo "Hostname or IP address of machine to deploy to. (Must have a user account named ${USER} already setup):"
-  read HOST_TO_DEPLOY
+  read -r HOST_TO_DEPLOY
   echo "Current list of aliases:"
   echo
   cat ~/.bash_aliases
   echo
   echo "Pick a short memorable unique bash and zsh alias for this new host:"
-  read ALIAS
+  read -r ALIAS
   echo "Shall we go ahead deploying to ${USER}@${HOST_TO_DEPLOY} and memorable alias: ${ALIAS}? (y/N)"
-  read answer
+  read -r answer
   if echo "${answer}" | grep -iq "^y" ;then
     echo "Proceeding..";
   else
@@ -60,8 +60,8 @@ sort -u ~/.bash_aliases -o ~/.bash_aliases.tmp
 sort -u ~/.zsh_aliases -o ~/.zsh_aliases.tmp
 mv ~/.bash_aliases.tmp ~/.bash_aliases
 mv ~/.zsh_aliases.tmp ~/.zsh_aliases
+# shellcheck source=/dev/null
 source ~/.zsh_aliases
-
 # clean up
 echo
 echo "New list of your aliases:"
@@ -69,7 +69,9 @@ echo
 cat ~/.zsh_aliases
 echo
 echo "Completed. Ready to try new alias: ${ALIAS} . Press any key to continue.."
-read answer
+read -r answer
+
+# shellcheck source=/dev/null
 source ~/.zsh_aliases
 
 
