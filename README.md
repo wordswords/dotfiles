@@ -1,20 +1,20 @@
-# My dotfiles
+# My .dotfiles
 
 # Features
 
-My setup with custom settings for bash, zsh and vim.
+My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure.
 
-## Vim:
+## Vim:
 
-![Alt text](http://i.imgur.com/ghAavTh.png "My vim setup")
+![Alt text](https://i.imgur.com/LsisDfP.png "My vim setup")
 
 ## Shell:
 
-![Alt text](http://i.imgur.com/aMrGjDy.png "My zsh setup")
+![Alt text](https://i.imgur.com/IN1SwL7.png "My zsh setup")
 
 # Requirements
 
-1. I use iterm2 on OSX, this setup will only work for that. i
+1. I use iterm2 on OSX, this setup will only work for that. 
 2. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim.
 ![Alt text](https://i.imgur.com/TOMXk1o.png "iTerm 2 setup")
 3. vim must be installed via homebrew
