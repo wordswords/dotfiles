@@ -10,7 +10,7 @@ My setup with custom settings for bash, zsh and vim.
 
 ## Shell:
 
-![Alt text](http://i.imgur.com/aMrGjDy.png "My zsh setup")
+![Alt text](https://i.imgur.com/IN1SwL7.png "My zsh setup")
 
 # Requirements
 
