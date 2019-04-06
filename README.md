@@ -2,7 +2,7 @@
 
 # Features
 
-My setup with custom settings for bash, zsh and vim.
+My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure.
 
 ## Vim:
 
