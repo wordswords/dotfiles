@@ -6,7 +6,7 @@ My setup with custom settings for bash, zsh and vim.
 
 ## Vim:
 
-![Alt text](http://i.imgur.com/ghAavTh.png "My vim setup")
+![Alt text](https://i.imgur.com/LsisDfP.png "My vim setup")
 
 ## Shell:
 
