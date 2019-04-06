@@ -3,5 +3,5 @@
 .vim/
 .bash_aliases
 .zsh_aliases
-
+.vim/bundle/*
 

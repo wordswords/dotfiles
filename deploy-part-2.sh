@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Configure OSX
+# Configure OSX and brew install packages
 ./configure-osx.sh
 
 # To be run after installation of oh-my-zsh
