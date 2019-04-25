@@ -48,7 +48,6 @@ git clone git@github.com:reedes/vim-textobj-quote
 git clone git@github.com:reedes/vim-textobj-sentence
 git clone git@github.com:rhysd/vim-grammarous
 git clone git@github.com:vim-syntastic/syntastic.git
-git clone git@github.com:LucHermitte/lh-vim-lib.git~
 git clone git@github.com:LucHermitte/lh-vim-lib.git
 git clone git@github.com:LucHermitte/lh-style.git
 git clone git@github.com:LucHermitte/lh-tags.git
@@ -64,13 +63,20 @@ git clone git@github.com:LucHermitte/lh-cpp.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 vim -u NONE -c "helptags lh-cpp/doc" -c q
 
+# install colorscheme
+
+git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme
+mv ./colorscheme/colors/* ~/.vim/colors/
+rm -rf ./colorscheme
+
 # install oh-my-zsh plugins
 cd ~/.oh-my-zsh/plugins || exit 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 # install font for vim-fonts
-brew tap caskroom/fonts
-brew cask install font-hack-nerd-font
+brew tap homebrew/cask-fonts
+brew install homebrew/cask-fonts/font-hack-nerd-font
+
 
 echo ""
 echo ""

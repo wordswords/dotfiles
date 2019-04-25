@@ -35,7 +35,7 @@ hi SpecialKey ctermfg=grey guifg=grey70
 filetype plugin indent on         " for writing plugins
 
 let g:rehash256 = 1
-colorscheme molokai
+colorscheme monokai256
 hi SpecialKey ctermfg=grey guifg=grey70
 hi NonText ctermfg=grey guifg=grey70
 

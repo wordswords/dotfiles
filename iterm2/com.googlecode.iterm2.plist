@@ -285,37 +285,37 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 165 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>11 791 918 401 0 0 2560 1417 </string>
+	<string>11 752 918 512 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 865 1155 552 0 0 2560 1417 </string>
+	<string>1720 -527 2082 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>293 17 2079 510 0 0 2560 1417 </string>
+	<string>612 413 2016 993 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 10</key>
-	<string>169 78 915 452 0 0 2560 1417 </string>
+	<string>169 0 1155 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 11</key>
-	<string>763 659 915 758 0 0 2560 1417 </string>
+	<string>763 848 1155 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 12</key>
-	<string>1005 510 1612 452 0 0 2560 1417 </string>
+	<string>1005 405 1155 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 13</key>
-	<string>499 537 810 502 0 0 1920 1177 </string>
+	<string>0 348 1884 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 14</key>
 	<string>1159 84 810 502 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1085 414 1518 552 0 0 2560 1417 </string>
+	<string>85 277 2610 1140 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>102 445 2079 972 0 0 2560 1417 </string>
+	<string>192 393 2280 972 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>0 0 1155 552 0 0 2560 1417 </string>
+	<string>0 865 1155 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
-	<string>1679 965 881 452 0 0 2560 1417 </string>
+	<string>145 -392 2560 699 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
-	<string>1159 0 1395 656 0 0 2560 1417 </string>
+	<string>685 784 1155 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 7</key>
-	<string>2 659 1019 758 0 0 2560 1417 </string>
+	<string>135 857 2423 552 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 8</key>
-	<string>1027 659 915 758 0 0 2560 1417 </string>
+	<string>0 325 1440 552 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 9</key>
-	<string>0 224 915 435 0 0 2560 1417 </string>
+	<string>238 674 1155 552 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1052,6 +1052,7 @@
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Paste History</string>
+		<string>Captured Output</string>
 	</array>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
