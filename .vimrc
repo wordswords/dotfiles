@@ -44,6 +44,9 @@ set nomodeline
 let g:secure_modelines_verbose = 0
 let g:secure_modelines_modelines = 15
 
+" Stop <<>> marks being inserted on all filetypes from lh-brackets plugin
+let g:cb_no_default_brackets = 1
+
 "" Turn off visual and audio bell
 autocmd GUIEnter * set visualbell t_vb=
 
