@@ -1,8 +1,6 @@
 "" Pathogen plugin manager
-execute pathogen#infect('~/.vim/bundle/nerdtree/{}')
-execute pathogen#infect('~/.vim/bundle/vim-airline/{}')
-execute pathogen#infect('~/.vim/bundle/vim-devicons/{}')
-execute pathogen#infect()
+call pathogen#infect()
+call pathogen#helptags()
 
 syntax enable
 set encoding=utf8
@@ -44,7 +42,7 @@ set nomodeline
 let g:secure_modelines_verbose = 0
 let g:secure_modelines_modelines = 15
 
-" Stop <<>> marks being inserted on all filetypes from lh-brackets plugin
+" Stop <> marks being inserted on all filetypes from lh-brackets plugin
 let g:cb_no_default_brackets = 1
 
 "" Turn off visual and audio bell

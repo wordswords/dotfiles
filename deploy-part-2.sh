@@ -60,12 +60,7 @@ git clone git@github.com:z0mbix/vim-shfmt.git
 git clone git@github.com:tomasr/molokai.git
 git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
 
-# update docs
-vim -u NONE -c "helptags vim-fugitive/doc" -c q
-vim -u NONE -c "helptags lh-cpp/doc" -c q
-
 # install colorscheme
-
 git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme
 mv ./colorscheme/colors/* ~/.vim/colors/
 rm -rf ./colorscheme
