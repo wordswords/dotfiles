@@ -45,13 +45,13 @@ let g:secure_modelines_modelines = 15
 " Stop <> marks being inserted on all filetypes from lh-brackets plugin
 let g:cb_no_default_brackets = 1
 
-"" Turn off visual and audio bell
+" Turn off visual and audio bell
 autocmd GUIEnter * set visualbell t_vb=
 
-"" Turn off recording
+" Turn off recording
 map q <Nop>
 
-"" Vim fonts
+" Vim fonts
 set guifont=Droid\ Sans\ Mono\ For\ Powerline\ Nerd\ Font\ Complete:h18
 let g:airline_powerline_fonts = 1
 let g:powerline_symbols = 'fancy'
@@ -61,13 +61,13 @@ highlight CursorColumn term=bold cterm=bold guibg=Grey40
 set cursorline cursorcolumn
 filetype plugin indent on " for writing plugins
 
-"" Buffers
+" Buffers
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-"" NERDtree plugin
+" NERDtree plugin
 " start NERDTree up when starting up VIM
 " if a file to open is provided, open that as well in NERDTree
 if (expand("%"))
@@ -85,7 +85,7 @@ autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
 " if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif
 
-"" Syntaxic settings
+" Syntaxic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -131,18 +131,14 @@ map <Down> :grep <REGEX> <PATH>
 augroup pencil
   autocmd!
   " Apply for Markdown and reStructuredText
-  autocmd FileType markdown,mkd,md,rst,text,asciidoc call pencil#init({'wrap': 'soft'}) | call lexical#init() | call litecorrect#init() | call textobj#quote#init() | call textobj#sentence#init()
+  autocmd FileType markdown,mkd,md,rst,text,asciidoc call pencil#init({'wrap': 'soft'})
+        \ | call lexical#init()
+        \ | call litecorrect#init()
+        \ | call textobj#quote#init()
+        \ | call textobj#sentence#init()
   autocmd FileType markdown,mkd,md call SetMarkdownOptions()
   autocmd FileType rst,text call SetRestructuredTextOptions()
   autocmd FileType c,h call SetCOptions()
-
-  " Highlight words to avoid in tech writing
-  " =======================================
-  "
-  "   obviously, basically, simply, of course, clearly,
-  "   just, everyone knows, However, So, easy
-
-  "   http://css-tricks.com/words-avoid-educational-writing/
 
   highlight TechWordsToAvoid ctermbg=red ctermfg=white
   function! MatchTechWordsToAvoid()
@@ -186,6 +182,7 @@ endfunction
 autocmd FileType python call SetPythonFileOptions()
 autocmd FileType Makefile call SetMakefileOptions()
 
+" Wordy is only activated when editing .txt files
 let g:wordy#ring = [
   \ 'weak',
   \ ['being', 'passive-voice', ],
@@ -200,15 +197,16 @@ let g:wordy#ring = [
   \ 'adverbs',
   \ ]
 
+" git indicators for nerdtree
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : " ✹ ",
-    \ "Staged"    : " ✚ ",
-    \ "Untracked" : " ✭ ",
-    \ "Renamed"   : " ➜ ",
-    \ "Unmerged"  : " ",
-    \ "Deleted"   : " ✖ ",
-    \ "Dirty"     : " ✗ ",
-    \ "Clean"     : " ✔︎ ",
-    \ "Ignored"   : " ☒ ",
-    \ "Unknown"   : " ? "
-    \ }
+  \ "Modified"  : " ✹ ",
+  \ "Staged"    : " ✚ ",
+  \ "Untracked" : " ✭ ",
+  \ "Renamed"   : " ➜ ",
+  \ "Unmerged"  : " ",
+  \ "Deleted"   : " ✖ ",
+  \ "Dirty"     : " ✗ ",
+  \ "Clean"     : " ✔︎ ",
+  \ "Ignored"   : " ☒ ",
+  \ "Unknown"   : " ? "
+  \ }

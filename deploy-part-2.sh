@@ -59,6 +59,7 @@ git clone git@github.com:LucHermitte/lh-cpp.git
 git clone git@github.com:z0mbix/vim-shfmt.git
 git clone git@github.com:tomasr/molokai.git
 git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
+git clone git@github.com:reedes/vim-wordy.git
 
 # install colorscheme
 git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme
