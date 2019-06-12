@@ -77,7 +77,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-plugins=(git bundler osx python sh-nvm zsh-syntax-highlighting)
+plugins=(git bundler osx python zsh-syntax-highlighting)
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
@@ -100,8 +100,6 @@ source ~/.zsh_aliases
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" || curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 export PATH=$PATH:$HOME/go/bin
 eval "$(jira --completion-script-zsh)"
-
-
-

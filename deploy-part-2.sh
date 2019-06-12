@@ -58,7 +58,8 @@ git clone git@github.com:LucHermitte/mu-template.git
 git clone git@github.com:tomtom/stakeholders_vim.git
 git clone git@github.com:LucHermitte/alternate-lite.git
 git clone git@github.com:LucHermitte/lh-cpp.git
-
+git clone git@github.com:z0mbix/vim-shfmt.git
+git clone git@github.com:tomasr/molokai.git
 # update docs
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 vim -u NONE -c "helptags lh-cpp/doc" -c q
@@ -77,6 +78,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 brew tap homebrew/cask-fonts
 brew install homebrew/cask-fonts/font-hack-nerd-font
 
+
+# install securemodeline
+git clone git@github.com:ciaranm/securemodelines.git ./securemodelines
+mv ./securemodelines/plugin/* ~/.vim/plugin/
+rm -rf ./securemodelines
 
 echo ""
 echo ""
