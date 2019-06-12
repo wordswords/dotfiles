@@ -183,7 +183,7 @@ function SetPythonFileOptions()
 endfunction
 
 autocmd FileType python call SetPythonFileOptions()
-  autocmd FileType Makefile call SetMakefileOptions()
+autocmd FileType Makefile call SetMakefileOptions()
 
 let g:wordy#ring = [
   \ 'weak',
@@ -199,3 +199,15 @@ let g:wordy#ring = [
   \ 'adverbs',
   \ ]
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : " ✹ ",
+    \ "Staged"    : " ✚ ",
+    \ "Untracked" : " ✭ ",
+    \ "Renamed"   : " ➜ ",
+    \ "Unmerged"  : " ",
+    \ "Deleted"   : " ✖ ",
+    \ "Dirty"     : " ✗ ",
+    \ "Clean"     : " ✔︎ ",
+    \ "Ignored"   : " ☒ ",
+    \ "Unknown"   : " ? "
+    \ }

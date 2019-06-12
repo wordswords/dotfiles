@@ -58,6 +58,7 @@ git clone git@github.com:LucHermitte/alternate-lite.git
 git clone git@github.com:LucHermitte/lh-cpp.git
 git clone git@github.com:z0mbix/vim-shfmt.git
 git clone git@github.com:tomasr/molokai.git
+git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
 
 # update docs
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
