@@ -20,8 +20,6 @@ ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/bin ~/bin
-mkdir -p ~/bin/
-ln -s ~/.dotfiles/deploy-remote-home.sh ~/bin/deploy-remote-home.sh
 
 # install vim plugins latest version
 rm -rf ~/.dotfiles/.vim/bundle/*
@@ -60,6 +58,7 @@ git clone git@github.com:LucHermitte/alternate-lite.git
 git clone git@github.com:LucHermitte/lh-cpp.git
 git clone git@github.com:z0mbix/vim-shfmt.git
 git clone git@github.com:tomasr/molokai.git
+
 # update docs
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 vim -u NONE -c "helptags lh-cpp/doc" -c q
@@ -77,7 +76,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 # install font for vim-fonts
 brew tap homebrew/cask-fonts
 brew install homebrew/cask-fonts/font-hack-nerd-font
-
 
 # install securemodeline
 git clone git@github.com:ciaranm/securemodelines.git ./securemodelines

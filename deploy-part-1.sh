@@ -16,6 +16,7 @@ rm -rf ~/.oh-my-zsh
 rm -rf ~/.vim
 rm -f ~/.vimrc
 rm -f ~/.bash_profile
+rm -rf ~/bin
 
 # Install oh-my-zsh
 

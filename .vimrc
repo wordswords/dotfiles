@@ -39,8 +39,10 @@ colorscheme monokai256
 hi SpecialKey ctermfg=grey guifg=grey70
 hi NonText ctermfg=grey guifg=grey70
 
-"" Disable modulelines for securtiy
-
+" Disable modelines, use securemodelines.vim instead
+set nomodeline
+let g:secure_modelines_verbose = 0
+let g:secure_modelines_modelines = 15
 
 "" Turn off visual and audio bell
 autocmd GUIEnter * set visualbell t_vb=
