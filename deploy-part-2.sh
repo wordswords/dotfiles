@@ -25,14 +25,7 @@ ln -s ~/.dotfiles/bin ~/bin
 rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/ || exit 1
 
-git clone git@github.com:/godlygeek/tabular.git
-git clone git@github.com:/ryanoasis/vim-devicons.git
-git clone git@github.com:/scrooloose/nerdtree.git
-git clone git@github.com:/tpope/vim-bundler.git
-git clone git@github.com:/tpope/vim-fugitive.git
-git clone git@github.com:/tpope/vim-git
-git clone git@github.com:/tpope/vim-rails.git
-git clone git@github.com:/vim-airline/vim-airline
+git clone --recursive git@github.com:davidhalter/jedi-vim.git
 git clone git@github.com:LucHermitte/alternate-lite.git
 git clone git@github.com:LucHermitte/lh-brackets.git
 git clone git@github.com:LucHermitte/lh-cpp.git
@@ -44,6 +37,7 @@ git clone git@github.com:LucHermitte/mu-template.git
 git clone git@github.com:LucHermitte/searchInRuntime.git
 git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
 git clone git@github.com:dpelle/vim-LanguageTool
+git clone git@github.com:godlygeek/tabular.git
 git clone git@github.com:jelera/vim-javascript-syntax.git
 git clone git@github.com:junegunn/goyo.vim
 git clone git@github.com:junegunn/limelight.vim
@@ -55,8 +49,15 @@ git clone git@github.com:reedes/vim-textobj-quote
 git clone git@github.com:reedes/vim-textobj-sentence
 git clone git@github.com:reedes/vim-wordy.git
 git clone git@github.com:rhysd/vim-grammarous
+git clone git@github.com:ryanoasis/vim-devicons.git
+git clone git@github.com:scrooloose/nerdtree.git
 git clone git@github.com:tomasr/molokai.git
 git clone git@github.com:tomtom/stakeholders_vim.git
+git clone git@github.com:tpope/vim-bundler.git
+git clone git@github.com:tpope/vim-fugitive.git
+git clone git@github.com:tpope/vim-git
+git clone git@github.com:tpope/vim-rails.git
+git clone git@github.com:vim-airline/vim-airline
 git clone git@github.com:vim-syntastic/syntastic.git
 git clone git@github.com:z0mbix/vim-shfmt.git
 
