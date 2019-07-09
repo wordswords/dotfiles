@@ -26,6 +26,7 @@ set laststatus=2    " show nonprintable characters such as tab and newlines
 set list            " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
 set noswapfile      " Don't drop swap files
+set relativenumber  " Set numbering from current line
 set noerrorbells    " turn off all bells
 set visualbell      " same as above
 set t_vb=           " same as above
@@ -33,6 +34,7 @@ set listchars=eol:$,tab:^T,trail:␠,nbsp:⎵
 hi SpecialKey ctermfg=grey guifg=grey70
 
 let g:rehash256 = 1
+
 colorscheme monokai256
 hi SpecialKey ctermfg=grey guifg=grey70
 hi NonText ctermfg=grey guifg=grey70
@@ -122,7 +124,12 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 
 " Arrow keys map to cnext cprev for :grep
 let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
+
+" tab completion for default keyword autocomplete and Python (jedi)
 inoremap <TAB> <C-n>
+let g:jedi#completions_command = "<TAB>"
+
+" Universal grep/search hotkeys
 noremap <silent> <Right> :cnext <CR>
 noremap <silent> <Left> :cprev <CR>
 noremap <silent> <Up> :clist <CR>
