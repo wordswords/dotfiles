@@ -122,6 +122,7 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 
 " Arrow keys map to cnext cprev for :grep
 let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
+inoremap <TAB> <C-n>
 noremap <silent> <Right> :cnext <CR>
 noremap <silent> <Left> :cprev <CR>
 noremap <silent> <Up> :clist <CR>
