@@ -3,6 +3,6 @@
 .vim/bundle
 .bash_aliases
 .zsh_aliases
-.vim/bundle/
+.vim/bundle
 iterm2/com.googlecode.iterm2.plist*
-.vim/pack/
+.vim/pack
