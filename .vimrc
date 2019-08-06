@@ -25,6 +25,8 @@ set history=1000    " 1000 previous commands remembered
 set laststatus=2    " show nonprintable characters such as tab and newlines
 set list            " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
+set wildmenu        " allow for menu based file navigation when opening files
+set wildmode=list:longest,full
 set noswapfile      " Don't drop swap files
 set relativenumber  " Set numbering from current line
 set noerrorbells    " turn off all bells
@@ -87,6 +89,10 @@ autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
 " if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif
 
+" Disable F1 help launcher
+noremap <F1> :echo<CR>
+inoremap <F1> <c-o>:echo<CR>
+
 " Syntaxic settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -132,7 +138,7 @@ let g:jedi#completions_command = "<TAB>"
 " Universal grep/search hotkeys
 noremap <silent> <Right> :cnext <CR>
 noremap <silent> <Left> :cprev <CR>
-noremap <silent> <Up> :clist <CR>
+noremap <silent> <Up> :Denite
 map <Down> :grep <REGEX> <PATH>
 
 " vim-pencil configuration
@@ -218,3 +224,21 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Ignored"   : " ☒ ",
   \ "Unknown"   : " ? "
   \ }
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+
