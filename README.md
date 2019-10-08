@@ -40,8 +40,9 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 
 1. Control-L for autocomplete based on your command line
 2. Control-R for nice access to bash history
-3. Simply type a directory name accessible from your current directory to cd to that directory, no need to type cd
-4. Simply type ‘l’ for a long-style ls
+3. Control-+ for smart autocomplete based on your command line
+4. Simply type a directory name accessible from your current directory to cd to that directory, no need to type cd
+5. Simply type ‘l’ for a long-style ls
 
 # VIM keybindings
 
