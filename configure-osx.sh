@@ -260,7 +260,7 @@ brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 brew install shellcheck
 brew install shfmt
-brew install vim
+brew install vim || brew update vim || echo "vim already is the latest version"
 brew link vim
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."

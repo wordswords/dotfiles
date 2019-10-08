@@ -36,9 +36,16 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 6. Open a new terminal to load everything in
 7. You're good to go.
 
+# Shell shortcuts
+
+1. Control-L for autocomplete based on your command line
+2. Control-R for nice access to bash history
+3. Simply type a directory name accessible from your current directory to cd to that directory, no need to type cd
+4. Simply type ‘l’ for a long-style ls
+
 # VIM keybindings
 
-1. <Tab> to activate autocomplete plugins specific to Python and CPP modes, and then the default autocomplete of vim after that
+1. &lt;Tab&gt; to activate autocomplete plugins specific to Python and CPP modes, and then the default autocomplete of vim after that
 2. Down cursor arrow to launch a shell-based grep through a path while editing a source file, and when you’ve done that:
 3. Left and right cursor arrows to move through the search results of above grep
 4. ‘>>’ and ‘<<’ to adjust indentation

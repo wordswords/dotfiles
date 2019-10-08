@@ -242,3 +242,5 @@ function! s:denite_my_settings() abort
   \ denite#do_map('toggle_select').'j'
 endfunction
 
+au BufRead,BufNewFile *.f90 set filetype=Fortran
+
