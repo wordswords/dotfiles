@@ -78,35 +78,30 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 plugins=(
-  zsh-autosuggestions
   git
   bundler
   osx
   python
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-
 export PATH="$PATH:$HOME/bin"
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH="$PATH:/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/bin/" # for flake8 python syntax checker
-
+#export PATH="$PATH:/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/bin/" # for flake8 python syntax checker
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-#alias vim="/Applications/MacVim.app/Contents/bin/mvim -f"
+source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh_aliases
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" || curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+bindkey '≠' autosuggest-accept
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
