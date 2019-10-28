@@ -104,4 +104,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 bindkey '≠' autosuggest-accept
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.zshrc-java-settings ] && source ~/.zshrc-java-settings
+
