@@ -2,7 +2,7 @@
 
 # Features
 
-My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure.
+My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure. Tested on OSX and Raspbian Linux.
 
 ## Vim:
 
@@ -14,14 +14,13 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 # Requirements
 
-1. I use iterm2 on OSX, this setup will only work for that.
-2. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim.
+1. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim.
 ![Alt text](https://i.imgur.com/TOMXk1o.png "iTerm 2 setup")
-3. vim must be installed via homebrew
-4. git must be installed and setup with ssh for github
-5. eslint must be installed for JavaScript linting
-6. shellcheck must be installed for Bash linting
-7. Ctags can be optionally installed via brew for Ctag-like search
+2. vim must be installed via homebrew
+3. git must be installed and setup with ssh for github
+4. eslint must be installed for JavaScript linting
+5. shellcheck must be installed for Bash linting
+6. Ctags can be optionally installed via brew for Ctag-like search
 
 As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it.
 
@@ -30,19 +29,16 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 1. git clone git@github.com:/wordswords/dotfiles ./dotfiles/
 2. cd ~/.dotfiles/
 3. ./deploy-part-1.sh
-3. Press control-D to drop out of oh-my-zsh
-4. ./deploy-part-2.sh
-5. Install a Nerd font (https://nerdfonts.com/) if you are using iterm2
-6. Open a new terminal to load everything in
-7. You're good to go.
+4. Press control-D to drop out of oh-my-zsh
+5. ./deploy-part-2.sh
 
 # Shell shortcuts
 
 1. Control-L for autocomplete based on your command line
 2. Control-R for nice access to bash history
 3. Control-+ for smart autocomplete based on your command line
-4. Simply type a directory name accessible from your current directory to cd to that directory, no need to type cd
-5. Simply type ‘l’ for a long-style ls
+4. Type a directory name accessible from your current directory to cd to that directory, no need to type cd
+5. Type ‘l’ for a long-style ls
 
 # VIM keybindings
 

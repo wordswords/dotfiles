@@ -10,7 +10,6 @@ cp ~/.zshrc* ~/.olddotfiles/
 cp -R ~/.oh-my-zsh ~/.olddotfiles/.oh-my-zsh
 
 # remove
-
 rm -rf ~/.zshrc
 rm -rf ~/.oh-my-zsh
 rm -rf ~/.vim
@@ -19,6 +18,6 @@ rm -f ~/.bash_profile
 rm -rf ~/bin
 
 # Install oh-my-zsh
-
 cd ~ || exit 1
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+

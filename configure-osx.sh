@@ -262,5 +262,7 @@ brew install shellcheck
 brew install shfmt
 brew install vim || brew update vim || echo "vim already is the latest version"
 brew link vim
+brew tap homebrew/cask-fonts
+brew install homebrew/cask-fonts/font-hack-nerd-font
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
