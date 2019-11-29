@@ -9,3 +9,14 @@ report_progress() {
   echo -e "\e[1m${level_char} ${message}\e[0m"
   echo
 }
+get_os() {
+  uname_s="$(uname -s)"
+  if echo $uname_s | grep 'Darwin'
+  then
+    baseos='osx'
+  else
+    baseos='linux'
+  fi
+  echo $baseos $
+}
+
