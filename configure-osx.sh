@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+echo "Installing brew packages"
+brew install bash
+brew install coreutils
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+brew install shellcheck
+brew install shfmt
+brew install vim || brew update vim || echo "vim already is the latest version"
+brew link vim
+brew tap homebrew/cask-fonts
+brew install homebrew/cask-fonts/font-hack-nerd-font
+
 # ~/.osx — https://mths.be/osx
 
 # Ask for the administrator password upfront
@@ -254,15 +266,5 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "SystemUIServer" "Terminal" "iCal"; do
   killall "${app}" &>/dev/null
 done
-
-echo "Installing brew packages"
-brew tap caskroom/fonts
-brew cask install font-hack-nerd-font
-brew install shellcheck
-brew install shfmt
-brew install vim || brew update vim || echo "vim already is the latest version"
-brew link vim
-brew tap homebrew/cask-fonts
-brew install homebrew/cask-fonts/font-hack-nerd-font
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
