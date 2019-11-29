@@ -29,6 +29,7 @@ cp -rs ~/.dotfiles/bin/* ~/bin/
 # install vim plugins latest version
 cd ~/.dotfiles/.vim/bundle/ || exit 1
 
+rm -rf ~/.dotfiles/.vim/bundle/*
 git clone --recursive git@github.com:davidhalter/jedi-vim.git
 git clone git@github.com:LucHermitte/alternate-lite.git
 git clone git@github.com:LucHermitte/lh-brackets.git
@@ -83,6 +84,12 @@ mv ./securemodelines/plugin/* ~/.vim/plugin/
 rm -rf ./securemodelines
 
 pip3 install --user pynvim
+
+# Git configuration for the default user, will still have to specify
+# email address
+
+git config --global core.editor vim
+git config --global user.name "David Craddock"
 
 # install font for vim-fonts
 echo ""
