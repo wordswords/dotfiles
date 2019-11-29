@@ -8,7 +8,7 @@ report_progress() {
   message=$2
   level_char=$(printf '+%.0s' $(seq 1 $level))
   echo
-  echo -e "\e[0;34m${level_char} ${message}\e[0m"
+  echo -e "\e[0;36m${level_char} ${message}\e[0m"
   echo
 }
 get_os() {
