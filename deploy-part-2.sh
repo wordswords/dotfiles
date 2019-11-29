@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
 ## To be run after installation of oh-my-zsh
+
 # Load in status message printing functions
 . ./deploy-common.sh
 

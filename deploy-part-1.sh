@@ -11,7 +11,6 @@ report_progress 1 'Deploying dotfiles: Part 1'
 if [ "$baseos" = "osx" ]; then
   report_progress 2 'Configuring OSX and brew install packages..'
   ./configure-osx.sh
-  alias cp=gcp
 fi
 
 report_progress 2 'Backing up existing dotfiles to ~/.olddotfiles..'

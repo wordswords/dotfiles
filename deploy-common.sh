@@ -11,6 +11,7 @@ report_progress() {
   echo -e "\e[0;36m${level_char} ${message}\e[0m"
   echo
 }
+
 get_os() {
   uname_s="$(uname -s)"
   if echo $uname_s | grep 'Darwin' >/dev/null
