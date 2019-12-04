@@ -102,7 +102,7 @@ source ~/.zsh_aliases
 test -e "${HOME}/.iterm2_shell_integration.zsh" || curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+alias ls="ls --color"
 bindkey '≠' autosuggest-accept
 
 [ -f ~/.zshrc-java-settings ] && source ~/.zshrc-java-settings
-
