@@ -1,0 +1,15 @@
+<!-- Created by DaviCrad with Vim 8.01 -->
+<html>
+  <script>
+    new Promise(function(resolve,reject){
+      resolve();
+    }).then(function(resolve,reject){
+        var input = window.prompt('Search all Talpay user stories for description:'); if (input) return(input);
+        resolve(input);
+    }).then(function(result){
+       window.open(encodeURI("https://itvplc.jira.com/issues/?jql=project in (TP5, TP6, TP7, TPBAU) AND issuetype in ('User Story') AND description ~ '" + result + "'"));
+    })
+  </script>
+  <body>
+  </body>
+</html>
