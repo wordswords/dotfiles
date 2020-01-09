@@ -34,5 +34,5 @@ rm -rf ~/.oh-my-zsh
 
 report_progress 2 'Installing oh-my-zsh..'
 cd ~ || exit 1
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(wget --no-check-certificate https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 

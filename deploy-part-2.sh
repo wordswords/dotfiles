@@ -17,6 +17,7 @@ report_progress 2 'Installing oh-my-zsh plugins..'
 cd ~/.oh-my-zsh/plugins || exit 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions.git
+git clone https://github.com/agkozak/zsh-z.git ./zsh-z
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && yes | ~/.fzf/install
 
 report_progress 2 'Removing default ~/.zshrc directory..'
@@ -56,6 +57,7 @@ git clone git@github.com:LucHermitte/mu-template.git
 git clone git@github.com:LucHermitte/searchInRuntime.git
 git clone git@github.com:Shougo/denite.nvim.git
 git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
+git clone git@github.com:ciaranm/securemodelines.git ./securemodelines
 git clone git@github.com:dpelle/vim-LanguageTool
 git clone git@github.com:godlygeek/tabular.git
 git clone git@github.com:jelera/vim-javascript-syntax.git
@@ -81,8 +83,8 @@ git clone git@github.com:tpope/vim-git
 git clone git@github.com:tpope/vim-rails.git
 git clone git@github.com:vim-airline/vim-airline
 git clone git@github.com:vim-syntastic/syntastic.git
+git clone git@github.com:vimwiki/vimwiki.git
 git clone git@github.com:z0mbix/vim-shfmt.git
-git clone git@github.com:ciaranm/securemodelines.git ./securemodelines
 mv ./securemodelines/plugin/* ~/.vim/plugin/
 rm -rf ./securemodelines
 

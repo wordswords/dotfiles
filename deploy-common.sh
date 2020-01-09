@@ -2,6 +2,7 @@
 # Common functions for deploy scripts
 
 export CLICOLOR=1
+git config --global http.sslVerify false
 
 report_progress() {
   level=$1

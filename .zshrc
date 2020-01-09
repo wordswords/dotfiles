@@ -84,6 +84,7 @@ plugins=(
   python
   zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-z
 )
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
@@ -104,5 +105,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 alias ls="ls --color"
 bindkey '≠' autosuggest-accept
+
+# zsh-z
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
 [ -f ~/.zshrc-java-settings ] && source ~/.zshrc-java-settings
