@@ -44,9 +44,10 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 
 1. &lt;Tab&gt; to activate autocomplete plugins specific to Python and CPP modes, and then the default autocomplete of vim after that
 2. Down cursor arrow to launch a shell-based grep through a path while editing a source file, and when you’ve done that:
-3. Left and right cursor arrows to move through the search results of above grep
-4. ‘>>’ and ‘<<’ to adjust indentation
-5. ‘]s’ and ‘[s’ to browse through spelling errors/grammar errors in text modes such as raw text, markdown etc
+3. Left and right cursor arrows to move through the syntaxic errors 
+4. Up cursor to toggle the file browser/NERDTree buffer
+5. ‘>>’ and ‘<<’ to adjust indentation
+6. ‘]s’ and ‘[s’ to browse through spelling errors/grammar errors in text modes such as raw text, markdown etc
 
 # Modifying
 
