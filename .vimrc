@@ -32,7 +32,7 @@ set relativenumber  " Set numbering from current line
 set noerrorbells    " turn off all bells
 set visualbell      " same as above
 set t_vb=           " same as above
-set listchars=eol:$,tab:^T,trail:␠,nbsp:⎵
+set listchars=eol:$,tab:^T,trail:␠
 hi SpecialKey ctermfg=grey guifg=grey70
 
 let g:rehash256 = 1
@@ -128,7 +128,7 @@ endfunction
 " Tab stopped file use
 au BufRead,BufNewFile *.robot setlocal noexpandtab
 
-nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
+noremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
@@ -159,7 +159,6 @@ function SetMarkdownOptions()
 endfunction
 
 function SetMakefileOptions()
-  colorscheme Tomorrow-Night
   set noexpandtab
   set tabstop=4
   set shiftwidth=4
@@ -167,10 +166,22 @@ function SetMakefileOptions()
 endfunction
 
 function SetibizFileOptions()
+  colorscheme monokai256
   set listchars+=space:␣
   set syntax=whitespace
   set nowrap
   set nospell
+endfunction
+
+function SetNormalTextFileOptions()
+  colorscheme evening
+  set listchars=eol:$,tab:^T,trail:␠
+  setlocal spell spelllang=en_gb
+  set wrap
+  set spell
+  unmap <Down>
+  unmap <Right>
+  unmap <Left>
 endfunction
 
 function SetPythonFileOptions()
@@ -185,7 +196,9 @@ endfunction
 
 autocmd FileType python call SetPythonFileOptions()
 autocmd FileType Makefile call SetMakefileOptions()
-autocmd FileType text call SetibizFileOptions()
+autocmd FileType text call SetNormalTextFileOptions()
+autocmd BufNewFile,BufRead $HOME/repository/* call SetibizFileOptions()
+autocmd BufNewFile,BufRead /var/lib/dropwizard/* call SetibizFileOptions()
 
 " Wordy is only activated when editing .txt files
 let g:wordy#ring = [
