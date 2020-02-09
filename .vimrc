@@ -89,6 +89,13 @@ autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
 " if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif
 
+" make NERDTree look nicer
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" make sure NERDTree shows hidden files/dirs
+let NERDTreeShowHidden = 1
+
 " Disable F1 help launcher
 noremap <F1> :echo<CR>
 inoremap <F1> <c-o>:echo<CR>
@@ -116,7 +123,6 @@ highlight link SyntasticStyleWarningSign SignColumn
 
 " Removes trailing spaces
 function! TrimWhiteSpace()
-    %s/\s\+$//e
 endfunction
 
 " Tab stopped file use
@@ -136,33 +142,10 @@ inoremap <TAB> <C-n>
 let g:jedi#completions_command = "<TAB>"
 
 " Universal grep/search hotkeys
-noremap <silent> <Right> :cnext <CR>
-noremap <silent> <Left> :cprev <CR>
-noremap <silent> <Up> :Denite
-map <Down> :grep <REGEX> <PATH>
-
-" vim-pencil configuration
-augroup pencil
-  autocmd!
-  " Apply for Markdown and reStructuredText
-  autocmd FileType markdown,mkd,md,rst,text,asciidoc call pencil#init({'wrap': 'soft'})
-        \ | call lexical#init()
-        \ | call litecorrect#init()
-        \ | call textobj#quote#init()
-        \ | call textobj#sentence#init()
-  autocmd FileType markdown,mkd,md call SetMarkdownOptions()
-  autocmd FileType rst,text call SetRestructuredTextOptions()
-  autocmd FileType c,h call SetCOptions()
-
-  highlight TechWordsToAvoid ctermbg=red ctermfg=white
-  function! MatchTechWordsToAvoid()
-      match TechWordsToAvoid /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
-  endfunction
-  autocmd BufWinEnter * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
-  autocmd InsertEnter * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
-  autocmd InsertLeave * match TechWordsToAvoid /\cobviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however,\|so,\|easy/
-  autocmd BufWinLeave * call clearmatches()
-augroup END
+noremap <silent> <Right> :cnext<CR>
+noremap <silent> <Left> :cprev<CR>
+noremap <Down> :grep <REGEX> <PATH>
+noremap <Up> :NERDTreeToggle<CR>
 
 function SetRestructuredTextOptions()
   au BufRead,BufNewFile *.rst setlocal textwidth=80
@@ -183,6 +166,13 @@ function SetMakefileOptions()
   set softtabstop=0
 endfunction
 
+function SetibizFileOptions()
+  set listchars+=space:␣
+  set syntax=whitespace
+  set nowrap
+  set nospell
+endfunction
+
 function SetPythonFileOptions()
   set expandtab
   set tabstop=4
@@ -195,6 +185,7 @@ endfunction
 
 autocmd FileType python call SetPythonFileOptions()
 autocmd FileType Makefile call SetMakefileOptions()
+autocmd FileType text call SetibizFileOptions()
 
 " Wordy is only activated when editing .txt files
 let g:wordy#ring = [
@@ -224,23 +215,6 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Ignored"   : " ☒ ",
   \ "Unknown"   : " ? "
   \ }
-
-" Define mappings
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select').'j'
-endfunction
 
 au BufRead,BufNewFile *.f90 set filetype=Fortran
 
