@@ -142,8 +142,8 @@ inoremap <TAB> <C-n>
 let g:jedi#completions_command = "<TAB>"
 
 " Universal grep/search hotkeys
-noremap <silent> <Right> :cnext<CR>
-noremap <silent> <Left> :cprev<CR>
+noremap <silent> <Right> :lnext<CR>
+noremap <silent> <Left> :lprevious<CR>
 noremap <Down> :grep <REGEX> <PATH>
 noremap <Up> :NERDTreeToggle<CR>
 
