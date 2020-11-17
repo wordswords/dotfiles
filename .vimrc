@@ -108,16 +108,7 @@ noremap <F1> :echo<CR>
 inoremap <F1> <c-o>:echo<CR>
 
 " Syntaxic settings
-set statusline+=%#warningmsg## don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=999999
-HISTFILESIZE=999999
+set statusline+=%#warningmsg## 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -236,4 +227,3 @@ let g:NERDTreeIndicatorMapCustom = {
   \ }
 
 au BufRead,BufNewFile *.f90 set filetype=Fortran
-
