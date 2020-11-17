@@ -2,7 +2,7 @@ alias ls="ls -Ga"
 alias grep="grep --color"
 alias cp="cp -av"
 alias please='sudo $(fc -ln -1)'
-export PATH=$PATH:$HOME/go/bin
+
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
