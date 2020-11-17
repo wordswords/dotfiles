@@ -32,6 +32,7 @@ set relativenumber  " Set numbering from current line
 set noerrorbells    " turn off all bells
 set visualbell      " same as above
 set t_vb=           " same as above
+autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
 set listchars=eol:$,tab:^T,trail:␠
 hi SpecialKey ctermfg=grey guifg=grey70
 
@@ -49,8 +50,7 @@ let g:secure_modelines_modelines = 15
 " Stop <> marks being inserted on all filetypes from lh-brackets plugin
 let g:cb_no_default_brackets = 1
 
-" Turn off visual and audio bell
-autocmd GUIEnter * set visualbell t_vb=
+
 
 " Turn off recording
 map q <Nop>
