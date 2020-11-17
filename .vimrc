@@ -34,7 +34,16 @@ set visualbell      " same as above
 set t_vb=           " same as above
 autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
 set listchars=eol:$,tab:^T,trail:␠
-hi SpecialKey ctermfg=grey guifg=grey70
+hi SpecialKey ctermfg=grey guifg=grey70# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=999999
+HISTFILESIZE=999999
 
 let g:rehash256 = 1
 
@@ -49,8 +58,6 @@ let g:secure_modelines_modelines = 15
 
 " Stop <> marks being inserted on all filetypes from lh-brackets plugin
 let g:cb_no_default_brackets = 1
-
-
 
 " Turn off recording
 map q <Nop>
