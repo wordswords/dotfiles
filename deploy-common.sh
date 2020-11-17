@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Common functions for deploy scripts
 
+# these have to be present in both deploy scripts
 export CLICOLOR=1
 git config --global http.sslVerify false
 
