@@ -101,7 +101,16 @@ noremap <F1> :echo<CR>
 inoremap <F1> <c-o>:echo<CR>
 
 " Syntaxic settings
-set statusline+=%#warningmsg#
+set statusline+=%#warningmsg## don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=999999
+HISTFILESIZE=999999
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -121,18 +130,8 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
-" Removes trailing spaces
-function! TrimWhiteSpace()
-endfunction
-
 " Tab stopped file use
 au BufRead,BufNewFile *.robot setlocal noexpandtab
-
-noremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
-autocmd FileWritePre    * :call TrimWhiteSpace()
-autocmd FileAppendPre   * :call TrimWhiteSpace()
-autocmd FilterWritePre  * :call TrimWhiteSpace()
-autocmd BufWritePre     * :call TrimWhiteSpace()
 
 " Arrow keys map to cnext cprev for :grep
 let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
