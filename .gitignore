@@ -1,6 +1,5 @@
 *.swp
 *.swo
-.vim/bundle
 .bash_aliases
 .zsh_aliases
 .vim/bundle
