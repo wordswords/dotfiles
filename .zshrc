@@ -90,7 +90,9 @@ plugins=(
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"# don't put duplicate lines or lines starting with space in the history.
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+
+# don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
@@ -100,8 +102,8 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=999999
 HISTFILESIZE=999999
+
 export PATH="$PATH:$HOME/bin"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
