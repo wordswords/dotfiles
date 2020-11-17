@@ -93,7 +93,6 @@ export NVM_DIR="~/.nvm"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-#export PATH="$PATH:/usr/local/Cellar/python/2.7.14/Frameworks/Python.framework/Versions/2.7/bin/" # for flake8 python syntax checker
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
