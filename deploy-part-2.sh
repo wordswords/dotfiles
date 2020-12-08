@@ -86,8 +86,8 @@ git clone git@github.com:vim-airline/vim-airline
 git clone git@github.com:vim-syntastic/syntastic.git
 git clone git@github.com:vimwiki/vimwiki.git
 git clone git@github.com:z0mbix/vim-shfmt.git
+git clone https://github.com/prettier/vim-prettier
 git clone --recursive git@github.com:davidhalter/jedi-vim.git
-
 mv ./securemodelines/plugin/* ~/.vim/plugin/
 rm -rf ./securemodelines
 

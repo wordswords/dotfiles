@@ -36,6 +36,7 @@ set listchars=eol:$,tab:^T,trail:␠
 hi SpecialKey ctermfg=grey guifg=grey70
 
 let g:rehash256 = 1
+let g:prettier#autoformat = 1
 
 colorscheme monokai256
 hi SpecialKey ctermfg=grey guifg=grey70

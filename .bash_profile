@@ -28,6 +28,10 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[0
 export PATH="~/bin/:$PATH"
 export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
+alias python="/opt/python-3.7.1/bin/python3.7"
+alias pip="/opt/python-3.7.1/bin/pip3.7"
+alias pip-sync="/opt/python-3.7.1/bin/pip-sync"
+
 
 zsh
 
