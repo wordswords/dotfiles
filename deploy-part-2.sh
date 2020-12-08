@@ -91,6 +91,13 @@ git clone --recursive git@github.com:davidhalter/jedi-vim.git
 mv ./securemodelines/plugin/* ~/.vim/plugin/
 rm -rf ./securemodelines
 
+report_progress 2 'Patching NerdTree to remove deprecated error..'
+cp ~/.dotfiles/nerdtree_plugin_fix.diff ~/.vim/bundle/nerdtree-git-plugin/nerdtree_plugin
+cd ~/.vim/bundle/nerdtree-git-plugin/nerdtree_plugin
+git apply nerdtree_plugin_fix.diff
+cd -
+
+
 report_progress 2 'Installing vim colorscheme..'
 git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme
 mv ./colorscheme/colors/* ~/.vim/colors/
