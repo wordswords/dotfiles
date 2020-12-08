@@ -32,8 +32,18 @@ set relativenumber  " Set numbering from current line
 set noerrorbells    " turn off all bells
 set visualbell      " same as above
 set t_vb=           " same as above
+autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
 set listchars=eol:$,tab:^T,trail:␠
-hi SpecialKey ctermfg=grey guifg=grey70
+hi SpecialKey ctermfg=grey guifg=grey70# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=999999
+HISTFILESIZE=999999
 
 let g:rehash256 = 1
 let g:prettier#autoformat = 1
@@ -49,9 +59,6 @@ let g:secure_modelines_modelines = 15
 
 " Stop <> marks being inserted on all filetypes from lh-brackets plugin
 let g:cb_no_default_brackets = 1
-
-" Turn off visual and audio bell
-autocmd GUIEnter * set visualbell t_vb=
 
 " Turn off recording
 map q <Nop>
@@ -102,7 +109,7 @@ noremap <F1> :echo<CR>
 inoremap <F1> <c-o>:echo<CR>
 
 " Syntaxic settings
-set statusline+=%#warningmsg#
+set statusline+=%#warningmsg## 
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
@@ -122,18 +129,8 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
-" Removes trailing spaces
-function! TrimWhiteSpace()
-endfunction
-
 " Tab stopped file use
 au BufRead,BufNewFile *.robot setlocal noexpandtab
-
-noremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
-autocmd FileWritePre    * :call TrimWhiteSpace()
-autocmd FileAppendPre   * :call TrimWhiteSpace()
-autocmd FilterWritePre  * :call TrimWhiteSpace()
-autocmd BufWritePre     * :call TrimWhiteSpace()
 
 " Arrow keys map to cnext cprev for :grep
 let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
@@ -231,4 +228,3 @@ let g:NERDTreeIndicatorMapCustom = {
   \ }
 
 au BufRead,BufNewFile *.f90 set filetype=Fortran
-

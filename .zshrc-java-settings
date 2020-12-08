@@ -1,9 +1,0 @@
-export JAVA_HOME="$(/usr/libexec/java_home -v 11.0.2)"
-export PATH=/usr/local/opt/findutils/libexec/gnubin:$PATH
-export PATH=/Users/DaviCrad/repository/apache-maven-3.6.2/bin:$PATH
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export PATH=/usr/local/opt/grep/libexec/gnubin:$PATH
-export WORKSPACE=~/repository/finance-talent-payments
-export TMP=/tmp
-ulimit -S -n 2048
-
