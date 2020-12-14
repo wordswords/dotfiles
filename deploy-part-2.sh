@@ -115,6 +115,17 @@ cd -
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 yarn config set "strict-ssl" false -g
 
+report_progress 2 'Installing vim8/coc extensions'
+# Install extensions
+mkdir -p ~/.config/coc/extensions
+cd ~/.config/coc/extensions
+if [ ! -f package.json ]
+then
+  echo '{"dependencies":{}}'> package.json
+fi
+# Change extension names to the extensions you need
+npm install coc-snippets coc-tsserver coc-json coc-html coc-css coc-python --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+
 report_progress 2 'Installing vim colorscheme..'
 git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme
 mv ./colorscheme/colors/* ~/.vim/colors/

@@ -98,28 +98,6 @@ let NERDTreeShowHidden = 1
 noremap <F1> :echo<CR>
 inoremap <F1> <c-o>:echo<CR>
 
-" Syntaxic settings
-set statusline+=%#warningmsg## 
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
-
-" Python files - get syntaxic to run flake8
-let g:syntastic_python_checkers = ['flake8']
-
 " Tab stopped file use
 au BufRead,BufNewFile *.robot setlocal noexpandtab
 
