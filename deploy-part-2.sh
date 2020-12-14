@@ -6,6 +6,17 @@ source ./deploy-common.sh
 
 baseos=$(get_os)
 
+report_progress 1 'Installing curl and the latest version of node for vim/coc'
+
+if [ "$baseos" = "osx" ]; then
+  brew install curl
+else
+  sudo apt-get install curl -y
+fi
+
+
+curl -sL install-node.now.sh/lts | bash
+
 report_progress 1 'Deploying .dotfiles: Part 2'
 
 report_progress 2 'Removing existing dotfiles..'
@@ -83,10 +94,8 @@ git clone git@github.com:tpope/vim-fugitive.git
 git clone git@github.com:tpope/vim-git
 git clone git@github.com:tpope/vim-rails.git
 git clone git@github.com:vim-airline/vim-airline
-git clone git@github.com:vim-syntastic/syntastic.git
 git clone git@github.com:vimwiki/vimwiki.git
 git clone git@github.com:z0mbix/vim-shfmt.git
-git clone https://github.com/dense-analysis/ale.git
 git clone https://github.com/prettier/vim-prettier
 git clone --recursive git@github.com:davidhalter/jedi-vim.git
 mv ./securemodelines/plugin/* ~/.vim/plugin/
@@ -98,6 +107,13 @@ cd ~/.vim/bundle/nerdtree-git-plugin/nerdtree_plugin
 git apply nerdtree_plugin_fix.diff
 cd -
 
+report_progress 2 'Installing vim8/coc'
+mkdir -p ~/.vim/pack/coc/start\ncd ~/.vim/pack/coc/start
+cd ~/.vim/pack/coc/start
+curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz > release.tgz && tar xzfv release.tgz
+cd -
+curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+yarn config set "strict-ssl" false -g
 
 report_progress 2 'Installing vim colorscheme..'
 git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme

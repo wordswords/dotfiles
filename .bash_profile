@@ -32,3 +32,5 @@ alias pip-sync="/opt/python-3.7.1/bin/pip-sync"
 
 zsh
 
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
