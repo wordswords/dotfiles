@@ -15,7 +15,7 @@ else
 fi
 
 
-curl -sL install-node.now.sh/lts | bash
+curl -sL install-node.now.sh/lts | sudo bash
 
 report_progress 1 'Deploying .dotfiles: Part 2'
 
@@ -113,6 +113,7 @@ cd ~/.vim/pack/coc/start
 curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz > release.tgz && tar xzfv release.tgz
 cd -
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+export PATH=$PATH:~/.yarn/bin
 yarn config set "strict-ssl" false -g
 
 report_progress 2 'Installing vim8/coc extensions'
