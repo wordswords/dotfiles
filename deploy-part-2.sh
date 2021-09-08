@@ -67,7 +67,6 @@ git clone git@github.com:Shougo/denite.nvim.git
 git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
 git clone git@github.com:ciaranm/securemodelines.git ./securemodelines
 git clone git@github.com:dpelle/vim-LanguageTool
-git clone git@github.com:easymotion/vim-easymotion.git
 git clone git@github.com:jelera/vim-javascript-syntax.git
 git clone git@github.com:junegunn/goyo.vim
 git clone git@github.com:junegunn/limelight.vim

@@ -1,4 +1,4 @@
-"" Pathogen plugin manager
+" Pathogek plugin manager
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -34,7 +34,6 @@ set visualbell      " same as above
 set t_vb=           " same as above
 autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
 set listchars=eol:$,tab:^T,trail:␠
-
 let g:rehash256 = 1
 let g:prettier#autoformat = 1
 
@@ -56,6 +55,7 @@ map q <Nop>
 " Vim fonts
 set guifont=Droid\ Sans\ Mono\ For\ Powerline\ Nerd\ Font\ Complete:h18
 let g:airline_powerline_fonts = 1
+let g:airline_section_x = '%{PencilMode()}'
 let g:powerline_symbols = 'fancy'
 
 highlight CursorLine term=bold cterm=bold guibg=Grey40
@@ -113,8 +113,15 @@ function SetRestructuredTextOptions()
 endfunction
 
 function SetMarkdownOptions()
+  autocmd FileType markdown,mkd call pencil#init()
+                            \ | call lexical#init()
+                            \ | call litecorrect#init()
+                            \ | call textobj#quote#init()
+                            \ | call textobj#sentence#init()
+  let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
+  let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)
   setlocal spell spelllang=en_gb
-  nmap <leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
+  nmap <Leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
 endfunction
 
 function SetMakefileOptions()
@@ -133,14 +140,14 @@ function SetibizFileOptions()
 endfunction
 
 function SetNormalTextFileOptions()
+autocmd FileType text         call pencil#init()
+let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
+  let g:pencil#cursorwrap = 0     " 0=disable, 1=enable (def)
   colorscheme evening
   set listchars=eol:$,tab:^T,trail:␠
   setlocal spell spelllang=en_gb
   set wrap
   set spell
-  unmap <Down>
-  unmap <Right>
-  unmap <Left>
 endfunction
 
 function SetPythonFileOptions()
@@ -160,6 +167,7 @@ autocmd FileType markdown call SetNormalTextFileOptions()
 autocmd BufNewFile,BufRead $HOME/repository/* call SetibizFileOptions()
 autocmd BufNewFile,BufRead /var/lib/dropwizard/* call SetibizFileOptions()
 
+map <F12> :Goyo<CR>
 " Wordy is only activated when editing .txt files
 let g:wordy#ring = [
   \ 'weak',
@@ -274,11 +282,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nmap <Leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <Leader>f  <Plug>(coc-format-selected)
+nmap <Leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -289,14 +297,14 @@ augroup mygroup
 augroup end
 
 " Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+" Example: `<Leader>aap` for current paragraph
+xmap <Leader>a  <Plug>(coc-codeaction-selected)
+nmap <Leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <Leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <Leader>qf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -311,12 +319,12 @@ omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 " Use CTRL-S for selections ranges.
@@ -359,23 +367,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ""
 "" END OF COC.vim CONFIG
 ""
-
-""
-"" EasyMotion CONFIG
-""
-
-" <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Move to line
-map <Leader>L <Plug>(easymotion-bd-jk)
-nmap <Leader>L <Plug>(easymotion-overwin-line)
-
-" Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
 
