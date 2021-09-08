@@ -146,7 +146,7 @@ then
   echo '{"dependencies":{}}'> package.json
 fi
 # Change extension names to the extensions you need
-npm install coc-snippets coc-tsserver coc-json coc-html coc-css coc-python --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+npm install coc-snippets coc-tsserver coc-json coc-html coc-css coc-python coc-sh --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
 
 report_progress 2 'Installing vim colorscheme..'
 git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme

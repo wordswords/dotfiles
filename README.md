@@ -19,6 +19,7 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 2. vim8 must be installed
 3. git must be installed and setup with ssh for github
 4. shellcheck must be installed for Bash linting
+5. python3 and pip3 must be installed
 
 As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it.
 
@@ -40,8 +41,8 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 
 # VIM keybindings
 
-1. &lt;Tab&gt; to activaue autocomplete plugins specific to Python and CPP modes, and then the default autocomplete of vim after that
-2. Down cursor arrow to launch a shell-based grep through a path while editing a source file, and when you’ve done that:
+1. &lt;Tab&gt; to activaue autocomplete plugins
+2. Down cursor for vim.coc diagnostics window
 3. Left and right cursor arrows to move through the syntaxic errors 
 4. Up cursor to toggle the file browser/NERDTree buffer
 5. ‘>>’ and ‘<<’ to adjust indentation

@@ -104,9 +104,6 @@ au BufRead,BufNewFile *.robot setlocal noexpandtab
 " Arrow keys map to cnext cprev for :grep
 let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
 
-" Universal grep/search hotkeys
-noremap <silent> <Right> :lnext<CR>
-noremap <silent> <Left> :lprevious<CR>
 noremap <Up> :NERDTreeToggle<CR>
 
 function SetRestructuredTextOptions()
@@ -250,8 +247,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> <LEFT> <Plug>(coc-diagnostic-prev)
+nmap <silent> <RIGHT> <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
