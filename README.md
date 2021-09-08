@@ -2,7 +2,7 @@
 
 # Features
 
-My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure. Tested on OSX and Raspbian Linux.
+My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure. Tested on OSX,Linux Mint and Raspbian Linux.
 
 ## Vim:
 
@@ -39,14 +39,14 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 4. Type a directory name accessible from your current directory to cd to that directory, no need to type cd
 5. Type ‘l’ for a long-style ls
 
-# VIM keybindings
+# VIM Key bindings
 
-1. &lt;Tab&gt; to activaue autocomplete plugins
+1. &lt;Tab&gt; to activate autocomplete plug ins
 2. Down cursor for vim.coc diagnostics window
 3. Left and right cursor arrows to move through the syntaxic errors 
 4. Up cursor to toggle the file browser/NERDTree buffer
 5. ‘>>’ and ‘<<’ to adjust indentation
-6. ‘]s’ and ‘[s’ to browse through spelling errors/grammar errors in text modes such as raw text, markdown etc
+6. ‘]s’ and ‘[s’ to browse through spelling errors/grammar errors in text modes such as raw text and markdown
 
 # Modifying
 
