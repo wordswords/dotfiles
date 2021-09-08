@@ -16,11 +16,9 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 1. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim.
 ![Alt text](https://i.imgur.com/TOMXk1o.png "iTerm 2 setup")
-2. vim must be installed via homebrew
+2. vim8 must be installed
 3. git must be installed and setup with ssh for github
-4. eslint must be installed for JavaScript linting
-5. shellcheck must be installed for Bash linting
-6. Ctags can be optionally installed via brew for Ctag-like search
+4. shellcheck must be installed for Bash linting
 
 As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it.
 
@@ -42,7 +40,7 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 
 # VIM keybindings
 
-1. &lt;Tab&gt; to activate autocomplete plugins specific to Python and CPP modes, and then the default autocomplete of vim after that
+1. &lt;Tab&gt; to activaue autocomplete plugins specific to Python and CPP modes, and then the default autocomplete of vim after that
 2. Down cursor arrow to launch a shell-based grep through a path while editing a source file, and when you’ve done that:
 3. Left and right cursor arrows to move through the syntaxic errors 
 4. Up cursor to toggle the file browser/NERDTree buffer

@@ -6,7 +6,7 @@ source ./deploy-common.sh
 
 baseos=$(get_os)
 
-report_progress 1 'Installing curl and the latest version of node for vim/coc'
+report_progress 1 'Installing curl'
 
 if [ "$baseos" = "osx" ]; then
   brew install curl
@@ -14,8 +14,13 @@ else
   sudo apt-get install curl -y
 fi
 
+report_progress 1 'Installing latest nodejs'
 
-curl -sL install-node.now.sh/lts | sudo bash
+# Install latest nodejs
+curl -s https://install-node.now.sh | sh -s --
+export PATH="/usr/local/bin/:$PATH"
+# Or use package manager, e.g.
+# sudo apt-get install nodejs
 
 report_progress 1 'Deploying .dotfiles: Part 2'
 
@@ -108,10 +113,26 @@ git apply nerdtree_plugin_fix.diff
 cd -
 
 report_progress 2 'Installing vim8/coc'
-mkdir -p ~/.vim/pack/coc/start\ncd ~/.vim/pack/coc/start
+
+# Use package feature to install coc.nvim
+
+# for vim8
+mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
-curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz > release.tgz && tar xzfv release.tgz
-cd -
+curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -
+
+# Install extensions
+mkdir -p ~/.config/coc/extensions
+cd ~/.config/coc/extensions
+if [ ! -f package.json ]
+then
+  echo '{"dependencies":{}}'> package.json
+fi
+# Change extension names to the extensions you need
+npm install coc-snippets --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+
+report_progress 2 'Installing yarn'
+
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 export PATH=$PATH:~/.yarn/bin
 yarn config set "strict-ssl" false -g
