@@ -62,6 +62,7 @@ report_progress 2 'Installing vim plugins latest version..'
 rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/ || exit 1
 
+git clone --recursive git@github.com:davidhalter/jedi-vim.git
 git clone git@github.com:LucHermitte/alternate-lite.git
 git clone git@github.com:LucHermitte/lh-brackets.git
 git clone git@github.com:LucHermitte/lh-cpp.git
@@ -75,6 +76,7 @@ git clone git@github.com:Shougo/denite.nvim.git
 git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
 git clone git@github.com:ciaranm/securemodelines.git ./securemodelines
 git clone git@github.com:dpelle/vim-LanguageTool
+git clone git@github.com:easymotion/vim-easymotion.git
 git clone git@github.com:godlygeek/tabular.git
 git clone git@github.com:jelera/vim-javascript-syntax.git
 git clone git@github.com:junegunn/goyo.vim
@@ -102,7 +104,6 @@ git clone git@github.com:vim-airline/vim-airline
 git clone git@github.com:vimwiki/vimwiki.git
 git clone git@github.com:z0mbix/vim-shfmt.git
 git clone https://github.com/prettier/vim-prettier
-git clone --recursive git@github.com:davidhalter/jedi-vim.git
 mv ./securemodelines/plugin/* ~/.vim/plugin/
 rm -rf ./securemodelines
 
