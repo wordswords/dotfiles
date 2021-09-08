@@ -156,6 +156,7 @@ endfunction
 autocmd FileType python call SetPythonFileOptions()
 autocmd FileType Makefile call SetMakefileOptions()
 autocmd FileType text call SetNormalTextFileOptions()
+autocmd FileType markdown call SetNormalTextFileOptions()
 autocmd BufNewFile,BufRead $HOME/repository/* call SetibizFileOptions()
 autocmd BufNewFile,BufRead /var/lib/dropwizard/* call SetibizFileOptions()
 

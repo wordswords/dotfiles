@@ -63,21 +63,11 @@ rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/ || exit 1
 
 git clone --recursive git@github.com:davidhalter/jedi-vim.git
-git clone git@github.com:LucHermitte/alternate-lite.git
-git clone git@github.com:LucHermitte/lh-brackets.git
-git clone git@github.com:LucHermitte/lh-cpp.git
-git clone git@github.com:LucHermitte/lh-dev.git
-git clone git@github.com:LucHermitte/lh-style.git
-git clone git@github.com:LucHermitte/lh-tags.git
-git clone git@github.com:LucHermitte/lh-vim-lib.git
-git clone git@github.com:LucHermitte/mu-template.git
-git clone git@github.com:LucHermitte/searchInRuntime.git
 git clone git@github.com:Shougo/denite.nvim.git
 git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
 git clone git@github.com:ciaranm/securemodelines.git ./securemodelines
 git clone git@github.com:dpelle/vim-LanguageTool
 git clone git@github.com:easymotion/vim-easymotion.git
-git clone git@github.com:godlygeek/tabular.git
 git clone git@github.com:jelera/vim-javascript-syntax.git
 git clone git@github.com:junegunn/goyo.vim
 git clone git@github.com:junegunn/limelight.vim
@@ -99,7 +89,6 @@ git clone git@github.com:tpope/vim-bundler.git
 git clone git@github.com:tpope/vim-commentary
 git clone git@github.com:tpope/vim-fugitive.git
 git clone git@github.com:tpope/vim-git
-git clone git@github.com:tpope/vim-rails.git
 git clone git@github.com:vim-airline/vim-airline
 git clone git@github.com:vimwiki/vimwiki.git
 git clone git@github.com:z0mbix/vim-shfmt.git
