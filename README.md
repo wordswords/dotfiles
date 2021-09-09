@@ -19,7 +19,7 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 4. shellcheck must be installed for Bash linting.
 5. python3 and pip3 must be installed.
 6. For shell formatting shfmt should be installed.
-7. 
+
 As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install
 the latest version of node and yarn.
 
