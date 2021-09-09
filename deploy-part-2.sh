@@ -27,6 +27,13 @@ export PATH="/usr/local/bin/:$PATH"
 # Install bash language server for coc
 sudo npm i -g bash-language-server
 
+report_progress 1 'Install LanguageTool grammar checker'
+cd ~/.dotfiles
+wget https://languagetool.org/download/LanguageTool-5.2.zip
+unzip LanguageTool-5.2.zip
+rm LanguageTool-5.2.zip
+cd -
+
 report_progress 2 'Removing existing dotfiles..'
 rm -rf ~/.vim
 rm -f ~/.vimrc

@@ -393,3 +393,12 @@ endif
 """
 """ END of bash-language-server CONFIG
 """
+
+""""
+"""" START of LanguageTool grammar checker plugin CONFIG
+""""
+let g:languagetool_jar="~/.dotfiles/LanguageTool-5.2/languagetool-commandline.jar"
+""""
+"""" END of LanguageTool grammar checker plugin CONFIG
+""""
+

@@ -57,7 +57,22 @@ the latest version of node and yarn.
 12. Use '<F12>' to toggle distraction-free writing mode.
 13. Use ':Format' to format a buffer by the coc language server's prettifer, where it exists.
 14. The <Leader> key is set to '\' - use it to access a whole lot of extra coc options.
-15. Type :Wordy<space><tab> to use the Wordy proofreading tool to check for poor words while writing, then use ]s and [s.
+15. Type :Wordy<space><tab> to use the Wordy proofreading tool to check for poor words while writing, then use <LEFT> and <RIGHT>
+16. Type :LanguageToolCheck' to use the command-line grammar and spelling checker (requires Java 8)
+
+# VIM Spellchecking/Grammar checking/Proofreading commands
+
+1. <LEFT>        - prev text error
+2. <RIGHT>       - next text error
+3. `zg`			 - Mark as a good word
+4. `zw`			 - Like `zg` but mark the word as a wrong (bad) word.
+5. `zug`         - Unmark as good word
+6. `zuw`         - Unmark as wrong (bad) word 
+7. `z=`			 - For the word under/after the cursor suggest correctly spelled words
+8. `1z=`		 - Use the first suggestion, without prompting
+9. `.`           - Redo - repeat last word replacement
+10. `:spellr`    - Repeat the replacement done by `z=` for all matches with the replaced 
+word in the current window
 
 # Modifying
 
