@@ -52,7 +52,7 @@ the latest version of node and yarn.
 11. Use 'u' to go up a root directory on nerdtree.
 12. Use '&lt;F12&gt;' to toggle distraction-free writing mode.
 13. Use ':Format' to format a buffer by the coc language server's prettifer, where it exists.
-14. The &lt;Leader&gt; key is set to '\' - use it to access a whole lot of extra coc options.
+14. The &lt;Leader&gt; key is set to '\\' - use it to access a whole lot of extra coc options.
 15. Type :Wordy<space><tab> to use the Wordy proofreading tool to check for poor words while writing, then use <LEFT> and <RIGHT>
 16. Type :LanguageToolCheck' to use the command-line grammar and spelling checker (requires Java 8)
 
