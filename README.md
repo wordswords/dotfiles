@@ -47,23 +47,23 @@ the latest version of node and yarn.
 2. Down cursor for vim.coc diagnostics window, except in text mode.
 3. Left and right cursor arrows to move through the syntaxic errors.
 4. Up cursor to toggle the file browser/NERDTree buffer.
-5. ‘>>’ and ‘<<’ to adjust indentation.
-6. ‘]s’ and ‘[s’ to browse through spelling errors/grammar errors in text modes such as raw text and markdown.
+5. ‘&gt;&gt;’ and ‘&lt;&lt;’ to adjust indentation.
+6. ‘]s’ and ‘\[s’ to browse through spelling errors/grammar errors in text modes such as raw text and markdown.
 7. 'K' to bring up documentation on the current term and use the mousewheel to scroll the info.
 8. 'gd' to go to the definition of function or class.
 9. ':G <git command>' to run a git command via vim-fugative, for example git diff, git add
 10. Use '/' and s and start typing to quickly jump to a certain term across all open buffers.
 11. Use 'u' to go up a root directory on nerdtree.
-12. Use '<F12>' to toggle distraction-free writing mode.
+12. Use '&lt;F12&gt;' to toggle distraction-free writing mode.
 13. Use ':Format' to format a buffer by the coc language server's prettifer, where it exists.
-14. The <Leader> key is set to '\' - use it to access a whole lot of extra coc options.
+14. The &lt;Leader&gt; key is set to '\' - use it to access a whole lot of extra coc options.
 15. Type :Wordy<space><tab> to use the Wordy proofreading tool to check for poor words while writing, then use <LEFT> and <RIGHT>
 16. Type :LanguageToolCheck' to use the command-line grammar and spelling checker (requires Java 8)
 
 # VIM Spellchecking/Grammar checking/Proofreading commands
 
-1. <LEFT>        - prev text error
-2. <RIGHT>       - next text error
+1. &lt;LEFT&gt;       - prev text error
+2. &lt;RIGHT&gt;      - next text error
 3. `zg`			 - Mark as a good word
 4. `zw`			 - Like `zg` but mark the word as a wrong (bad) word.
 5. `zug`         - Unmark as good word
