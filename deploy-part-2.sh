@@ -67,6 +67,7 @@ ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.vim ~/.vim
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
 
 report_progress 2 'Installing vim plugins latest version..'
 rm -rf ~/.dotfiles/.vim/bundle/*
@@ -137,9 +138,6 @@ then
 fi
 # Change extension names to the extensions you need
 npm install coc-snippets coc-tsserver coc-json coc-html coc-css coc-python --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
-
-# Install coc-settings file
-cp ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
 
 report_progress 2 'Installing vim colorscheme..'
 git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme
