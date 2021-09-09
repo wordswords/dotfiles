@@ -44,7 +44,7 @@ the latest version of node and yarn.
 3. Left and right cursor arrows to move through the syntaxic errors.
 4. Up cursor to toggle the file browser/NERDTree buffer.
 5. ‘&gt;&gt;’ and ‘&lt;&lt;’ to adjust indentation.
-6. ‘]s’ and ‘\[s’ to browse through spelling errors/grammar errors in text modes such as raw text and markdown.
+6. set mouse=a is on, if you have any problems with copying and pasting just :set mouse= beforehand.
 7. 'K' to bring up documentation on the current term and use the mousewheel to scroll the info.
 8. 'gd' to go to the definition of function or class.
 9. ':G <git command>' to run a git command via vim-fugative, for example git diff, git add
