@@ -48,7 +48,7 @@ the latest version of node and yarn.
 7. 'K' to bring up documentation on the current term and use the mousewheel to scroll the info.
 8. 'gd' to go to the definition of function or class.
 9. ':G <git command>' to run a git command via vim-fugative, for example git diff, git add
-10. Use '/' and s and start typing to quickly jump to a certain term across all open buffers.
+10. Use '/' and start typing to quickly jump to a certain term across all open buffers.
 11. Use 'u' to go up a root directory on nerdtree.
 12. Use '&lt;F12&gt;' to toggle distraction-free writing mode.
 13. Use ':Format' to format a buffer by the coc language server's prettifer, where it exists.
