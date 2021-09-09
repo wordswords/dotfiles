@@ -1,5 +1,7 @@
 # My .dotfiles
 
+![Alt text](https://i.imgur.com/TOMXk1o.png "iTerm 2 setup")
+
 # Features
 
 My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure. Tested on OSX,Linux Mint and Raspbian Linux.
@@ -12,15 +14,16 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 ![Alt text](https://i.imgur.com/IN1SwL7.png "My zsh setup")
 
+
 # Requirements
 
 1. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim.
-![Alt text](https://i.imgur.com/TOMXk1o.png "iTerm 2 setup")
 2. vim8 must be installed.
 3. git must be installed and setup with ssh for github.
 4. shellcheck must be installed for Bash linting.
 5. python3 and pip3 must be installed.
-
+6. For shell formatting shfmt should be installed.
+7. 
 As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install
 the latest version of node and yarn.
 
@@ -46,12 +49,15 @@ the latest version of node and yarn.
 4. Up cursor to toggle the file browser/NERDTree buffer.
 5. ‘>>’ and ‘<<’ to adjust indentation.
 6. ‘]s’ and ‘[s’ to browse through spelling errors/grammar errors in text modes such as raw text and markdown.
-7. 'K' to bring up documentation on the current term.
+7. 'K' to bring up documentation on the current term and use the mousewheel to scroll the info.
 8. 'gd' to go to the definition of function or class.
 9. ':G <git command>' to run a git command via vim-fugative, for example git diff, git add
 10. Use '/' and s and start typing to quickly jump to a certain term across all open buffers.
 11. Use 'u' to go up a root directory on nerdtree.
 12. Use '<F12>' to toggle distraction-free writing mode.
+13. Use ':Format' to format a buffer by the coc language server's prettifer, where it exists.
+14. The <Leader> key is set to '\' - use it to access a whole lot of extra coc options.
+15. Type :Wordy<space><tab> to use the Wordy proofreading tool to check for poor words while writing, then use ]s and [s.
 
 # Modifying
 

@@ -24,13 +24,7 @@ HISTFILESIZE=999999
 shopt -s checkwinsize
 
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;30m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-
-export PATH="~/bin/:$PATH"
-alias python="/opt/python-3.7.1/bin/python3.7"
-alias pip="/opt/python-3.7.1/bin/pip3.7"
-alias pip-sync="/opt/python-3.7.1/bin/pip-sync"
-
-zsh
-
-
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+export PATH="~/bin/:$PATH"
+export GIT_EDITOR=vim
+

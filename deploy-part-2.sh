@@ -6,6 +6,8 @@ source ./deploy-common.sh
 
 baseos=$(get_os)
 
+report_progress 1 'Deploying .dotfiles: Part 2'
+
 report_progress 1 'Installing curl'
 
 if [ "$baseos" = "osx" ]; then
@@ -14,7 +16,7 @@ else
   sudo apt-get install curl -y
 fi
 
-report_progress 1 'Installing latest nodejs'
+report_progress 1 'Installing latest nodejs and bash-language-server'
 
 # Install latest nodejs
 curl -s https://install-node.now.sh | sh -s --
@@ -22,7 +24,8 @@ export PATH="/usr/local/bin/:$PATH"
 # Or use package manager, e.g.
 # sudo apt-get install nodejs
 
-report_progress 1 'Deploying .dotfiles: Part 2'
+# Install bash language server for coc
+sudo npm i -g bash-language-server
 
 report_progress 2 'Removing existing dotfiles..'
 rm -rf ~/.vim
@@ -62,7 +65,6 @@ report_progress 2 'Installing vim plugins latest version..'
 rm -rf ~/.dotfiles/.vim/bundle/*
 cd ~/.dotfiles/.vim/bundle/ || exit 1
 
-git clone --recursive git@github.com:davidhalter/jedi-vim.git
 git clone git@github.com:Shougo/denite.nvim.git
 git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
 git clone git@github.com:ciaranm/securemodelines.git ./securemodelines
@@ -77,21 +79,15 @@ git clone git@github.com:reedes/vim-pencil
 git clone git@github.com:reedes/vim-textobj-quote
 git clone git@github.com:reedes/vim-textobj-sentence
 git clone git@github.com:reedes/vim-wordy.git
-git clone git@github.com:rhysd/vim-grammarous
 git clone git@github.com:roxma/nvim-yarp.git
 git clone git@github.com:roxma/vim-hug-neovim-rpc
 git clone git@github.com:ryanoasis/vim-devicons.git
 git clone git@github.com:scrooloose/nerdtree.git
 git clone git@github.com:tomasr/molokai.git
-git clone git@github.com:tomtom/stakeholders_vim.git
 git clone git@github.com:tpope/vim-bundler.git
-git clone git@github.com:tpope/vim-commentary
 git clone git@github.com:tpope/vim-fugitive.git
 git clone git@github.com:tpope/vim-git
 git clone git@github.com:vim-airline/vim-airline
-git clone git@github.com:vimwiki/vimwiki.git
-git clone git@github.com:z0mbix/vim-shfmt.git
-git clone https://github.com/prettier/vim-prettier
 mv ./securemodelines/plugin/* ~/.vim/plugin/
 rm -rf ./securemodelines
 
@@ -117,8 +113,6 @@ if [ ! -f package.json ]
 then
   echo '{"dependencies":{}}'> package.json
 fi
-# Change extension names to the extensions you need
-npm install coc-snippets --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
 
 report_progress 2 'Installing yarn'
 
@@ -136,6 +130,9 @@ then
 fi
 # Change extension names to the extensions you need
 npm install coc-snippets coc-tsserver coc-json coc-html coc-css coc-python coc-sh --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+
+# Install coc-settings file
+cp ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
 
 report_progress 2 'Installing vim colorscheme..'
 git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme

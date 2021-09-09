@@ -1,4 +1,4 @@
-" Pathogek plugin manager
+" Pathogen plugin manager
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -22,21 +22,25 @@ set cursorline      " highlight current line
 set splitright      " Open new vertical split windows to the right of the current one, not the left.
 set splitbelow      " See above description. Opens new windows below, not above.
 set history=1000    " 1000 previous commands remembered
-set laststatus=2    " show nonprintable characters such as tab and newlines
+set laststatus=2    " show non-printable characters such as tab and newlines
 set list            " .. and use these characters to display them
 set t_Co=256        " force 256 colour mode
 set wildmenu        " allow for menu based file navigation when opening files
 set wildmode=list:longest,full
 set noswapfile      " Don't drop swap files
+set nobackup        " required for coc vim bug
+set nowritebackup   " ^^
 set relativenumber  " Set numbering from current line
 set noerrorbells    " turn off all bells
 set visualbell      " same as above
 set t_vb=           " same as above
+set mouse=a         " turn on mouse support for scrolling coc vim popups
 autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
 set listchars=eol:$,tab:^T,trail:␠
 let g:rehash256 = 1
 let g:prettier#autoformat = 1
 
+" Default colourscheme
 colorscheme monokai256
 hi SpecialKey ctermfg=grey guifg=grey70
 hi NonText ctermfg=grey guifg=grey70
@@ -49,29 +53,40 @@ let g:secure_modelines_modelines = 15
 " Stop <> marks being inserted on all filetypes from lh-brackets plugin
 let g:cb_no_default_brackets = 1
 
-" Turn off recording
+" Turn off macro recording
 map q <Nop>
 
-" Vim fonts
-set guifont=Droid\ Sans\ Mono\ For\ Powerline\ Nerd\ Font\ Complete:h18
-let g:airline_powerline_fonts = 1
-let g:airline_section_x = '%{PencilMode()}'
-let g:powerline_symbols = 'fancy'
+" Disable F1 help launcher
+noremap <F1> :echo<CR>
+inoremap <F1> <c-o>:echo<CR>
 
+" Vim fonts for gVIM
+set guifont=Droid\ Sans\ Mono\ For\ Powerline\ Nerd\ Font\ Complete:h18
+
+" Highlighted ruler for extra focus
 highlight CursorLine term=bold cterm=bold guibg=Grey40
 highlight CursorColumn term=bold cterm=bold guibg=Grey40
 set cursorline cursorcolumn
-filetype plugin indent on " for writing plugins
 
-" Buffers
-" Enable the list of buffers
+"""
+""" vim-airline CONFIG
+"""
+
+let g:airline_powerline_fonts = 1
+let g:airline_section_x = '%{PencilMode()}'
+let g:powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
-" NERDtree plugin
-" start NERDTree up when starting up VIM
-" if a file to open is provided, open that as well in NERDTree
+"""
+""" END of vim-airline CONFIG
+"""
+
+"""
+""" NERDTree CONFIG
+"""
+
+" Startup NerdTree when vim is started
 if (expand("%"))
   autocmd VimEnter * silent NERDTree %
 else
@@ -93,18 +108,10 @@ let NERDTreeDirArrows = 1
 
 " make sure NERDTree shows hidden files/dirs
 let NERDTreeShowHidden = 1
+"
+" Pressing <UP> cursor toggles NerdTree
+noremap <UP> :NERDTreeToggle<CR>
 
-" Disable F1 help launcher
-noremap <F1> :echo<CR>
-inoremap <F1> <c-o>:echo<CR>
-
-" Tab stopped file use
-au BufRead,BufNewFile *.robot setlocal noexpandtab
-
-" Arrow keys map to cnext cprev for :grep
-let &grepprg='grep -n -R --exclude=' . shellescape(&wildignore) . ' $*'
-
-noremap <Up> :NERDTreeToggle<CR>
 
 function SetRestructuredTextOptions()
   au BufRead,BufNewFile *.rst setlocal textwidth=80
@@ -121,7 +128,13 @@ function SetMarkdownOptions()
   let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
   let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)
   setlocal spell spelllang=en_gb
+  set wrap
+  set spell
   nmap <Leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
+  "" scroll through spelling/grammar errors
+  nmap <silent> <LEFT> ]s
+  nmap <silent> <RIGHT> [s
+  nmap <silent> <DOWN> <nop>
 endfunction
 
 function SetMakefileOptions()
@@ -131,23 +144,24 @@ function SetMakefileOptions()
   set softtabstop=0
 endfunction
 
-function SetibizFileOptions()
-  colorscheme monokai256
-  set listchars+=space:␣
-  set syntax=whitespace
-  set nowrap
-  set nospell
-endfunction
-
 function SetNormalTextFileOptions()
-autocmd FileType text         call pencil#init()
-let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
-  let g:pencil#cursorwrap = 0     " 0=disable, 1=enable (def)
+  autocmd FileType text call pencil#init()
+                            \ | call litecorrect#init()
+                            \ | call lexical#init()
+                            \ | call litecorrect#init()
+                            \ | call textobj#quote#init({'educate': 0})
+                            \ | call textobj#sentence#init()
+  let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
+  let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)
   colorscheme evening
   set listchars=eol:$,tab:^T,trail:␠
   setlocal spell spelllang=en_gb
   set wrap
   set spell
+  "" scroll through spelling/grammar errors
+  nmap <silent> <LEFT> ]s
+  nmap <silent> <RIGHT> [s
+  nmap <silent> <DOWN> <nop>
 endfunction
 
 function SetPythonFileOptions()
@@ -163,11 +177,13 @@ endfunction
 autocmd FileType python call SetPythonFileOptions()
 autocmd FileType Makefile call SetMakefileOptions()
 autocmd FileType text call SetNormalTextFileOptions()
-autocmd FileType markdown call SetNormalTextFileOptions()
-autocmd BufNewFile,BufRead $HOME/repository/* call SetibizFileOptions()
-autocmd BufNewFile,BufRead /var/lib/dropwizard/* call SetibizFileOptions()
+autocmd FileType markdown call SetMarkdownOptions()
+autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
+autocmd BufRead,BufNewFile *.robot setlocal noexpandtab
+filetype plugin indent on " for writing plugins
 
-map <F12> :Goyo<CR>
+map <F12> :Goyo<CR> " this activates distraction-free mode
+
 " Wordy is only activated when editing .txt files
 let g:wordy#ring = [
   \ 'weak',
@@ -183,21 +199,6 @@ let g:wordy#ring = [
   \ 'adverbs',
   \ ]
 
-" git indicators for nerdtree
-let g:NERDTreeIndicatorMapCustom = {
-  \ "Modified"  : " ✹ ",
-  \ "Staged"    : " ✚ ",
-  \ "Untracked" : " ✭ ",
-  \ "Renamed"   : " ➜ ",
-  \ "Unmerged"  : " ",
-  \ "Deleted"   : " ✖ ",
-  \ "Dirty"     : " ✗ ",
-  \ "Clean"     : " ✔︎ ",
-  \ "Ignored"   : " ☒ ",
-  \ "Unknown"   : " ? "
-  \ }
-
-au BufRead,BufNewFile *.f90 set filetype=Fortran
 
 ""
 "" START OF COC.vim CONFIG
@@ -206,8 +207,6 @@ au BufRead,BufNewFile *.f90 set filetype=Fortran
 set hidden
 
 " Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -241,13 +240,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -327,11 +319,6 @@ vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(
 vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
-
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
@@ -368,3 +355,41 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "" END OF COC.vim CONFIG
 ""
 
+"" 
+"" nerdtree-git-plugin CONFIG
+"" 
+
+let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
+let g:NERDTreeGitStatusShowClean = 1 " default: 0
+let g:NERDTreeGitStatusUntrackedFilesMode = 'all' " a heavy feature too. default: normal
+let g:NERDTreeGitStatusShowIgnored = 1 " a heavy feature may cost much more time. default: 0
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+
+"""
+""" END of nerdtree-git-plugin CONFIG
+"""
+
+"""
+""" START of bash-language-server CONFIG
+"""
+if executable('bash-language-server')
+  au User lsp_setup call lsp#register_server({
+        \ 'name': 'bash-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+        \ 'allowlist': ['sh'],
+        \ })
+endif
+"""
+""" END of bash-language-server CONFIG
+"""
