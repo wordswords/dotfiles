@@ -1,14 +1,10 @@
 # My .dotfiles
 
-![Alt text](https://i.imgur.com/TOMXk1o.png "iTerm 2 setup")
+![Alt text](https://i.imgur.com/UNar5Rm.png "VIM setup")
 
 # Features
 
 My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure. Tested on OSX,Linux Mint and Raspbian Linux.
-
-## Vim:
-
-![Alt text](https://i.imgur.com/LsisDfP.png "My vim setup")
 
 ## Shell:
 
