@@ -112,6 +112,13 @@ let NERDTreeShowHidden = 1
 " Pressing <UP> cursor toggles NerdTree
 noremap <UP> :NERDTreeToggle<CR>
 
+""
+"" END OF Nerdtree CONFIG
+""
+
+""
+"" Filetype formats/autocmd CONFIG
+""
 
 function SetRestructuredTextOptions()
   au BufRead,BufNewFile *.rst setlocal textwidth=80
@@ -182,9 +189,25 @@ autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
 autocmd BufRead,BufNewFile *.robot setlocal noexpandtab
 filetype plugin indent on " for writing plugins
 
+""
+"" END of Filetype formats/autocmd CONFIG
+""
+
+""
+"" Goyo CONFIG
+""
+
 map <F12> :Goyo<CR> " this activates distraction-free mode
 
-" Wordy is only activated when editing .txt files
+""
+"" END of Goyo CONFIG
+""
+
+""
+"" Wordy CONFIG
+""
+
+" Wordy is only activated when editing text files
 let g:wordy#ring = [
   \ 'weak',
   \ ['being', 'passive-voice', ],
@@ -199,6 +222,9 @@ let g:wordy#ring = [
   \ 'adverbs',
   \ ]
 
+""
+"" END of Wordy CONFIG
+""
 
 ""
 "" START OF COC.vim CONFIG
