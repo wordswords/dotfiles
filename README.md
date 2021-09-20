@@ -35,6 +35,7 @@ the latest version of node and yarn.
 1. Control-R for previous commands.
 2. Type 'z' and a directory name accessible from your current directory to cd to that directory, no need to type cd.
 3. Type ‘l’ for a long-style ls.
+4. Type 'please' to repeat the last command with sudo.
 
 # VIM Key bindings
 
