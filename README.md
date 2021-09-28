@@ -80,7 +80,24 @@ word in the current window
 6. `:diffg LO`  " get from LOCAL
 7. These arguments also work on ranges, for example you can select all of the file and then use a range to `diffg LO`
 8. `wq` to save and commit the merge.
+ 
+# Git stuff I keep forgetting
 
+1. `git commit --amend` - roll the current commit into the previous one and edit the previous commit message
+2. `git branch` - show the current branches on your local copy
+3. `git stash push` - push to the stash, puts all non-commited files on the stash
+4. `git stash pop` - pop whatever is on to stash to the local copy.
+5. `git checkout -b <new branch name>` - create a new branch and switch to it
+6. `git rebase -i HEAD~2` - perform an interactive rebase on the last two commits
+7. `git pull origin master` or `git pull origin main` - pull and merge master/main into your current local branch
+8. Use 'main' instead of 'master' for all future repos - everyone is doing it.
+9. `git difftool` - use wherever you would use git diff - it's much more useful.
+10. `git blame` - use to figure out which committer did what on a file.
+11. When all goes horribly wrong, backup your changed files, delete your entire local copy, checkout again from master, 
+    and rebuild your commit by copying the backed up files in.
+12. Use github PR's 'changed files' tab for exactly what has changed, but don't forget the commits tab, there should only 
+    usually be one commit per PR. And remember the revert button on Github PRs. 
+ 
 # Modifying
 
 If you want, you can fork this repo and base your config on this. If you have any problems using these dotfiles please let me know and I can help you.
