@@ -156,6 +156,9 @@ report_progress 2 'Setting default git config.. change this if you are not David
 # email address
 git config --global core.editor vim
 git config --global user.name "David Craddock"
+git config merge.tool vimdiff
+git config merge.conflictstyle diff3
+git config mergetool.prompt false
 
 report_progress 1 'Deploy script finished.'
 if [ "$baseos" = "osx" ]; then
