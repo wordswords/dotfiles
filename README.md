@@ -74,10 +74,12 @@ word in the current window
  
 1. When a merge is started and conflicts are found, run `git mergetool`
 2. REMOTE = whatever is in the repo, BASE = whatever was the previous commit, LOCAL = whatever is in your local copy
-3. `:diffg RE`  " get from REMOTE
-4. `:diffg BA`  " get from BASE
-5. `:diffg LO`  " get from LOCAL
-6. These arguments also work on ranges, for example you can select all of the file and then use a range to `diffg LO`
+3. Move to the change you want to select `/>>>>` will search through the file for them.
+4. `:diffg RE`  " get from REMOTE
+5. `:diffg BA`  " get from BASE
+6. `:diffg LO`  " get from LOCAL
+7. These arguments also work on ranges, for example you can select all of the file and then use a range to `diffg LO`
+8. `wq` to save and commit the merge.
 
 # Modifying
 
