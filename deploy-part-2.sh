@@ -159,6 +159,7 @@ git config --global user.name "David Craddock"
 git config merge.tool vimdiff
 git config merge.conflictstyle diff3
 git config mergetool.prompt false
+git config diff.tool vimdiff
 
 report_progress 1 'Deploy script finished.'
 if [ "$baseos" = "osx" ]; then
