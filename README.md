@@ -70,6 +70,15 @@ the latest version of node and yarn.
 10. `:spellr`    - Repeat the replacement done by `z=` for all matches with the replaced 
 word in the current window
 
+# Mergetool - VIMdiff
+ 
+1. When a merge is started and conflicts are found, run `git mergetool`
+2. REMOTE = whatever is in the repo, BASE = whatever was the previous commit, LOCAL = whatever is in your local copy
+3. `:diffg RE`  " get from REMOTE
+4. `:diffg BA`  " get from BASE
+5. `:diffg LO`  " get from LOCAL
+6. These arguments also work on ranges, for example you can select all of the file and then use a range to `diffg LO`
+
 # Modifying
 
 If you want, you can fork this repo and base your config on this. If you have any problems using these dotfiles please let me know and I can help you.
