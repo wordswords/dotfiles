@@ -74,7 +74,7 @@ word in the current window
  
 1. When a merge is started and conflicts are found, run `git mergetool`
 2. REMOTE = whatever is in the repo, BASE = whatever was the previous commit, LOCAL = whatever is in your local copy
-3. Move to the change you want to select `/>>>>` will search through the file for them.
+3. Move to the bottom window and the change you want to select `/>>>>` will search through the file for them.
 4. `:diffg RE`  " get from REMOTE
 5. `:diffg BA`  " get from BASE
 6. `:diffg LO`  " get from LOCAL
