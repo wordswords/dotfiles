@@ -8,7 +8,7 @@ baseos=$(get_os)
 
 report_progress 1 'Deploying .dotfiles: Part 2'
 
-report_progress 1 'Installing curl'
+report_progress 2 'Installing curl'
 
 if [ "$baseos" = "osx" ]; then
   brew install curl
@@ -16,7 +16,7 @@ else
   sudo apt-get install curl -y
 fi
 
-report_progress 1 'Installing latest nodejs and bash-language-server'
+report_progress 2 'Installing latest nodejs and bash-language-server'
 
 # Install latest nodejs
 curl -s https://install-node.now.sh | sh -s --
@@ -27,7 +27,7 @@ export PATH="/usr/local/bin/:$PATH"
 # Install bash language server for coc
 sudo npm i -g bash-language-server
 
-report_progress 1 'Install LanguageTool grammar checker'
+report_progress 2 'Install LanguageTool grammar checker'
 cd ~/.dotfiles
 wget https://languagetool.org/download/LanguageTool-5.2.zip
 unzip LanguageTool-5.2.zip
@@ -160,6 +160,18 @@ git config merge.tool vimdiff
 git config merge.conflictstyle diff3
 git config mergetool.prompt false
 git config diff.tool vimdiff
+
+report_progress 2 'Installing and configuring Joplin notetaking app'
+if [ "$baseos" = "osx" ]; then
+    brew install joplin
+else
+    sudo apt install joplin
+fi
+
+joplin config --import < ~/.dotfiles/joplin.config
+
+report_progress 2 'You will now be asked to log into dropbox'
+joplin sync
 
 report_progress 1 'Deploy script finished.'
 if [ "$baseos" = "osx" ]; then
