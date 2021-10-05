@@ -165,7 +165,7 @@ report_progress 2 'Installing and configuring Joplin notetaking app'
 if [ "$baseos" = "osx" ]; then
     brew install joplin
 else
-    sudo apt install joplin
+    sudo apt install joplin || snap install joplin
 fi
 
 joplin config --import < ~/.dotfiles/joplin.config
