@@ -4,6 +4,10 @@
 # Load in status message printing functions
 source ./deploy-common.sh
 
+if [ "$baseos" = "linux" ]; then
+    sudo apt update
+fi
+
 baseos=$(get_os)
 
 report_progress 1 'Deploying .dotfiles: Part 2'
@@ -13,7 +17,7 @@ report_progress 2 'Installing curl'
 if [ "$baseos" = "osx" ]; then
   brew install curl
 else
-  sudo apt-get install curl -y
+  sudo apt install curl -y
 fi
 
 report_progress 2 'Installing latest nodejs and bash-language-server'
@@ -22,7 +26,7 @@ report_progress 2 'Installing latest nodejs and bash-language-server'
 curl -s https://install-node.now.sh | sh -s --
 export PATH="/usr/local/bin/:$PATH"
 # Or use package manager, e.g.
-# sudo apt-get install nodejs
+# sudo apt install nodejs
 
 # Install bash language server for coc
 sudo npm i -g bash-language-server
