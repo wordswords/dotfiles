@@ -22,7 +22,7 @@ This is a simple description of how I work 99% of the time, as I am a simpleton.
 7. Often at this point I find I have to add new commits to fix things I have broken or have been flagged up in PR review.
   1. ```git commit```
   2. ```git push origin <branch name which will be made into a PR>```
-8. Reviewers now have some of their comments made on stale commits in Github. This is better than squashing the commits I find because sometimes the commits are not stale and their comments are still valid, and it becomes easier to keep track of. They can view the 'files changed' tab to add review comments until they are happy. I loop back to check whether master/main has diverged, and if it hasn't just keep adding commits.
+8. Reviewers now have some of their comments made on stale commits in Github. This is better than squashing the commits I find because sometimes the commits are not stale and their comments are still valid, and it becomes easier to keep track of. They can view the 'files changed' tab to add review comments until they are happy. I loop back to check whether master/main has diverged, and if it hasn't just keep adding commits to address their concerns.
 9. The PR gets approved (hopefully)
 10. I merge the PR into master or main
 11. I delete the old branch
