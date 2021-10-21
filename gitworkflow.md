@@ -4,7 +4,6 @@ This is a simple description of how I work 99% of the time, as I am a simpleton.
 
 1. I first make sure I am uptodate on origin/master or origin/main by git pulling.
   1. ```git checkout origin master```
-Reviewers now have some of their comments made on stale commits in Github. This is better than squashing the commits I find because sometimes the commits are not stale and their comments are still valid, and it becomes easier to keep track of. They can view the 'files changed' tab to add review comments until they are happy. I loop back to steps 6 and 7 until it is approved.
   2. ```git pull origin master```
 2. I start making changes to the local copy on my local machine.
 3. When it gets to a point where I want to save my changes, I:
