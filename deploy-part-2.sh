@@ -112,8 +112,6 @@ cd -
 
 report_progress 2 'Installing vim8/coc'
 
-# Use package feature to install coc.nvim
-
 # for vim8
 mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
@@ -159,11 +157,12 @@ pip3 install --user pynvim
 report_progress 2 'Setting default git config.. change this if you are not David Craddock!'
 # Git configuration for the default user, will still have to specify
 # email address
+rm ~/.gitconfig
 git config --global core.editor vim
 git config --global user.name "David Craddock"
 git config --global diff.tool vimdiff
 git config --global merge.conflictstyle diff3
-git config --global merge.tool vimdiff
+git config --global merge.tool vimdiff3
 git config --global mergetool.keepBackup false
 git config --global mergetool.prompt false
 
