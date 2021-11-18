@@ -63,15 +63,16 @@ else
 fi
 
 report_progress 2 'Setting up symbolic links..'
-ln -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
-ln -s ~/.dotfiles/.bash_aliases ~/.zsh_aliases
-ln -s ~/.dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/.bash_profile_remote ~/.bash_profile_remote
-ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/.vim ~/.vim
-ln -s ~/.dotfiles/.vimrc ~/.vimrc
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
+ln --force -s ~/.dotfiles/.bash_aliases ~/.bash_aliases
+ln --force -s ~/.dotfiles/.bash_aliases ~/.zsh_aliases
+ln --force -s ~/.dotfiles/.bash_profile ~/.bash_profile
+ln --force -s ~/.dotfiles/.bash_profile_remote ~/.bash_profile_remote
+ln --force -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln --force -s -n ~/.dotfiles/.vim ~/.vim
+ln --force -s -n ~/.dotfiles/.e ~/.e
+ln --force -s ~/.dotfiles/.vimrc ~/.vimrc
+ln --force -s ~/.dotfiles/.zshrc ~/.zshrc
+ln --force -s ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
 
 report_progress 2 'Installing vim plugins latest version..'
 rm -rf ~/.dotfiles/.vim/bundle/*
@@ -160,11 +161,11 @@ report_progress 2 'Setting default git config.. change this if you are not David
 # email address
 git config --global core.editor vim
 git config --global user.name "David Craddock"
-git config diff.tool vimdiff
-git config merge.conflictstyle diff3
-git config merge.tool vimdiff
-git config mergetool.keepBackup false
-git config mergetool.prompt false
+git config --global diff.tool vimdiff
+git config --global merge.conflictstyle diff3
+git config --global merge.tool vimdiff
+git config --global mergetool.keepBackup false
+git config --global mergetool.prompt false
 
 report_progress 2 'Installing and configuring Joplin notetaking app'
 if [ "$baseos" = "osx" ]; then
@@ -179,6 +180,7 @@ report_progress 2 'You will now be asked to log into dropbox'
 joplin sync
 
 report_progress 1 'Deploy script finished.'
+
 if [ "$baseos" = "osx" ]; then
   echo "NEXT STEPS: If using iterm2, set your font in iterm2 settings to a Powerline font both for ASCII and non-ASCII font types!"
   echo "After this, run deploy-iterm2-default-profile.sh"
@@ -186,3 +188,4 @@ else
   echo "NEXT STEPS: Linux detected. You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
   echo "After this, you will have to set your terminal emulator to use said font."
 fi
+

@@ -3,42 +3,41 @@ call pathogen#infect()
 call pathogen#helptags()
 
 syntax enable
-set encoding=utf8
-set backspace=2     " backspace back up a line
-set ts=4            " each tab is two spaces
-set background=dark " dark background, light foreground
-set ls=2            " always show status line
-set expandtab       " always expand tabs
-set shiftwidth=2    " numbers of spaces to (auto)indent
-set scrolloff=3     " keep 3 lines when scrolling
-set showcmd         " display incomplete commands
-set hlsearch        " highlight searches
-set incsearch       " do incremental searching
-set ruler           " show the cursor position all the time
-set number          " show line numbers
-set ignorecase      " ignore case when searching
-set ttyfast         " smoother changes
-set cursorline      " highlight current line
-set splitright      " Open new vertical split windows to the right of the current one, not the left.
-set splitbelow      " See above description. Opens new windows below, not above.
+set background=dark " Dark background, light foreground
+set backspace=2     " Backspace back up a line
+set cursorline      " Highlight current line
+set encoding=utf8   " Enforce UTF8 encoding
+set expandtab       " Always expand tabs
 set history=1000    " 1000 previous commands remembered
-set laststatus=2    " show non-printable characters such as tab and newlines
-set list            " .. and use these characters to display them
-set t_Co=256        " force 256 colour mode
-set wildmenu        " allow for menu based file navigation when opening files
-set wildmode=list:longest,full
-set noswapfile      " Don't drop swap files
-set nobackup        " required for coc vim bug
-set nowritebackup   " ^^
-set relativenumber  " Set numbering from current line
-set noerrorbells    " turn off all bells
-set visualbell      " same as above
-set t_vb=           " same as above
-set mouse=a         " turn on mouse support for scrolling coc vim popups
-autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
+set hlsearch        " Highlight searches
+set ignorecase      " Ignore case when searching
+set incsearch       " Do incremental searching
+set laststatus=2    " Show non-printable characters such as tab and newlines
+set list            " Use the following list characters to display non-printable chars
 set listchars=eol:$,tab:^T,trail:␠
-let g:rehash256 = 1
-let g:prettier#autoformat = 1
+set ls=2            " Always show status line
+set nobackup        " Required for coc vim bug
+set noerrorbells    " Turn off all bells
+set noswapfile      " Don't drop swap files
+set nowritebackup   " Don't drop backup files
+set number          " Show line numbers
+set relativenumber  " Set numbering from current line
+set ruler           " Show the cursor position all the time
+set scrolloff=3     " Keep 3 lines when scrolling
+set shiftwidth=2    " Numbers of spaces to (auto)indent
+set showcmd         " Display incomplete commands
+set splitbelow      " Opens new windows below, not above
+set splitright      " Open new vertical split windows to the right of the current one, not the left
+set t_Co=256        " Force 256 colour mode
+set t_vb=           " Visual bell off
+set ts=4            " Each tab is four spaces
+set ttyfast         " Smoother changes
+set wildmenu        " Allow for menu based file navigation when opening files
+set wildmode=list:longest,full
+
+autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
+let g:prettier#autoformat = 1 " Prettier code formatter automatically format files
+let g:rehash256 = 1 " Ensure 256 color mode
 
 " Default colourscheme
 colorscheme monokai256
@@ -231,8 +230,6 @@ let g:wordy#ring = [
 ""
 
 set hidden
-
-" Some servers have issues with backup files, see #649.
 
 " Give more space for displaying messages.
 set cmdheight=2

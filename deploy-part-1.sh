@@ -16,17 +16,19 @@ fi
 report_progress 2 'Backing up existing dotfiles to ~/.olddotfiles..'
 rm -rf ~/.olddotfiles
 mkdir -p ~/.olddotfiles
-cp ~/.vimrc ~/.olddotfiles/.vimrc
-cp ~/.bash_profile ~/.olddotfiles/.bash_profile
-cp ~/.zshrc* ~/.olddotfiles/
 
 if [ "$baseos" = "osx" ]; then
-  /usr/bin/env gcp -R ~/.oh-my-zsh ~/.olddotfiles/.oh-my-zsh
-  /usr/bin/env gcp -R ~/.vim ~/.olddotfiles/
-else
-  cp -R ~/.oh-my-zsh ~/.olddotfiles/.oh-my-zsh
-  cp -R ~/.vim ~/.olddotfiles/
+  alias cp='/usr/bin/env gcp'
 fi
+
+cp -RL ~/.e ~/.olddotfiles/.e
+cp -RL ~/.vim ~/.olddotfiles/.vim
+cp -RL ~/.zsh* ~/.olddotfiles/
+cp -RL ~/.oh_my_zsh ~/.olddotfiles/
+cp -L ~/.bash_aliases ~/.olddotfiles/.bash_aliases
+cp -L ~/.bash_profile ~/.olddotfiles/.bash_profile
+cp -L ~/.tmux.conf ~/.olddotfiles/.tmux.conf
+cp -L ~/.vimrc ~/.olddotfiles/.vimrc
 
 report_progress 2 'Removing existing zsh config..'
 rm -rf ~/.zshrc
