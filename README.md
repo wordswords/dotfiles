@@ -4,7 +4,7 @@
 
 # Features
 
-My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure. Tested on OSX,Linux Mint and Raspbian Linux.
+My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure. Tested on OSX, Ubuntu, Linux Mint and Raspbian Linux.
 
 ## Shell:
 
