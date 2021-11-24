@@ -25,42 +25,41 @@ the latest version of yarn.
 
 # Install
 
-1. git clone git@github.com:/wordswords/dotfiles ./dotfiles/
-2. cd ~/.dotfiles/
-3. ./deploy-part-1.sh
-4. Press control-D to drop out of oh-my-zsh
-5. ./deploy-part-2.sh
+1. `git clone git@github.com:/wordswords/dotfiles ./dotfiles/`
+2. `cd ~/.dotfiles/`
+3. `./deploy-part-1.sh`
+4. Press `control-D` to drop out of oh-my-zsh
+5. `./deploy-part-2.sh`
 
 # Shell shortcuts
 
 1. Control-R for previous commands.
-2. Type 'z' and a directory name accessible from your current directory to cd to that directory, no need to type cd.
-3. Type ‘l’ for a long-style ls.
-4. Type 'please' to repeat the last command with sudo.
+2. Type `z` and a directory name accessible from your current directory to cd to that directory, no need to type cd.
+3. Type `l` for a long-style ls.
 
 # VIM Key bindings
 
-1. &lt;Tab&gt; to activate autocomplete plug ins.
+1. `<tab>` to activate autocomplete plug ins.
 2. Down cursor for vim.coc diagnostics window, except in text mode.
 3. Left and right cursor arrows to move through the syntaxic errors.
 4. Up cursor to toggle the file browser/NERDTree buffer.
-5. ‘&gt;&gt;’ and ‘&lt;&lt;’ to adjust indentation.
-6. set mouse=a is on, if you have any problems with copying and pasting just :set mouse= beforehand.
-7. 'K' to bring up documentation on the current term and use the mousewheel to scroll the info.
-8. 'gd' to go to the definition of function or class.
-9. ':G <git command>' to run a git command via vim-fugative, for example git diff, git add
-10. Use '/' and start typing to quickly jump to a certain term across all open buffers.
-11. Use 'u' to go up a root directory on nerdtree.
-12. Use '&lt;F12&gt;' to toggle distraction-free writing mode.
-13. Use ':Format' to format a buffer by the coc language server's prettifer, where it exists.
-14. The &lt;Leader&gt; key is set to '\\' - use it to access a whole lot of extra coc options.
-15. Type :Wordy&lt;space&gt;&lt;tab&gt; to use the Wordy proofreading tool to check for poor words while writing.
-16. Type :LanguageToolCheck' to use the command-line grammar and spelling checker (requires Java 8).
+5. `>>` and `<<` to adjust indentation.
+6. `set mouse=a` is on, if you have any problems with copying and pasting just :set mouse= beforehand.
+7. `K` to bring up documentation on the current term and use the mousewheel to scroll the info.
+8. `gd` to go to the definition of function or class.
+9. `:G <git command>` to run a git command via vim-fugative, for example `git diff`, `git add`
+10. Use `/` and start typing to quickly jump to a certain term across all open buffers.
+11. Use `u` to go up a root directory on nerdtree.
+12. Use `<F12>` to toggle distraction-free writing mode.
+13. Use `:Format` to format a buffer by the coc language server's prettifer, where it exists.
+14. The "Leader" key is set to `\` - use it to access a whole lot of extra coc options.
+15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for poor words while writing.
+16. Type `:LanguageToolCheck`' to use the command-line grammar and spelling checker (requires Java 8).
 
 # VIM Spellchecking/Grammar checking/Proofreading commands
 
-1. &lt;LEFT&gt;       - prev text error
-2. &lt;RIGHT&gt;      - next text error
+1. `<LEFT>`       - prev text error
+2. `<RIGHT>`      - next text error
 3. `zg`			 - Mark as a good word
 4. `zw`			 - Like `zg` but mark the word as a wrong (bad) word.
 5. `zug`         - Unmark as good word
