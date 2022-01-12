@@ -36,6 +36,7 @@ the latest version of yarn.
 1. Control-R for previous commands.
 2. Type `z` and a directory name accessible from your current directory to cd to that directory, no need to type cd.
 3. Type `l` for a long-style ls.
+4. `vimdiff <file1> <file2>` for a nice 2 way diff style interface where you can analyse and easily copy changes between files.
 
 # VIM Key bindings
 
