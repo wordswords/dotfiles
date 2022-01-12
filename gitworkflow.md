@@ -15,10 +15,9 @@ This is a simple description of how I work 99% of the time, as I am a simpleton.
 5. When I am ready to create the PR, I create and push to the remote branch:
   1. ```git push origin <branch name which will be made into a PR>```
 6. Github will tell me if master/main has diverged past a state where my commits can be merged in without conflict. If there is a possible conflict, I will merge in origin master/main to my local copy and then push to the PR branch again:
-  1. ```git checkout <branch name which will be made into a PR>```
-  2. ```git pull origin master (or origin main)```
-  3. I resolve locally conflicts through ```git mergetool``` which, for me, is vim's three way diff tool.
-  4. I commit the updated conflicts and push to the remote branch - ```git add && git commit && git push origin <branch name which will be made into a PR>```
+  1. ```git pull origin master (or origin main)```
+  2. I resolve locally conflicts through ```git mergetool``` which, for me, is vim's three way diff tool.
+  3. I commit the updated conflicts and push to the remote branch - ```git add && git commit && git push origin <branch name which will be made into a PR>```
 7. Often at this point I find I have to add new commits to fix things I have broken or have been flagged up in PR review.
   1. ```git commit```
   2. ```git push origin <branch name which will be made into a PR>```
