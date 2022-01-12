@@ -27,7 +27,6 @@ cp -RL ~/.zsh* ~/.olddotfiles/
 cp -RL ~/.oh_my_zsh ~/.olddotfiles/
 cp -L ~/.bash_aliases ~/.olddotfiles/.bash_aliases
 cp -L ~/.bash_profile ~/.olddotfiles/.bash_profile
-cp -L ~/.tmux.conf ~/.olddotfiles/.tmux.conf
 cp -L ~/.vimrc ~/.olddotfiles/.vimrc
 
 report_progress 2 'Removing existing zsh config..'
