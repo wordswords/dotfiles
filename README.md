@@ -106,6 +106,15 @@ word in the current window
 
 Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
  
+# Docker/Docker Compose
+ 
+1. `docker system prune -a` - remove all unused Docker container images. This is essential to do occasionally to reclaim disk space.
+2. `docker-compose --rm <service>` - execute <service> providing there is a docker-compose.yml file in the current directory describing <service>.
+3. `docker ps` - status information on all running docker containers.
+4. `docker-compose ps` - status information on all running docker-compose services.
+5. `docker-compose run <service> <bash_command>` - run a quick bash command. <service> must be a valid docker-compose service. For example `docker-compose run wordpress cat /etc/issue`.
+6. `docker logs <service>` - output the logs for a service. This is the <service> name from `docker-compose ps`.
+ 
 # Modifying
 
 If you want, you can fork this repo and base your config on this. If you have any problems using these dotfiles please let me know and I can help you.
