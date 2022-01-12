@@ -165,6 +165,7 @@ git config --global merge.conflictstyle diff3
 git config --global merge.tool vimdiff3
 git config --global mergetool.keepBackup false
 git config --global mergetool.prompt false
+git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 report_progress 2 'Installing and configuring Joplin notetaking app'
 if [ "$baseos" = "osx" ]; then
