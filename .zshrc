@@ -78,12 +78,14 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 plugins=(
-  git
   bundler
+  docker
+  docker-compose
+  git
   osx
   python
-  zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-syntax-highlighting
   zsh-z
 )
 
@@ -110,4 +112,7 @@ zstyle ':completion:*' menu select
 source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# secrets
+source ~/.dotfiles/secrets/KABOODLE_SECRETS.sh
 
