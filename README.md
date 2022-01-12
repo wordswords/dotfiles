@@ -99,6 +99,8 @@ word in the current window
 12. Use github PR's 'changed files' tab for exactly what has changed, but don't forget the commits tab, there should only 
     usually be one commit per PR. And remember the revert button on Github PRs. 
 13. `git logline` for my custom oneline per commit log alias which includes useful extra information, see: https://ma.ttias.be/pretty-git-log-in-one-line/
+14. `git checkout -- <filepath>` - this will overwrite your local changes to the file at <filepath> and restore the version in the latest commit on your branch.
+15. `git checkout <hash> <filepath>` - this will checkout a previous version of the file from the <hash> commit. A useful technique for restoring a change from a previous commit is to copy the current <filepath> to <filepath.bak>, checkout the hash version of <filepath>, and use vimdiff <filepath> <filepath.bak> to copy a change over from the previous commit, and then rm <filepath> and mv <filepath.bak> to <filepath>.
 
 Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
  
