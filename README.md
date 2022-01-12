@@ -98,6 +98,7 @@ word in the current window
     and rebuild your commit by copying the backed up files in.
 12. Use github PR's 'changed files' tab for exactly what has changed, but don't forget the commits tab, there should only 
     usually be one commit per PR. And remember the revert button on Github PRs. 
+13. `git logline` for my custom oneline per commit log alias which includes useful extra information, see: https://ma.ttias.be/pretty-git-log-in-one-line/
 
 Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
  
