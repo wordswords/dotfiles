@@ -55,6 +55,7 @@ the latest version of yarn.
 14. The "Leader" key is set to `\` - use it to access a whole lot of extra coc options.
 15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for poor words while writing.
 16. Type `:LanguageToolCheck`' to use the command-line grammar and spelling checker (requires Java 8).
+17. Use `:G blame` to see a line-by-line overview in the editor of what commit touched each line, and who committed it.
 
 # VIM Spellchecking/Grammar checking/Proofreading commands
 
@@ -83,20 +84,22 @@ word in the current window
  
 # Git stuff I keep forgetting
 
-1. `git commit --amend` - roll the current commit into the previous one and edit the previous commit message
-2. `git branch` - show the current branches on your local copy
-3. `git stash push` - push to the stash, puts all non-commited files on the stash
-4. `git stash pop` - pop whatever is on to stash to the local copy.
-5. `git checkout -b <new branch name>` - create a new branch and switch to it
-6. `git rebase -i HEAD~2` - perform an interactive rebase on the last two commits
-7. `git pull origin master` or `git pull origin main` - pull and merge master/main into your current local branch
-8. Use 'main' instead of 'master' for all future repos - everyone is doing it.
-9. `git difftool` - use wherever you would use git diff - it's much more useful.
-10. `git blame` - use to figure out which committer did what on a file.
+1. `git status` - will tell you what branch you're on and what files have changed. Use this all the time.
+2. `git commit --amend` - roll the current commit into the previous one and edit the previous commit message
+3. `git branch` - show the current branches on your local copy
+4. `git stash push` - push to the stash, puts all non-commited files on the stash
+5. `git stash pop` - pop whatever is on to stash to the local copy.
+6. `git checkout -b <new branch name>` - create a new branch and switch to it
+7. `git rebase -i HEAD~3` - perform an interactive rebase on the last *two* commits..eg you always want to +1 to the number. Be careful with this.
+8. `git pull origin master` or `git pull origin main` - pull and merge master/main into your current local branch
+9. Use 'main' instead of 'master' for all future repos - everyone is doing it.
+10. `git difftool` - use wherever you would use git diff - it's much more useful.
 11. When all goes horribly wrong, backup your changed files, delete your entire local copy, checkout again from master, 
     and rebuild your commit by copying the backed up files in.
 12. Use github PR's 'changed files' tab for exactly what has changed, but don't forget the commits tab, there should only 
     usually be one commit per PR. And remember the revert button on Github PRs. 
+
+Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
  
 # Modifying
 
