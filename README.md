@@ -13,7 +13,7 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 # Requirements
 
-1. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim.
+1. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim. This is not a prerequisite, it will show you how to install it at the end of the dotfile deployment.
 2. vim8 must be installed.
 3. git must be installed and setup with ssh for github.
 4. python3 and pip3 must be installed.
