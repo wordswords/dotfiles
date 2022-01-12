@@ -90,7 +90,7 @@ word in the current window
 4. `git stash push` - push to the stash, puts all non-commited files on the stash
 5. `git stash pop` - pop whatever is on to stash to the local copy.
 6. `git checkout -b <new branch name>` - create a new branch and switch to it
-7. `git rebase -i HEAD~3` - perform an interactive rebase on the last *two* commits..eg you always want to +1 to the number. Be careful with this.
+7. `git rebase -i HEAD~3` - perform an interactive rebase on the last _2_ commits..eg you always want to +1 to the number. Be careful with this.
 8. `git pull origin master` or `git pull origin main` - pull and merge master/main into your current local branch
 9. Use 'main' instead of 'master' for all future repos - everyone is doing it.
 10. `git difftool` - use wherever you would use git diff - it's much more useful.
