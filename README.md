@@ -95,7 +95,7 @@ word in the current window
 9. Use 'main' instead of 'master' for all future repos - everyone is doing it.
 10. `git difftool` - use wherever you would use git diff - it's much more useful.
 11. `git mergetool` - use whenever you have merges to make, see above.
-12. When all goes horribly wrong, backup your changed files, delete your entire local copy, checkout again from master, 
+12. When all goes horribly wrong, backup your changed files by manually mving them out of the repo directory, delete your entire local copy, checkout again from master, 
     and rebuild your commit by copying the backed up files in.
 12. Use github PR's 'changed files' tab for exactly what has changed, but don't forget the commits tab, there should only 
     usually be one commit per PR. And remember the revert button on Github PRs. 
