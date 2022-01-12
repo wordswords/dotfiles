@@ -1,4 +1,4 @@
-# My Simple Commandline Git Workflow
+# My Simpleton Commandline Git Workflow
 
 This is a simple description of how I work 99% of the time, as I am a simpleton. Origin/main is the new origin/master for future repositories, I just note both here for completeness because I use origin master for a lot of current repos.
 
