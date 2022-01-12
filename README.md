@@ -114,7 +114,8 @@ Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles
 4. `docker-compose ps` - status information on all running docker-compose services.
 5. `docker-compose run <service> <bash_command>` - run a quick bash command. `<service>` must be a valid docker-compose service. For example `docker-compose run wordpress cat /etc/issue`.
 6. `docker logs <service>` - output the logs for a service. This is the `<service>` name from `docker-compose ps`.
- 
+7. `docker build .` - builds the container described in the `Dockerfile` from the local directory.
+
 # Modifying
 
 If you want, you can fork this repo and base your config on this. If you have any problems using these dotfiles please let me know and I can help you.
