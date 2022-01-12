@@ -85,7 +85,7 @@ word in the current window
 # Git stuff I keep forgetting
 
 1. `git status` - will tell you what branch you're on and what files have changed. Use this all the time.
-2. `git commit --amend` - roll the current commit into the previous one and edit the previous commit message
+2. `git commit --amend` and `git rebase -i HEAD~2` - roll the current commit into the previous one and edit the previous commit message. Use the rebase to squash the commit.
 3. `git branch` - show the current branches on your local copy
 4. `git stash push` - push to the stash, puts all non-commited files on the stash
 5. `git stash pop` - pop whatever is on to stash to the local copy.
