@@ -19,6 +19,7 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 4. python3 and pip3 must be installed.
 5. For grammar checking Java 8 should be installed.
 6. Latest versions of Node and npm must be installed.
+7. zsh must be installed.
 
 # What it does
 
