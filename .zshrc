@@ -113,6 +113,8 @@ source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# latest node version first
+export PATH="/usr/local/bin/:$PATH"
 # secrets
 source ~/.dotfiles/secrets/KABOODLE_SECRETS.sh
 

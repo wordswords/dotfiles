@@ -23,7 +23,7 @@ fi
 report_progress 2 'Installing latest nodejs and bash-language-server'
 
 # Install latest nodejs
-curl -s https://install-node.now.sh | sh -s --
+curl -sfLS install-node.vercel.app/lts | sudo bash
 export PATH="/usr/local/bin/:$PATH"
 # Or use package manager, e.g.
 # sudo apt install nodejs
