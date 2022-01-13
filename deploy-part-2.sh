@@ -117,14 +117,6 @@ mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
 curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -
 
-# Install extensions
-mkdir -p ~/.config/coc/extensions
-cd ~/.config/coc/extensions
-if [ ! -f package.json ]
-then
-  echo '{"dependencies":{}}'> package.json
-fi
-
 report_progress 2 'Installing yarn'
 
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
@@ -132,7 +124,6 @@ export PATH=$PATH:~/.yarn/bin
 yarn config set "strict-ssl" false -g
 
 report_progress 2 'Installing vim8/coc extensions'
-# Install extensions
 mkdir -p ~/.config/coc/extensions
 cd ~/.config/coc/extensions
 if [ ! -f package.json ]
