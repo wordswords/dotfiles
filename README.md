@@ -53,7 +53,7 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 10. Use `/` and start typing to quickly jump to a certain term across all open buffers.
 11. Use `u` to go up a root directory on nerdtree.
 12. Use `<F12>` to toggle distraction-free writing mode.
-13. Use `:Format` to format a buffer by the coc language server's prettifer, where it exists.
+13. Use `:Format` to format a buffer by the coc language server's prettifier, where it exists.
 14. The "Leader" key is set to `\` - use it to access a whole lot of extra coc options.
 15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for poor words while writing.
 16. Type `:LanguageToolCheck`' to use the command-line grammar and spelling checker (requires Java 8).
@@ -90,10 +90,10 @@ word in the current window
 1. `git status` - will tell you what branch you're on and what files have changed. Use this all the time.
 2. `git commit --amend` and `git rebase -i HEAD~2` - roll the current commit into the previous one and edit the previous commit message. Use the rebase to squash the commit.
 3. `git branch` - show the current branches on your local copy
-4. `git stash push` - push to the stash, puts all non-commited files on the stash
+4. `git stash push` - push to the stash, puts all non-committed files on the stash
 5. `git stash pop` - pop whatever is on to stash to the local copy.
 6. `git checkout -b <new branch name>` - create a new branch and switch to it
-7. `git rebase -i HEAD~3` - perform an interactive rebase on the last _2_ commits..eg you always want to +1 to the number. Be careful with this.
+7. `git rebase -i HEAD~3` - perform an interactive rebase on the last _2_ commits.. e.g: you always want to +1 to the number. Be careful with this.
 8. `git pull origin master` or `git pull origin main` - pull and merge master/main into your current local branch
 9. Use 'main' instead of 'master' for all future repos - everyone is doing it.
 10. `git difftool` - use wherever you would use git diff - it's much more useful.
