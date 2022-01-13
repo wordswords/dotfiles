@@ -168,11 +168,8 @@ git config --global mergetool.prompt false
 git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 report_progress 2 'Installing and configuring Joplin notetaking app'
-if [ "$baseos" = "osx" ]; then
-    brew install joplin
-else
-    sudo apt install joplin || sudo snap install joplin
-fi
+NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin
+sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin
 
 joplin config --import < ~/.dotfiles/joplin.config
 
@@ -181,11 +178,9 @@ joplin sync
 
 report_progress 1 'Deploy script finished.'
 
+echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
+echo "After this, you will have to set your terminal emulator to use said font."
 if [ "$baseos" = "osx" ]; then
-  echo "NEXT STEPS: If using iterm2, set your font in iterm2 settings to a Powerline font both for ASCII and non-ASCII font types!"
-  echo "After this, run deploy-iterm2-default-profile.sh"
-else
-  echo "NEXT STEPS: Linux detected. You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
-  echo "After this, you will have to set your terminal emulator to use said font."
+  echo "\nOSX DETECTED: Once you have installed the nerdfont, run deploy-iterm2-default-profile.sh"
 fi
 

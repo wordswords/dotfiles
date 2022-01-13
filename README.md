@@ -20,8 +20,9 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 5. For grammar checking Java 8 should be installed.
 6. Latest versions of Node and npm must be installed.
 
-As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install
-the latest version of yarn.
+# What it does
+
+As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install the latest version of yarn, Joplin commandline, a lot of vim plugins, and the latest LTS version of node.
 
 # Install
 
@@ -59,7 +60,7 @@ the latest version of yarn.
 17. Use `:G blame` to see a line-by-line overview in the editor of what commit touched each line, and who committed it.
 18. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`
 
-# VIM Spellchecking/Grammar checking/Proofreading commands
+# VIM Spellchecking/Grammar checking/Proofreading commands (also when editing Joplin notes)
 
 1. `<LEFT>`       - prev text error
 2. `<RIGHT>`      - next text error
