@@ -176,6 +176,9 @@ joplin config --import < ~/.dotfiles/joplin.config
 report_progress 2 'You will now be asked to log into dropbox'
 joplin sync
 
+report_progress 2 'Installing Morgen calendar app via snap'
+sudo snap install morgen
+
 report_progress 1 'Deploy script finished.'
 
 echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
