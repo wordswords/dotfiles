@@ -57,6 +57,7 @@ the latest version of yarn.
 15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for poor words while writing.
 16. Type `:LanguageToolCheck`' to use the command-line grammar and spelling checker (requires Java 8).
 17. Use `:G blame` to see a line-by-line overview in the editor of what commit touched each line, and who committed it.
+18. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`
 
 # VIM Spellchecking/Grammar checking/Proofreading commands
 
@@ -115,6 +116,21 @@ Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles
 5. `docker-compose run <service> <bash_command>` - run a quick bash command. `<service>` must be a valid docker-compose service. For example `docker-compose run wordpress cat /etc/issue`.
 6. `docker logs <service>` - output the logs for a service. This is the `<service>` name from `docker-compose ps`.
 7. `docker build .` - builds the container described in the `Dockerfile` from the local directory.
+
+# Joplin commandline
+
+1. Navigate the panes using the tab key
+2. Press enter on an existing note to open it in an editor
+3. Type `tc` without `:` to toggle the maximisation levels of the console.
+4. Type `:help` for basic help.
+5. Type `:help keymap` for hotkeys.
+6. Type `/<search term>` to search.
+7. Type `mn` to create a new note.
+8. Type `tm` to toggle metadata - user created time and lots of other metadata.
+9. Write all notes using Markdown so they display optimally across all clients.
+
+
+
 
 # Modifying
 
