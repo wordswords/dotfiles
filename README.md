@@ -128,9 +128,7 @@ Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles
 7. Type `mn` to create a new note.
 8. Type `tm` to toggle metadata - user created time and lots of other metadata.
 9. Write all notes using Markdown so they display optimally across all clients.
-
-
-
+10. Press `<DEL>` to delete a selected note.
 
 # Modifying
 
