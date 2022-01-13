@@ -108,7 +108,7 @@ word in the current window
 
 Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
  
-# Docker/Docker Compose
+# Docker/Docker Compose stuff I forget
  
 1. `docker system prune -a` - remove all unused Docker container images. This is essential to do occasionally to reclaim disk space.
 2. `docker-compose --rm <service>` - execute <service> providing there is a docker-compose.yml file in the current directory describing `<service>`.
