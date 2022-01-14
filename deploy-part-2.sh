@@ -138,10 +138,6 @@ git clone https://github.com/shannonmoeller/vim-monokai256 ./colorscheme
 mv ./colorscheme/colors/* ~/.vim/colors/
 rm -rf ./colorscheme
 
-report_progress 2 'Installing oh-my-zsh plugins..'
-cd ~/.oh-my-zsh/plugins || exit 1
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-
 report_progress 2 'Installing pynvim for python integration with vim..'
 pip3 install --user pynvim
 
