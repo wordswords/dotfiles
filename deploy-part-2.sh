@@ -158,13 +158,16 @@ report_progress 2 'Installing and configuring Joplin notetaking app'
 NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin
 sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin
 
-joplin config --import < ~/.dotfiles/joplin.config
+/usr/bin/joplin config --import < ~/.dotfiles/joplin.config
 
 report_progress 2 'You will now be asked to log into dropbox'
-joplin sync
+/usr/bin/joplin sync
 
 report_progress 2 'Installing Morgen calendar app via snap'
 sudo snap install morgen
+
+report_progress 1 'Changing shell to /bin/zsh.'
+yes | chsh $USER -s /bin/zsh 
 
 report_progress 1 'Deploy script finished.'
 
