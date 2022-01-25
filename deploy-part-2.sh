@@ -33,9 +33,7 @@ sudo npm i -g bash-language-server
 
 report_progress 2 'Install LanguageTool grammar checker'
 cd ~/.dotfiles
-wget https://languagetool.org/download/LanguageTool-5.2.zip
-unzip LanguageTool-5.2.zip
-rm LanguageTool-5.2.zip
+ls -al LanguageTool-5.2.zip || wget https://languagetool.org/download/LanguageTool-5.2.zip && unzip LanguageTool-5.2.zip
 cd -
 
 report_progress 2 'Removing existing dotfiles..'
