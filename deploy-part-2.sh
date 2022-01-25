@@ -167,7 +167,7 @@ report_progress 2 'Installing Morgen calendar app via snap'
 sudo snap install morgen
 
 report_progress 1 'Changing shell to /bin/zsh.'
-yes | chsh $USER -s /bin/zsh 
+sudo chsh -s $(which zsh) $(whoami)
 
 report_progress 1 'Deploy script finished.'
 
