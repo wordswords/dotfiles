@@ -57,8 +57,7 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 14. The "Leader" key is set to `\` - use it to access a whole lot of extra coc options.
 15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for poor words while writing.
 16. Type `:LanguageToolCheck`' to use the command-line grammar and spelling checker (requires Java 8).
-17. Use `:G blame` to see a line-by-line overview in the editor of what commit touched each line, and who committed it.
-18. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`
+17. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`
 
 # VIM Spellchecking/Grammar checking/Proofreading commands (also when editing Joplin notes)
 
@@ -73,6 +72,10 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 9. `.`           - Redo - repeat last word replacement
 10. `:spellr`    - Repeat the replacement done by `z=` for all matches with the replaced 
 word in the current window
+
+# Git Fugitive Plugin in Vim
+
+1. ``:Git blame`` for line-by-line git blame on current file, select a commit and press 'o' to open the commit diff with the commit message in a new window.
 
 # Mergetool - VIMdiff
  
