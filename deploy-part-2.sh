@@ -164,6 +164,10 @@ report_progress 2 'You will now be asked to log into dropbox'
 report_progress 2 'Installing Morgen calendar app via snap'
 sudo snap install morgen
 
+
+report_progress 2 'Installing Spotify app via snap'
+sudo snap install spotify
+
 report_progress 1 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh) $(whoami)
 
