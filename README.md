@@ -58,6 +58,8 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for poor words while writing.
 16. Type `:LanguageToolCheck`' to use the command-line grammar and spelling checker (requires Java 8).
 17. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`
+18. To search all instances of ``git clone`` and replace them with ``git submodule add`` on a visual block, use ``:<,>s/git clone/git submodule add/``
+19. To feed a visual block through the NIX external sort command, ``:'<,'>!sort`` - this will sort the visual block lines alphabetically
 
 # VIM Spellchecking/Grammar checking/Proofreading commands (also when editing Joplin notes)
 

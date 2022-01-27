@@ -73,38 +73,42 @@ ln --force -s ~/.dotfiles/.zshrc ~/.zshrc
 ln --force -s ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
 
 report_progress 2 'Installing vim plugins latest version..'
-rm -rf ~/.dotfiles/.vim/bundle/*
-cd ~/.dotfiles/.vim/bundle/ || exit 1
+rm -rf ~/.dotfiles/.vim/pack/plugins/start/*
+mkdir -p ~/.dotfiles/.vim/pack/plugins/start/
+cd ~/.dotfiles/.vim/pack/plugins/start/ || exit 1
 
-git clone git@github.com:Shougo/denite.nvim.git
-git clone git@github.com:Xuyuanp/nerdtree-git-plugin.git
-git clone git@github.com:ciaranm/securemodelines.git ./securemodelines
-git clone git@github.com:dpelle/vim-LanguageTool
-git clone git@github.com:jelera/vim-javascript-syntax.git
-git clone git@github.com:junegunn/goyo.vim
-git clone git@github.com:junegunn/limelight.vim
-git clone git@github.com:kana/vim-textobj-user
-git clone git@github.com:reedes/vim-lexical
-git clone git@github.com:reedes/vim-litecorrect
-git clone git@github.com:reedes/vim-pencil
-git clone git@github.com:reedes/vim-textobj-quote
-git clone git@github.com:reedes/vim-textobj-sentence
-git clone git@github.com:reedes/vim-wordy.git
-git clone git@github.com:roxma/nvim-yarp.git
-git clone git@github.com:roxma/vim-hug-neovim-rpc
-git clone git@github.com:ryanoasis/vim-devicons.git
-git clone git@github.com:scrooloose/nerdtree.git
-git clone git@github.com:tomasr/molokai.git
-git clone git@github.com:tpope/vim-bundler.git
-git clone git@github.com:tpope/vim-fugitive.git
-git clone git@github.com:tpope/vim-git
-git clone git@github.com:vim-airline/vim-airline
 mv ./securemodelines/plugin/* ~/.vim/plugin/
 rm -rf ./securemodelines
 
+git submodule add -f git@github.com:ciaranm/securemodelines.git ./securemodelines
+git submodule add -f git@github.com:dpelle/vim-LanguageTool
+git submodule add -f git@github.com:jelera/vim-javascript-syntax.git
+git submodule add -f git@github.com:junegunn/goyo.vim
+git submodule add -f git@github.com:junegunn/limelight.vim
+git submodule add -f git@github.com:kana/vim-textobj-user
+git submodule add -f git@github.com:reedes/vim-lexical
+git submodule add -f git@github.com:reedes/vim-litecorrect
+git submodule add -f git@github.com:reedes/vim-pencil
+git submodule add -f git@github.com:reedes/vim-textobj-quote
+git submodule add -f git@github.com:reedes/vim-textobj-sentence
+git submodule add -f git@github.com:reedes/vim-wordy.git
+git submodule add -f git@github.com:roxma/nvim-yarp.git
+git submodule add -f git@github.com:roxma/vim-hug-neovim-rpc
+git submodule add -f git@github.com:ryanoasis/vim-devicons.git
+git submodule add -f git@github.com:scrooloose/nerdtree.git
+git submodule add -f git@github.com:Shougo/denite.nvim.git
+git submodule add -f git@github.com:tomasr/molokai.git
+git submodule add -f git@github.com:tpope/vim-bundler.git
+git submodule add -f git@github.com:tpope/vim-fugitive.git
+git submodule add -f git@github.com:tpope/vim-git
+git submodule add -f git@github.com:vim-airline/vim-airline
+git submodule add -f git@github.com:Xuyuanp/nerdtree-git-plugin.git
+
+git submodule update --remote --merge
+
 report_progress 2 'Patching NerdTree to remove deprecated error..'
-cp ~/.dotfiles/nerdtree_plugin_fix.diff ~/.vim/bundle/nerdtree-git-plugin/nerdtree_plugin
-cd ~/.vim/bundle/nerdtree-git-plugin/nerdtree_plugin
+cp ~/.dotfiles/nerdtree_plugin_fix.diff ~/.vim/pack/plugins/start/nerdtree-git-plugin/nerdtree_plugin
+cd ~/.vim/pack/plugins/start/nerdtree-git-plugin/nerdtree_plugin
 git apply nerdtree_plugin_fix.diff
 cd -
 
@@ -163,7 +167,6 @@ report_progress 2 'You will now be asked to log into dropbox'
 
 report_progress 2 'Installing Morgen calendar app via snap'
 sudo snap install morgen
-
 
 report_progress 2 'Installing Spotify app via snap'
 sudo snap install spotify
