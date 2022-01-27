@@ -112,7 +112,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias grep="grep --color"
 alias please='sudo $(fc -ln -1)'
-alias blameline='~/.dotfiles/bin/git-better-blameline.sh'
+alias blameline='~/.dotfiles/bin/git-better-blame.sh'
 
 bindkey '≠' autosuggest-accept
 
