@@ -60,7 +60,8 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_GB.UTF-8
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR=vim
+export GIT_EDITOR=vim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -103,7 +104,14 @@ source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" || curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# some more ls aliases
 alias ls="ls --color"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias grep="grep --color"
+alias please='sudo $(fc -ln -1)'
+
 bindkey '≠' autosuggest-accept
 
 # zsh-z
