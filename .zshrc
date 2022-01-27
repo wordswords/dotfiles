@@ -83,6 +83,7 @@ plugins=(
   docker
   docker-compose
   git
+  npm
   osx
   python
   zsh-autosuggestions
