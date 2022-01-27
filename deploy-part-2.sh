@@ -33,7 +33,7 @@ sudo npm i -g bash-language-server
 
 report_progress 2 'Install LanguageTool grammar checker'
 cd ~/.dotfiles
-ls -al LanguageTool-5.2.zip || wget https://languagetool.org/download/LanguageTool-5.2.zip && unzip LanguageTool-5.2.zip
+ls ./LanguageTool-5.2.zip || $( wget https://languagetool.org/download/LanguageTool-5.2.zip && unzip LanguageTool-5.2.zip ) 
 cd -
 
 report_progress 2 'Removing existing dotfiles..'
@@ -80,29 +80,29 @@ cd ~/.dotfiles/.vim/pack/plugins/start/ || exit 1
 mv ./securemodelines/plugin/* ~/.vim/plugin/
 rm -rf ./securemodelines
 
-git submodule add -f git@github.com:ciaranm/securemodelines.git ./securemodelines
-git submodule add -f git@github.com:dpelle/vim-LanguageTool
-git submodule add -f git@github.com:jelera/vim-javascript-syntax.git
-git submodule add -f git@github.com:junegunn/goyo.vim
-git submodule add -f git@github.com:junegunn/limelight.vim
-git submodule add -f git@github.com:kana/vim-textobj-user
-git submodule add -f git@github.com:reedes/vim-lexical
-git submodule add -f git@github.com:reedes/vim-litecorrect
-git submodule add -f git@github.com:reedes/vim-pencil
-git submodule add -f git@github.com:reedes/vim-textobj-quote
-git submodule add -f git@github.com:reedes/vim-textobj-sentence
-git submodule add -f git@github.com:reedes/vim-wordy.git
-git submodule add -f git@github.com:roxma/nvim-yarp.git
-git submodule add -f git@github.com:roxma/vim-hug-neovim-rpc
-git submodule add -f git@github.com:ryanoasis/vim-devicons.git
-git submodule add -f git@github.com:scrooloose/nerdtree.git
-git submodule add -f git@github.com:Shougo/denite.nvim.git
-git submodule add -f git@github.com:tomasr/molokai.git
-git submodule add -f git@github.com:tpope/vim-bundler.git
-git submodule add -f git@github.com:tpope/vim-fugitive.git
-git submodule add -f git@github.com:tpope/vim-git
-git submodule add -f git@github.com:vim-airline/vim-airline
-git submodule add -f git@github.com:Xuyuanp/nerdtree-git-plugin.git
+git submodule add git@github.com:ciaranm/securemodelines.git ./securemodelines
+git submodule add git@github.com:dpelle/vim-LanguageTool
+git submodule add git@github.com:jelera/vim-javascript-syntax.git
+git submodule add git@github.com:junegunn/goyo.vim
+git submodule add git@github.com:junegunn/limelight.vim
+git submodule add git@github.com:kana/vim-textobj-user
+git submodule add git@github.com:reedes/vim-lexical
+git submodule add git@github.com:reedes/vim-litecorrect
+git submodule add git@github.com:reedes/vim-pencil
+git submodule add git@github.com:reedes/vim-textobj-quote
+git submodule add git@github.com:reedes/vim-textobj-sentence
+git submodule add git@github.com:reedes/vim-wordy.git
+git submodule add git@github.com:roxma/nvim-yarp.git
+git submodule add git@github.com:roxma/vim-hug-neovim-rpc
+git submodule add git@github.com:ryanoasis/vim-devicons.git
+git submodule add git@github.com:scrooloose/nerdtree.git
+git submodule add git@github.com:Shougo/denite.nvim.git
+git submodule add git@github.com:tomasr/molokai.git
+git submodule add git@github.com:tpope/vim-bundler.git
+git submodule add git@github.com:tpope/vim-fugitive.git
+git submodule add git@github.com:tpope/vim-git
+git submodule add git@github.com:vim-airline/vim-airline
+git submodule add git@github.com:Xuyuanp/nerdtree-git-plugin.git
 
 git submodule update --remote --merge
 
@@ -113,14 +113,11 @@ git apply nerdtree_plugin_fix.diff
 cd -
 
 report_progress 2 'Installing vim8/coc'
-
-# for vim8
 mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
 curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -
 
 report_progress 2 'Installing yarn'
-
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 export PATH=$PATH:~/.yarn/bin
 yarn config set "strict-ssl" false -g
@@ -157,25 +154,21 @@ git config --global mergetool.prompt false
 git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 report_progress 2 'Installing and configuring Joplin notetaking app'
-NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin
-sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin
+which joplin || ( NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin && sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin && /usr/bin/joplin config --import < ~/.dotfiles/joplin.config )
 
-/usr/bin/joplin config --import < ~/.dotfiles/joplin.config
-
-report_progress 2 'You will now be asked to log into dropbox'
+report_progress 2 'Syncing Joplin notes, you will now be asked to log into dropbox'
 /usr/bin/joplin sync
 
 report_progress 2 'Installing Morgen calendar app via snap'
-sudo snap install morgen
+sudo snap install morgen || sudo snap refresh morgen
 
 report_progress 2 'Installing Spotify app via snap'
-sudo snap install spotify
+sudo snap install spotify || sudo snap refresh spotify
 
 report_progress 1 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh) $(whoami)
 
 report_progress 1 'Deploy script finished.'
-
 echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
 echo "After this, you will have to set your terminal emulator to use said font."
 if [ "$baseos" = "osx" ]; then
