@@ -4,7 +4,6 @@
 .zsh_aliases
 .vim/pack
 iterm2/com.googlecode.iterm2.plist*
-.vim/pack
 .vim/bundle
 secrets/
 *.zip
