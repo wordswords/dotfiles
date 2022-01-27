@@ -103,13 +103,14 @@ word in the current window
 9. Use 'main' instead of 'master' for all future repos - everyone is doing it.
 10. `git difftool` - use wherever you would use git diff - it's much more useful.
 11. `git mergetool` - use whenever you have merges to make, see above.
-12. When all goes horribly wrong, backup your changed files by manually `mv`-ing them out of the repo directory, delete your entire local copy, checkout again from master, 
+12. `blameline` - shell script for line-by-line blame with commit comments/summary. 
+13. When all goes horribly wrong, backup your changed files by manually `mv`-ing them out of the repo directory, delete your entire local copy, checkout again from master, 
     and rebuild your commit by copying the backed up files in.
-12. Use github PR's 'changed files' tab for exactly what has changed, but don't forget the commits tab, there should only 
+14. Use github PR's 'changed files' tab for exactly what has changed, but don't forget the commits tab, there should only 
     usually be one commit per PR. And remember the revert button on Github PRs. 
-13. `git logline` for my custom oneline per commit log alias which includes useful extra information, see: https://ma.ttias.be/pretty-git-log-in-one-line/
-14. `git checkout -- <filepath>` - this will overwrite your local changes to the file at <filepath> and restore the version in the latest commit on your branch.
-15. `git checkout <hash> <filepath>` - this will checkout a previous version of the file from the <hash> commit. A useful technique for restoring a change from a previous commit is to `cp <filepath> <filepath.bak>`, use `git logline` to find the right hash and then, `git checkout <hash> <filepath>`, then use `vimdiff <filepath> <filepath.bak>` to copy a change over from the previous commit to `<filepath.bak>`, and then `rm <filepath>` and `mv <filepath.bak> <filepath>`.
+15. `git logline` for my custom oneline per commit log alias which includes useful extra information, see: https://ma.ttias.be/pretty-git-log-in-one-line/
+16. `git checkout -- <filepath>` - this will overwrite your local changes to the file at <filepath> and restore the version in the latest commit on your branch.
+17. `git checkout <hash> <filepath>` - this will checkout a previous version of the file from the <hash> commit. A useful technique for restoring a change from a previous commit is to `cp <filepath> <filepath.bak>`, use `git logline` to find the right hash and then, `git checkout <hash> <filepath>`, then use `vimdiff <filepath> <filepath.bak>` to copy a change over from the previous commit to `<filepath.bak>`, and then `rm <filepath>` and `mv <filepath.bak> <filepath>`.
 
 Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
  
