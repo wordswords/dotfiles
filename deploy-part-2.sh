@@ -77,9 +77,6 @@ rm -rf ~/.dotfiles/.vim/pack/plugins/start/*
 mkdir -p ~/.dotfiles/.vim/pack/plugins/start/
 cd ~/.dotfiles/.vim/pack/plugins/start/ || exit 1
 
-mv ./securemodelines/plugin/* ~/.vim/plugin/
-rm -rf ./securemodelines
-
 git submodule add git@github.com:ciaranm/securemodelines.git ./securemodelines
 git submodule add git@github.com:dpelle/vim-LanguageTool
 git submodule add git@github.com:jelera/vim-javascript-syntax.git
@@ -105,6 +102,9 @@ git submodule add git@github.com:vim-airline/vim-airline
 git submodule add git@github.com:Xuyuanp/nerdtree-git-plugin.git
 
 git submodule update --remote --merge
+
+mv ./securemodelines/plugin/* ~/.vim/plugin/
+rm -rf ./securemodelines
 
 report_progress 2 'Patching NerdTree to remove deprecated error..'
 cp ~/.dotfiles/nerdtree_plugin_fix.diff ~/.vim/pack/plugins/start/nerdtree-git-plugin/nerdtree_plugin
