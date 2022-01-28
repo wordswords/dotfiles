@@ -10,7 +10,6 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 ![Alt text](https://i.imgur.com/IN1SwL7.png "My zsh setup")
 
-
 # Requirements
 
 1. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim. This is not a prerequisite, it will show you how to install it at the end of the dotfile deployment.
@@ -22,7 +21,7 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 # What it does
 
-As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install the latest version of yarn, the notetaking app Joplin's commandline interface, the Morgen paid calendar app, a lot of vim plugins, the and the latest LTS version of node.
+As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install the latest version of yarn, the notetaking app Joplin's commandline interface, the Morgen paid calendar app, the Spotify snap, a lot of vim plugins, the and the latest LTS version of node.
 
 # Install
 
@@ -46,20 +45,20 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 3. Left and right cursor arrows to move through the syntaxic errors.
 4. Up cursor to toggle the file browser/NERDTree buffer.
 5. `>>` and `<<` to adjust indentation.
-6. `set mouse=a` is on, if you have any problems with copying and pasting just :set mouse= beforehand.
+6. `set mouse=a` is on, if you have any problems with copying and pasting just ``:set mouse=`` beforehand.
 7. `K` to bring up documentation on the current term and use the mousewheel to scroll the info.
 8. `gd` to go to the definition of function or class.
-9. `:G <git command>` to run a git command via vim-fugative, for example `git diff`, `git add`
+9. `:G <git command>` to run a git command via vim-fugative, for example `git diff`, `git add`.
 10. Use `/` and start typing to quickly jump to a certain term across all open buffers.
 11. Use `u` to go up a root directory on nerdtree.
 12. Use `<F12>` to toggle distraction-free writing mode.
 13. Use `:Format` to format a buffer by the coc language server's prettifier, where it exists.
 14. The "Leader" key is set to `\` - use it to access a whole lot of extra coc options.
 15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for poor words while writing.
-16. Type `:LanguageToolCheck`' to use the command-line grammar and spelling checker (requires Java 8).
-17. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`
-18. To search all instances of ``git clone`` and replace them with ``git submodule add`` on a visual block, use ``:<,>s/git clone/git submodule add/``
-19. To feed a visual block through the NIX external sort command, ``:'<,'>!sort`` - this will sort the visual block lines alphabetically
+16. Type `:LanguageToolCheck` to use the command-line grammar and spelling checker (requires Java 8).
+17. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`.
+18. To search all instances of `git clone` and replace them with `git submodule add` on a visual block, use `:<','>s/git clone/git submodule add/`.
+19. To feed a visual block through an external command, for example, the NIX external sort command, `:'<,'>!sort` - this will sort the visual block lines alphabetically.
 
 # VIM Spellchecking/Grammar checking/Proofreading commands (also when editing Joplin notes)
 
@@ -140,4 +139,3 @@ Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles
 # Modifying
 
 If you want, you can fork this repo and base your config on this. If you have any problems using these dotfiles please let me know and I can help you.
-
