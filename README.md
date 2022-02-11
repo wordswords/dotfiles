@@ -21,7 +21,7 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 # What it does
 
-As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install the latest version of yarn, the notetaking app Joplin's commandline interface, the Morgen paid calendar app, the Spotify snap, a lot of vim plugins, the and the latest LTS version of node.
+As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install the latest version of yarn, the notetaking app Joplin's commandline interface, the Morgen paid calendar app, the Spotify snap, a lot of vim plugins, and the latest LTS version of node.
 
 # Install
 
