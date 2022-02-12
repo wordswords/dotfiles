@@ -125,14 +125,15 @@ function SetRestructuredTextOptions()
   setlocal spell spelllang=en_gb
 endfunction
 
-function SetMarkdownOptions()
-  autocmd FileType markdown,mkd call pencil#init()
+function SetTextAndMarkdownOptions()
+  autocmd FileType text,markdown,mkd call pencil#init()
                             \ | call lexical#init()
                             \ | call litecorrect#init()
                             \ | call textobj#quote#init()
                             \ | call textobj#sentence#init()
   let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
   let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)
+  colorscheme evening
   setlocal spell spelllang=en_gb
   set wrap
   set spell
@@ -150,26 +151,6 @@ function SetMakefileOptions()
   set softtabstop=0
 endfunction
 
-function SetNormalTextFileOptions()
-  autocmd FileType text call pencil#init()
-                            \ | call litecorrect#init()
-                            \ | call lexical#init()
-                            \ | call litecorrect#init()
-                            \ | call textobj#quote#init({'educate': 0})
-                            \ | call textobj#sentence#init()
-  let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
-  let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)
-  colorscheme evening
-  set listchars=eol:$,tab:^T,trail:␠
-  setlocal spell spelllang=en_gb
-  set wrap
-  set spell
-  "" scroll through spelling/grammar errors
-  nmap <silent> <LEFT> ]s
-  nmap <silent> <RIGHT> [s
-  nmap <silent> <DOWN> <nop>
-endfunction
-
 function SetPythonFileOptions()
   set expandtab
   set tabstop=4
@@ -182,8 +163,7 @@ endfunction
 
 autocmd FileType python call SetPythonFileOptions()
 autocmd FileType Makefile call SetMakefileOptions()
-autocmd FileType text call SetNormalTextFileOptions()
-autocmd FileType markdown call SetMarkdownOptions()
+autocmd FileType text,markdown call SetTextAndMarkdownOptions()
 autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
 autocmd BufRead,BufNewFile *.robot setlocal noexpandtab
 filetype plugin indent on " for writing plugins
