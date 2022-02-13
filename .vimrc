@@ -1,38 +1,36 @@
-" Pathogen plugin manager
-call pathogen#infect()
-call pathogen#helptags()
-
 syntax enable
-set background=dark " Dark background, light foreground
-set backspace=2     " Backspace back up a line
-set cursorline      " Highlight current line
-set encoding=utf8   " Enforce UTF8 encoding
-set expandtab       " Always expand tabs
-set history=1000    " 1000 previous commands remembered
-set hlsearch        " Highlight searches
-set ignorecase      " Ignore case when searching
-set incsearch       " Do incremental searching
-set laststatus=2    " Show non-printable characters such as tab and newlines
-set list            " Use the following list characters to display non-printable chars
+set background=dark             " Dark background, light foreground
+set backspace=2                 " Backspace back up a line
+set backupdir=~/.backup/vim     " Directory to drop backup files
+set bk                          " Drop backup files
+set cursorline                  " Highlight current line
+set dir=~/.backup/vim/swap      " Directory to drop swap files
+set encoding=utf8               " Enforce UTF8 encoding
+set expandtab                   " Always expand tabs
+set history=1000                " 1000 previous commands remembered
+set hlsearch                    " Highlight searches
+set ignorecase                  " Ignore case when searching
+set incsearch                   " Do incremental searching
+set laststatus=2                " Show non-printable characters such as tab and newlines
+set list                        " Use the following list characters to display non-printable chars
 set listchars=eol:$,tab:^T,trail:␠
-set ls=2            " Always show status line
-set nobackup        " Required for coc vim bug
-set noerrorbells    " Turn off all bells
-set noswapfile      " Don't drop swap files
-set nowritebackup   " Don't drop backup files
-set number          " Show line numbers
-set relativenumber  " Set numbering from current line
-set ruler           " Show the cursor position all the time
-set scrolloff=3     " Keep 3 lines when scrolling
-set shiftwidth=2    " Numbers of spaces to (auto)indent
-set showcmd         " Display incomplete commands
-set splitbelow      " Opens new windows below, not above
-set splitright      " Open new vertical split windows to the right of the current one, not the left
-set t_Co=256        " Force 256 colour mode
-set t_vb=           " Visual bell off
-set ts=4            " Each tab is four spaces
-set ttyfast         " Smoother changes
-set wildmenu        " Allow for menu based file navigation when opening files
+set ls=2                        " Always show status line
+set noerrorbells                " Turn off all bells
+set number                      " Show line numbers
+set relativenumber              " Set numbering from current line
+set ruler                       " Show the cursor position all the time
+set scrolloff=3                 " Keep 3 lines when scrolling
+set shiftwidth=2                " Numbers of spaces to (auto)indent
+set showcmd                     " Display incomplete commands
+set splitbelow                  " Opens new windows below, not above
+set splitright                  " Open new vertical split windows to the right of the current one, not the left
+set t_Co=256                    " Force 256 colour mode
+set t_vb=                       " Visual bell off
+set ts=4                        " Each tab is four spaces
+set ttyfast                     " Smoother changes
+set undodir=~/.backup/vim/undos " Directory to drop undo files
+set undofile                    " Drop undo files
+set wildmenu                    " Allow for menu based file navigation when opening files
 set wildmode=list:longest,full
 
 autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
