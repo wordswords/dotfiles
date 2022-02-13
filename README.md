@@ -37,6 +37,7 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 2. Type `z` and a directory name accessible from your current directory to cd to that directory, no need to type cd.
 3. Type `l` for a long-style ls.
 4. `vimdiff <file1> <file2>` for a nice 2 way diff style interface where you can analyse and easily copy changes between files.
+5. `cat <file> | pbcopy` to cat a file into the clipboard, very useful for then using on a website form.
 
 # VIM Key bindings
 
