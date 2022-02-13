@@ -21,6 +21,8 @@ if [ "$baseos" = "osx" ]; then
 else
   sudo apt install curl -y
 fi
+report_progress 2 'Setting up pbcopy and pbpaste aliases'
+sudo apt install xclip xsel
 
 report_progress 2 'Installing latest nodejs and bash-language-server'
 

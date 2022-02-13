@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 ## Sets up configuration
 
+set -e
+
 # Load in status message printing functions
 . ./deploy-common.sh
 
@@ -21,13 +23,12 @@ if [ "$baseos" = "osx" ]; then
   alias cp='/usr/bin/env gcp'
 fi
 
-cp -RL ~/.e ~/.olddotfiles/.e
-cp -RL ~/.vim ~/.olddotfiles/.vim
-cp -RL ~/.zsh* ~/.olddotfiles/
-cp -RL ~/.oh_my_zsh ~/.olddotfiles/
-cp -L ~/.bash_aliases ~/.olddotfiles/.bash_aliases
-cp -L ~/.bash_profile ~/.olddotfiles/.bash_profile
-cp -L ~/.vimrc ~/.olddotfiles/.vimrc
+cp -RL ~/.vim ~/.olddotfiles/.vim || echo "INFO: Could not backup .vim dir, does it exist?"
+cp -RL ~/.zsh* ~/.olddotfiles/ || echo "INFO: Could not backup .zsh* dirs, do they exist?"
+cp -RL ~/.oh-my-zsh ~/.olddotfiles/ || echo "INFO: Could not backup .oh-my-zsh directory, does it exist?"
+cp -L ~/.bash_aliases ~/.olddotfiles/.bash_aliases || echo "INFO: Could not backup .bash_aliases, does it exist?"
+cp -L ~/.bash_profile ~/.olddotfiles/.bash_profile || echo "INFO: Could not backup .bash_profile, does it exist?"
+cp -L ~/.vimrc ~/.olddotfiles/.vimrc || echo "INFO: Could not backup .vimrc, does it exist?"
 
 report_progress 2 'Removing existing zsh config..'
 rm -rf ~/.zshrc

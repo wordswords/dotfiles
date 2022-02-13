@@ -113,6 +113,8 @@ alias l='ls -CF'
 alias grep="grep --color"
 alias please='sudo $(fc -ln -1)'
 alias blameline='~/.dotfiles/bin/git-better-blame.sh'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 bindkey '≠' autosuggest-accept
 
@@ -126,5 +128,5 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # latest node version first
 export PATH="/usr/local/bin/:$PATH"
 # secrets
-source ~/.dotfiles/secrets/KABOODLE_SECRETS.sh
+#source ~/.dotfiles/secrets/KABOODLE_SECRETS.sh
 
