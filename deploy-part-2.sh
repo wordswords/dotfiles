@@ -117,7 +117,6 @@ git submodule add git@github.com:tpope/vim-bundler.git
 git submodule add git@github.com:tpope/vim-fugitive.git
 git submodule add git@github.com:tpope/vim-git
 git submodule add git@github.com:vim-airline/vim-airline
-
 set -e # turn exit on error return back on
 
 set -x
@@ -190,7 +189,7 @@ sudo snap install morgen || sudo snap refresh morgen
 report_progress 2 'Installing Spotify app via snap'
 sudo snap install spotify || sudo snap refresh spotify
 
-report_progress 1 'Changing shell to /bin/zsh.'
+report_progress 2 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh) $(whoami)
 
 report_progress 1 'Deploy script finished.'
