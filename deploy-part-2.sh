@@ -59,9 +59,9 @@ report_progress 2 'Setting up local bin directory..'
 mkdir -p ~/bin
 
 if [ "$baseos" = "osx" ]; then
-  gcp -urs ~/.dotfiles/bin/* ~/bin/
+  gcp -furs ~/.dotfiles/bin/* ~/bin/
 else
-  cp -urs ~/.dotfiles/bin/* ~/bin/
+  cp -furs ~/.dotfiles/bin/* ~/bin/
 fi
 
 report_progress 2 'Setting up symbolic links..'
@@ -97,6 +97,7 @@ set +x
 set +e # turn exit on error return off
 git submodule add git@github.com:Shougo/denite.nvim.git
 git submodule add git@github.com:Xuyuanp/nerdtree-git-plugin.git
+git submodule add git@github.com:ciaranm/securemodelines.git
 git submodule add git@github.com:dpelle/vim-LanguageTool
 git submodule add git@github.com:jelera/vim-javascript-syntax.git
 git submodule add git@github.com:junegunn/goyo.vim
@@ -117,7 +118,7 @@ git submodule add git@github.com:tpope/vim-bundler.git
 git submodule add git@github.com:tpope/vim-fugitive.git
 git submodule add git@github.com:tpope/vim-git
 git submodule add git@github.com:vim-airline/vim-airline
-git submodule add git@github.com:ciaranm/securemodelines.git
+
 set -e # turn exit on error return back on
 
 set -x

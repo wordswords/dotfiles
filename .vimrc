@@ -163,6 +163,7 @@ autocmd FileType python call SetPythonFileOptions()
 autocmd FileType Makefile call SetMakefileOptions()
 autocmd FileType text,markdown call SetTextAndMarkdownOptions()
 autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
+autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
 autocmd BufRead,BufNewFile *.robot setlocal noexpandtab
 filetype plugin indent on " for writing plugins
 
