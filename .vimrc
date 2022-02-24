@@ -24,7 +24,6 @@ set number                      " Show line numbers
 set relativenumber              " Set numbering from current line
 set ruler                       " Show the cursor position all the time
 set scrolloff=3                 " Keep 3 lines when scrolling
-set shiftwidth=2                " Numbers of spaces to (auto)indent
 set shiftwidth=4                " With indentation shifts, use 4 space tabs 
 set showcmd                     " Display incomplete commands
 set softtabstop=4               " With tab key, use 4 space tabs
