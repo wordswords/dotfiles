@@ -1,4 +1,7 @@
 syntax enable
+filetype plugin indent on
+
+set autoindent                  " Automatically indent code
 set background=dark             " Dark background, light foreground
 set backspace=2                 " Backspace back up a line
 set backupdir=~/.backup/vim     " Directory to drop backup files
@@ -7,13 +10,14 @@ set cursorline                  " Highlight current line
 set dir=~/.backup/vim/swap      " Directory to drop swap files
 set encoding=utf8               " Enforce UTF8 encoding
 set expandtab                   " Always expand tabs
+set expandtab                   " Convert all tabs to spaces
 set history=1000                " 1000 previous commands remembered
 set hlsearch                    " Highlight searches
 set ignorecase                  " Ignore case when searching
 set incsearch                   " Do incremental searching
 set laststatus=2                " Show non-printable characters such as tab and newlines
-set list                        " Use the following list characters to display non-printable chars
 set listchars=eol:$,tab:^T,trail:␠
+set list                        " Use the following list characters to display non-printable chars
 set ls=2                        " Always show status line
 set noerrorbells                " Turn off all bells
 set number                      " Show line numbers
@@ -21,18 +25,21 @@ set relativenumber              " Set numbering from current line
 set ruler                       " Show the cursor position all the time
 set scrolloff=3                 " Keep 3 lines when scrolling
 set shiftwidth=2                " Numbers of spaces to (auto)indent
+set shiftwidth=4                " With indentation shifts, use 4 space tabs 
 set showcmd                     " Display incomplete commands
+set softtabstop=4               " With tab key, use 4 space tabs
 set splitbelow                  " Opens new windows below, not above
 set splitright                  " Open new vertical split windows to the right of the current one, not the left
 set t_Co=256                    " Force 256 colour mode
-set t_vb=                       " Visual bell off
 set ts=4                        " Each tab is four spaces
 set ttyfast                     " Smoother changes
+set t_vb=                       " Visual bell off
 set undodir=~/.backup/vim/undos " Directory to drop undo files
 set undofile                    " Drop undo files
 set wildmenu                    " Allow for menu based file navigation when opening files
 set wildmode=list:longest,full
 
+" GUI config
 autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
 let g:prettier#autoformat = 1 " Prettier code formatter automatically format files
 let g:rehash256 = 1 " Ensure 256 color mode
@@ -51,7 +58,7 @@ let g:secure_modelines_modelines = 15
 let g:cb_no_default_brackets = 1
 
 " Turn off macro recording
-map q <Nop>
+noremap q <Nop>
 
 " Disable F1 help launcher
 noremap <F1> :echo<CR>
@@ -137,9 +144,9 @@ function SetTextAndMarkdownOptions()
   set spell
   nmap <Leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
   "" scroll through spelling/grammar errors
-  nmap <silent> <LEFT> ]s
-  nmap <silent> <RIGHT> [s
-  nmap <silent> <DOWN> <nop>
+  noremap <silent> <LEFT> ]s
+  noremap <silent> <RIGHT> [s
+  noremap <silent> <DOWN> <nop>
 endfunction
 
 function SetMakefileOptions()
@@ -175,7 +182,7 @@ filetype plugin indent on " for writing plugins
 "" Goyo CONFIG
 ""
 
-map <F12> :Goyo<CR> " this activates distraction-free mode
+noremap <F12> :Goyo<CR> " this activates distraction-free mode
 
 ""
 "" END of Goyo CONFIG
@@ -404,3 +411,4 @@ let g:languagetool_jar="~/.dotfiles/LanguageTool-5.2/languagetool-commandline.ja
 """" END of LanguageTool grammar checker plugin CONFIG
 """"
 
+:autocmd BufWritePost Jenkinsfile !ssh jenkins.dev.kaboodle.co.uk -p9669 declarative-linter < %
