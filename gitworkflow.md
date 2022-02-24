@@ -26,3 +26,4 @@ This is a simple description of how I work 99% of the time, as I am a simpleton.
 10. I merge the PR into master or main
 11. I delete the old branch
 
+AND For when everything goes to sh!t - [https://ohshitgit.com/](https://ohshitgit.com/)
