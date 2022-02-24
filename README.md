@@ -124,6 +124,8 @@ Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles
 6. `docker logs <service>` - output the logs for a service. This is the `<service>` name from `docker-compose ps`.
 7. `docker build .` - builds the container described in the `Dockerfile` from the local directory.
 
+Also checkout the notes I took from the Docker Deep Dive book here: [https://github.com/wordswords/dotfiles/blob/master/dockernotes.md](https://github.com/wordswords/dotfiles/blob/master/dockernotes.md)
+
 # Joplin commandline
 
 1. Navigate the panes using the tab key
