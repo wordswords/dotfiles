@@ -171,8 +171,6 @@ report_progress 2 'Installing pynvim for python integration with vim..'
 pip3 install --user pynvim
 
 report_progress 2 'Setting default git config.. change this if you are not David Craddock!'
-# Git configuration for the default user, will still have to specify
-# email address
 rm ~/.gitconfig
 set -x
 git config --global core.editor vim

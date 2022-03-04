@@ -60,6 +60,7 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 17. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`.
 18. To search all instances of `git clone` and replace them with `git submodule add` on a visual block, use `:<','>s/git clone/git submodule add/`.
 19. To feed a visual block through an external command, for example, the NIX external sort command, `:'<,'>!sort` - this will sort the visual block lines alphabetically.
+20. To generate a ctags index for all functions/methods in all languages, run this command at the root of the source control repo `!ctags -R *`. Then you can use `gd` to jump to the original definition of the function in any file.
 
 # VIM Spellchecking/Grammar checking/Proofreading commands (also when editing Joplin notes)
 
