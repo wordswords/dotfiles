@@ -14,6 +14,15 @@ baseos=$(get_os)
 
 report_progress 1 'Deploying .dotfiles: Part 2'
 
+report_progress 2 'Installing ctags'
+
+if [ "$baseos" = "osx" ]; then
+  brew install ctags 
+else
+  sudo apt install ctags -y
+fi
+ctags -R *
+
 report_progress 2 'Installing curl'
 
 if [ "$baseos" = "osx" ]; then
@@ -172,6 +181,7 @@ git config --global user.email "$( cat ~/.dotfiles/secretseadd | tr 'N-ZA-Mn-za-
 git config --global diff.tool vimdiff
 git config --global merge.conflictstyle diff3
 git config --global merge.tool vimdiff3
+git config --global mergetool.vimdiff3.cmd 'vimdiff --noplugin -n -i NONE +star'
 git config --global mergetool.keepBackup false
 git config --global mergetool.prompt false
 git config --global alias.logline "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
