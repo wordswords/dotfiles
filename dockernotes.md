@@ -86,7 +86,7 @@ Use the keystroke combo <Control>-PQ to exit a container without terminating it.
 
 This will reattach your terminal to it with a docker container exec command.
 
-This will result in TWO processes being seen when you do a `docker container ls`. This is because the reattach created a seperate bash process. Now existing that second process will not terminate the container because the first process will still be running.
+This will result in TWO processes being seen when you do a `docker container ls`. This is because the reattach created a separate bash process. Now existing that second process will not terminate the container because the first process will still be running.
 
 ### Stopping a container
 
@@ -98,7 +98,7 @@ This is equivalent to 'pausing' a virtual machine. The state of the machine is s
 
 `docker container rm <digest>`
 
-This is equivalent to deleting a virtual machine. The state is wiped and the next time you start it, it will only contain what is in the prebuilt image.
+This is equivalent to deleting a virtual machine. The state is wiped and the next time you start it, it will only contain what is in the pre built image.
 
 ## Docker compose
 
