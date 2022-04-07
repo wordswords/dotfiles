@@ -10,7 +10,7 @@ This is a simple description of how I work 99% of the time, as I am a simpleton.
   1. ```git stash push```
   2. ```git checkout -b <branch name which will be made into a PR>```
   3. ```git stash pop```
-4. I then commit the changes to the new branch.
+4. I then commit the changes to the new branch, using for example, ```git add <file>```
   1. ```git commit```
 5. When I am ready to create the PR, I create and push to the remote branch:
   1. ```git push origin <branch name which will be made into a PR>```
