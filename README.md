@@ -27,7 +27,7 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 
 # Install
 
-1. `git clone git@github.com:/wordswords/dotfiles ./dotfiles/`
+1. `git clone git@github.com:/wordswords/dotfiles ~/.dotfiles`
 2. `cd ~/.dotfiles/`
 3. `./deploy-part-1.sh`
 4. Press `control-D` to drop out of oh-my-zsh
