@@ -1,6 +1,6 @@
 # My .dotfiles
 
-![Alt text](https://i.imgur.com/UNar5Rm.png "VIM setup")
+![Alt text](https://i.imgur.com/ZVA2IpQ.png "VIM setup")
 
 # Features
 
@@ -8,7 +8,7 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 ## Shell:
 
-![Alt text](https://i.imgur.com/IN1SwL7.png "My zsh setup")
+![Alt text](https://i.imgur.com/2uiO2ga.png "My zsh setup")
 
 # Requirements
 
