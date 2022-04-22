@@ -193,10 +193,10 @@ report_progress 2 'Syncing Joplin notes, you will now be asked to log into dropb
 /usr/bin/joplin sync
 
 report_progress 2 'Installing Morgen calendar app via snap'
-sudo snap install morgen || sudo snap refresh morgen
+sudo snap install morgen 2>/dev/null || sudo snap refresh morgen
 
 report_progress 2 'Installing Spotify app via snap'
-sudo snap install spotify || sudo snap refresh spotify
+sudo snap install spotify 2>/dev/null || sudo snap refresh spotify
 
 report_progress 2 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh) $(whoami)
