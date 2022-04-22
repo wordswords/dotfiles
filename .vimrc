@@ -1,46 +1,56 @@
+" /- - - - - - - - - - - - - - - - - - - - - -\
+" |     David Craddock's VIM Config           |
+" |                                           |
+" |  https://github.com/wordswords/dotfiles   |
+" \- - - - - - - - - - - - - - - - - - - - - -/
+"
+" vim: spell indent
+"
 syntax enable
-filetype plugin indent on
 
-set autoindent                  " Automatically indent code
-set background=dark             " Dark background, light foreground
-set backspace=2                 " Backspace back up a line
-set backupdir=~/.backup/vim     " Directory to drop backup files
-set bk                          " Drop backup files
-set cursorline                  " Highlight current line
-set dir=~/.backup/vim/swap      " Directory to drop swap files
-set encoding=utf8               " Enforce UTF8 encoding
-set expandtab                   " Always expand tabs
-set expandtab                   " Convert all tabs to spaces
-set history=1000                " 1000 previous commands remembered
-set hlsearch                    " Highlight searches
-set ignorecase                  " Ignore case when searching
-set incsearch                   " Do incremental searching
-set laststatus=2                " Show non-printable characters such as tab and newlines
-set listchars=eol:$,tab:^T,trail:␠
-set list                        " Use the following list characters to display non-printable chars
-set ls=2                        " Always show status line
-set noerrorbells                " Turn off all bells
-set number                      " Show line numbers
-set relativenumber              " Set numbering from current line
-set ruler                       " Show the cursor position all the time
-set scrolloff=3                 " Keep 3 lines when scrolling
-set shiftwidth=4                " With indentation shifts, use 4 space tabs 
-set showcmd                     " Display incomplete commands
-set softtabstop=4               " With tab key, use 4 space tabs
-set splitbelow                  " Opens new windows below, not above
-set splitright                  " Open new vertical split windows to the right of the current one, not the left
-set t_Co=256                    " Force 256 colour mode
-set ts=4                        " Each tab is four spaces
-set ttyfast                     " Smoother changes
-set t_vb=                       " Visual bell off
-set undodir=~/.backup/vim/undos " Directory to drop undo files
-set undofile                    " Drop undo files
-set wildmenu                    " Allow for menu based file navigation when opening files
+set autoindent                    " Automatically indent code
+set background=dark               " Dark background, light foreground
+set backspace=2                   " Backspace back up a line
+set backupdir=~/.backup/vim       " Directory to drop backup files
+set bk                            " Drop backup files
+set colorcolumn=+1                " Enable coloured column after textwidth line
+set cursorline                    " Highlight current line
+set dir=~/.backup/vim/swap        " Directory to drop swap files
+set encoding=utf8                 " Enforce UTF8 encoding
+set expandtab                     " Always expand tabs
+set expandtab                     " Convert all tabs to spaces
+set history=1000                  " 1000 previous commands remembered
+set hlsearch                      " Highlight searches
+set ignorecase                    " Ignore case when searching
+set incsearch                     " Do incremental searching
+set laststatus=2                  " Show non-printable characters e.g. tab, \n
+set list                          " Use the following list characters 
+set listchars=eol:$,tab:^T,trail: " to display non-printable characters
+set ls=2                          " Always show status line
+set noerrorbells                  " Turn off all bells
+set number                        " Show line numbers
+set relativenumber                " Set numbering from current line
+set ruler                         " Show the cursor position all the time
+set scrolloff=3                   " Keep 3 lines when scrolling
+set shiftwidth=4                  " With indentation shifts, use 4 space tabs 
+set showcmd                       " Display incomplete commands
+set softtabstop=4                 " With tab key, use 4 space tabs
+set spelllang=en_gb               " Set dictionary to be UK spelling
+set splitbelow                    " Opens new windows below, not above
+set splitright                    " Open new vertical split windows to the right
+set t_Co=256                      " Force 256 colour mode
+set t_vb=                         " Visual bell off
+set textwidth=80                  " Force line wrapping after the 80th char
+set ts=4                          " Each tab is four spaces
+set ttyfast                       " Smoother changes
+set undodir=~/.backup/vim/undos   " Directory to drop undo files
+set undofile                      " Drop undo files
+set wildmenu                      " Allow for menu based file navigation
 set wildmode=list:longest,full
 
 " GUI config
-autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI vim
-let g:prettier#autoformat = 1 " Prettier code formatter automatically format files
+autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI 
+let g:prettier#autoformat = 1 " Prettier code formatter automatically files
 let g:rehash256 = 1 " Ensure 256 color mode
 
 " Default colourscheme
@@ -74,13 +84,11 @@ set cursorline cursorcolumn
 """
 """ vim-airline CONFIG
 """
-
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 let g:airline_powerline_fonts = 1
 let g:airline_section_x = '%{PencilMode()}'
 let g:powerline_symbols = 'fancy'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
-
 """
 """ END of vim-airline CONFIG
 """
@@ -88,7 +96,6 @@ let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 """
 """ NERDTree CONFIG
 """
-
 " Startup NerdTree when vim is started
 if (expand("%"))
   autocmd VimEnter * silent NERDTree %
@@ -102,7 +109,8 @@ autocmd VimEnter * wincmd p
 autocmd FileType nerdtree noremap <buffer> <c-h> <nop>
 autocmd FileType nerdtree noremap <buffer> <c-l> <nop>
 
-" if NERDTree is the last window present, i.e: when you've closed all other windows, then close vim
+" if NERDTree is the last window present, i.e: when you've closed all other 
+" windows, then close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")) | q | endif
 
 " make NERDTree look nicer
@@ -114,7 +122,6 @@ let NERDTreeShowHidden = 1
 "
 " Pressing <UP> cursor toggles NerdTree
 noremap <UP> :NERDTreeToggle<CR>
-
 ""
 "" END OF Nerdtree CONFIG
 ""
@@ -122,11 +129,10 @@ noremap <UP> :NERDTreeToggle<CR>
 ""
 "" Filetype formats/autocmd CONFIG
 ""
-
 function SetRestructuredTextOptions()
   au BufRead,BufNewFile *.rst setlocal textwidth=80
   autocmd FileType gitcommit setlocal spell
-  setlocal spell spelllang=en_gb
+  setlocal spell
 endfunction
 
 function SetTextAndMarkdownOptions()
@@ -138,9 +144,8 @@ function SetTextAndMarkdownOptions()
   let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
   let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)
   colorscheme evening
-  setlocal spell spelllang=en_gb
-  set wrap
-  set spell
+  setlocal spell
+  setlocal wrap
   nmap <Leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
   "" scroll through spelling/grammar errors
   noremap <silent> <LEFT> ]s
@@ -149,30 +154,36 @@ function SetTextAndMarkdownOptions()
 endfunction
 
 function SetMakefileOptions()
-  set noexpandtab
-  set tabstop=4
-  set shiftwidth=4
-  set softtabstop=0
+  setlocal noexpandtab
+  setlocal tabstop=4
+  setlocal shiftwidth=4
+  setlocal softtabstop=0
 endfunction
 
 function SetPythonFileOptions()
-  set expandtab
-  set tabstop=4
-  set shiftwidth=4
-  set softtabstop=4
-  set textwidth=79
-  set autoindent
-  set fileformat=unix
+  setlocal expandtab
+  setlocal tabstop=4
+  setlocal shiftwidth=4
+  setlocal softtabstop=4
+  setlocal textwidth=79
+  setlocal autoindent
+  setlocal fileformat=unix
 endfunction
 
-autocmd FileType python call SetPythonFileOptions()
-autocmd FileType Makefile call SetMakefileOptions()
-autocmd FileType text,markdown call SetTextAndMarkdownOptions()
-autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
-autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
-autocmd BufRead,BufNewFile *.robot setlocal noexpandtab
-filetype plugin indent on " for writing plugins
+function SetGitCommitFileOptions()
+  setlocal colorcolumn+=51
+  setlocal textwidth=70
+  setlocal spell
+endfunction
 
+autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
+autocmd BufRead,BufNewFile *.robot setlocal noexpandtab
+autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
+autocmd FileType Makefile call SetMakefileOptions()
+autocmd FileType gitcommit call SetGitCommitFileOptions()
+autocmd FileType plugin indent on " for writing plugins
+autocmd FileType python call SetPythonFileOptions()
+autocmd FileType text,markdown call SetTextAndMarkdownOptions()
 ""
 "" END of Filetype formats/autocmd CONFIG
 ""
@@ -180,9 +191,7 @@ filetype plugin indent on " for writing plugins
 ""
 "" Goyo CONFIG
 ""
-
 noremap <F12> :Goyo<CR> " this toggles distraction-free mode
-
 ""
 "" END of Goyo CONFIG
 ""
@@ -190,7 +199,6 @@ noremap <F12> :Goyo<CR> " this toggles distraction-free mode
 ""
 "" Wordy CONFIG
 ""
-
 " Wordy is only activated when editing text files
 let g:wordy#ring = [
   \ 'weak',
@@ -205,7 +213,6 @@ let g:wordy#ring = [
   \ 'adjectives',
   \ 'adverbs',
   \ ]
-
 ""
 "" END of Wordy CONFIG
 ""
@@ -213,7 +220,6 @@ let g:wordy#ring = [
 ""
 "" START OF COC.vim CONFIG
 ""
-
 set hidden
 
 " Give more space for displaying messages.
@@ -255,7 +261,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location 
+" list.
 nmap <silent> <LEFT> <Plug>(coc-diagnostic-prev)
 nmap <silent> <RIGHT> <Plug>(coc-diagnostic-next)
 
@@ -307,7 +314,7 @@ nmap <Leader>ac  <Plug>(coc-codeaction)
 nmap <Leader>qf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server
 xmap if <Plug>(coc-funcobj-i)
 omap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
@@ -317,24 +324,14 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
-
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
@@ -358,7 +355,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
 ""
 "" END OF COC.vim CONFIG
 ""
@@ -366,11 +362,10 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "" 
 "" nerdtree-git-plugin CONFIG
 "" 
-
-let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
-let g:NERDTreeGitStatusShowClean = 1 " default: 0
-let g:NERDTreeGitStatusUntrackedFilesMode = 'all' " a heavy feature too. default: normal
-let g:NERDTreeGitStatusShowIgnored = 1 " a heavy feature may cost much more time. default: 0
+let g:NERDTreeGitStatusUseNerdFonts = 1 "default: 0
+let g:NERDTreeGitStatusShowClean = 1 "default: 0
+let g:NERDTreeGitStatusUntrackedFilesMode = 'all' "heavy feature default:normal
+let g:NERDTreeGitStatusShowIgnored = 1 "heavy feature may cost time. default: 0
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',
                 \ 'Staged'    :'✚',
@@ -383,7 +378,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Clean'     :'✔︎',
                 \ 'Unknown'   :'?',
                 \ }
-
 """
 """ END of nerdtree-git-plugin CONFIG
 """
@@ -410,5 +404,3 @@ let g:languagetool_jar="~/.dotfiles/LanguageTool-5.2/languagetool-commandline.ja
 """" END of LanguageTool grammar checker plugin CONFIG
 """"
 
-autocmd BufWritePost Jenkinsfile !ssh jenkins.dev.kaboodle.co.uk -p9669 declarative-linter < %
-autocmd BufWritePost Jenkinsfile !ssh jenkins.dev.kaboodle.co.uk -p9669 declarative-linter < %
