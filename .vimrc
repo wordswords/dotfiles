@@ -181,7 +181,7 @@ filetype plugin indent on " for writing plugins
 "" Goyo CONFIG
 ""
 
-noremap <F12> :Goyo<CR> " this activates distraction-free mode
+noremap <F12> :Goyo<CR> " this toggles distraction-free mode
 
 ""
 "" END of Goyo CONFIG
@@ -410,4 +410,5 @@ let g:languagetool_jar="~/.dotfiles/LanguageTool-5.2/languagetool-commandline.ja
 """" END of LanguageTool grammar checker plugin CONFIG
 """"
 
-:autocmd BufWritePost Jenkinsfile !ssh jenkins.dev.kaboodle.co.uk -p9669 declarative-linter < %
+autocmd BufWritePost Jenkinsfile !ssh jenkins.dev.kaboodle.co.uk -p9669 declarative-linter < %
+autocmd BufWritePost Jenkinsfile !ssh jenkins.dev.kaboodle.co.uk -p9669 declarative-linter < %
