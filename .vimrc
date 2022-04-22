@@ -8,44 +8,44 @@
 "
 syntax enable
 
-set autoindent                    " Automatically indent code
-set background=dark               " Dark background, light foreground
-set backspace=2                   " Backspace back up a line
-set backupdir=~/.backup/vim       " Directory to drop backup files
-set bk                            " Drop backup files
-set colorcolumn=+1                " Enable coloured column after textwidth line
-set cursorline                    " Highlight current line
-set dir=~/.backup/vim/swap        " Directory to drop swap files
-set encoding=utf8                 " Enforce UTF8 encoding
-set expandtab                     " Always expand tabs
-set expandtab                     " Convert all tabs to spaces
-set history=1000                  " 1000 previous commands remembered
-set hlsearch                      " Highlight searches
-set ignorecase                    " Ignore case when searching
-set incsearch                     " Do incremental searching
-set laststatus=2                  " Show non-printable characters e.g. tab, \n
-set list                          " Use the following list characters 
-set listchars=eol:$,tab:^T,trail: " to display non-printable characters
-set ls=2                          " Always show status line
-set noerrorbells                  " Turn off all bells
-set number                        " Show line numbers
-set relativenumber                " Set numbering from current line
-set ruler                         " Show the cursor position all the time
-set scrolloff=3                   " Keep 3 lines when scrolling
-set shiftwidth=4                  " With indentation shifts, use 4 space tabs 
-set showcmd                       " Display incomplete commands
-set softtabstop=4                 " With tab key, use 4 space tabs
-set spelllang=en_gb               " Set dictionary to be UK spelling
-set splitbelow                    " Opens new windows below, not above
-set splitright                    " Open new vertical split windows to the right
-set t_Co=256                      " Force 256 colour mode
-set t_vb=                         " Visual bell off
-set textwidth=80                  " Force line wrapping after the 80th char
-set ts=4                          " Each tab is four spaces
-set ttyfast                       " Smoother changes
-set undodir=~/.backup/vim/undos   " Directory to drop undo files
-set undofile                      " Drop undo files
-set wildmenu                      " Allow for menu based file navigation
+set autoindent                     " Automatically indent code
+set background=dark                " Dark background, light foreground
+set backspace=2                    " Backspace back up a line
+set backupdir=~/.backup/vim        " Directory to drop backup files
+set bk                             " Drop backup files
+set colorcolumn=+1                 " Enable coloured column after textwidth line
+set cursorline                     " Highlight current line
+set dir=~/.backup/vim/swap         " Directory to drop swap files
+set encoding=utf8                  " Enforce UTF8 encoding
+set expandtab                      " Always expand tabs
+set expandtab                      " Convert all tabs to spaces
+set history=1000                   " 1000 previous commands remembered
+set hlsearch                       " Highlight searches
+set ignorecase                     " Ignore case when searching
+set incsearch                      " Do incremental searching
+set laststatus=2                   " Show non-printable characters e.g. tab, \n
+set list                           " Use the following list characters:
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set ls=2                           " Always show status line
+set noerrorbells                   " Turn off all bells
+set number                         " Show line numbers
+set relativenumber                 " Set numbering from current line
+set ruler                          " Show the cursor position all the time
+set scrolloff=3                    " Keep 3 lines when scrolling
+set shiftwidth=4                   " With indentation shifts, use 4 space tabs 
+set showcmd                        " Display incomplete commands
+set softtabstop=4                  " With tab key, use 4 space tabs
+set spelllang=en_gb                " Set dictionary to be UK spelling
+set splitbelow                     " Opens new windows below, not above
+set splitright                     " Open new vertical split windows to the right
+set t_Co=256                       " Force 256 colour mode
+set t_vb=                          " Visual bell off
+set textwidth=80                   " Force line wrapping after the 80th char
+set ts=4                           " Each tab is four spaces
+set ttyfast                        " Smoother changes
+set undodir=~/.backup/vim/undos    " Directory to drop undo files
+set undofile                       " Drop undo files
+set wildmenu                       " Allow for menu based file navigation
 set wildmode=list:longest,full
 
 " GUI config
