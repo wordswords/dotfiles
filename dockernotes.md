@@ -24,7 +24,7 @@ This pulls a docker image down from a repository, usually DockerHub.
 
 Top level repositories are trusted in DockerHub, for example 'ubuntu'. Untrusted repos are denoted by an additional level, for example 'nigelpoulton/tu-demo'.
 
-Tag can be ':latest' or '3.3.11' a version tag, or anything similar.
+Tag can be `:latest` or `3.3.11` a version tag, or anything similar.
 
 If you do not specify a tag, Docker will presume you are pulling the latest.
 
@@ -50,7 +50,7 @@ They are the cryptographic hashes of the docker image - it's 'truename' aside fr
 
 `docker image ls --digests ubuntu:latest`
 
-will lists the digest for ubuntu-latest
+This will list the digest for ubuntu-latest
 
 ## Layers
 
@@ -70,15 +70,15 @@ When you see 'Already exists' in a docker pull, that means that layer already ex
 
 ### Docker run
 
-docker run -it <image> <command>
+`docker run -it <image> <command>`
 
 `docker run -it ubuntu:latest cat /etc/issue`
 
-This will pull down <image> and run <command> on it. -it makes sure your local terminal is connected to the image.
+This will pull down `<image>` and run `<command>` on it. -it makes sure your local terminal is connected to the image.
 
 ### Killing the process in the container will also kill the containers
 
-Use the keystroke combo <Control>-PQ to exit a container without terminating it. That container will still run and you can use`docker container ls` to view the list of running containers.
+Use the keystroke combo `<Control>-PQ` to exit a container without terminating it. That container will still run and you can use`docker container ls` to view the list of running containers.
 
 ### Reattaching to a running container
 
