@@ -49,7 +49,7 @@ that directory, no need to type cd.
 analyse and easily copy changes between files.
 5. `cat <file> | pbcopy` to cat a file into the clipboard, very useful for then
 using on a website form.
-6. Use <tab> to activate oh-my-zsh's autocomplete plugins. For example `git
+6. Use `<tab>` to activate oh-my-zsh's autocomplete plugins. For example `git
 <tab>`
 
 # VIM Key bindings
