@@ -109,13 +109,16 @@ replaced word in the current window
 1. ``:Git blame`` for line-by-line git blame on current file, select a commit 
 and press 'o' to open the commit diff with the commit message in a new window.
 
-# Git Fugative Mergetool
+# Git Fugitive Mergetool
 
 1. Buffers are setup so [local branch | resulting mergefile | merge in branch]
 2. Use `[c` and `]c` to navigate through the conflicts
 3. Go to local branch OR merge in branch, select the conflict, and use `dp` to
 choose that version.
 4. When done, use `:Gwrite!`
+
+More info:
+http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
  
 # Git stuff I keep forgetting
 
