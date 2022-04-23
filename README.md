@@ -1,17 +1,17 @@
 # My .dotfiles
 
-![Alt text](https://i.imgur.com/UNar5Rm.png "VIM setup")
-
-# Features
-
 My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin 
 helper scripts for good measure. Tested on OSX, Ubuntu, Linux Mint and Raspbian 
 Linux, although it has NOT been tested for several years on OSX so may well need
 some updates.
 
-## Shell:
+## VIM:
 
-![Alt text](https://i.imgur.com/IN1SwL7.png "My zsh setup")
+![Alt text](https://i.imgur.com/ZVA2IpQ.png "VIM setup")
+
+## ZSH:
+
+![Alt text](https://i.imgur.com/2uiO2ga.png "My zsh setup")
 
 # Requirements
 
@@ -33,7 +33,7 @@ the Spotify snap, a lot of vim plugins, and the latest LTS version of node.
 
 # Install
 
-1. `git clone git@github.com:/wordswords/dotfiles ./dotfiles/`
+1. `git clone git@github.com:/wordswords/dotfiles ~/.dotfiles`
 2. `cd ~/.dotfiles/`
 3. `./deploy-part-1.sh`
 4. Press `control-D` to drop out of oh-my-zsh

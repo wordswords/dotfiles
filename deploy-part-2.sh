@@ -79,7 +79,6 @@ ln --force -s ~/.dotfiles/.bash_aliases ~/.zsh_aliases
 ln --force -s ~/.dotfiles/.bash_profile ~/.bash_profile
 ln --force -s ~/.dotfiles/.bash_profile_remote ~/.bash_profile_remote
 ln --force -s -n ~/.dotfiles/.vim ~/.vim
-ln --force -s -n ~/.dotfiles/.e ~/.e
 ln --force -s ~/.dotfiles/.vimrc ~/.vimrc
 ln --force -s ~/.dotfiles/.zshrc ~/.zshrc
 ln --force -s ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
