@@ -109,19 +109,13 @@ replaced word in the current window
 1. ``:Git blame`` for line-by-line git blame on current file, select a commit 
 and press 'o' to open the commit diff with the commit message in a new window.
 
-# Mergetool - VIMdiff
- 
-1. When a merge is started and conflicts are found, run `git mergetool`
-2. REMOTE = whatever is in the repo, BASE = whatever was the previous commit, 
-LOCAL = whatever is in your local copy
-3. Move to the bottom window and the change you want to select `/>>>>` will 
-search through the file for them.
-4. `:diffg RE`  " get from REMOTE
-5. `:diffg BA`  " get from BASE
-6. `:diffg LO`  " get from LOCAL
-7. These arguments also work on ranges, for example you can select all of the 
-file and then use a range to `diffg LO`
-8. `wq` to save and commit the merge.
+# Git Fugative Mergetool
+
+1. Buffers are setup so [local branch | resulting mergefile | merge in branch]
+2. Use `[c` and `]c` to navigate through the conflicts
+3. Go to local branch OR merge in branch, select the conflict, and use `dp` to
+choose that version.
+4. When done, use `:Gwrite!`
  
 # Git stuff I keep forgetting
 
