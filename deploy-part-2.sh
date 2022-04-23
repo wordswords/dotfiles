@@ -177,10 +177,10 @@ git config --global commit.template ~/.dotfiles/.git-commit-template
 git config --global core.editor vim
 git config --global diff.tool vimdiff
 git config --global merge.conflictstyle diff3
-git config --global merge.tool vimdiff3
+git config --global merge.tool fugitive
+git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiffsplit!" "$MERGED"'
 git config --global mergetool.keepBackup false
 git config --global mergetool.prompt false
-git config --global mergetool.vimdiff3.cmd 'vimdiff --noplugin -n -i NONE +star'
 git config --global user.email "$( cat ~/.dotfiles/secretseadd | tr 'N-ZA-Mn-za-m' 'A-Za-z' )"
 git config --global user.name "David Craddock"
 set +x
