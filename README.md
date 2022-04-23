@@ -4,7 +4,10 @@
 
 # Features
 
-My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin helper scripts for good measure. Tested on OSX, Ubuntu, Linux Mint and Raspbian Linux, although it has NOT been tested for several years on OSX so may well need some updates.
+My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin 
+helper scripts for good measure. Tested on OSX, Ubuntu, Linux Mint and Raspbian 
+Linux, although it has NOT been tested for several years on OSX so may well need
+some updates.
 
 ## Shell:
 
@@ -12,7 +15,9 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 # Requirements
 
-1. You have to use a ‘Nerd font’ - this is a specially patched font with extra symbol characters for use in vim. This is not a prerequisite, it will show you how to install it at the end of the dotfile deployment.
+1. You have to use a ‘Nerd font’ - this is a specially patched font with extra 
+symbol characters for use in vim. This is not a prerequisite, it will show you 
+how to install it at the end of the dotfile deployment.
 2. vim8 must be installed.
 3. git must be installed and setup with ssh for github.
 4. python3 and pip3 must be installed.
@@ -21,7 +26,10 @@ My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin h
 
 # What it does
 
-As part of the process, this will install the latest version of oh-my-zsh and set your default shell to it, and install the latest version of yarn, the notetaking app Joplin's commandline interface, the Morgen paid calendar app, the Spotify snap, a lot of vim plugins, and the latest LTS version of node.
+As part of the process, this will install the latest version of oh-my-zsh and
+set your default shell to it, and install the latest version of yarn, the 
+notetaking app Joplin's commandline interface, the Morgen paid calendar app, 
+the Spotify snap, a lot of vim plugins, and the latest LTS version of node.
 
 # Install
 
@@ -34,10 +42,15 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 # Shell shortcuts
 
 1. Control-R for previous commands.
-2. Type `z` and a directory name accessible from your current directory to cd to that directory, no need to type cd.
+2. Type `z` and a directory name accessible from your current directory to cd to
+that directory, no need to type cd.
 3. Type `l` for a long-style ls.
-4. `vimdiff <file1> <file2>` for a nice 2 way diff style interface where you can analyse and easily copy changes between files.
-5. `cat <file> | pbcopy` to cat a file into the clipboard, very useful for then using on a website form.
+4. `vimdiff <file1> <file2>` for a nice 2 way diff style interface where you can
+analyse and easily copy changes between files.
+5. `cat <file> | pbcopy` to cat a file into the clipboard, very useful for then
+using on a website form.
+6. Use <tab> to activate oh-my-zsh's autocomplete plugins. For example `git
+<tab>`
 
 # VIM Key bindings
 
@@ -46,86 +59,131 @@ As part of the process, this will install the latest version of oh-my-zsh and se
 3. Left and right cursor arrows to move through the syntaxic errors.
 4. Up cursor to toggle the file browser/NERDTree buffer.
 5. `>>` and `<<` to adjust indentation.
-6. `set mouse=a` is on, if you have any problems with copying and pasting just ``:set mouse=`` beforehand.
-7. `K` to bring up documentation on the current term and use the mousewheel to scroll the info.
+6. `set mouse=a` is on, if you have any problems with copying and pasting just 
+`:set mouse=` beforehand.
+7. `K` to bring up documentation on the current term and use the mousewheel to 
+scroll the info.
 8. `gd` to go to the definition of function or class.
-9. `:G <git command>` to run a git command via vim-fugative, for example `git diff`, `git add`.
-10. Use `/` and start typing to quickly jump to a certain term across all open buffers.
+9. `:G <git command>` to run a git command via vim-fugative, for example 
+`git diff`, `git add`.
+10. Use `/` and start typing to quickly jump to a certain term across all open 
+buffers.
 11. Use `u` to go up a root directory on nerdtree.
 12. Use `<F12>` to toggle distraction-free writing mode.
-13. Use `:Format` to format a buffer by the coc language server's prettifier, where it exists.
-14. The "Leader" key is set to `\` - use it to access a whole lot of extra coc options.
-15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for poor words while writing.
-16. Type `:LanguageToolCheck` to use the command-line grammar and spelling checker (requires Java 8).
-17. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`.
-18. To search all instances of `git clone` and replace them with `git submodule add` on a visual block, use `:<','>s/git clone/git submodule add/`.
-19. To feed a visual block through an external command, for example, the NIX external sort command, `:'<,'>!sort` - this will sort the visual block lines alphabetically.
-20. To generate a ctags index for all functions/methods in all languages, run this command at the root of the source control repo `!ctags -R *`. Then you can use `gd` to jump to the original definition of the function in any file.
+13. Use `:Format` to format a buffer by the coc language server's prettifier, 
+where it exists.
+14. The "Leader" key is set to `\` - use it to access a whole lot of extra coc 
+options.
+15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for 
+poor words while writing.
+16. Type `:LanguageToolCheck` to use the command-line grammar and spelling 
+checker (requires Java 8).
+17. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to 
+strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`.
+18. To search all instances of `git clone` and replace them with `git submodule 
+add` on a visual block, use `:<','>s/git clone/git submodule add/`.
+19. To feed a visual block through an external command, for example, the NIX 
+external sort command, `:'<,'>!sort` - this will sort the visual block lines 
+alphabetically.
+20. To generate a ctags index for all functions/methods in all languages, run 
+this command at the root of the source control repo `!ctags -R *`. Then you can 
+use `gd` to jump to the original definition of the function in any file.
 
-# VIM Spellchecking/Grammar checking/Proofreading commands (also when editing Joplin notes)
+# VIM Spellchecking/Grammar checking/Proofreading commands (also Joplin notes)
 
 1. `<LEFT>`       - prev text error
 2. `<RIGHT>`      - next text error
 3. `zg`			 - Mark as a good word
-4. `zw`			 - Like `zg` but mark the word as a wrong (bad) word.
+4. `zw`			 - Like `zg` but mark the word as a wrong (bad) word
 5. `zug`         - Unmark as good word
 6. `zuw`         - Unmark as wrong (bad) word 
-7. `z=`			 - For the word under/after the cursor suggest correctly spelled words
+7. `z=`			 - For the word under/after the cursor suggest correctly spelled
+words
 8. `1z=`		 - Use the first suggestion, without prompting
 9. `.`           - Redo - repeat last word replacement
-10. `:spellr`    - Repeat the replacement done by `z=` for all matches with the replaced 
-word in the current window
+10. `:spellr`    - Repeat the replacement done by `z=` for all matches with the 
+replaced word in the current window
 
 # Git Fugitive Plugin in Vim
 
-1. ``:Git blame`` for line-by-line git blame on current file, select a commit and press 'o' to open the commit diff with the commit message in a new window.
+1. ``:Git blame`` for line-by-line git blame on current file, select a commit 
+and press 'o' to open the commit diff with the commit message in a new window.
 
 # Mergetool - VIMdiff
  
 1. When a merge is started and conflicts are found, run `git mergetool`
-2. REMOTE = whatever is in the repo, BASE = whatever was the previous commit, LOCAL = whatever is in your local copy
-3. Move to the bottom window and the change you want to select `/>>>>` will search through the file for them.
+2. REMOTE = whatever is in the repo, BASE = whatever was the previous commit, 
+LOCAL = whatever is in your local copy
+3. Move to the bottom window and the change you want to select `/>>>>` will 
+search through the file for them.
 4. `:diffg RE`  " get from REMOTE
 5. `:diffg BA`  " get from BASE
 6. `:diffg LO`  " get from LOCAL
-7. These arguments also work on ranges, for example you can select all of the file and then use a range to `diffg LO`
+7. These arguments also work on ranges, for example you can select all of the 
+file and then use a range to `diffg LO`
 8. `wq` to save and commit the merge.
  
 # Git stuff I keep forgetting
 
-1. `git status` - will tell you what branch you're on and what files have changed. Use this all the time.
-2. `git commit --amend` and `git rebase -i HEAD~2` - roll the current commit into the previous one and edit the previous commit message. Use the rebase to squash the commit.
+1. `git status` - will tell you what branch you're on and what files have 
+changed. Use this all the time.
+2. `git commit --amend` and `git rebase -i HEAD~2` - roll the current commit 
+into the previous one and edit the previous commit message. Use the rebase to 
+squash the commit.
 3. `git branch` - show the current branches on your local copy
-4. `git stash push` - push to the stash, puts all non-committed files on the stash
+4. `git stash push` - push to the stash, puts all non-committed files on the 
+stash
 5. `git stash pop` - pop whatever is on to stash to the local copy.
 6. `git checkout -b <new branch name>` - create a new branch and switch to it
-7. `git rebase -i HEAD~3` - perform an interactive rebase on the last _2_ commits.. e.g: you always want to +1 to the number. Be careful with this.
-8. `git pull origin master` or `git pull origin main` - pull and merge master/main into your current local branch
+7. `git rebase -i HEAD~3` - perform an interactive rebase on the last _2_ 
+commits.. e.g: you always want to +1 to the number. Be careful with this.
+8. `git pull origin master` or `git pull origin main` - pull and merge 
+master/main into your current local branch
 9. Use 'main' instead of 'master' for all future repos - everyone is doing it.
 10. `git difftool` - use wherever you would use git diff - it's much more useful.
 11. `git mergetool` - use whenever you have merges to make, see above.
-12. `blameline` - shell script for line-by-line blame with commit comments/summary. 
-13. When all goes horribly wrong, backup your changed files by manually `mv`-ing them out of the repo directory, delete your entire local copy, checkout again from master, 
-    and rebuild your commit by copying the backed up files in.
-14. Use github PR's 'changed files' tab for exactly what has changed, but don't forget the commits tab, there should only 
+12. `blameline` - shell script for line-by-line blame with commit summary. 
+13. When all goes horribly wrong, backup your changed files by manually 
+`mv`-ing them out of the repo directory, delete your entire local copy, checkout
+again from master, and rebuild your commit by copying the backed up files in.
+14. Use github PR's 'changed files' tab for exactly what has changed, but don't 
+forget the commits tab, there should only 
     usually be one commit per PR. And remember the revert button on Github PRs. 
-15. `git logline` for my custom oneline per commit log alias which includes useful extra information, see: https://ma.ttias.be/pretty-git-log-in-one-line/
-16. `git checkout -- <filepath>` - this will overwrite your local changes to the file at <filepath> and restore the version in the latest commit on your branch.
-17. `git checkout <hash> <filepath>` - this will checkout a previous version of the file from the <hash> commit. A useful technique for restoring a change from a previous commit is to `cp <filepath> <filepath.bak>`, use `git logline` to find the right hash and then, `git checkout <hash> <filepath>`, then use `vimdiff <filepath> <filepath.bak>` to copy a change over from the previous commit to `<filepath.bak>`, and then `rm <filepath>` and `mv <filepath.bak> <filepath>`.
+15. `git logline` for my custom oneline per commit log alias which includes 
+useful extra information, see: https://ma.ttias.be/pretty-git-log-in-one-line/
+16. `git checkout -- <filepath>` - this will overwrite your local changes to 
+the file at <filepath> and restore the version in the latest commit on your 
+branch.
+17. `git checkout <hash> <filepath>` - this will checkout a previous version of 
+the file from the <hash> commit. A useful technique for restoring a change from 
+a previous commit is to `cp <filepath> <filepath.bak>`, use `git logline` to 
+find the right hash and then, `git checkout <hash> <filepath>`, then use 
+`vimdiff <filepath> <filepath.bak>` to copy a change over from the previous 
+commit to `<filepath.bak>`, and then `rm <filepath>` and then
+`mv <filepath.bak> <filepath>`.
 
-Check out my simpleton Git workflow here: https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
+Check out my simpleton Git workflow here: 
+https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
  
 # Docker/Docker Compose stuff I forget
  
-1. `docker system prune -a` - remove all unused Docker container images. This is essential to do occasionally to reclaim disk space.
-2. `docker-compose --rm <service>` - execute <service> providing there is a docker-compose.yml file in the current directory describing `<service>`.
+1. `docker system prune -a` - remove all unused Docker container images. 
+This is essential to do occasionally to reclaim disk space.
+2. `docker-compose --rm <service>` - execute <service> providing there is a 
+docker-compose.yml file in the current directory describing `<service>`.
 3. `docker ps` - status information on all running docker containers.
-4. `docker-compose ps` - status information on all running docker-compose services.
-5. `docker-compose run <service> <bash_command>` - run a quick bash command. `<service>` must be a valid docker-compose service. For example `docker-compose run wordpress cat /etc/issue`.
-6. `docker logs <service>` - output the logs for a service. This is the `<service>` name from `docker-compose ps`.
-7. `docker build .` - builds the container described in the `Dockerfile` from the local directory.
+4. `docker-compose ps` - status information on all running docker-compose 
+services.
+5. `docker-compose run <service> <bash_command>` - run a quick bash command. 
+`<service>` must be a valid docker-compose service. For example `docker-compose 
+run wordpress cat /etc/issue`.
+6. `docker logs <service>` - output the logs for a service. This is the 
+`<service>` name from `docker-compose ps`.
+7. `docker build .` - builds the container described in the `Dockerfile` from 
+the local directory.
 
-Also checkout the notes I took from the Docker Deep Dive book here: [https://github.com/wordswords/dotfiles/blob/master/dockernotes.md](https://github.com/wordswords/dotfiles/blob/master/dockernotes.md)
+Also checkout the notes I took from the Docker Deep Dive book here: 
+[https://github.com/wordswords/dotfiles/blob/master/dockernotes.md](https://github.com/wordswords/dotfiles/blob/master/dockernotes.md)
 
 # Joplin commandline
 
@@ -142,4 +200,5 @@ Also checkout the notes I took from the Docker Deep Dive book here: [https://git
 
 # Modifying
 
-If you want, you can fork this repo and base your config on this. If you have any problems using these dotfiles please let me know and I can help you.
+If you want, you can fork this repo and base your config on this. If you have 
+any problems using these dotfiles please let me know and I can help you.
