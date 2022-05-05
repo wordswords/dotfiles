@@ -51,7 +51,7 @@ set wildmode=list:longest,full
 " GUI config
 autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI 
 let g:prettier#autoformat = 1 " Prettier code formatter automatically files
-let g:rehash256 = 1 " Ensure 256 color mode
+let g:rehash256 = 1 " Ensure 256 colour mode
 
 " Default colourscheme
 colorscheme monokai256
@@ -403,4 +403,3 @@ let g:languagetool_jar="~/.dotfiles/LanguageTool-5.2/languagetool-commandline.ja
 """"
 """" END of LanguageTool grammar checker plugin CONFIG
 """"
-

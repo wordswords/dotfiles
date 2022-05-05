@@ -10,18 +10,9 @@ baseos=$(get_os)
 
 report_progress 1 'Deploying dotfiles: Part 1'
 
-if [ "$baseos" = "osx" ]; then
-  report_progress 2 'Configuring OSX and brew install packages..'
-  ./configure-osx.sh
-fi
-
 report_progress 2 'Backing up existing dotfiles to ~/.olddotfiles..'
 rm -rf ~/.olddotfiles
 mkdir -p ~/.olddotfiles
-
-if [ "$baseos" = "osx" ]; then
-  alias cp='/usr/bin/env gcp'
-fi
 
 cp -RL ~/.vim ~/.olddotfiles/.vim || echo "INFO: Could not backup .vim dir, does it exist?"
 cp -RL ~/.zsh* ~/.olddotfiles/ || echo "INFO: Could not backup .zsh* dirs, do they exist?"

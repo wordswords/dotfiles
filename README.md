@@ -1,9 +1,8 @@
 # My .dotfiles
 
-My setup with custom settings for bash, zsh osx and vim, with some extra ~/bin 
-helper scripts for good measure. Tested on OSX, Ubuntu, Linux Mint and Raspbian 
-Linux, although it has NOT been tested for several years on OSX so may well need
-some updates.
+My setup with custom settings for bash, zsh and vim, with some extra ~/bin 
+helper scripts for good measure. Tested on Ubuntu, Linux Mint and Raspbian 
+Linux.
 
 ## VIM:
 
