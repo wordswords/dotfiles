@@ -125,9 +125,9 @@ to learn sooner or later, so it might as well be sooner.
 
 https://missing.csail.mit.edu/
 
-### IET 'Fundementals' Course
+### ISTQB 'Fundementals' Course
 
-Although the true usefulness of IET's Fundementals testing course has been debated
+Although the true usefulness of ISTQB's Fundementals testing course has been debated
 for a long while, it is worth getting on your CV simply because a lot of job
 descriptions of QA roles require it. 
 
@@ -137,7 +137,7 @@ skills, with some useful information on communication and soft skills.
 
 However it did not cover many software development technical subjects at all,
 which I think has become increasingly important for any QA Engineer to know.
-There are seperate specialist 'test automation' IET courses but I haven't been 
+There are seperate specialist 'test automation' ISTQB courses but I haven't been 
 on any of those so cannot comment.
 
 Often employers will consider sending you on this course for professional
