@@ -24,18 +24,18 @@ Very good list I found of VIM shortcuts. From here: https://www.reddit.com/r/vim
 * `gg` - jump to the top of file
 * `G` - jump to end of file
 * `:{line_number}` or `{line_number}gg` - go to a specific line
-* `%` - jump to matching brackets ({[]})
+* `%` - jump to matching brackets `({[]})`
 * `Ctrl + d` - scroll down
 * `Ctrl + u` - scroll up
 
 ## Search:
 
-* `f{character}` - jump to next occurrence of the {character} in the line
-* `F{character}` - jump to previous occurrence of the {character} in the line
-* `/{pattern}` - forward search for {pattern} (n to jump to the next match and N to jump to previous match)
-* `?{pattern}` - backward search for {pattern} (n to jump to the next match and N to jump to previous match)
-* `:%s/old_str/new_str/gc` - find and replace every occurrence of "old_str" with "new_str" (with a yes/no prompt for each occurrence)
-* `:%s/old_str/new_str/g` - find and replace every occurrence of "old_str" with "new_str"
+* `f{character}` - jump to next occurrence of the `{character}` in the line
+* `F{character}` - jump to previous occurrence of the `{character}` in the line
+* `/{pattern}` - forward search for `{pattern}` (`n` to jump to the next match and `N` to jump to previous match)
+* `?{pattern}` - backward search for `{pattern}` (`n` to jump to the next match and `N` to jump to previous match)
+* `:%s/old_str/new_str/gc` - find and replace every occurrence of `"old_str"` with `"new_str"` (with a yes/no prompt for each occurrence)
+* `:%s/old_str/new_str/g` - find and replace every occurrence of `"old_str"` with `"new_str"`
 
 Note: You can use a colon instead of a forward slash as well. This is useful if there is a forward slash in the string to be searched or replaced.
 
@@ -43,18 +43,18 @@ Note: You can use a colon instead of a forward slash as well. This is useful if 
 
 * `dd` - delete the current line including newline character
 * `cc` - delete the current line and start insert mode
-* `{count}dd` - delete {count} number of lines. eg: 3dd deletes 3 lines
-* `{count}cc` - delete {count} number of lines and start insert mode
+* `{count}dd` - delete `{count}` number of lines. eg: `3dd` deletes 3 lines
+* `{count}cc` - delete `{count}` number of lines and start insert mode
 * `x` - delete character under cursor in normal mode
 * `s` - delete character under cursor and start insert mode
 * `X` - delete character to the left of the cursor and stay in normal mode
-* `r{new_char}` - replace character under cursor with {new_char} in normal mode
+* `r{new_char}` - replace character under cursor with `{new_char}` in normal mode
 * `Ctrl+w` - delete the last word you typed in insert mode
 * `ggdG` - delete complete document
 
-Prefix "d" to stay in normal mode and "c" to enter insert mode for the following shortcuts:
+Prefix `"d"` to stay in normal mode and `"c"` to enter insert mode for the following shortcuts:
 
-* `d/c{count}{motion}` - Eg: d2e deletes two words
+* `d/c{count}{motion}` - Eg: `d2e` deletes two words
 * `d/c$` - delete from current position to end of line
 * `d/ciw` - delete word
 * `d/ciW` - delete word including hypens
@@ -65,8 +65,8 @@ Prefix "d" to stay in normal mode and "c" to enter insert mode for the following
 * `d/ci"` - delete inside double quotes
 * `d/cit` - delete inside html tag
 * `d/cat` - delete outer html tag
-* `d/cib` - delete a block surrounded by (
-* `d/ciB` - delete a block surrrouned by {
+* `d/cib` - delete a block surrounded by `(`
+* `d/ciB` - delete a block surrrouned by `{`
 * `d/cas` - delete a sentence
 * `d/cap` - delete a paragraph
 
@@ -81,7 +81,7 @@ Prefix "d" to stay in normal mode and "c" to enter insert mode for the following
 * `yy` - yank the current line including the newline character.
 * `^y$` - yank the current line without the newline character
 * `^d$` - Cut the current line without the newline character
-* `{number}yy` - yank {number} of lines. eg: 2yy yanks two lines
+* `{number}yy` - yank `{number}` of lines. eg: `2yy` yanks two lines
 * `:%y` - yank entire file
 * `p` - paste after cursor
 * `P` - paste before cursor
