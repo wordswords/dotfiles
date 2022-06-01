@@ -1,3 +1,5 @@
+Very good list of VIM shortcuts. From here https://www.reddit.com/r/vim/comments/v1xrwv/my_list_of_most_used_vim_shortcuts/
+
 ## Basic:
 
 * `:w` - save
