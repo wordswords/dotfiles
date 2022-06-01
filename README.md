@@ -88,17 +88,20 @@ alphabetically.
 this command at the root of the source control repo `!ctags -R *`. Then you can 
 use `gd` to jump to the original definition of the function in any file.
 
+Check out this handy VIM cheatsheet I found here: 
+https://github.com/wordswords/dotfiles/blob/master/VIMCHEATSHEET.md
+
 # VIM Spellchecking/Grammar checking/Proofreading commands (also Joplin notes)
 
 1. `<LEFT>`       - prev text error
 2. `<RIGHT>`      - next text error
-3. `zg`			 - Mark as a good word
-4. `zw`			 - Like `zg` but mark the word as a wrong (bad) word
+3. `zg`          - Mark as a good word
+4. `zw`          - Like `zg` but mark the word as a wrong (bad) word
 5. `zug`         - Unmark as good word
 6. `zuw`         - Unmark as wrong (bad) word 
-7. `z=`			 - For the word under/after the cursor suggest correctly spelled
+7. `z=`          - For the word under/after the cursor suggest correctly spelled
 words
-8. `1z=`		 - Use the first suggestion, without prompting
+8. `1z=`         - Use the first suggestion, without prompting
 9. `.`           - Redo - repeat last word replacement
 10. `:spellr`    - Repeat the replacement done by `z=` for all matches with the 
 replaced word in the current window
