@@ -152,6 +152,7 @@ rm -rf ./colorscheme
 
 report_progress 2 'Installing pynvim for python integration with vim..'
 pip3 install --user pynvim
+pip3 install jedi
 
 report_progress 2 'Setting default git config.. change this if you are not David Craddock!'
 rm ~/.gitconfig

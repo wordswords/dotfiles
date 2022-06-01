@@ -127,6 +127,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # latest node version first
 export PATH="/usr/local/bin/:$PATH"
+# python3 bin on path
+export PATH="${HOME}/.local/bin/:$PATH"
 # secrets
 source ~/.dotfiles/secrets/KABOODLE_SECRETS.sh
 
