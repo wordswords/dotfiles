@@ -1,4 +1,4 @@
-Very good list I found of VIM shortcuts. These are basic VIM shortcuts and will work on almost all versions of VIM without any extra plugins/configuration. From here: https://www.reddit.com/r/vim/comments/v1xrwv/my_list_of_most_used_vim_shortcuts/
+Very good list I found of VIM shortcuts. These are vanilla VIM shortcuts and will work on almost all versions of VIM without any extra plugins/configuration. From here: https://www.reddit.com/r/vim/comments/v1xrwv/my_list_of_most_used_vim_shortcuts/
 
 ## Basic:
 
