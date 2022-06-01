@@ -1,4 +1,4 @@
-##Basic:
+## Basic:
 
 `:w` - save
 `:wq` - save & quit
@@ -8,7 +8,7 @@
 `i` - insert before cursor
 `a` - insert after cursor
 
-##Movement:
+## Movement:
 
 `hjkl` - left, down, up & right respectively
 `w` - jump to next word
@@ -26,7 +26,7 @@
 `Ctrl + d` - scroll down
 `Ctrl + u` - scroll up
 
-##Search:
+## Search:
 
 `f{character}` - jump to next occurrence of the {character} in the line
 `F{character}` - jump to previous occurrence of the {character} in the line
@@ -41,7 +41,7 @@ with "new_str"
 
 Note: You can use a colon instead of a forward slash as well. This is useful if there is a forward slash in the string to be searched or replaced.
 
-##Delete:
+## Delete:
 
 `dd` - delete the current line including newline character
 `cc` - delete the current line and start insert mode
@@ -78,7 +78,7 @@ Prefix "d" to stay in normal mode and "c" to enter insert mode for the following
 `d/cas` - delete a sentence
 `d/cap` - delete a paragraph
 
-##Cut, Copy and Paste:
+## Cut, Copy and Paste:
 
 `y` - yank selection
 `yw` - yank to end of word including whitespace
@@ -98,27 +98,27 @@ Prefix "d" to stay in normal mode and "c" to enter insert mode for the following
 `yyp` - duplicate line and paste below
 `yyP` - duplicate line and paste above
 
-##Copy/Paste to and from an external program
+## Copy/Paste to and from an external program
 
 `Ctrl + shift + v` - paste to vim from an external program
 
 `"+y` (Must be in normal mode) - yank from vim to an external
 program. To remap this shortcut to Ctrl-c, add `vnoremap <C-c> "+y` to vimrc.
 
-##Select
+## Select
 
 `V{line_no}G` - select lines upto {line_no}. eg: V35G selects upto line 35
 `vat` - select outer html tag
 `vit` - select inside html tag
 
-##Wrap text:
+## Wrap text:
 
 First set the textwidth in vimrc using `set textwidth=80`
 Then do:
 `gqq` - wrap single line
 `gggqG` - wrap whole document
 
-##Switch between tabs:
+## Switch between tabs:
 
 `gt` - next tab
 `gT` - prev tab
