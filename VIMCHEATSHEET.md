@@ -83,10 +83,8 @@ Prefix "d" to stay in normal mode and "c" to enter insert mode for the following
 * `^d$` - Cut the current line without the newline character
 * `{number}yy` - yank {number} of lines. eg: 2yy yanks two lines
 * `:%y` - yank entire file
-
 * `p` - paste after cursor
 * `P` - paste before cursor
-
 * `yyp` - duplicate line and paste below
 * `yyP` - duplicate line and paste above
 
