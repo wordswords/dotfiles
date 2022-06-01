@@ -96,7 +96,7 @@ program. To remap this shortcut to Ctrl-c, add `vnoremap <C-c> "+y` to vimrc.
 
 ## Select:
 
-* `V{line_no}G` - select lines upto {line_no}. eg: V35G selects upto line 35
+* `V{line_no}G` - select lines upto `{line_no}`. eg: `V35G` selects up to line 35
 * `vat` - select outer html tag
 * `vit` - select inside html tag
 
