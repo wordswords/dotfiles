@@ -76,7 +76,7 @@ Prefix `"d"` to stay in normal mode and `"c"` to enter insert mode for the follo
 * `yw` - yank to end of word including whitespace
 * `ye` - yank to end of word
 * `y$` - yank to end of line
-* `yiw` – yank inside word
+* `yiw` - yank inside word
 * `yit` - yank inside html tag
 * `yy` - yank the current line including the newline character.
 * `^y$` - yank the current line without the newline character
