@@ -96,14 +96,13 @@ Prefix "d" to stay in normal mode and "c" to enter insert mode for the following
 * `yyp` - duplicate line and paste below
 * `yyP` - duplicate line and paste above
 
-## Copy/Paste to and from an external program
+## Copy/Paste to and from an external program:
 
 * `Ctrl + shift + v` - paste to vim from an external program
-
 * `"+y` (Must be in normal mode) - yank from vim to an external
 program. To remap this shortcut to Ctrl-c, add `vnoremap <C-c> "+y` to vimrc.
 
-## Select
+## Select:
 
 * `V{line_no}G` - select lines upto {line_no}. eg: V35G selects upto line 35
 * `vat` - select outer html tag
