@@ -131,7 +131,6 @@ noremap <UP> :NERDTreeToggle<CR>
 ""
 function SetRestructuredTextOptions()
   au BufRead,BufNewFile *.rst setlocal textwidth=80
-  autocmd FileType gitcommit setlocal spell
   setlocal spell
 endfunction
 
@@ -150,7 +149,8 @@ function SetTextAndMarkdownOptions()
   "" scroll through spelling/grammar errors
   noremap <silent> <LEFT> ]s
   noremap <silent> <RIGHT> [s
-  noremap <silent> <DOWN> <nop>
+  noremap <DOWN> :Wordy weak<CR>
+  noremap <UP> :LanguageToolCheck<CR>
 endfunction
 
 function SetMakefileOptions()
@@ -171,9 +171,10 @@ function SetPythonFileOptions()
 endfunction
 
 function SetGitCommitFileOptions()
-  setlocal colorcolumn+=51
+  setlocal colorcolumn+=51 " set additional marker for line wrap
+  setlocal wrap " Enable word wrap 
   setlocal textwidth=70
-  setlocal spell
+  setlocal spell " highlight spelling mistakes
 endfunction
 
 autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
