@@ -16,7 +16,7 @@ report_progress 1 'Deploying .dotfiles: Part 2'
 
 report_progress 2 'Installing ctags'
 
-sudo apt install ctags -y
+#sudo apt install ctags -y
 ctags -R *
 
 report_progress 2 'Installing curl'
@@ -28,10 +28,10 @@ sudo apt install xclip xsel
 report_progress 2 'Installing latest nodejs and bash-language-server'
 
 # Install latest nodejs
-curl -sfLS install-node.vercel.app/lts > node-lts.sh
-chmod u+x node-lts.sh
-sudo ./node-lts.sh --yes
-rm ./node-lts.sh
+#curl -sfLS install-node.vercel.app/lts > node-lts.sh
+#chmod u+x node-lts.sh
+#sudo ./node-lts.sh --yes
+#rm ./node-lts.sh
 export PATH="/usr/local/bin/:$PATH"
 
 report_progress 2 'Install LanguageTool grammar checker'
