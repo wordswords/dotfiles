@@ -50,6 +50,10 @@ analyse and easily copy changes between files.
 using on a website form.
 6. Use `<tab>` to activate oh-my-zsh's autocomplete plugins. For example `git
 <tab>`
+7. Run `repos.sh` to check the branch name of all git repositories under the 
+current directory. Very useful when you have a number of different projects
+that interact with each other and you want to quickly see which repos branches
+you have checked out.
 
 # VIM Key bindings
 
