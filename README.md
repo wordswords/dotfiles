@@ -48,7 +48,7 @@ You probably want to change this if you're not me!
 
 # Shell shortcuts
 
-1. Control-R for previous commands.
+1. `<CTRL>-<R>` for previous commands.
 2. Type `z` and a directory name accessible from your current directory to cd to
 that directory, no need to type cd.
 3. Type `l` for a long-style ls.
