@@ -197,7 +197,7 @@ Also checkout the notes I took from the Docker Deep Dive book here:
 
 # Joplin commandline
 
-1. Use the alias 'notes' to open Joplin.
+1. Use the alias `notes` to open Joplin.
 2. Navigate the panes using the tab key
 3. Press enter on an existing note to open it in an editor
 4. Type `tc` without `:` to toggle the maximisation levels of the console.
