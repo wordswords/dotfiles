@@ -91,6 +91,8 @@ alphabetically.
 20. To generate a ctags index for all functions/methods in all languages, run 
 this command at the root of the source control repo `!ctags -R *`. Then you can 
 use `gd` to jump to the original definition of the function in any file.
+21. If in some modes the '`' character does not insert, try typing it twice '``'
+that should insert it properly.
 
 Check out this handy VIM cheatsheet I found here: 
 https://github.com/wordswords/dotfiles/blob/master/VIMCHEATSHEET.md
