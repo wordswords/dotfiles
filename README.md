@@ -67,9 +67,9 @@ are problems with the vim config.
 # VIM Key bindings
 
 1. `<tab>` to activate autocomplete plug ins.
-2. Down cursor for vim.coc diagnostics window, except in text mode.
-3. Left and right cursor arrows to move through the syntaxic errors.
-4. Up cursor to toggle the file browser/NERDTree buffer.
+2. `<DOWN>` for vim.coc diagnostics window, except in text mode.
+3. `<LEFT>` and `<RIGHT>` cursor arrows to move through the syntaxic errors.
+4. `<UP>` to toggle the file browser/NERDTree buffer.
 5. `>>` and `<<` to adjust indentation.
 6. `set mouse=a` is on, if you have any problems with copying and pasting just 
 `:set mouse=` beforehand.
@@ -205,7 +205,7 @@ Also checkout the notes I took from the Docker Deep Dive book here:
 # Joplin commandline
 
 1. Use the alias `notes` to open Joplin.
-2. Navigate the panes using the tab key
+2. Navigate the panes using `<TAB>` key
 3. Press enter on an existing note to open it in an editor
 4. Type `tc` without `:` to toggle the maximisation levels of the console.
 5. Type `:help` for basic help.
