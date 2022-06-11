@@ -68,7 +68,7 @@ are problems with the vim config.
 
 # VIM Key bindings
 
-1. `<tab>` to activate autocomplete plug ins.
+1. `<TAB>` to activate autocomplete plug ins.
 2. `<DOWN>` for vim.coc diagnostics window, except in text mode.
 3. `<LEFT>` and `<RIGHT>` cursor arrows to move through the syntaxic errors.
 4. `<UP>` to toggle the file browser/NERDTree buffer.
