@@ -57,6 +57,7 @@ using on a website form.
 current directory. Very useful when you have a number of different projects
 that interact with each other and you want to quickly see which repos branches
 you have checked out.
+8. Use `lockup` to encypt the secure directory. Remember to lock up after yourself!
 
 # VIM Key bindings
 
