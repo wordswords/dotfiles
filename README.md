@@ -27,7 +27,7 @@ how to install it at the end of the dotfile deployment.
 
 As part of the process, this will install the latest version of oh-my-zsh and
 set your default shell to it, and install the latest version of yarn, the 
-notetaking app Joplin's commandline interface, the Morgen paid calendar app, 
+note taking app Joplin's command line interface, the Morgen paid calendar app, 
 the Spotify snap, a lot of vim plugins, and the latest LTS version of node.
 
 # Install
@@ -64,7 +64,7 @@ you have checked out.
 5. `>>` and `<<` to adjust indentation.
 6. `set mouse=a` is on, if you have any problems with copying and pasting just 
 `:set mouse=` beforehand.
-7. `K` to bring up documentation on the current term and use the mousewheel to 
+7. `K` to bring up documentation on the current term and use the mouse wheel to 
 scroll the info.
 8. `gd` to go to the definition of function or class.
 9. `:G <git command>` to run a git command via vim-fugative, for example 
