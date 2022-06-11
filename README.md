@@ -197,16 +197,17 @@ Also checkout the notes I took from the Docker Deep Dive book here:
 
 # Joplin commandline
 
-1. Navigate the panes using the tab key
-2. Press enter on an existing note to open it in an editor
-3. Type `tc` without `:` to toggle the maximisation levels of the console.
-4. Type `:help` for basic help.
-5. Type `:help keymap` for hotkeys.
-6. Type `/<search term>` to search.
-7. Type `mn` to create a new note.
-8. Type `tm` to toggle metadata - user created time and lots of other metadata.
-9. Write all notes using Markdown so they display optimally across all clients.
-10. Press `<DEL>` to delete a selected note.
+1. Use the alias 'notes' to open Joplin.
+2. Navigate the panes using the tab key
+3. Press enter on an existing note to open it in an editor
+4. Type `tc` without `:` to toggle the maximisation levels of the console.
+5. Type `:help` for basic help.
+6. Type `:help keymap` for hotkeys.
+7. Type `/<search term>` to search.
+8. Type `mn` to create a new note.
+9. Type `tm` to toggle metadata - user created time and lots of other metadata.
+10. Write all notes using Markdown so they display optimally across all clients.
+11. Press `<DEL>` to delete a selected note.
 
 # Modifying
 
