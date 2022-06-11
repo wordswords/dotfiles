@@ -116,8 +116,8 @@ git submodule update --recursive --remote --merge
 set +x
 
 report_progress 2 'Install securemodelines security patch for vim..'
-mv ./securemodelines/plugin/* ~/.vim/plugin/
-rm -rf ./securemodelines
+#mv ./securemodelines/plugin/* ~/.vim/plugin/
+#rm -rf ./securemodelines
 
 report_progress 2 'Patching NerdTree to remove deprecated error..'
 cp ~/.dotfiles/nerdtree_plugin_fix.diff ~/.vim/pack/plugins/start/nerdtree-git-plugin/nerdtree_plugin
@@ -173,6 +173,11 @@ set +x
 report_progress 2 'Installing and configuring Joplin CLI notetaking app'
 ( which joplin && sudo npm update -g joplin ) || ( NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin && sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin && /usr/bin/joplin config --import < ~/.dotfiles/joplin.config )
 
+report_progress 2 'Encrypting Joplin notes'
+export SECURE_DIR="$HOME/.secure"
+ls $SECURE_DIR || mkdir -p $SECURE_DIR
+( sudo mount | grep -q .secure ) || (mkdir -p $SECURE_DIR && sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR && mkdir -p $SECURE_DIR/.config && ( mv ~/.config/joplin $SECURE_DIR/.config/ || echo '' ) && ln -s $SECURE_DIR/.config/joplin ~/.config/joplin )
+
 report_progress 2 'Syncing Joplin notes, you will now be asked to log into dropbox'
 /usr/bin/joplin sync
 
@@ -191,6 +196,9 @@ fi
 
 report_progress 2 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh) $(whoami)
+
+report_progress 2 'Unmounting encrpted directory'
+sudo umount $SECURE_DIR
 
 report_progress 1 'Deploy script finished.'
 echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"

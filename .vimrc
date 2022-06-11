@@ -87,7 +87,7 @@ set cursorline cursorcolumn
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 let g:airline_powerline_fonts = 1
-let g:airline_section_x = '%{PencilMode()}'
+"let g:airline_section_x = '%{PencilMode()}'
 let g:powerline_symbols = 'fancy'
 """
 """ END of vim-airline CONFIG

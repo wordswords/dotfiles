@@ -105,6 +105,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" || curl -L https://iterm2.com/mi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # some more ls aliases
+alias vi="vim -u NONE"
 alias ls="ls --color"
 alias ll='ls -alF'
 alias la='ls -A'
@@ -129,6 +130,15 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/bin/:$PATH"
 # python3 bin on path
 export PATH="${HOME}/.local/bin/:$PATH"
+
+# secure joplin
+export SECURE_DIR="$HOME/.secure"
+notes() {
+    ( sudo mount | grep -q .secure ) || ( mkdir -p $SECURE_DIR && sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR ) 
+    joplin
+    sudo umount $SECURE_DIR
+}
+autoload -Uz notes
 
 cd ~/.dotfiles
 git pull origin master
