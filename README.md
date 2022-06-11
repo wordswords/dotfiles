@@ -32,9 +32,9 @@ As part of the process, this will install the latest version of oh-my-zsh and
 set your default shell to it, and install the latest version of yarn, the 
 note taking app Joplin's command line interface, the Morgen paid calendar app, 
 the Spotify snap, a lot of vim plugins, and the latest LTS version of node. It
-will also setup an encypted directory under ~/.secure encrypted with your 
-pass phrase with ecrypt. It will use this directory to store your Joplin notes
-just in case you have any sensitive ones.
+will also setup an encypted directory under `~/.secure` encrypted with your 
+choice of pass phrase with ecrypt. It will use this directory to store your
+Joplin notes just in case you have any sensitive ones.
 
 # Install
 
