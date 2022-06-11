@@ -99,10 +99,14 @@ add` on a visual block, use `:<','>s/git clone/git submodule add/`.
 19. To feed a visual block through an external command, for example, the NIX 
 external sort command, `:'<,'>!sort` - this will sort the visual block lines 
 alphabetically.
-20. To generate a ctags index for all functions/methods in all languages, run 
+20. To execute a command on all lines in a visual block, use the norm
+command, for example: `:'<,'> norm i##` after selecting in visual mode to comment
+all lines out with a `##`. For the reverse, to uncomment and delete the first
+character, use `:'<,'> norm x` after selecting in visual mode.
+21. To generate a ctags index for all functions/methods in all languages, run 
 this command at the root of the source control repo `!ctags -R *`. Then you can 
 use `gd` to jump to the original definition of the function in any file.
-21. If in some modes the backtick character does not insert, try typing it twice 
+22. If in some modes the backtick character does not insert, try typing it twice 
 that should insert it properly.
 
 Check out this handy VIM cheatsheet I found here: 
