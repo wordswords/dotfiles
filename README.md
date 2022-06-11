@@ -101,15 +101,17 @@ https://github.com/wordswords/dotfiles/blob/master/VIMCHEATSHEET.md
 
 1. `<LEFT>`       - prev text error
 2. `<RIGHT>`      - next text error
-3. `zg`          - Mark as a good word
-4. `zw`          - Like `zg` but mark the word as a wrong (bad) word
-5. `zug`         - Unmark as good word
-6. `zuw`         - Unmark as wrong (bad) word 
-7. `z=`          - For the word under/after the cursor suggest correctly spelled
+3. `<UP>`         - run LanguageToolCheck (requires Java)
+4. `<DOWN>`       - run :Wordy weak
+5. `zg`           - Mark as a good word
+6. `zw`           - Like `zg` but mark the word as a wrong (bad) word
+7. `zug`          - Unmark as good word
+8. `zuw`          - Unmark as wrong (bad) word 
+9. `z=`           - For the word under/after the cursor suggest correctly spelled
 words
-8. `1z=`         - Use the first suggestion, without prompting
-9. `.`           - Redo - repeat last word replacement
-10. `:spellr`    - Repeat the replacement done by `z=` for all matches with the 
+10. `1z=`         - Use the first suggestion, without prompting
+11. `.`           - Redo - repeat last word replacement
+12. `:spellr`     - Repeat the replacement done by `z=` for all matches with the 
 replaced word in the current window
 
 # Git Fugitive Plugin in Vim
