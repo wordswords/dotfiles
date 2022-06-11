@@ -61,6 +61,8 @@ current directory. Very useful when you have a number of different projects
 that interact with each other and you want to quickly see which repos branches
 you have checked out.
 8. Use `lockup` to encypt the secure directory. Remember to lock up after yourself!
+9. Use `vi` instead of `vim` to load a seperate minimal vim config, useful if there
+are problems with the vim config.
 
 # VIM Key bindings
 
@@ -128,11 +130,12 @@ and press 'o' to open the commit diff with the commit message in a new window.
 
 # Git Fugitive Mergetool
 
-1. Buffers are setup so [local branch | resulting mergefile | merge in branch]
-2. Use `[c` and `]c` to navigate through the conflicts
-3. Go to local branch OR merge in branch, select the conflict, and use `dp` to
+1. Whenever you have a merge conflict, use `git mergetool` to open this.
+2. Buffers are setup so [local branch | resulting mergefile | merge in branch]
+3. Use `[c` and `]c` to navigate through the conflicts
+4. Go to local branch OR merge in branch, select the conflict, and use `dp` to
 choose that version.
-4. When done, use `:Gwrite!`
+5. When done, use `:Gwrite!`
 
 More info:
 http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
