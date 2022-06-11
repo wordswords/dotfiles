@@ -39,9 +39,10 @@ Joplin notes just in case you have any sensitive ones.
 
 1. `git clone git@github.com:/wordswords/dotfiles ~/.dotfiles`
 2. `cd ~/.dotfiles/`
-3. `./deploy-part-1.sh`
-4. Press `control-D` to drop out of oh-my-zsh
-5. `./deploy-part-2.sh`
+3. `./deploy-part-0.sh` to attempt to install preqs
+4. `./deploy-part-1.sh` to install and setup oh-my-zsh
+5. Press `control-D` to drop out of oh-my-zsh
+6. `./deploy-part-2.sh`
 
 # Shell shortcuts
 
