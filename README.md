@@ -23,6 +23,9 @@ how to install it at the end of the dotfile deployment.
 5. For grammar checking Java 8 should be installed.
 6. zsh must be installed.
 
+You can run a script that will attempt to install the prerequisites under Ubuntu
+by executing `./deploy-part-0.sh`.
+
 # What it does
 
 As part of the process, this will install the latest version of oh-my-zsh and
