@@ -134,7 +134,7 @@ export PATH="${HOME}/.local/bin/:$PATH"
 # secure joplin
 export SECURE_DIR="$HOME/.secure"
 notes() {
-    ( sudo mount | grep -q .secure ) || ( mkdir -p $SECURE_DIR && sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR ) 
+    ( sudo mount | grep -q .secure ) || ( sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR ) 
     joplin
     sudo umount $SECURE_DIR
 }
