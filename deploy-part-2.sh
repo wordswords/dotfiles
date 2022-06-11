@@ -28,10 +28,10 @@ sudo apt install xclip xsel
 report_progress 2 'Installing latest nodejs and bash-language-server'
 
 # Install latest nodejs
-#curl -sfLS install-node.vercel.app/lts > node-lts.sh
-#chmod u+x node-lts.sh
-#sudo ./node-lts.sh --yes
-#rm ./node-lts.sh
+curl -sfLS install-node.vercel.app/lts > node-lts.sh
+chmod u+x node-lts.sh
+sudo ./node-lts.sh --yes
+rm ./node-lts.sh
 export PATH="/usr/local/bin/:$PATH"
 
 report_progress 2 'Install LanguageTool grammar checker'
@@ -176,14 +176,18 @@ report_progress 2 'Installing and configuring Joplin CLI notetaking app'
 report_progress 2 'Syncing Joplin notes, you will now be asked to log into dropbox'
 /usr/bin/joplin sync
 
-report_progress 2 'Installing Joplin UI app via snap'
-sudo snap install joplin 2>/dev/null || sudo snap refresh joplin
+read SNAPINSTALL
+if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];
+then
+    report_progress 2 'Installing Joplin UI app via snap'
+    sudo snap install joplin 2>/dev/null || sudo snap refresh joplin
 
-report_progress 2 'Installing Morgen calendar app via snap'
-sudo snap install morgen 2>/dev/null || sudo snap refresh morgen
+    report_progress 2 'Installing Morgen calendar app via snap'
+    sudo snap install morgen 2>/dev/null || sudo snap refresh morgen
 
-report_progress 2 'Installing Spotify app via snap'
-sudo snap install spotify 2>/dev/null || sudo snap refresh spotify
+    report_progress 2 'Installing Spotify app via snap'
+    sudo snap install spotify 2>/dev/null || sudo snap refresh spotify
+fi
 
 report_progress 2 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh) $(whoami)

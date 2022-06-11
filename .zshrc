@@ -17,7 +17,7 @@ ZSH_THEME="fishy"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=7
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -129,6 +129,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/bin/:$PATH"
 # python3 bin on path
 export PATH="${HOME}/.local/bin/:$PATH"
-# secrets
-source ~/.dotfiles/secrets/KABOODLE_SECRETS.sh
+
+cd ~/.dotfiles
+git pull origin master
+
 
