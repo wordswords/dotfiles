@@ -140,6 +140,11 @@ notes() {
 }
 autoload -Uz notes
 
+lockup() {
+  sudo umount $SECURE_DIR
+}
+autoload -Uz lockup
+
 cd ~/.dotfiles
 git pull origin master
 
