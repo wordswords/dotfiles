@@ -42,7 +42,7 @@ Joplin notes just in case you have any sensitive ones.
 3. `./deploy-part-0.sh` to attempt to install preqs
 4. `./deploy-part-1.sh` to install and setup oh-my-zsh
 5. Press `control-D` to drop out of oh-my-zsh
-6. `./deploy-part-2.sh`
+6. `./deploy-part-2.sh` to install the vast majority of the customisations
 7. By default it sets your git email address to be my address.
 You probably want to change this if you're not me!
 
