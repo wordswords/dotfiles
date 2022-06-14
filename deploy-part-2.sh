@@ -181,7 +181,7 @@ ls $SECURE_DIR || mkdir -p $SECURE_DIR
 report_progress 2 'Syncing Joplin notes, you will now be asked to log into dropbox'
 /usr/bin/joplin sync
 
-read SNAPINSTALL
+read -p "Do you want to install the Ubuntu snap images of Spotify, Joplin UI and Morgen? (y/N)" SNAPINSTALL
 if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];
 then
     report_progress 2 'Installing Joplin UI app via snap'
