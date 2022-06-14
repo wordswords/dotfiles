@@ -45,6 +45,8 @@ Joplin notes just in case you have any sensitive ones.
 6. `./deploy-part-2.sh` to install the vast majority of the customisations
 7. By default it sets your git email address to be my address.
 You probably want to change this if you're not me!
+8. It will also attempt by default to log in to my Joplin account, which will 
+not succeed without my credentials. So you probably want to change that.
 
 # Shell shortcuts
 
