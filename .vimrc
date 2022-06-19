@@ -404,5 +404,3 @@ let g:languagetool_jar="~/.dotfiles/LanguageTool-5.2/languagetool-commandline.ja
 """"
 """" END of LanguageTool grammar checker plugin CONFIG
 """"
-autocmd BufWritePost Jenkinsfile !ssh jenkins.dev.kaboodle.co.uk -p9669 declarative-linter < %
-autocmd BufWritePost Jenkinsfile !ssh jenkins.dev.kaboodle.co.uk -p9669 declarative-linter < %
