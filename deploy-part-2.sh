@@ -14,9 +14,8 @@ baseos=$(get_os)
 
 report_progress 1 'Deploying .dotfiles: Part 2'
 
-report_progress 2 'Installing ctags'
+report_progress 2 'Running ctags'
 
-#sudo apt install ctags -y
 ctags -R *
 
 report_progress 2 'Installing curl'
