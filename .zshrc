@@ -140,12 +140,25 @@ notes() {
 }
 autoload -Uz notes
 
+syncnotes() {
+    ( sudo mount | grep -q .secure ) || ( sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR ) 
+    joplin sync
+    sudo umount $SECURE_DIR
+}
+autoload -Uz syncnotes
+
+updatedotfiles() {
+    cd ~/.dotfiles
+    git pull origin master
+    cd -
+}
+autoload -Uz updatedotfiles
+
 lockup() {
   sudo umount $SECURE_DIR
 }
 autoload -Uz lockup
 
-cd ~/.dotfiles
-git pull origin master
-
+# on start of interactive shell
+updatedotfiles()
 
