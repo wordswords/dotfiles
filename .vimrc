@@ -340,7 +340,6 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <DOWN>  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
@@ -400,6 +399,9 @@ endif
 """" START of LanguageTool grammar checker plugin CONFIG
 """"
 let g:languagetool_jar="~/.dotfiles/LanguageTool-5.2/languagetool-commandline.jar"
+let g:languagetool_lang="en-GB"
+hi LanguageToolGrammarError  guisp=blue gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=blue term=underline cterm=none
+hi LanguageToolSpellingError guisp=red  gui=undercurl guifg=NONE guibg=NONE ctermfg=white ctermbg=red  term=underline cterm=none
 """"
 """" END of LanguageTool grammar checker plugin CONFIG
 """"
