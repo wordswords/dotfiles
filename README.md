@@ -78,7 +78,6 @@ you have checked out.
 # VIM Key bindings
 
 1. `<TAB>` to activate autocomplete plug ins.
-2. `<DOWN>` for vim.coc diagnostics window, except in text mode.
 3. `<LEFT>` and `<RIGHT>` cursor arrows to move through the syntaxic errors.
 4. `<UP>` to toggle the file browser/NERDTree buffer.
 5. `>>` and `<<` to adjust indentation.
@@ -126,7 +125,7 @@ https://github.com/wordswords/dotfiles/blob/master/VIMCHEATSHEET.md
 1. `<LEFT>`       - prev text error
 2. `<RIGHT>`      - next text error
 3. `<UP>`         - run LanguageToolCheck (requires Java)
-4. `<DOWN>`       - run :Wordy weak
+4. `<DOWN>`       - go into Goyo focused mode
 5. `zg`           - Mark as a good word
 6. `zw`           - Like `zg` but mark the word as a wrong (bad) word
 7. `zug`          - Unmark as good word
