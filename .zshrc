@@ -104,18 +104,18 @@ source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 test -e "${HOME}/.iterm2_shell_integration.zsh" || curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# some more ls aliases
-alias vi="vim -u NONE"
-alias ls="ls --color"
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias grep="grep --color"
-alias please='sudo $(fc -ln -1)'
+# aliases
 alias blameline='~/.dotfiles/bin/git-better-blame.sh'
+alias grep="grep --color"
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls="ls --color"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias please='sudo $(fc -ln -1)'
 alias ports='netstat -tlpn | sort -t: -k2 -n'
+alias vi="vim -u NONE"
 
 bindkey '≠' autosuggest-accept
 
