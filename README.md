@@ -1,7 +1,7 @@
 # My .dotfiles
 
 My setup with custom settings for bash, zsh and vim, with some extra ~/bin 
-helper scripts for good measure. Tested on Ubuntu 22.04.
+helper scripts for good measure. Tested on Ubuntu 22.04 and the latest Lubuntu.
 
 ## VIM:
 
