@@ -137,7 +137,6 @@ endfunction
 function SetTextAndMarkdownOptions()
   autocmd FileType text,markdown,mkd call pencil#init()
                             \ | call lexical#init()
-                            \ | call litecorrect#init()
                             \ | call textobj#quote#init()
                             \ | call textobj#sentence#init()
   let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
@@ -149,7 +148,7 @@ function SetTextAndMarkdownOptions()
   "" scroll through spelling/grammar errors
   noremap <silent> <LEFT> ]s
   noremap <silent> <RIGHT> [s
-  noremap <DOWN> :Wordy weak<CR>
+  noremap <DOWN> :Goyo<CR> " this toggles distraction-free mode
   noremap <UP> :LanguageToolCheck<CR>
 endfunction
 
