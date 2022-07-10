@@ -91,20 +91,11 @@ plugins=(
 )
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-export NVM_DIR="~/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-
-export PATH="$PATH:$HOME/bin"
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" || curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# aliases
+## [++ ALIASES ++]
 alias blameline='~/.dotfiles/bin/git-better-blame.sh'
 alias grep="grep --color"
 alias l='ls -CF'
@@ -116,6 +107,7 @@ alias pbpaste='xclip -selection clipboard -o'
 alias please='sudo $(fc -ln -1)'
 alias ports='netstat -tlpn | sort -t: -k2 -n'
 alias vi="vim -u NONE"
+## [-- ALIASES --]
 
 bindkey '≠' autosuggest-accept
 
@@ -124,45 +116,13 @@ autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# latest node version first
-export PATH="/usr/local/bin/:$PATH"
-# python3 bin on path
-export PATH="${HOME}/.local/bin/:$PATH"
-
-# secure joplin
+## [++ PATHS ++]
+export PATH="${HOME}/bin:${HOME}/.local/bin/:$PATH:/usr/local/bin/:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export SECURE_DIR="$HOME/.secure"
-lockup() {
-  sudo umount $SECURE_DIR
-}
-autoload -Uz lockup
+## [-- PATHS --]
 
-unlock() {
-    ( sudo mount | grep -q .secure ) || ( sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR ) 
-}
-autoload -Uz unlock
-
-syncnotes() {
-    unlock
-    joplin sync
-    lockup
-}
-autoload -Uz syncnotes
-
-notes() {
-    unlock
-    joplin
-    lockup
-}
-autoload -Uz notes
-
-updatedotfiles() {
-    cd ~/.dotfiles
-    git pull origin master
-    cd -
-}
-autoload -Uz updatedotfiles
-# on start of every interactive shell
+## [++ COMMANDS RUN ON EVERY INTERACTIVE SHELL ++]
 updatedotfiles
-fortune
+fortuneprint
+## [-- COMMANDS RUN ON EVERY INTERACTIVE SHELL --]
+

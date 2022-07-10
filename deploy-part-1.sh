@@ -22,7 +22,8 @@ cp -L ~/.bash_profile ~/.olddotfiles/.bash_profile || echo "INFO: Could not back
 cp -L ~/.vimrc ~/.olddotfiles/.vimrc || echo "INFO: Could not backup .vimrc, does it exist?"
 
 report_progress 2 'Removing existing zsh config..'
-rm -rf ~/.zshrc
+rm -f ~/.zshrc
+rm -f ~/.zshenv
 rm -rf ~/.oh-my-zsh
 
 report_progress 2 'Installing oh-my-zsh..'
