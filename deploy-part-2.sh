@@ -199,6 +199,9 @@ sudo chsh -s $(which zsh) $(whoami)
 report_progress 2 'Unmounting encrpted directory'
 sudo umount $SECURE_DIR
 
+report_progress 2 'Customising Fortune random quoter'
+sudo rm -rf /usr/share/games/fortunes/riddles*
+
 report_progress 1 'Deploy script finished.'
 echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
 echo "After this, you will have to set your terminal emulator to use said font."

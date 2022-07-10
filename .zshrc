@@ -165,4 +165,4 @@ updatedotfiles() {
 autoload -Uz updatedotfiles
 # on start of every interactive shell
 updatedotfiles
-
+fortune
