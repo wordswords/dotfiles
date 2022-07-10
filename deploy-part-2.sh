@@ -5,6 +5,8 @@ set -e
 
 # Load in status message printing functions
 source ./deploy-common.sh
+# Load in functions
+source ./.zshenv
 
 if [ "$baseos" = "linux" ]; then
     sudo apt update
@@ -64,6 +66,7 @@ ln --force -s ~/.dotfiles/.bash_profile_remote ~/.bash_profile_remote
 ln --force -s -n ~/.dotfiles/.vim ~/.vim
 ln --force -s ~/.dotfiles/.vimrc ~/.vimrc
 ln --force -s ~/.dotfiles/.zshrc ~/.zshrc
+ln --force -s ~/.dotfiles/.zshenv ~/.zshenv
 ln --force -s ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
 
 report_progress 2 'Creating vim backup file directory structure..'
@@ -191,8 +194,8 @@ report_progress 2 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh) $(whoami)
 
 report_progress 2 'Customising Fortune random quoter'
-sudo rm -rf /usr/share/games/fortunes/riddles*
-sudo rm -rf /usr/share/games/fortunes/fortune*
+sudo rm -rf /usr/share/games/fortunes/riddles* || echo ''
+sudo rm -rf /usr/share/games/fortunes/fortune* || echo ''
 
 report_progress 1 'Deploy script finished.'
 echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
