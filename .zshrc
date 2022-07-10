@@ -133,19 +133,29 @@ export PATH="${HOME}/.local/bin/:$PATH"
 
 # secure joplin
 export SECURE_DIR="$HOME/.secure"
-notes() {
-    ( sudo mount | grep -q .secure ) || ( sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR ) 
-    joplin
-    sudo umount $SECURE_DIR
+lockup() {
+  sudo umount $SECURE_DIR
 }
-autoload -Uz notes
+autoload -Uz lockup
+
+unlock() {
+    ( sudo mount | grep -q .secure ) || ( sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR ) 
+}
+autoload -Uz unlock
 
 syncnotes() {
-    ( sudo mount | grep -q .secure ) || ( sudo mount -t ecryptfs -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes,no_sig_cache $SECURE_DIR $SECURE_DIR ) 
+    unlock
     joplin sync
-    sudo umount $SECURE_DIR
+    lockup
 }
 autoload -Uz syncnotes
+
+notes() {
+    unlock
+    joplin
+    lockup
+}
+autoload -Uz notes
 
 updatedotfiles() {
     cd ~/.dotfiles
@@ -153,12 +163,6 @@ updatedotfiles() {
     cd -
 }
 autoload -Uz updatedotfiles
-
-lockup() {
-  sudo umount $SECURE_DIR
-}
-autoload -Uz lockup
-
-# on start of interactive shell
-updatedotfiles()
+# on start of every interactive shell
+updatedotfiles
 
