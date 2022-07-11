@@ -169,13 +169,19 @@ git config --global user.name "David Craddock"
 set +x
 
 report_progress 2 'Installing and configuring Joplin CLI notetaking app'
-( which joplin && sudo npm update -g joplin ) || ( NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin && sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin && /usr/bin/joplin config --import < ~/.dotfiles/joplin.config )
+( which joplin-cli && sudo npm update -g joplin ) || ( NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin && sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin-cli )
 
-report_progress 2 'Encrypting Joplin notes'
-ls $SECURE_DIR || ( mkdir -p $SECURE_DIR && ( unlock && mkdir -p $SECURE_DIR/.config && ( mv ~/.config/joplin $SECURE_DIR/.config/ || echo '' ) && ln -s $SECURE_DIR/.config/joplin ~/.config/joplin ) )
+report_progress 2 'Import Joplin config'
+/usr/bin/joplin-cli config --import < ~/.dotfiles/joplin.config 
+
+report_progress 2 'Creating SECURE_DIR if it doesnt already exist..'
+ls $SECURE_DIR || ( mkdir -p $SECURE_DIR )
 
 report_progress 2 'Syncing Joplin notes, you will now be asked to log into dropbox'
 syncnotes
+
+report_progress 2 'Encrypting Joplin notes'
+unlock && mkdir -p $SECURE_DIR/.config && ( mv ~/.config/joplin $SECURE_DIR/.config/ || echo '' ) && ( ln -s $SECURE_DIR/.config/joplin ~/.config/joplin )
 
 read "?Do you want to install or update the Ubuntu snap images of Spotify, Joplin UI and Morgen? (y/N)?" SNAPINSTALL
 if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];

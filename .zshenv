@@ -11,14 +11,14 @@ autoload -Uz unlock
 
 syncnotes() {
     unlock
-    joplin sync
+    joplin-cli sync
     lockup
 }
 autoload -Uz syncnotes
 
 notes() {
     unlock
-    joplin
+    joplin-cli
     lockup
 }
 autoload -Uz notes
