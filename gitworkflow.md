@@ -1,5 +1,7 @@
 # My Simpleton Commandline Git Workflow
 
+![alt text](git.png "Git Workflow Diagram")
+
 This is a simple description of how I work 99% of the time, as I am a simpleton. Origin/main is the new origin/master for future repositories, I just note both here for completeness because I use origin master for a lot of current repos.
 
 1. I first make sure I am uptodate on origin/master or origin/main by git pulling.
