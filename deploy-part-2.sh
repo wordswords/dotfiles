@@ -181,7 +181,9 @@ report_progress 2 'Syncing Joplin notes, you will now be asked to log into dropb
 syncnotes
 
 report_progress 2 'Encrypting Joplin notes'
-unlock && mkdir -p $SECURE_DIR/.config && ( mv ~/.config/joplin $SECURE_DIR/.config/ || echo '' ) && ( ln -s $SECURE_DIR/.config/joplin ~/.config/joplin )
+unlock && mkdir -p $SECURE_DIR/.config && ( mv ~/.config/joplin
+$SECURE_DIR/.config/ || echo '' ) && ( ln -s $SECURE_DIR/.config/joplin ~/.config/joplin )
+
 
 read "?Do you want to install or update the Ubuntu snap images of Spotify, Joplin UI and Morgen? (y/N)?" SNAPINSTALL
 if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];
@@ -202,6 +204,7 @@ sudo chsh -s $(which zsh) $(whoami)
 report_progress 2 'Customising Fortune random quoter'
 sudo rm -rf /usr/share/games/fortunes/riddles* || echo ''
 sudo rm -rf /usr/share/games/fortunes/fortune* || echo ''
+sudo rm -rf /usr/share/games/fortunes/literature* || echo ''
 
 report_progress 1 'Deploy script finished.'
 echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
