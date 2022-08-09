@@ -1,4 +1,7 @@
 ## [++ CUSTOM ZSH FUNCTIONS ++]
+
+export USE_HARD_LINKS=false
+
 lockup() {
   sudo umount $SECURE_DIR
 }
