@@ -116,6 +116,7 @@ this command at the root of the source control repo `!ctags -R *`. Then you can
 use `gd` to jump to the original definition of the function in any file.
 22. If in some modes the backtick character does not insert, try typing it twice 
 that should insert it properly.
+23. To open the URL under the cursor in the default browser use `gx` <- handy!
 
 Check out this handy VIM cheatsheet I found here: 
 https://github.com/wordswords/dotfiles/blob/master/VIMCHEATSHEET.md
