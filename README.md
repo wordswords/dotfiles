@@ -19,7 +19,7 @@ Other info displayed includes File Format, file type detected, current line of
 code / total lines of code, current column number / total columns, and so on.
    
 When it shows 'SPELL' is on, it is checking text spellings in addition to any
-code related errors. To toggle this, use `:set nospell` or `:set spell'. It
+code related errors. To toggle this, use `:set nospell` or `:set spell`. It
 highlights spelling errors in comments.
 
 ## ZSH:
