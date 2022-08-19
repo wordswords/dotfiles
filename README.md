@@ -110,7 +110,7 @@ directory.
 # VIM Key bindings
 
 1. `<TAB>` to activate autocomplete plug ins.
-2. `,` is set to be the <Leader> key in VIM8, use it to trigger shortcuts.
+2. `,` is set to be the `<Leader>` key in VIM8, use it to trigger shortcuts.
 3. `<LEFT>` and `<RIGHT>` cursor arrows to move through the syntaxic errors.
 4. `<UP>` to toggle the file browser/NERDTree buffer.
 5. `>>` and `<<` to adjust indentation.
