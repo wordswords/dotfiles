@@ -9,22 +9,22 @@ helper scripts for good measure. Tested on Ubuntu 22.04 and the latest Lubuntu.
 
 # How to decode the status bar under each buffer
 
-The problems in the file are noted in the far right. If there are no problems 
-there will be no red or orange expanded sections. 
+The problems in the file are noted in the far right. If there are no problems
+there will be no red or orange expanded sections.
 
-* Orange - Warnings 
+* Orange - Warnings
 * Red - Errors
 
-It will show you how many warnings or errors there are, and the line number of 
-the first one. You should be able to skip between warnings/errors with the 
+It will show you how many warnings or errors there are, and the line number of
+the first one. You should be able to skip between warnings/errors with the
 `<Left>` and `<Right>` keys.
 
 When you are searching through the file with `/` then it shows you: your term,
 how many matches there are of your term, and which one you're on.
 
-Other info displayed includes File Format, file type detected, current line of 
+Other info displayed includes File Format, file type detected, current line of
 code / total lines of code, current column number / total columns, and so on.
-   
+
 When it shows 'SPELL' is on, it is checking text spellings in addition to any
 code related errors. To toggle this, use `:set nospell` or `:set spell`. It
 highlights spelling errors in comments.
@@ -32,7 +32,7 @@ highlights spelling errors in comments.
 # How to decode Nerdtree symbols
 
 * A tick means that there are no changes to this file in the current branch.
-* A star `*` means there are changes to be commited to this file or dir on the 
+* A star `*` means there are changes to be commited to this file or dir on the
 current branch.
 * `X` or `[X]` means this file or directory is ignored by git, e.g it has a match
 in `.gitignore`
@@ -105,7 +105,7 @@ you have checked out.
     repeat the last command with sudo
 13. Use `ports` to list the open ports on the system in a readable way.
 14. Use `tree` for a handy diagram of the full directory tree under the current
-directory. 
+directory.
 
 # VIM Key bindings
 
