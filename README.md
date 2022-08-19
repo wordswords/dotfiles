@@ -150,7 +150,7 @@ e.g. method, variable etc.
 5. `gd` to jump to the method/class definition under the cursor
 6. `K` for the language feature under the cursor to pull up the language server
 documentation for that feature.
-7. `help coc-nvim` for the reference documentation for Coc.vim
+7. `:help coc-nvim` for the reference documentation for Coc.vim
 
 # Git Fugitive Plugin in Vim
 
