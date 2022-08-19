@@ -89,10 +89,11 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Use `[g` and `]g` to navigate diagnostics
+" Use `<LEFT>` and `<RIGHT>` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> <LEFT> <Plug>(coc-diagnostic-prev)
+nmap <silent> <RIGHT> <Plug>(coc-diagnostic-next)
+nmap <silent> <DOWN> call CocActionAsync('diagnosticToggle')
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -289,7 +290,7 @@ function SetRestructuredTextOptions()
 endfunction
 
 function SetTextAndMarkdownOptions()
-  autocmd FileType text,markdown,mkd call pencil#init()
+  au BufRead,BufNewFile *.txt *.md call pencil#init()
                             \ | call lexical#init()
                             \ | call textobj#quote#init()
                             \ | call textobj#sentence#init()
@@ -300,8 +301,6 @@ function SetTextAndMarkdownOptions()
   setlocal wrap
   nmap <Leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
   "" scroll through spelling/grammar errors
-  noremap <silent> <LEFT> ]s
-  noremap <silent> <RIGHT> [s
   noremap <DOWN> :Goyo<CR> " this toggles distraction-free mode
   noremap <UP> :LanguageToolCheck<CR>
 endfunction
@@ -333,11 +332,12 @@ endfunction
 autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
 autocmd BufRead,BufNewFile *.robot setlocal noexpandtab
 autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
-autocmd FileType Makefile call SetMakefileOptions()
+autocmd BufRead,BufNewFile *.txt call SetTextAndMarkdownOptions()
+autocmd BufRead,BufNewFile *.md call SetTextAndMarkdownOptions()
+autocmd BufRead,BufNewFile Makefile call SetMakeFileOptions()
+autocmd BufRead,BufNewFile *.py call SetPythonFileOptions()
 autocmd FileType gitcommit call SetGitCommitFileOptions()
 autocmd FileType plugin indent on " for writing plugins
-autocmd FileType python call SetPythonFileOptions()
-autocmd FileType text,markdown call SetTextAndMarkdownOptions()
 ""
 "" END of Filetype formats/autocmd CONFIG
 ""

@@ -138,6 +138,19 @@ words
 12. `:spellr`     - Repeat the replacement done by `z=` for all matches with the 
 replaced word in the current window
 
+# Coc.vim on large software projects
+
+1. `:CocDiagnostics` to show the errors in the current language server.
+2. `<LEFT>` for the prev diagnostic error
+3. `<RIGHT>` for the next diagnostic error
+4. `:CocRename` for language server assisted refactoring by renaming a constant,
+e.g. method, variable etc.
+5. `gd` to jump to the method/class definition under the cursor.5. `gd` to jump
+to the method/class definition under the cursor.
+6. `K` for the language feature under the cursor to pull up the language server
+documentation for that feature.
+7. `help coc-nvim` for the reference documentation for Coc.vim
+
 # Git Fugitive Plugin in Vim
 
 1. ``:Git blame`` for line-by-line git blame on current file, select a commit 
