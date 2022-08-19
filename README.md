@@ -141,8 +141,10 @@ replaced word in the current window
 # Coc.vim on large software projects
 
 1. `:CocDiagnostics` to show the errors in the current language server.
-2. `<LEFT>` for the prev diagnostic error
-3. `<RIGHT>` for the next diagnostic error
+2. `<LEFT>` for the prev diagnostic error, this should be on any programming
+language server.
+3. `<RIGHT>` for the next diagnostic error, this should be on any programming
+language server.
 4. `:CocRename` for language server assisted refactoring by renaming a constant,
 e.g. method, variable etc.
 5. `gd` to jump to the method/class definition under the cursor
@@ -191,8 +193,8 @@ master/main into your current local branch
 `mv`-ing them out of the repo directory, delete your entire local copy, checkout
 again from master, and rebuild your commit by copying the backed up files in.
 14. Use github PR's 'changed files' tab for exactly what has changed, but don't 
-forget the commits tab, there should only 
-    usually be one commit per PR. And remember the revert button on Github PRs. 
+forget the commits tab, there should only usually be one commit per PR. And 
+remember the revert button on Github PRs. 
 15. `git logline` for my custom oneline per commit log alias which includes 
 useful extra information, see: https://ma.ttias.be/pretty-git-log-in-one-line/
 16. `git checkout -- <filepath>` - this will overwrite your local changes to 
