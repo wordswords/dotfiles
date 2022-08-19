@@ -7,6 +7,20 @@ helper scripts for good measure. Tested on Ubuntu 22.04 and the latest Lubuntu.
 
 ![Alt text](https://i.imgur.com/ZVA2IpQ.png "VIM setup")
 
+# Vim Airline Functions (the status bar at the bottom of each VIM buffer)
+
+The problems in the file are noted in the far right. If there are no errors there 
+will be no red or orange expanded sections. Orange - warnings, Red - Error.
+
+It will show you how many warnings or errors there are, and the line number of 
+the first one.
+
+You should be able to skip between warnings/errors with the <Left> and <Right>
+keys.
+   
+Other info displayed includes File Format, file type detected, current line of 
+code / total lines of code, current column number / total columns, and so on.
+
 ## ZSH:
 
 ![Alt text](https://i.imgur.com/2uiO2ga.png "My zsh setup")
