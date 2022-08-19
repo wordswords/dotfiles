@@ -48,6 +48,9 @@ set undofile                       " Drop undo files
 set wildmenu                       " Allow for menu based file navigation
 set wildmode=list:longest,full
 
+"" map the <Leader> character to comma
+let mapleader=","
+
 ""
 "" START OF COC.vim CONFIG
 ""
@@ -93,7 +96,6 @@ endif
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> <LEFT> <Plug>(coc-diagnostic-prev)
 nmap <silent> <RIGHT> <Plug>(coc-diagnostic-next)
-nmap <silent> <DOWN> call CocActionAsync('diagnosticToggle')
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -181,7 +183,9 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" Don't need below line because vim-airline is automatically configured
+
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
