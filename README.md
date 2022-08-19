@@ -10,10 +10,14 @@ helper scripts for good measure. Tested on Ubuntu 22.04 and the latest Lubuntu.
 # How to decode the status bar under each buffer
 
 The problems in the file are noted in the far right. If there are no errors there 
-will be no red or orange expanded sections. Orange - warnings, Red - Error. It 
-will show you how many warnings or errors there are, and the line number of 
+will be no red or orange expanded sections. 
+
+Orange - Warnings 
+Red - Errors
+
+It will show you how many warnings or errors there are, and the line number of 
 the first one. You should be able to skip between warnings/errors with the 
-<Left> and <Right> keys.
+`<Left>` and `<Right>` keys.
    
 Other info displayed includes File Format, file type detected, current line of 
 code / total lines of code, current column number / total columns, and so on.
