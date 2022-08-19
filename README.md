@@ -179,10 +179,13 @@ language server.
 language server.
 4. `:CocRename` for language server assisted refactoring by renaming a constant,
 e.g. method, variable etc.
-5. `gd` to jump to the method/class definition under the cursor
-6. `K` for the language feature under the cursor to pull up the language server
+5. `gd` to jump to the definition of the language object under the cursor.
+6. `gy` to jump to the type definition of the language object under cursor.
+7. `gi` to jump to the implementation of the language object under cursor.
+8. `gr` to show all references to the language object under cursor.
+9. `K` for the language feature under the cursor to pull up the language server
 documentation for that feature.
-7. `:help coc-nvim` for the reference documentation for Coc.vim
+10. `:help coc-nvim` for the reference documentation for Coc.vim
 
 # Git Fugitive Plugin in Vim
 
