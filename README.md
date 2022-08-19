@@ -18,7 +18,10 @@ will be no red or orange expanded sections.
 It will show you how many warnings or errors there are, and the line number of 
 the first one. You should be able to skip between warnings/errors with the 
 `<Left>` and `<Right>` keys.
-   
+
+When you are searching through the file with `/` then it shows you: your term,
+how many matches there are of your term, and which one you're on.
+
 Other info displayed includes File Format, file type detected, current line of 
 code / total lines of code, current column number / total columns, and so on.
    
