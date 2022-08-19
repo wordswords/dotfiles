@@ -9,8 +9,8 @@ helper scripts for good measure. Tested on Ubuntu 22.04 and the latest Lubuntu.
 
 # How to decode the status bar under each buffer
 
-The problems in the file are noted in the far right. If there are no errors there 
-will be no red or orange expanded sections. 
+The problems in the file are noted in the far right. If there are no problems 
+there will be no red or orange expanded sections. 
 
 * Orange - Warnings 
 * Red - Errors
