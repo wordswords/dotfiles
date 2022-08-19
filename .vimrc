@@ -204,9 +204,14 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Use :Prettier to run Coc-Prettier against the file
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
 ""
 "" END OF COC.vim CONFIG
 ""
+
 " GUI config
 autocmd GUIEnter * set visualbell t_vb= " Turn off visual and audio bell for GUI 
 let g:prettier#autoformat = 1 " Prettier code formatter automatically files
