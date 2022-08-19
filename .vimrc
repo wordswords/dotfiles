@@ -300,7 +300,6 @@ function SetTextAndMarkdownOptions()
                             \ | call textobj#sentence#init()
   let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
   let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)
-  colorscheme evening
   setlocal spell
   setlocal wrap
   nmap <Leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
