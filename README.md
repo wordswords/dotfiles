@@ -12,8 +12,8 @@ helper scripts for good measure. Tested on Ubuntu 22.04 and the latest Lubuntu.
 The problems in the file are noted in the far right. If there are no errors there 
 will be no red or orange expanded sections. 
 
-Orange - Warnings 
-Red - Errors
+* Orange - Warnings 
+* Red - Errors
 
 It will show you how many warnings or errors there are, and the line number of 
 the first one. You should be able to skip between warnings/errors with the 
