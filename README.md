@@ -5,7 +5,7 @@ helper scripts for good measure. Tested on Ubuntu 22.04 and the latest Lubuntu.
 
 ## VIM:
 
-![Alt text](https://i.imgur.com/ZVA2IpQ.png "VIM setup")
+![Alt text](https://i.imgur.com/7Dl7t89.png "VIM setup")
 
 # How to decode the status bar under each buffer
 
