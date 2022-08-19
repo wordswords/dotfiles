@@ -104,6 +104,8 @@ you have checked out.
 12. Use `please` after realising that you needed sudo with the last command, to
     repeat the last command with sudo
 13. Use `ports` to list the open ports on the system in a readable way.
+14. Use `tree` for a handy diagram of the full directory tree under the current
+directory. 
 
 # VIM Key bindings
 
