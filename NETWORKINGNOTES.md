@@ -82,8 +82,8 @@ or the  maximum number of hops is reached.
 ## Traceroute
 
 To trace the life of a connection, you can use the network tool traceroute to
-connect to a particular IP address. It will map out the routers that your
-connection goes through before it arrives at its destination.
+connect to a particular IP address. It will map out the routers and routing tables
+that your connection goes through before it arrives at its destination.
 
 You can use this tool on different IP addresses to make sure your routing table 
 is setup properly.
