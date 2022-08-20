@@ -26,8 +26,8 @@ right IP address.
 Double-NATed networks can cause problems because you cannot make a direct
 connection without the network address translation. Ports have to be forwarded
 by the firewall on the router to the right LAN. It is normally fine for outbound
-traffic from the NATed LAN, LAN 1, but not inbound traffic from the internet to the
-LAN. Because the machine on LAN 1 has no fixed IP address bar the gateway on LAN 2.
+traffic from the NATed LAN, LAN 1, but not for hosting services on LAN 1.
+Because the machine on LAN 1 has no fixed IP address bar the gateway on LAN 2.
 
 ## What is DNS?
 
