@@ -70,7 +70,7 @@ metric 1's interface is down.
 
 It also specifies a 'default route' which is identifiable as a Network of a
 subnet mask of '0.0.0.0' on the interface. It will have the lowest metric.
-This is the route which is used for any traffic destined for any of the networks 
+This is the route which is used for any traffic not destined for any of the networks 
 in the routing table. There will be a gateway specified which is typically another 
 router with its own routing table. That other router will have a default route.. 
 and so on. 
