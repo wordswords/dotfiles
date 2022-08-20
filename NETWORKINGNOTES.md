@@ -2,19 +2,19 @@
 
 A network is defined by an inteface, an IP address, a gateway and a subnet mask.
 
-E.g. IP address 192.168.1.2
-Subnet mask: 192.168.\*.\* (/16)
-Gateway: 192.168.1.1
+1. E.g. IP address 192.168.1.2
+2. Subnet mask: 192.168.\*.\* (/16)
+3. Gateway: 192.168.1.1
 
 ## What is a NAT?
 
 NAT - network address translation is a type of firewall that rewrites the IP
 address of packets sent to the gateway of the machine so they come out from
 another interface on the router. And visa versa. So:
-
+`
 [LAN 1] <------------> [Router] <------------> [LAN 2] <----> [INTERNET]
             10.1.100.1/24   192.168.1.1/24
-
+`
 The router has two IP addresses as it has two interfaces. They are each on 
 different networks. When it receives a packet from LAN 1 that is not destined
 for LAN 1's network, it converts it to LAN 2, and sends it to its gateway on the
@@ -50,9 +50,12 @@ entries it is setup for.
 
 ## What is a routing table?
 
-A routing table consists of:
+A routing table entry consists of:
 
-Network  Gateway  Interface IP  Routing Weight/Metric
+1. Network
+2. Gateway
+3. Interface IP
+4. Routing Weight/Metric
 
 * Network is a subnet mask of a network for example, 192.168.1.\* 24. Any traffic
 to IP addresses in that network range will be managed by this routing rule.
