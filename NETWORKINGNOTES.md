@@ -1,6 +1,6 @@
 ## What is a Network?
 
-A network is defined by an inteface, an IP address, a gateway and a subnet mask.
+A network is defined by an interface, an IP address, a gateway and a subnet mask.
 
 1. E.g. IP address 192.168.1.2
 2. Subnet mask: 192.168.\*.\* (/16)
@@ -77,7 +77,7 @@ and so on.
 
 This is how traffic is handled on the internet, through routers passing on the 
 traffic to their default route until there is a relevant entry in the routing table, 
-or the  maximum number of hops is reached.
+or the maximum number of hops is reached.
 
 ## Traceroute
 
