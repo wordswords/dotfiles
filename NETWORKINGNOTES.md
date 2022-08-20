@@ -11,10 +11,10 @@ A network is defined by an inteface, an IP address, a gateway and a subnet mask.
 NAT - network address translation is a type of firewall that rewrites the IP
 address of packets sent to the gateway of the machine so they come out from
 another interface on the router. And visa versa. So:
-`
+```
 [LAN 1] <------------> [Router] <------------> [LAN 2] <----> [INTERNET]
             10.1.100.1/24   192.168.1.1/24
-`
+```
 The router has two IP addresses as it has two interfaces. They are each on 
 different networks. When it receives a packet from LAN 1 that is not destined
 for LAN 1's network, it converts it to LAN 2, and sends it to its gateway on the
