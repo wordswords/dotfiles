@@ -104,14 +104,14 @@ services. Non-root users on a NIX machine are not allowed to bind to them to set
 listening service.
 
 Say Machine 2 connects to Machine 1:
-
+```
 [Machine 1] - Port 80/HTTP
                ^
                |
                |
                v
 [Machine 2] - Randomly assigned local port - 5720
-
+```
 This connection between the two machines needs to be closed with another handshake. If
 it isn't closed and a keepalive packet isn't recieved in a set time, it will time out
 and the connection will be closed anyway.
@@ -138,7 +138,8 @@ interpreted as precursor to a hacking attempt.
 
 `sudo apt install nmap`
 
-`david@W10-STUDIO-PC ~> sudo nmap -vvv -Pn -sS 192.168.1.50                                                             1
+```
+david@W10-STUDIO-PC ~> sudo nmap -vvv -Pn -sS 192.168.1.50                                                             1
 Starting Nmap 7.80 ( https://nmap.org ) at 2022-08-21 08:10 BST
 Initiating Parallel DNS resolution of 1 host. at 08:10
 Completed Parallel DNS resolution of 1 host. at 08:10, 0.00s elapsed
@@ -173,7 +174,7 @@ Read data files from: /usr/bin/../share/nmap
 Nmap done: 1 IP address (1 host up) scanned in 0.17 seconds
            Raw packets sent: 1000 (44.000KB) | Rcvd: 1000 (40.032KB)
 david@W10-STUDIO-PC ~>
-`
+```
 
 So you can see the open ports listed, and the service they are normally associated with.
 
@@ -189,9 +190,9 @@ HTTP command, which means get the default index page.
 GET /`
 
 Google.com replies first with a HTTP header, and then the HTML body, eg the web page source 
-in HTML (not shown because it's huge)/
+in HTML (not shown because it's huge):
 
-`
+```
 HTTP/1.0 200 OK
 Date: Sun, 21 Aug 2022 07:17:41 GMT
 Expires: -1
@@ -205,8 +206,32 @@ Accept-Ranges: none
 Vary: Accept-Encoding
 ....
 <HTML BODY follows>
-....`
+....
+```
 
+It is interesting to observe that all TCP traffic can be encoded as text characters, so if you
+knew the exact text characters to send via netcat, you could impersonate any type of network
+connection by just typing it in! (assuming you don't get timed out). There is no backspace though :)
+
+### Setup listening ports via Netcat
+
+If you want to test a two-way connection via netcat, you can setup a listening netcat server
+that binds to a port on the local machine, and then connect to it with the other machine.
+
+This is a good way of diagnosing connection problems between two hosts.
+
+On Machine 1 with an IP address of 192.168.51.1, to create a listening TCP connection
+on port 444:
+
+`nc -l 4444`
+
+On Machine 2 to connect to Machine 1:
+
+`nc 192.168.51.1 4444`
+
+If you are watching both machines, type something on each machine and you will see the text being
+send between each machine (assuming the connection works). Terminate the connection from either side
+with `Control-D`.
 
 
 ## Firewalls
