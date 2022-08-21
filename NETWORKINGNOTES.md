@@ -184,7 +184,7 @@ You can use the handy utility 'Netcat' `nc` to setup traffic to and from ports. 
 a very basic browser by connecting to port 80 (http) of www.google.com and issuing a 'GET /' 
 HTTP command, which means get the default index page.
 
-`sudo apt install nc`
+`sudo apt install netcat`
 
 ```
 david@W10-STUDIO-PC ~> nc google.com 80                                                                             130
