@@ -186,8 +186,10 @@ HTTP command, which means get the default index page.
 
 `sudo apt install nc`
 
-`david@W10-STUDIO-PC ~> nc google.com 80                                                                             130
-GET /`
+```
+david@W10-STUDIO-PC ~> nc google.com 80                                                                             130
+GET /
+```
 
 Google.com replies first with a HTTP header, and then the HTML body, eg the web page source 
 in HTML (not shown because it's huge):
