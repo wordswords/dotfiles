@@ -221,7 +221,7 @@ that binds to a port on the local machine, and then connect to it with the other
 This is a good way of diagnosing connection problems between two hosts.
 
 On Machine 1 with an IP address of 192.168.51.1, to create a listening TCP connection
-on port 444:
+on port 4444:
 
 `nc -l 4444`
 
