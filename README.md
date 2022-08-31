@@ -8,7 +8,7 @@ I test this on my two main Linux computers, and my work Linux laptop.
 
 ![Alt text](https://i.imgur.com/7Dl7t89.png "VIM setup")
 
-# How to decode the status bar under each buffer
+### How to decode the status bar under each buffer
 
 The problems in the file are noted in the far right. If there are no problems
 there will be no red or orange expanded sections.
@@ -30,7 +30,7 @@ When it shows 'SPELL' is on, it is checking text spellings in addition to any
 code related errors. To toggle this, use `:set nospell` or `:set spell`. It
 highlights spelling errors in comments.
 
-# How to decode Nerdtree symbols
+### How to decode Nerdtree symbols
 
 * A tick means that there are no changes to this file in the current branch.
 * A star `*` means there are changes to be commited to this file or dir on the
@@ -42,7 +42,9 @@ in `.gitignore`
 
 ![Alt text](https://i.imgur.com/2uiO2ga.png "My zsh setup")
 
-# Requirements
+# Installation
+
+## Installation Requirements for .dotfiles
 
 1. You have to use a ‘Nerd font’ - this is a specially patched font with extra
 symbol characters for use in vim. This is not a prerequisite, it will show you
@@ -56,7 +58,7 @@ how to install it at the end of the dotfile deployment.
 You can run a script that will attempt to install the prerequisites under Ubuntu
 by executing `./deploy-part-0.sh`.
 
-# What it does
+## What it will Install
 
 As part of the process, this will install the latest version of oh-my-zsh and
 set your default shell to it, and install the latest version of yarn, the
@@ -66,7 +68,7 @@ will also setup an encypted directory under `~/.secure` encrypted with your
 choice of pass phrase with ecrypt. It will use this directory to store your
 Joplin notes just in case you have any sensitive ones.
 
-# Install
+## Install Steps
 
 1. `git clone git@github.com:/wordswords/dotfiles ~/.dotfiles`
 2. `cd ~/.dotfiles/`
@@ -79,7 +81,9 @@ You probably want to change this if you're not me!
 8. It will also attempt by default to log in to my Joplin account, which will
 not succeed without my credentials. So you probably want to change that.
 
-# Shell shortcuts
+# Using the Dotfiles Environment
+
+## Shell shortcuts
 
 1. `<CTRL>-<R>` for previous commands.
 2. Type `z` and a directory name accessible from your current directory to cd to
@@ -108,7 +112,7 @@ you have checked out.
 14. Use `tree` for a handy diagram of the full directory tree under the current
 directory.
 
-# VIM Key bindings
+## VIM Key bindings
 
 1. `<TAB>` to activate autocomplete plug ins.
 2. `,` is set to be the `<Leader>` key in VIM8, use it to trigger shortcuts.
@@ -158,7 +162,7 @@ use `:Prettier`
 Check out this handy VIM cheatsheet I found here:
 https://github.com/wordswords/dotfiles/blob/master/VIMCHEATSHEET.md
 
-# VIM Spellchecking/Grammar checking/Proofreading commands (also Joplin notes)
+## VIM Spellchecking/Grammar checking/Proofreading commands (also Joplin notes)
 
 1. `<LEFT>`       - prev text error
 2. `<RIGHT>`      - next text error
@@ -175,7 +179,7 @@ words
 12. `:spellr`     - Repeat the replacement done by `z=` for all matches with the
 replaced word in the current window
 
-# Coc.vim on large software projects
+## Coc.vim Shortcuts on large software projects
 
 1. `:CocDiagnostics` to show the errors in the current language server.
 2. `<LEFT>` for the prev diagnostic error, this should be on any programming
@@ -192,12 +196,12 @@ e.g. method, variable etc.
 documentation for that feature.
 10. `:help coc-nvim` for the reference documentation for Coc.vim
 
-# Git Fugitive Plugin in Vim
+## Git Fugitive Plugin in Vim
 
 1. ``:Git blame`` for line-by-line git blame on current file, select a commit
 and press 'o' to open the commit diff with the commit message in a new window.
 
-# Git Fugitive Mergetool
+## Git Fugitive Mergetool
 
 1. Whenever you have a merge conflict, use `git mergetool` to open this.
 2. Buffers are setup so [local branch | resulting mergefile | merge in branch]
@@ -209,7 +213,9 @@ choose that version.
 More info:
 http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
 
-# Git stuff I keep forgetting
+# Additional Notes
+
+## Git stuff I keep forgetting
 
 1. `git status` - will tell you what branch you're on and what files have
 changed. Use this all the time.
@@ -251,7 +257,7 @@ commit to `<filepath.bak>`, and then `rm <filepath>` and then
 Check out my simpleton Git workflow here:
 https://github.com/wordswords/dotfiles/blob/master/gitworkflow.md
 
-# Docker/Docker Compose stuff I forget
+## Docker/Docker Compose stuff I forget
 
 1. `docker system prune -a` - remove all unused Docker container images.
 This is essential to do occasionally to reclaim disk space.
@@ -271,7 +277,7 @@ the local directory.
 Also checkout the notes I took from the Docker Deep Dive book here:
 [https://github.com/wordswords/dotfiles/blob/master/dockernotes.md](https://github.com/wordswords/dotfiles/blob/master/dockernotes.md)
 
-# Joplin commandline
+## Joplin commandline
 
 1. Use the alias `notes` to open Joplin.
 2. Navigate the panes using `<TAB>` key
