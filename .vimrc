@@ -4,7 +4,7 @@
 " |  https://github.com/wordswords/dotfiles   |
 " \- - - - - - - - - - - - - - - - - - - - - -/
 "
-" vim: spell indent
+" vim: spell indent nowrap
 "
 syntax enable
 
