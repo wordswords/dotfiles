@@ -319,7 +319,7 @@ current checkout state.
 
 This shows a line-by-line git blame on a particular file, e.g. `blameline README.md`
 showing the origin commit and a snippet of the commit message. Very useful 
-for figuring out how a file was original put together.
+for figuring out how a file was put together.
 
 # Modifying
 
