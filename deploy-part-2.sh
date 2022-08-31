@@ -164,8 +164,7 @@ git config --global user.name "David Craddock"
 set +x
 
 report_progress 2 'Installing and configuring Joplin CLI notetaking app'
-( which joplin-cli && sudo npm update -g joplin ) || ( NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin && sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin-cli )
-
+( which joplin-cli && sudo npm update -g joplin ) || ( NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin && sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin-cli ) 
 report_progress 2 'Import Joplin config'
 ls ~/.config | grep joplin || /usr/bin/joplin-cli config --import < ~/.dotfiles/joplin.config 
 
@@ -179,6 +178,15 @@ $SECURE_DIR/.config/ || echo '' ) && ( ln -sf $SECURE_DIR/.config/joplin ~/.conf
 report_progress 2 'Syncing Joplin notes, you will now be asked to log into dropbox'
 syncnotes
 
+read "?Do you want to install JIRA-CLI Go client? (y/N)?" JIRAINSTALL
+if [[ ${JIRAINSTALL} == 'yes' || ${JIRAINSTALL} == 'y' || ${JIRAINSTALL} == 'Y' ]];
+then
+    sudo snap install go --classic || sudo snap refresh go
+    go install golang.org/dl/go1.19@latest
+    go install github.com/ankitpokhrel/jira-cli/cmd/jira@latest
+    report_progress 2 '''JIRA-CLI go client installed. You will now have to setup
+    it with your local JIRA_API token, see: https://github.com/ankitpokhrel/jira-cli/'''
+fi
 
 read "?Do you want to install or update the Ubuntu snap images of Spotify, Joplin UI and Morgen? (y/N)?" SNAPINSTALL
 if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];

@@ -117,9 +117,13 @@ zstyle ':completion:*' menu select
 source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
 ## [++ PATHS ++]
-export PATH="${HOME}/bin:${HOME}/.local/bin/:$PATH:/usr/local/bin/:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="${HOME}/bin:${HOME}/.local/bin/:$PATH:/usr/local/bin/:$HOME/.config/yarn/global/node_modules/.bin:${HOME}/go/bin"
 export SECURE_DIR="$HOME/.secure"
 ## [-- PATHS --]
+
+## [++ Required for Golang install syntax ++]
+export GO111MODULE=on
+## [-- Required for Golang install syntax --]
 
 ## [++ COMMANDS RUN ON EVERY INTERACTIVE SHELL ++]
 updatedotfiles
