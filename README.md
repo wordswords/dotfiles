@@ -139,31 +139,29 @@ buffers.
 12. Use `<F12>` to toggle distraction-free writing mode.
 13. Use `:Format` to format a buffer by the coc language server's prettifier,
 where it exists.
-14. The "Leader" key is set to `\` - use it to access a whole lot of extra coc
-options.
-15. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for
+14. Type `:Wordy<space><tab>` to use the Wordy proofreading tool to check for
 poor words while writing.
-16. Type `:LanguageToolCheck` to use the command-line grammar and spelling
+15. Type `:LanguageToolCheck` to use the command-line grammar and spelling
 checker (requires Java 8).
-17. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to
+16. Vim has a weird non-greedy regex match `.\{-}` which means `.+?`. So to
 strip a document of all its html tags use this: `:%s/<.\{-}>/ /g`.
-18. To search all instances of `git clone` and replace them with `git submodule
+17. To search all instances of `git clone` and replace them with `git submodule
 add` on a visual block, use `:<','>s/git clone/git submodule add/`.
-19. To feed a visual block through an external command, for example, the NIX
+18. To feed a visual block through an external command, for example, the NIX
 external sort command, `:'<,'>!sort` - this will sort the visual block lines
 alphabetically.
-20. To execute a command on all lines in a visual block, use the norm
+19. To execute a command on all lines in a visual block, use the norm
 command, for example: `:'<,'> norm i##` after selecting in visual mode to comment
 all lines out with a `##`. For the reverse, to uncomment and delete the first
 character, use `:'<,'> norm x` after selecting in visual mode.
-21. To generate a ctags index for all functions/methods in all languages, run
+20. To generate a ctags index for all functions/methods in all languages, run
 this command at the root of the source control repo `!ctags -R *`. Then you can
 use `gd` to jump to the original definition of the function in any file.
-22. If in some modes the backtick character does not insert, try typing it twice
+21. If in some modes the backtick character does not insert, try typing it twice
 that should insert it properly.
-23. To open the URL under the cursor in the default browser use `gx` <- handy!
-24. To remove all trailing whitesapce from a file, use `:%s/\s\+$//e` <- handy!
-25. To run Prettier on language servers that support this VS Code prettier,
+22. To open the URL under the cursor in the default browser use `gx` <- handy!
+23. To remove all trailing whitesapce from a file, use `:%s/\s\+$//e` <- handy!
+24. To run Prettier on language servers that support this VS Code prettier,
 use `:Prettier`
 
 Check out this handy VIM cheatsheet I found here:
