@@ -316,9 +316,9 @@ It is useful for getting a general overview of a complex codebase.
 
 ![Alt text](https://i.imgur.com/7kfUGNQ.png "blameline")
 
-This shows a line-by-line git blame on the file, showing the origin commit
-and a snippet of the commit message. Very useful for figuring out how a file
-was original put together.
+This shows a line-by-line git blame on a particular file, e.g. `blameline README.md`
+showing the origin commit and a snippet of the commit message. Very useful 
+for figuring out how a file was original put together.
 
 # Modifying
 
