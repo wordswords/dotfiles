@@ -8,12 +8,6 @@ source ./deploy-common.sh
 # Load in functions
 source ./.zshenv
 
-if [ "$baseos" = "linux" ]; then
-    sudo apt update
-fi
-
-baseos=$(get_os)
-
 report_progress 1 'Deploying .dotfiles: Part 2'
 
 report_progress 2 'Running ctags'
