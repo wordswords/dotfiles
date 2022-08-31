@@ -49,7 +49,13 @@ of the current Github directory, see 'master' on the right.
 * `?` - means there are untracked files
 * `!` - means there are modified files which haven't been added to the commit
 
-# Installation
+# Installation / Updating
+
+The scripts are designed to install for the first time OR update the current
+version. When you install my .dotfiles every time you log into a console, it
+will fetch down the latest master from this repo. If there are any changes, you
+are advised to rerun the scripts in 'Install Steps' below to keep your copy
+uptodate.
 
 ## Installation Requirements for .dotfiles
 
@@ -65,15 +71,24 @@ how to install it at the end of the dotfile deployment.
 You can run a script that will attempt to install the prerequisites under Ubuntu
 by executing `./deploy-part-0.sh`.
 
-## What it will Install
+## What It Will Install
 
-As part of the process, this will install the latest version of oh-my-zsh and
-set your default shell to it, and install the latest version of yarn, the
-note taking app Joplin's command line interface, the Morgen paid calendar app,
-the Spotify snap, a lot of vim plugins, and the latest LTS version of node. It
-will also setup an encypted directory under `~/.secure` encrypted with your
-choice of pass phrase with ecrypt. It will use this directory to store your
-Joplin notes just in case you have any sensitive ones.
+It will install my VIM8 development environment and anything else I use
+regularly in my work. Currently it will:
+
+* Install my heavily customised version of VIM8 with coc.vim and other plugins
+* Install latest version of Oh-my-ZSH and set your default shell to ZSH
+* Install Joplin the command-line open source Evernote replacement, and secure
+it with encryption, and download all my notes (presuming you are me).
+* Ask if you want to install my usual apps - Morgen: a paid multiplatform
+calendar app that I use with Google Calendar and Spotify. These are delivered
+via the snap installation process.
+* Ask if you want to install the excellent Golang JIRA CLI client which makes
+navigating JIRA boards less painful.
+
+You may well have to customise, mix and match, and edit these individual 
+settings because  you won't have the authentication required for this whole 
+process to work.
 
 ## Install Steps
 
