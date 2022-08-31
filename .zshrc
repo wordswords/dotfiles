@@ -117,7 +117,7 @@ zstyle ':completion:*' menu select
 source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
 ## [++ PATHS ++]
-export PATH="${HOME}/bin:${HOME}/.local/bin/:$PATH:/usr/local/bin/:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="${HOME}/bin:${HOME}/.local/bin/:$PATH:/usr/local/bin/:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export SECURE_DIR="$HOME/.secure"
 ## [-- PATHS --]
 
