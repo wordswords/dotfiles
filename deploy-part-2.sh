@@ -195,29 +195,6 @@ report_done
 report_progress 'Syncing Joplin notes, you will now be asked to log into dropbox'
 syncnotes
 
-read "?Do you want to install JIRA-CLI Go client? (y/N)?" JIRAINSTALL
-if [[ ${JIRAINSTALL} == 'yes' || ${JIRAINSTALL} == 'y' || ${JIRAINSTALL} == 'Y' ]];
-then
-    sudo snap install go --classic 2>/dev/null || sudo snap refresh go
-    go install golang.org/dl/go1.19@latest
-    go install github.com/ankitpokhrel/jira-cli/cmd/jira@latest
-    report_progress '''JIRA-CLI go client installed. You will now have to setup
-    it with your local JIRA_API token, see: https://github.com/ankitpokhrel/jira-cli/'''
-    report_done
-fi
-
-read "?Do you want to install or update the Ubuntu snap images of Spotify and Morgen? (y/N)?" SNAPINSTALL
-if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];
-then
-    report_progress 'Installing Morgen calendar app via snap'
-    sudo snap install morgen 2>/dev/null || sudo snap refresh morgen
-    report_done
-
-    report_progress 'Installing Spotify app via snap'
-    sudo snap install spotify 2>/dev/null || sudo snap refresh spotify
-    report_done
-fi
-
 report_progress 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh 2>/dev/null) $(whoami)
 report_done
@@ -230,6 +207,31 @@ set -o extendedglob
 set +o extendedglob
 report_done
 
+echo "-- OPTIONAL EXTRAS -- "
+echo
+read "?Do you want to install JIRA-CLI Go client? (y/N)? " JIRAINSTALL
+if [[ ${JIRAINSTALL} == 'yes' || ${JIRAINSTALL} == 'y' || ${JIRAINSTALL} == 'Y' ]];
+then
+    sudo snap install go --classic 2>/dev/null || sudo snap refresh go
+    go install golang.org/dl/go1.19@latest
+    go install github.com/ankitpokhrel/jira-cli/cmd/jira@latest
+    report_progress '''JIRA-CLI go client installed. You will now have to setup
+    it with your local JIRA_API token, see: https://github.com/ankitpokhrel/jira-cli/'''
+    report_done
+fi
+echo
+read "?Do you want to install or update the Ubuntu snap images of Spotify and Morgen? (y/N)? " SNAPINSTALL
+if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];
+then
+    report_progress 'Installing Morgen calendar app via snap'
+    sudo snap install morgen 2>/dev/null || sudo snap refresh morgen
+    report_done
+
+    report_progress 'Installing Spotify app via snap'
+    sudo snap install spotify 2>/dev/null || sudo snap refresh spotify
+    report_done
+fi
+echo
 report_progress 'Deploy script finished.'
 echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
 echo "After this, you will have to set your terminal emulator to use said font."
