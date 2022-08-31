@@ -2,6 +2,7 @@
 *.swp
 *.zip
 .bash_aliases
+.jira-cli/
 .vim/bundle
 .vim/coc-settings.json
 .vim/pack/coc
