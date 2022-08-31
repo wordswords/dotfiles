@@ -203,6 +203,12 @@ replaced word in the current window
 
 ## Coc.vim Shortcuts on large software projects
 
+Coc.vim is meant to provide an approximate mapping for Visual Studio Code's
+plugins and IntelliSense features onto VIM8 and Neovim. It does this with various
+degrees of compatability. Often these features are not currently documented and require
+prior knowledge of how the Code editor does things. This URL is the documentation 
+for the Code editor: https://docs.microsoft.com/en-us/visualstudio/ide/navigating-code?view=vs-2022
+
 1. `:CocDiagnostics` to show the errors in the current language server.
 2. `<LEFT>` for the prev diagnostic error, this should be on any programming
 language server.
