@@ -157,7 +157,7 @@ git config --global user.name "David Craddock"
 set +x
 
 report_progress 2 'Installing and configuring Joplin CLI notetaking app'
-( which joplin-cli && sudo npm update -g joplin ) || ( NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin && sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin-cli ) 
+( which joplin-cli 2>/dev/null && sudo npm update -g joplin ) || ( NPM_CONFIG_PREFIX=~/.joplin-bin npm install -g joplin && sudo ln -s ~/.joplin-bin/bin/joplin /usr/bin/joplin-cli ) 
 report_progress 2 'Import Joplin config'
 ls ~/.config | grep joplin || /usr/bin/joplin-cli config --import < ~/.dotfiles/joplin.config 
 
@@ -174,7 +174,7 @@ syncnotes
 read "?Do you want to install JIRA-CLI Go client? (y/N)?" JIRAINSTALL
 if [[ ${JIRAINSTALL} == 'yes' || ${JIRAINSTALL} == 'y' || ${JIRAINSTALL} == 'Y' ]];
 then
-    sudo snap install go --classic || sudo snap refresh go
+    sudo snap install go --classic 2>/dev/null || sudo snap refresh go
     go install golang.org/dl/go1.19@latest
     go install github.com/ankitpokhrel/jira-cli/cmd/jira@latest
     report_progress 2 '''JIRA-CLI go client installed. You will now have to setup
@@ -192,7 +192,7 @@ then
 fi
 
 report_progress 2 'Changing shell to /bin/zsh.'
-sudo chsh -s $(which zsh) $(whoami)
+sudo chsh -s $(which zsh 2>/dev/null) $(whoami)
 
 report_progress 2 'Customising Fortune random quoter'
 sudo rm -rf /usr/share/games/fortunes/riddles* || echo ''
