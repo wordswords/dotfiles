@@ -98,8 +98,8 @@ that directory, no need to type cd.
 3. Type `l` for a long-style ls.
 4. `vimdiff <file1> <file2>` for a nice 2 way diff style interface where you can
 analyse and easily copy changes between files.
-5. `cat <file> | pbcopy` to cat a file into the clipboard, very useful for then
-using on a website form.
+5. `cat <file> | pbcopy` to cat a file into the local OS clipboard, very useful 
+for then using on a website form.
 6. Use `<tab>` to activate oh-my-zsh's autocomplete plugins. For example `git
 <tab>`
 7. Run `repos.sh` to check the branch name of all git repositories under the
