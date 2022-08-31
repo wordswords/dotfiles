@@ -109,7 +109,9 @@ export SECURE_DIR="$HOME/.secure"
 ## [-- PATHS --]
 
 ## [++ SOURCE EMPLOYER-SPECIFIC SETTINGS ++]
+set +e
 source ~/.dotfiles/secrets/*
+set -e
 
 ## [++ ALIASES ++]
 alias blameline='~/.dotfiles/bin/git-better-blame.sh'
