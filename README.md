@@ -85,10 +85,12 @@ calendar app that I use with Google Calendar and Spotify. These are delivered
 via the snap installation process.
 * Ask if you want to install the excellent Golang JIRA CLI client which makes
 navigating JIRA boards less painful.
+* Setup 'fortune' with some Ubuntu server tips displayed on login.
 
 You may well have to customise, mix and match, and edit these individual 
 settings because  you won't have the authentication required for this whole 
-process to work.
+process to work. If you are serious about reusing what I've done, I would 
+advise running this setup in a docker container or virtual machine.
 
 ## Install Steps
 
