@@ -185,9 +185,6 @@ fi
 read "?Do you want to install or update the Ubuntu snap images of Spotify, Joplin UI and Morgen? (y/N)?" SNAPINSTALL
 if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];
 then
-    report_progress 2 'Installing Joplin UI app via snap'
-    sudo snap install joplin 2>/dev/null || sudo snap refresh joplin
-
     report_progress 2 'Installing Morgen calendar app via snap'
     sudo snap install morgen 2>/dev/null || sudo snap refresh morgen
 
