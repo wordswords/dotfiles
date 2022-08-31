@@ -4,6 +4,8 @@ set -e
 
 echo "We will now attempt to install the preqs under Ubuntu-compatible systems."
 
+sudo apt update
+
 sudo apt install vim git
 # Python 3 used for vim plugins
 sudo apt install python3

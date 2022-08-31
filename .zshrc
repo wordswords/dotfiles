@@ -109,15 +109,16 @@ export SECURE_DIR="$HOME/.secure"
 ## [-- PATHS --]
 
 ## [++ SOURCE EMPLOYER-SPECIFIC SETTINGS ++]
-set +e
-source ~/.dotfiles/secrets/*
-set -e
+set -o extendedglob
+for f (~/.dotfiles/secrets/**/^*("~"|dpkg-(dist|old|new)|.(tmp|back|bak))(N.))  . $f
+set +o extendedglob
+## [-- SOURCE EMPLOYER-SPECIFIC SETTINGS --]
 
 ## [++ ALIASES ++]
+( which jira >/dev/null && alias board="jira sprint list -s~Done" )
+( which jira >/dev/null && alias issues="jira issue list -a$(jira me) -s~Done" )
 alias blameline='~/.dotfiles/bin/git-better-blame.sh'
-alias board="jira sprint list -s~Done"
 alias grep="grep --color"
-alias issues="jira issue list -a$(jira me) -s~Done"
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
