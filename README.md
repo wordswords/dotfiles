@@ -42,6 +42,10 @@ in `.gitignore`
 
 ![Alt text](https://i.imgur.com/2uiO2ga.png "My zsh setup")
 
+ZSH uses oh-my-zsh in Fish shell emulation mode, which provides fast and responsive 
+auto-complete options. Just hit `<TAB>` to autocomplete. It will also show the status
+of the current Github directory, see 'Master' on the right.
+
 # Installation
 
 ## Installation Requirements for .dotfiles
