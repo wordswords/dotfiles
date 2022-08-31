@@ -298,6 +298,28 @@ Also checkout the notes I took from the Docker Deep Dive book here:
 10. Write all notes using Markdown so they display optimally across all clients.
 11. Press `<DEL>` to delete a selected note.
 
+## External Scripts
+
+I have written a few helper scripts in ~/.dotfiles/bin
+
+### `repos.sh`
+
+![Alt text](https://i.imgur.com/U0h7a8F.png "repos.sh")
+
+This is like the 'tree' command, it will descend downwards into the current
+directory and show which branches the Git repositories under the current
+directory are on.
+
+It is useful for getting a general overview of a complex codebase.
+
+### `blameline`
+
+![Alt text](https://i.imgur.com/7kfUGNQ.png "blameline")
+
+This shows a line-by-line git blame on the file, showing the origin commit
+and a snippet of the commit message. Very useful for figuring out how a file
+was original put together.
+
 # Modifying
 
 If you want, you can fork this repo and base your config on this. If you have
