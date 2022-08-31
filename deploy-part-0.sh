@@ -1,8 +1,12 @@
 #!/bin/bash
+# vim: spell set nowrap
 
 set -e
+source ./deploy-common.sh
 
-echo "We will now attempt to install the preqs under Ubuntu-compatible systems."
+report_heading 'Deploy Prerequisites: Part 0'
+
+report_progress 'We will now attempt to install the preqs under Ubuntu-compatible systems.'
 sudo apt update && sudo apt upgrade
 
 sudo apt install vim git
@@ -27,10 +31,12 @@ sudo apt install fortunes-ubuntu-server
 sudo apt install ripgrep
 # tree is very useful for showing directory structures'
 sudo apt install tree
+report_done
 
-echo "We will now attempt to enable automated unattended-upgrades"
+report_progress 'We will now attempt to enable automated unattended-upgrades'
 sudo apt install unattended-upgrades
 sudo dpkg-reconfigure unattended-upgrades
+report_done
 
 
 
