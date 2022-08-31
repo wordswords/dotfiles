@@ -95,19 +95,6 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-## [++ ALIASES ++]
-alias blameline='~/.dotfiles/bin/git-better-blame.sh'
-alias grep="grep --color"
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
-alias ls="ls --color"
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-alias please='sudo $(fc -ln -1)'
-alias ports='netstat -tlpn | sort -t: -k2 -n'
-alias vi="vim -u NONE"
-## [-- ALIASES --]
 
 bindkey '≠' autosuggest-accept
 
@@ -120,6 +107,25 @@ source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 export PATH="${HOME}/bin:${HOME}/.local/bin/:$PATH:/usr/local/bin/:$HOME/.config/yarn/global/node_modules/.bin:${HOME}/go/bin"
 export SECURE_DIR="$HOME/.secure"
 ## [-- PATHS --]
+
+## [++ SOURCE EMPLOYER-SPECIFIC SETTINGS ++]
+source ~/.dotfiles/secrets/*
+
+## [++ ALIASES ++]
+alias blameline='~/.dotfiles/bin/git-better-blame.sh'
+alias board="jira sprint list -s~Done"
+alias grep="grep --color"
+alias issues="jira issue list -a$(jira me) -s~Done"
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls="ls --color"
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+alias please='sudo $(fc -ln -1)'
+alias ports='netstat -tlpn | sort -t: -k2 -n'
+alias vi="vim -u NONE"
+## [-- ALIASES --]
 
 ## [++ Required for Golang install syntax ++]
 export GO111MODULE=on
