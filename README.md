@@ -296,6 +296,13 @@ Also checkout the notes I took from the Docker Deep Dive book here:
 10. Write all notes using Markdown so they display optimally across all clients.
 11. Press `<DEL>` to delete a selected note.
 
+## JIRA Go Client
+
+1. First you must setup the JIRA Go client with the API key as specified in
+the documentation - https://github.com/ankitpokhrel/jira-cli
+2. `issues` to show open issues allocated to you.
+3. `board` to show the current JIRA board.
+
 ## External Scripts
 
 I have written a few helper scripts in ~/.dotfiles/bin
