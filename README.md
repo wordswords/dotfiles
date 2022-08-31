@@ -80,7 +80,7 @@ regularly in my work. Currently it will:
 * Install latest version of Oh-my-ZSH and set your default shell to ZSH
 * Install Joplin the command-line open source Evernote replacement, and secure
 it with encryption, and download all my notes (presuming you are me).
-* Ask if you want to install my usual apps - Morgen: a paid multiplatform
+* Ask if you want to install my usual apps - https://Morgen.so : a paid multiplatform
 calendar app that I use with Google Calendar and Spotify. These are delivered
 via the snap installation process.
 * Ask if you want to install the excellent Golang JIRA CLI client which makes
