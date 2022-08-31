@@ -9,7 +9,7 @@ sudo apt install vim git
 sudo apt install python3
 sudo apt install python3-pip
 # Java open jdk, used for LanguageTool checker
-sudo apt install openjdk-18-jdk
+sudo apt install default-jdk
 # zsh the best shell (so far)
 sudo apt install zsh
 # Used for encrypted .secure dir
