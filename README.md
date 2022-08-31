@@ -310,7 +310,8 @@ This is like the 'tree' command, it will descend downwards into the current
 directory and show which branches the Git repositories under the current
 directory are on.
 
-It is useful for getting a general overview of a complex codebase.
+It is useful for getting a general overview of a complex codebase and its 
+current checkout state.
 
 ### `blameline`
 
