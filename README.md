@@ -10,23 +10,23 @@ I test this on my two main Linux computers, and my work Linux laptop.
 
 ### How to decode the status bar under each buffer
 
-The problems in the file are noted in the far right. If there are no problems
+1. The problems in the file are noted in the far right. If there are no problems
 there will be no red or orange expanded sections.
 
 * Orange - Warnings
 * Red - Errors
 
-It will show you how many warnings or errors there are, and the line number of
+2. It will show you how many warnings or errors there are, and the line number of
 the first one. You should be able to skip between warnings/errors with the
 `<Left>` and `<Right>` keys.
 
-When you are searching through the file with `/` then it shows you: your term,
+3. When you are searching through the file with `/` then it shows you: your term,
 how many matches there are of your term, and which one you're on.
 
-Other info displayed includes File Format, file type detected, current line of
+4. Other info displayed includes File Format, file type detected, current line of
 code / total lines of code, current column number / total columns, and so on.
 
-When it shows 'SPELL' is on, it is checking text spellings in addition to any
+5. When it shows 'SPELL' is on, it is checking text spellings in addition to any
 code related errors. To toggle this, use `:set nospell` or `:set spell`. It
 highlights spelling errors in comments.
 
