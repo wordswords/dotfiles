@@ -321,6 +321,13 @@ This shows a line-by-line git blame on a particular file, e.g. `blameline README
 showing the origin commit and a snippet of the commit message. Very useful 
 for figuring out how a file was put together.
 
+### `git logline`
+
+![Alt text](https://i.imgur.com/iimaagl.png "git logline")
+
+A compact summary of commits to a directory or file, e.g. `git logline
+~/.dotfiles`
+
 # Modifying
 
 If you want, you can fork this repo and base your config on this. If you have
