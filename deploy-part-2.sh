@@ -181,7 +181,7 @@ then
     it with your local JIRA_API token, see: https://github.com/ankitpokhrel/jira-cli/'''
 fi
 
-read "?Do you want to install or update the Ubuntu snap images of Spotify, Joplin UI and Morgen? (y/N)?" SNAPINSTALL
+read "?Do you want to install or update the Ubuntu snap images of Spotify and Morgen? (y/N)?" SNAPINSTALL
 if [[ ${SNAPINSTALL} == 'yes' || ${SNAPINSTALL} == 'y' || ${SNAPINSTALL} == 'Y' ]];
 then
     report_progress 2 'Installing Morgen calendar app via snap'
