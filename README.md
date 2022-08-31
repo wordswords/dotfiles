@@ -44,7 +44,10 @@ in `.gitignore`
 
 ZSH uses oh-my-zsh in Fish shell emulation mode, which provides fast and responsive 
 auto-complete options. Just hit `<TAB>` to autocomplete. It will also show the status
-of the current Github directory, see 'Master' on the right.
+of the current Github directory, see 'master' on the right.
+
+* `?` - means there are untracked files
+* `!` - means there are modified files which haven't been added to the commit
 
 # Installation
 
