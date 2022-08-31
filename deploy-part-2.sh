@@ -11,12 +11,11 @@ source ./.zshenv
 report_progress 1 'Deploying .dotfiles: Part 2'
 
 report_progress 2 'Running ctags'
-
 ctags -R *
 
 report_progress 2 'Installing curl'
-
 sudo apt install curl -y
+
 report_progress 2 'Setting up pbcopy and pbpaste aliases'
 sudo apt install xclip xsel
 
