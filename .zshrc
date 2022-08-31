@@ -105,7 +105,7 @@ source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
 ## [++ PATHS ++]
 export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/bin:${HOME}/go/bin:${PATH}"
-export SECURE_DIR="$HOME/.secure"
+export SECURE_DIR="${HOME}/.secure"
 ## [-- PATHS --]
 
 ## [++ SOURCE EMPLOYER-SPECIFIC SETTINGS ++]
