@@ -182,7 +182,7 @@ that should insert it properly.
 use `:Prettier`
 
 Check out this handy VIM cheatsheet I found here:
-https://github.com/wordswords/dotfiles/notes/blob/master/VIMCHEATSHEET.md
+https://github.com/wordswords/dotfiles/blob/master/notes/VIMCHEATSHEET.md
 
 ## VIM Spellchecking/Grammar checking/Proofreading commands (also Joplin notes)
 
@@ -285,7 +285,7 @@ commit to `<filepath.bak>`, and then `rm <filepath>` and then
 `mv <filepath.bak> <filepath>`.
 
 Check out my simpleton Git workflow here:
-https://github.com/wordswords/dotfiles/notes/blob/master/GITWORKFLOW.md
+https://github.com/wordswords/dotfiles/blob/master/notes/GITWORKFLOW.md
 
 ## Docker/Docker Compose stuff I forget
 
@@ -305,7 +305,7 @@ run wordpress cat /etc/issue`.
 the local directory.
 
 Also checkout the notes I took from the Docker Deep Dive book here:
-[https://github.com/wordswords/dotfiles/blob/master/notes/dockernotes.md](https://github.com/wordswords/dotfiles/notes/blob/master/dockernotes.md)
+[https://github.com/wordswords/dotfiles/blob/master/notes/DOCKERNOTES.md](https://github.com/wordswords/dotfiles/blob/master/notes/DOCKERNOTES.md)
 
 ## Joplin commandline
 
