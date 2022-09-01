@@ -49,14 +49,13 @@ They correspond to the git status of the file in the repo.
 
 ## ZSH:
 
-![Alt text](https://i.imgur.com/2uiO2ga.png "My zsh setup")
+![Alt text](https://i.imgur.com/yBs7bKu.png "My zsh setup")
 
-ZSH uses oh-my-zsh in Fish shell emulation mode, which provides fast and responsive 
+ZSH uses oh-my-zsh in Powerlevel10k mode, which provides fast and responsive 
 auto-complete options. Just hit `<TAB>` to autocomplete. It will also show the status
-of the current Github directory, see 'master' on the right.
+of the current Github directory.
 
-* `?` - means there are untracked files
-* `!` - means there are modified files which haven't been added to the commit
+https://github.com/romkatv/powerlevel10k
 
 # Installation / Updating
 
