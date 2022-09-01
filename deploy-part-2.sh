@@ -143,7 +143,9 @@ cd ~/.config/coc/extensions
 echo '{"dependencies":{}}'> package.json
 
 # Change extension names to the extensions you need
-npm install coc-sh coc-tsserver vim-language-server coc-json coc-prettier coc-html coc-css coc-python --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+npm install coc-sh coc-tsserver coc-vimlsp coc-json coc-prettier coc-html coc-css coc-python --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+sudo npm install -g vim-language-server
+vim -c 'CocInstall coc-vimlsp|q'
 vim -c 'CocUpdateSync|q'
 report_done
 
