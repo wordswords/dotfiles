@@ -309,8 +309,10 @@ function SetTextAndMarkdownOptions()
   setlocal wrap
   nmap <Leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
   "" scroll through spelling/grammar errors
-  noremap <DOWN> :Goyo<CR> " this toggles distraction-free mode
+  noremap <LEFT> ]s " prev spelling/grammar mistake
+  noremap <RIGHT> ]s " next spelling/grammar mistake
   noremap <UP> :LanguageToolCheck<CR>
+  noremap <DOWN> :NERDTreeToggle<CR>
 endfunction
 
 function SetMakefileOptions()
