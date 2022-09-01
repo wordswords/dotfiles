@@ -203,6 +203,8 @@ words
 12. `:spellr`     - Repeat the replacement done by `z=` for all matches with the
 replaced word in the current window
 
+[![asciicast](https://asciinema.org/a/518234.svg)](https://asciinema.org/a/518234)
+
 ## Coc.vim Shortcuts on large software projects
 
 Coc.vim is meant to provide an approximate mapping for Visual Studio Code's
