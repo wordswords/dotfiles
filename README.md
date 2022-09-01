@@ -8,7 +8,7 @@ I test this on my two main Linux computers, and my work Linux laptop.
 
 ![Alt text](https://i.imgur.com/7Dl7t89.png "VIM setup")
 
-### How to decode vim-airline
+### How to Decode the vim-airline Buffer Statusline
 
 Full docs: https://github.com/vim-airline/vim-airline
 
