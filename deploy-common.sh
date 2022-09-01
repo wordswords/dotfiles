@@ -7,7 +7,7 @@ git config --global http.sslVerify false
 
 report_heading () {
     message="$1"
-    echo -e "\e[0;31m[*] ${message} [*]\e[0m"
+    echo -e "\e[0;31m[✭] ${message} [✭]\e[0m"
 }
 
 write_message () {
@@ -23,7 +23,7 @@ remove_message () {
 report_progress () {
   message=$1
   echo
-  echo -e "\e[0;36m[?] ${message}\e[0m"
+  echo -e "\e[0;36m[..] ${message}\e[0m"
   write_message "${message}"
 }
 
