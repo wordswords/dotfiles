@@ -7,9 +7,11 @@ source ./deploy-common.sh
 report_heading 'Deploy Prerequisites: Part 0'
 
 report_progress 'We will now attempt to install the preqs under Ubuntu-compatible systems.'
-sudo apt update && sudo apt upgrade
 
-sudo apt install vim git
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update && sudo apt upgrade
+sudo apt upgrade vim
+sudo apt install git
 # Python 3 used for vim plugins
 sudo apt install python3
 sudo apt install python3-pip
