@@ -337,6 +337,9 @@ function SetGitCommitFileOptions()
   setlocal spell " highlight spelling mistakes
 endfunction
 
+"" remove trailing whitespace on these filetypes only:
+autocmd FileType text,markdown,Makefile,Jenkinsfile,Python autocmd BufWritePre <buffer> %s/\s\+$//e
+
 autocmd BufRead,BufNewFile *.f90 set filetype=Fortran
 autocmd BufRead,BufNewFile *.robot setlocal noexpandtab
 autocmd BufRead,BufNewFile Jenkinsfile set filetype=groovy
