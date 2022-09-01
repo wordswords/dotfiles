@@ -8,7 +8,9 @@ I test this on my two main Linux computers, and my work Linux laptop.
 
 ![Alt text](https://i.imgur.com/7Dl7t89.png "VIM setup")
 
-### How to decode the status bar under each buffer
+### How to decode vim-airline
+
+Full docs: https://github.com/vim-airline/vim-airline
 
 1. The problems in the file are noted in the far right. If there are no problems
 there will be no red or orange expanded sections.
