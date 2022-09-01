@@ -248,10 +248,10 @@ set cursorline cursorcolumn
 """
 """ vim-airline CONFIG
 """
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 let g:airline_powerline_fonts = 1
-"let g:airline_section_x = '%{PencilMode()}'
 let g:powerline_symbols = 'fancy'
 """
 """ END of vim-airline CONFIG
