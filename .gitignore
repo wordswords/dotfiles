@@ -9,6 +9,7 @@
 .vim/pack/coc
 .vim/spell
 .vim/pack/plugins/start
+.vim/pack/plugins/start/nerdtree-git-plugin/nerdtree_plugin
 .zsh_aliases
 LanguageTool-5.2.zip
 LanguageTool-5.2/
