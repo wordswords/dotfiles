@@ -81,7 +81,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 plugins=(
   bundler
   docker
-  docker-compose
   git
   npm
   python
