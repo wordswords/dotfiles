@@ -306,13 +306,25 @@ function SetTextAndMarkdownOptions()
   let g:pencil#joinspaces = 1     " 0=one_space (def), 1=two_spaces
   let g:pencil#cursorwrap = 1     " 0=disable, 1=enable (def)
   setlocal spell
-  setlocal wrap
+  setlocal nowrap " this is required for special text wrapping
   nmap <Leader>l <Plug>Ysurroundiw]%a(<C-R>*)<Esc>
   "" scroll through spelling/grammar errors
+<<<<<<< HEAD
   noremap <LEFT> ]s " prev spelling/grammar mistake
   noremap <RIGHT> ]s " next spelling/grammar mistake
+||||||| parent of d3b7bb2 (Fixing some weird text mode problems)
+  noremap <DOWN> :Goyo<CR> " this toggles distraction-free mode
+=======
+  noremap <LEFT> [s " last spelling/grammar error
+  noremap <RIGHT> ]s " next spelling/grammar error
+>>>>>>> d3b7bb2 (Fixing some weird text mode problems)
   noremap <UP> :LanguageToolCheck<CR>
+<<<<<<< HEAD
   noremap <DOWN> :NERDTreeToggle<CR>
+||||||| parent of d3b7bb2 (Fixing some weird text mode problems)
+=======
+  noremap <DOWN> :Goyo<CR> " this toggles distraction-free mode
+>>>>>>> d3b7bb2 (Fixing some weird text mode problems)
 endfunction
 
 function SetMakefileOptions()
