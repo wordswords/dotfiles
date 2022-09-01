@@ -126,6 +126,7 @@ set -e # turn exit on error return back on
 
 set -x
 git submodule update --recursive --remote --merge
+git submodule update --init
 set +x
 report_done
 
