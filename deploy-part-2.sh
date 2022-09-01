@@ -196,6 +196,7 @@ report_done
 
 report_progress 'Syncing Joplin notes, you will now be asked to log into dropbox'
 syncnotes
+report_done
 
 report_progress 'Changing shell to /bin/zsh.'
 sudo chsh -s $(which zsh 2>/dev/null) $(whoami)
@@ -208,6 +209,7 @@ set -o extendedglob
 ( sudo rm -rf "/usr/share/games/fortunes/literature*" 2>/dev/null || echo '' )
 set +o extendedglob
 report_done
+
 echo
 echo "-- OPTIONAL EXTRAS -- "
 echo
