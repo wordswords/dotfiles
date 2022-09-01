@@ -29,7 +29,7 @@ report_progress () {
 
 report_done () {
   message=$(</tmp/report_progress_message/message.txt)
-  echo -e "\e[0;32[✔︎]\e[0m \e[0;36m${message} ... \e[0m\e[0;32m[DONE]\e[0m"
+  echo -e "\e[0;32m[✔︎]\e[0m \e[0;36m${message} ... \e[0m\e[0;32m[DONE]\e[0m"
   remove_message
 }
 
