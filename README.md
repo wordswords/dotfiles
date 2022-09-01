@@ -209,6 +209,8 @@ degrees of compatability. Often these features are not currently documented and 
 prior knowledge of how the Code editor does things. This URL is the documentation 
 for the Code editor: https://docs.microsoft.com/en-us/visualstudio/ide/navigating-code?view=vs-2022
 
+This is an excellent introduction to Coc.vim's objectives: https://samroeca.com/coc-plugin.html
+
 1. `:CocDiagnostics` to show the errors in the current language server.
 2. `<LEFT>` for the prev diagnostic error, this should be on any programming
 language server.
