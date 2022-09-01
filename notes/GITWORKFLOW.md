@@ -29,3 +29,6 @@ This is a simple description of how I work 99% of the time, as I am a simpleton.
 11. I delete the old branch
 
 AND For when everything goes to sh!t - [https://ohshitgit.com/](https://ohshitgit.com/)
+
+
+![alt text](gitcheat.jpg "Git Cheat Sheet")
