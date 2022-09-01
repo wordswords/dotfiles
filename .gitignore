@@ -8,7 +8,7 @@
 .vim/coc-settings.json
 .vim/pack/coc
 .vim/spell
-.vim/pack/plugins/start/
+.vim/pack/plugins/start
 .zsh_aliases
 LanguageTool-5.2.zip
 LanguageTool-5.2/
