@@ -105,6 +105,8 @@ You probably want to change this if you're not me!
 8. It will also attempt by default to log in to my Joplin account, which will
 not succeed without my credentials. So you probably want to change that.
 
+[![asciicast](https://asciinema.org/a/EhIutOkIqGSBwoaZwHQUUJ2wh.svg)](https://asciinema.org/a/EhIutOkIqGSBwoaZwHQUUJ2wh)
+
 # Using the Dotfiles Environment
 
 ## Shell shortcuts
