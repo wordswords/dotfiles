@@ -190,8 +190,8 @@ https://github.com/wordswords/dotfiles/blob/master/notes/VIMCHEATSHEET.md
 
 1. `<LEFT>`       - prev text error
 2. `<RIGHT>`      - next text error
-3. `<UP>`         - run LanguageToolCheck (requires Java)
-4. `<DOWN>`       - go into Goyo focused mode
+3. `<UP>`         - run LanguageToolCheck (requires Java) this checks grammar
+4. `<DOWN>`       - toggle NerdTree (the directory index browser)
 5. `zg`           - Mark as a good word
 6. `zw`           - Like `zg` but mark the word as a wrong (bad) word
 7. `zug`          - Unmark as good word
@@ -202,6 +202,7 @@ words
 11. `.`           - Redo - repeat last word replacement
 12. `:spellr`     - Repeat the replacement done by `z=` for all matches with the
 replaced word in the current window
+13. `<F12>`       - Toggle 'Goyo' distraction-free mode.
 
 [![asciicast](https://asciinema.org/a/518234.svg)](https://asciinema.org/a/518234)
 
