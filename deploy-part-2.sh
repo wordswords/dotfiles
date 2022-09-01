@@ -208,7 +208,7 @@ set -o extendedglob
 ( sudo rm -rf "/usr/share/games/fortunes/literature*" 2>/dev/null || echo '' )
 set +o extendedglob
 report_done
-
+echo
 echo "-- OPTIONAL EXTRAS -- "
 echo
 read "?Do you want to install JIRA-CLI Go client? (y/N)? " JIRAINSTALL
@@ -234,8 +234,12 @@ then
     report_done
 fi
 echo
-report_progress 'Deploy script finished.'
-echo "NEXT STEPS: You will have to install your nerdfont manually, download DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts"
-echo "After this, you will have to set your terminal emulator to use said font."
+echo "-- NEXT STEPS -- "
+echo
+echo '''You will have to install your nerdfont manually, download
+DroidSansNerdFontMono from https://github.com/ryanoasis/nerd-fonts . After this,
+you will have to set your terminal emulator to use said font.'''
+
+report_progress 'Deployment process finished'
 report_done
 
