@@ -30,13 +30,20 @@ code / total lines of code, current column number / total columns, and so on.
 code related errors. To toggle this, use `:set nospell` or `:set spell`. It
 highlights spelling errors in comments.
 
-### How to decode Nerdtree symbols
+### How to decode Nerdtree file status symbols
 
-* A tick means that there are no changes to this file in the current branch.
-* A star `*` means there are changes to be commited to this file or dir on the
-current branch.
-* `X` or `[X]` means this file or directory is ignored by git, e.g it has a match
-in `.gitignore`
+They correspond to the git status of the file in the repo.
+
+* 'Modified'  :`✹`
+* 'Staged'    :`✚`
+* 'Untracked' :`✭`
+* 'Renamed'   :`➜`
+* 'Unmerged'  :`═`
+* 'Deleted'   :`✖`
+* 'Dirty'     :`✗`
+* 'Ignored'   :`☒`
+* 'Clean'     :`✔︎`
+* 'Unknown'   :`?`
 
 ## ZSH:
 
