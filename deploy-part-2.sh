@@ -73,6 +73,11 @@ ln --force -s ~/.dotfiles/.zshenv ~/.zshenv
 ln --force -s ~/.dotfiles/coc-settings.json ~/.vim/coc-settings.json
 report_done
 
+report_progress 'Installing Powerlevel10k prompt'
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+ln --force -s ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
+report_done
+
 report_progress 'Creating vim backup file directory structure'
 mkdir -p ~/.backup/vim/swap || echo "INFO: Swapfile backup directory seems to be already there."
 mkdir ~/.backup/vim/undos || echo "INFO: Undofile backup directory seems to be already there."
@@ -136,13 +141,13 @@ git apply nerdtree_plugin_fix.diff
 cd -
 report_done
 
-report_progress 'Installing vim8/coc'
+report_progress 'Installing vim9/coc'
 mkdir -p ~/.vim/pack/coc/start
 cd ~/.vim/pack/coc/start
 curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz | tar xzfv -
 report_done
 
-report_progress 'Installing vim8/coc extensions'
+report_progress 'Installing vim9/coc extensions'
 mkdir -p ~/.config/coc/extensions
 cd ~/.config/coc/extensions
 echo '{"dependencies":{}}'> package.json
