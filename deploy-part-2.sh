@@ -190,8 +190,7 @@ ls $SECURE_DIR || ( mkdir -p $SECURE_DIR )
 report_done
 
 report_progress 'Encrypting Joplin notes'
-unlock && mkdir -p $SECURE_DIR/.config || echo '' && ( mv ~/.config/joplin
-$SECURE_DIR/.config/ 2>/dev/null || echo '' ) && ( ln -sf $SECURE_DIR/.config/joplin ~/.config/joplin )
+unlock && mkdir -p $SECURE_DIR/.config || echo '' && ( mv ~/.config/joplin $SECURE_DIR/.config/ 2>/dev/null || echo '' ) && ( ln -sf $SECURE_DIR/.config/joplin ~/.config/joplin )
 report_done
 
 report_progress 'Syncing Joplin notes, you will now be asked to log into dropbox'
