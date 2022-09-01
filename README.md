@@ -53,7 +53,7 @@ They correspond to the git status of the file in the repo.
 
 ZSH uses oh-my-zsh in Powerlevel10k mode, which provides fast and responsive 
 auto-complete options. Just hit `<TAB>` to autocomplete. It will also show the status
-of the current Github directory.
+of the current Git repo.
 
 https://github.com/romkatv/powerlevel10k
 
