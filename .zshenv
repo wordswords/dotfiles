@@ -40,3 +40,9 @@ fortuneprint() {
 }
 autoload -Uz fortuneprint
 ## [-- CUSTOM ZSH FUNCTIONS --]
+
+
+## [++ SOURCE REMOTE CONNECTION ALIASE ++]
+source ~/.zsh_aliases
+## [-- SOURCE REMOTE CONNECTION ALIASE --]
+

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ##
-### Script to copy local public ssh key and remote dotfiles to a given host
-### and setup an alias in ~/.zsh_aliases and ~/.bash_aliases for quick keyed login
-### and dotfiles
+### Script to copy local public ssh key to a given host
+### and setup an alias in ~/.zsh_aliases and ~/.bash_aliases 
+### for quick keyed login
 ##
 
 # get parameters
@@ -38,16 +38,6 @@ rsync -ave ssh ~/.bash_aliases "${USER}@${HOST_TO_DEPLOY}:~/"
 ssh "${USER}@${HOST_TO_DEPLOY}" "mkdir -p ~/.ssh"
 cat ~/.ssh/id_rsa.pub | ssh "${USER}@${HOST_TO_DEPLOY}" 'cat >> .ssh/authorized_keys'
 ssh "${USER}@${HOST_TO_DEPLOY}" "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
-
-# setup .dotfiles
-rsync -ave ssh ~/.dotfiles "${USER}@${HOST_TO_DEPLOY}:~/"
-ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vim ${HOME}/.vim'
-ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.vimrc ${HOME}/.vimrc'
-ssh "${USER}@${HOST_TO_DEPLOY}" 'rm -rf ${HOME}/bin'
-ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/bin ${HOME}/bin'
-ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bash_profile_remote ${HOME}/.bash_profile'
-ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.bashrc_remote ${HOME}/.bashrc'
-ssh "${USER}@${HOST_TO_DEPLOY}" 'ln -sf ${HOME}/.dotfiles/.tmux.conf ${HOME}/.tmux.conf'
 
 # update aliases.. we use functions as aliases so we can expand in scripts
 echo "${ALIAS} () { /usr/bin/env ssh -t ${USER}@${HOST_TO_DEPLOY} \"\$@\" ;}" >> /tmp/new_aliases
