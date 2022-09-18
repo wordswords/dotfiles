@@ -8,9 +8,14 @@ report_heading 'Deploy Prerequisites: Part 0'
 
 report_progress 'We will now attempt to install the preqs under Ubuntu-compatible systems.'
 
+# vim9
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update && sudo apt upgrade
 sudo apt upgrade vim
+# speedtest-cli
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+sudo apt-get install speedtest
+# git
 sudo apt install git
 # Python 3 used for vim plugins
 sudo apt install python3
