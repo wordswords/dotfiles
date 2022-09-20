@@ -51,6 +51,9 @@ set wildmode=list:longest,full
 "" map the <Leader> character to comma
 let mapleader=","
 
+"" remap control-backspace to delete the last word in insert mode
+inoremap <C-H> <C-W>
+
 ""
 "" START OF COC.vim CONFIG
 ""
