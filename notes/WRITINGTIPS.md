@@ -9,4 +9,15 @@ attention.
 * Don't be wordy, be succinct. The fewer words the better.
 * If you can say something in simpler language, do so. Not everyone has a
 thesaurus to hand.
+* Adapt your writing to your audience. You should use different language
+depending on who you are writing for. Literate and educated professionals may
+understand and appreciate a philosophical take one an issue, whereas the general
+public might not, and think it is unnecessary.
+* Adapt your writing to the platform. Social media post writing is very
+different from writing for a journal, for example, in terms of format and what
+you can say.
+* On social media, take into account the overall public opinion for the topic
+you're writing about. Is it a good idea to publicly publish a hot take on the
+Queen's role in society when everyone else is posting about how much they loved
+her?
 
