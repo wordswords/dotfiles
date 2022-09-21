@@ -7,6 +7,8 @@ the 'show me more' button. Try and write this part as a compelling hook.
 * Posts with interesting pictures or other visible content get a lot more
 attention.
 * Don't be wordy, be succinct. The fewer words the better.
+* Try not to repeat words in sentences. The more you repeat words, the more people
+are likely to switch off.
 * If you can say something in simpler language, do so. Not everyone has a
 thesaurus to hand.
 * Adapt your writing to your audience. You should use different language
