@@ -13,7 +13,7 @@ are likely to switch off.
 thesaurus to hand.
 * Adapt your writing to your audience. You should use different language
 depending on who you are writing for. Literate and educated professionals may
-understand and appreciate a philosophical take one an issue, whereas the general
+understand and appreciate a philosophical take on an issue, whereas the general
 public might not, and think it is unnecessary.
 * Adapt your writing to the platform. Social media post writing is very
 different from writing for a journal, for example, in terms of format and what
