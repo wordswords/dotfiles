@@ -1,4 +1,4 @@
-* Try not to start sentences with the same word. It makes people tune out.
+* Try not to start successive sentences or paragraphs with the same word. It makes people tune out.
 * Use the spelling checker and grammar checker on each piece.
 * Use proper spacing. Too dense a paragraph will put people off, too light may
 seem overtly spamming.
@@ -13,7 +13,7 @@ are likely to switch off.
 thesaurus to hand.
 * Adapt your writing to your audience. You should use different language
 depending on who you are writing for. Literate and educated professionals may
-understand and appreciate a philosophical take on an issue, whereas the general
+understand and appreciate a philosophical take on an issue, whereas the
 public might not, and think it is unnecessary.
 * Adapt your writing to the platform. Social media post writing is very
 different from writing for a journal, for example, in terms of format and what
@@ -22,4 +22,11 @@ you can say.
 you're writing about. Is it a good idea to publicly publish a hot take on the
 Queen's role in society when everyone else is posting about how much they loved
 her?
+* Make images associated with social media posts twice as wide as they are high.
+The social media platforms display these better.
+* Prefer images in your post to be bright colours, it will be more popular.
+* If you ARE going to repeat a word, do it on purpose to make a point.
+* If you are passionate/interested in the subject you're writing about, readers
+are more likely to find your work interesting.
+
 
