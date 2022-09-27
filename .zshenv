@@ -42,7 +42,11 @@ autoload -Uz fortuneprint
 ## [-- CUSTOM ZSH FUNCTIONS --]
 
 
-## [++ SOURCE REMOTE CONNECTION ALIASE ++]
+## [++ SOURCE REMOTE CONNECTION ALIASES ++]
 source ~/.zsh_aliases
-## [-- SOURCE REMOTE CONNECTION ALIASE --]
+## [-- SOURCE REMOTE CONNECTION ALIASES --]
+
+## [++ FOR RUST ++]
+ls "$HOME/.cargo" &>/dev/null && . "$HOME/.cargo/env"
+## [-- FOR RUST --
 
