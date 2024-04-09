@@ -1,4 +1,4 @@
 #!/bin/bash
 
-shutdown -h '18:00'
+shutdown -h '17:00'
 
