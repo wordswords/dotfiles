@@ -17,7 +17,7 @@
 [alias]
     logline = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [commit]
-    template = /home/david/.dotfiles/.git-commit-template
+    template = ~/.dotfiles/.git-commit-template
 [core]
     pager = delta
     editor = vim
@@ -38,7 +38,7 @@
     prompt = false
 [user]
     name = David Craddock
-    email = contact@davidcraddock.net
+	email = contact@davidcraddock.net
 [http]
     sslVerify = false
 [pack]

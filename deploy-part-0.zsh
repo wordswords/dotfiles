@@ -191,11 +191,11 @@ report_done
 report_progress 'Installing McFly, a zsh Control-R replacement'
     curl -LSfs https://raw.githubusercontent.com/cantino/mcfly/master/ci/install.sh | sudo sh -s -- --force --git cantino/mcfly
 report_done
-report_progress 'Installing Delta, a git diff viewer'
-    wget https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb
-    sudo dpkg -i git-delta_0.15.1_amd64.deb
-    rm git-delta_0.15.1_amd64.deb
-report_done
+#report_progress 'Installing Delta, a git diff viewer'
+#    wget https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb
+#    sudo dpkg -i git-delta_0.15.1_amd64.deb
+#    rm git-delta_0.15.1_amd64.deb
+#report_done
 report_progress 'Installing cht.sh a command line help client'
     curl https://cht.sh/cht.sh > ~/.dotfiles/bin/cht.sh
     chmod +x ~/.dotfiles/bin/cht.sh
@@ -206,11 +206,11 @@ report_done
 report_progress 'Installing epy a command line epub reader'
     pip3 install git+https://github.com/wustho/epy
 report_done
-report_progress 'Installing winbox wine snap'
-    sudo snap refresh winbox || sudo snap install winbox
-    sudo ufw allow 5678/udp
-    sudo ufw reload
-report_done
+#report_progress 'Installing winbox wine snap'
+#    sudo snap refresh winbox || sudo snap install winbox
+#    sudo ufw allow 5678/udp
+#    sudo ufw reload
+#report_done
 
 # os-specific lines
 cur_os=$(get_os)
