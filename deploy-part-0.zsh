@@ -9,9 +9,9 @@ report_heading 'Deploy Prerequisites: Part 0'
 export PIP_BREAK_SYSTEM_PACKAGES=1
 
 # Must go before everything else
-report_progress 'Checking locale'
-     locale | grep -q LANG=en_GB.UTF-8 || ( echo 'en_GB.UTF-8 is not set as the locale. You need to fix this before proceeding.' && exit 1 )
-report_done
+#report_progress 'Checking locale'
+#     locale | grep -q LANG=en_GB.UTF-8 || ( echo 'en_GB.UTF-8 is not set as the locale. You need to fix this before proceeding.' && exit 1 )
+#report_done
 report_progress 'Checking for existence of SECRETS directory'
 if [[ ! -d ~/.dotfiles/SECRETS ]] ; then
     echo "SECRETS directory does not exist.  Please create it and put your secrets in it. Running config tool:"
@@ -67,14 +67,14 @@ report_done
 report_progress 'Check for Ubuntu release upgrade'
     sudo do-release-upgrade -c || echo 'No release upgraded needed.'
 report_done
-report_progress 'Installing snap'
-    sudo apt install snapd
-    sudo systemctl enable --now snapd apparmor
-report_done
-report_progress 'Download compile and install VIM9 on Ubuntu'
-    sudo apt install libncurses-dev -y
-    ~/.dotfiles/bin/make-and-install-vim.sh 9.1.0
-report_done
+#report_progress 'Installing snap'
+#    sudo apt install snapd
+#    sudo systemctl enable --now snapd apparmor
+#report_done
+#report_progress 'Download compile and install VIM9 on Ubuntu'
+    #sudo apt install libncurses-dev -y
+    #~/.dotfiles/bin/make-and-install-vim.sh 9.1.0
+#report_done
 report_progress 'Install Python used for vim plugins'
     sudo apt-get install python3 -y
     sudo apt-get install python3-pip -y
@@ -82,7 +82,7 @@ report_progress 'Install Python used for vim plugins'
     pip3 install --upgrade pip # upgrade python3
 report_done
 report_progress 'Install Rust and Cargo'
-    curl https://sh.rustup.rs -sSfy | sh 
+    curl https://sh.rustup.rs -sSf | sh 
 report_done
 report_progress 'Install latest open JDK used for LanguageTool'
     sudo apt-get install default-jdk -y

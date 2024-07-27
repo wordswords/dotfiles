@@ -156,13 +156,13 @@ cp ~/.dotfiles/.gitconfig ~/.gitconfig
 git config --global user.email "${VIMZ_EMAIL}"
 set +x
 report_done
-report_progress 'Installing and configuring Joplin CLI notetaking app'
-~/.dotfiles/bin/update-joplin-cli.sh
-ln -f -s ~/.joplin-bin/bin/joplin ~/bin/joplin
-~/bin/joplin config --import-file ~/.dotfiles/joplin.config
-. ~/.dotfiles/SECRETS/vimz_config.sh
-~/bin/joplin config sync.10.password "${VIMZ_JOPLIN_SYNC_PASSWORD}"
-report_done
+#report_progress 'Installing and configuring Joplin CLI notetaking app'
+#~/.dotfiles/bin/update-joplin-cli.sh
+#ln -f -s ~/.joplin-bin/bin/joplin ~/bin/joplin
+#~/bin/joplin config --import-file ~/.dotfiles/joplin.config
+#. ~/.dotfiles/SECRETS/vimz_config.sh
+#~/bin/joplin config sync.10.password "${VIMZ_JOPLIN_SYNC_PASSWORD}"
+#report_done
 report_progress 'Changing shell to /bin/zsh.'
 sudo chsh -s "$(which zsh)" "$(whoami)"
 report_done
