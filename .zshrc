@@ -108,6 +108,7 @@ alias grep="grep --color"
 alias hn100="curl 'hkkr.in/h-n100-f2'"
 alias hn="curl 'hkkr.in/h-n10-f2'"
 alias hq="ssh -p 608 hq.local"
+alias rhq="ssh -p 608 david@davidcraddock.net"
 alias iostat="iostat -mxz 15"
 alias l='ls -CF'
 alias la='ls -A'
