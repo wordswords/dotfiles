@@ -121,7 +121,7 @@ alias ports="sudo netstat -tlpn | sort -t: -k2 -n"
 alias vi="vim -u NONE"
 alias top="htop"
 alias zshconfig="vim ~/.dotfiles/.zshrc && ~/.dotfiles/bin/deploy-zshrc.sh"
-alias todo="tod list view --project Important"
+alias todo="tod list view --project Important | less"
 ## [-- ALIASES --]
 ## [++ Required for Golang install syntax ++]
 export GO111MODULE=on
@@ -150,7 +150,6 @@ echo "\n"
 checkbackup
 checkdiskspace
 getweather
-tramsprint
 echo '' # BLANK LINE
 ## [-- VISIBLE COMMANDS RUN ON EVERY INTERACTIVE SHELL --]
 #zprof #- Uncomment this to profile zsh startup

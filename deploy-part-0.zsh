@@ -15,7 +15,8 @@ report_done
 report_progress 'Checking for existence of SECRETS directory'
 if [[ ! -d ~/.dotfiles/SECRETS ]] ; then
     echo "SECRETS directory does not exist.  Please create it and put your secrets in it. Running config tool:"
-    ~/.dotfiles/bin/setup-secrets-dir.sh
+    
+#~/.dotfiles/bin/setup-secrets-dir.sh
 fi
 source ~/.dotfiles/SECRETS/vimz_config.sh
 report_done
@@ -71,10 +72,10 @@ report_progress 'Installing snap'
     sudo apt install snapd
     sudo systemctl enable --now snapd apparmor
 report_done
-report_progress 'Download compile and install VIM9 on Ubuntu'
-    sudo apt install libncurses-dev -y
-    ~/.dotfiles/bin/make-and-install-vim.sh 9.1.0
-report_done
+#report_progress 'Download compile and install VIM9 on Ubuntu'
+#    sudo apt install libncurses-dev -y
+#    ~/.dotfiles/bin/make-and-install-vim.sh 9.1.0
+#report_done
 report_progress 'Install Python used for vim plugins'
     sudo apt-get install python3 -y
     sudo apt-get install python3-pip -y
