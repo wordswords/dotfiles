@@ -9,9 +9,6 @@ report_heading 'Deploy Prerequisites: Part 0'
 export PIP_BREAK_SYSTEM_PACKAGES=1
 
 # Must go before everything else
-report_progress 'Checking locale'
-     locale | grep -q LANG=en_GB.UTF-8 || ( echo 'en_GB.UTF-8 is not set as the locale. You need to fix this before proceeding.' && exit 1 )
-report_done
 report_progress 'Checking for existence of SECRETS directory'
 if [[ ! -d ~/.dotfiles/SECRETS ]] ; then
     echo "SECRETS directory does not exist.  Please create it and put your secrets in it. Running config tool:"
