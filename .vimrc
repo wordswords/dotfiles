@@ -18,7 +18,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'kana/vim-textobj-user'
 Plugin 'lervag/vimtex'
-Plugin 'madox2/vim-ai'
+#Plugin 'madox2/vim-ai'
 Plugin 'reedes/vim-lexical'
 Plugin 'reedes/vim-litecorrect'
 Plugin 'reedes/vim-pencil'
@@ -51,11 +51,11 @@ syntax enable
 set autoindent                     # Automatically indent code
 set background=dark                # Dark background, light foreground
 set backspace=2                    # Backspace back up a line
-set backupdir=~/.backup/vim        # Directory to drop backup files
+set backupdir=~/.vim/backup/        # Directory to drop backup files
 set bk                             # Backup files
 set colorcolumn=+1                 # Enable coloured column after textwidth line
 set cursorline                     # Highlight current line
-set dir=~/.backup/vim/swap         # Directory to drop swap files
+set dir=~/.vim/backup/swap         # Directory to drop swap files
 set encoding=utf-8                 # Required for YCM
 set expandtab                      # Always expand tabs
 set history=1000                   # 1000 previous commands remembered
@@ -79,12 +79,13 @@ set splitright                     # Open new vertical split windows to the righ
 set t_Co=256                       # Force 256 colour mode
 set ts=4                           # Each tab is four spaces
 set ttyfast                        # Smoother changes
-set undodir=~/.backup/vim/undos    # Directory to drop undo files
+set undodir=~/.vim/backup/undos    # Directory to drop undo files
 set undofile                       # Drop undo files
 set wildmenu                       # Allow for menu based file navigation
 set wildmode=list:longest,full
 # Generate vim helpfiles
 :helptags ALL
+g:tagbar_ctags_bin = '/opt/homebrew/bin/ctags'
 g:tagbar_type_typescriptreact = { ctagstype: 'typescript',
  kinds: [
    "c:class",
@@ -113,6 +114,9 @@ g:tagbar_type_typescriptreact = { ctagstype: 'typescript',
 # no bells, ever
 set noerrorbells novisualbell t_vb=
 set belloff=all
+
+# copilot disabled by default
+g:copilot_enabled = v:false
 
 # map the <leader> character to comma
 g:mapleader = ','
@@ -195,14 +199,18 @@ nnoremap <UP> :call <SID>ToggleOnLocationList()<CR>
 
 # Git Copilot toggle
 def ToggleCopilotOff(): void
-    :Copilot disable
+    #:Copilot disable
     :Copilot status
     nnoremap <silent><leader>c :call <SID>ToggleCopilotOn()<CR>
 enddef
 nnoremap <silent><leader>c :call <SID>ToggleCopilotOff()<CR>
 
+# Default = off
+#ToggleCopilotOff()
+#:Copilot disable
+
 def ToggleCopilotOn(): void
-    :Copilot enable
+    #:Copilot enable
     :Copilot status
     nnoremap <silent><leader>c :call <SID>ToggleCopilotOff()<CR>
 enddef
