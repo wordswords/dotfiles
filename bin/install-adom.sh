@@ -6,12 +6,28 @@ IFS=$'\n\t'
 # For desert island situations.
 # ADOM_VERSION can be set via the environment (exported by deploy.sh).
 ADOM_VERSION="${ADOM_VERSION:-3.3.3}"
+ARCHIVE="adom_linux_ubuntu_64_${ADOM_VERSION}.tar.gz"
 
 sudo dnf install -y ncurses-libs
+<<<<<<< HEAD
 sudo dnf config-manager --set-enabled crb
 sudo dnf install ncurses-compat-libs -y
 wget "https://www.adom.de/home/download/current/adom_linux_ubuntu_64_${ADOM_VERSION}.tar.gz"
 tar xzf "adom_linux_ubuntu_64_${ADOM_VERSION}.tar.gz"
 cp ./adom*/adom ~/bin
 rm -rf ./adom*
+||||||| 2388b87
+wget "https://www.adom.de/home/download/current/adom_linux_ubuntu_64_${ADOM_VERSION}.tar.gz"
+tar xzf "adom_linux_ubuntu_64_${ADOM_VERSION}.tar.gz"
+cp ./adom*/adom ~/bin
+rm -rf ./adom*
+=======
+wget "https://www.adom.de/home/download/current/${ARCHIVE}"
+tar xzf "${ARCHIVE}"
+
+# The archive extracts into a versioned adom*/ directory.
+sudo install -m 755 ./adom*/adom "${HOME}/bin/adom"
+find . -maxdepth 1 -type d -name 'adom*' -exec rm -rf {} +
+rm -f "${ARCHIVE}"
+>>>>>>> 332813a2530758c5b129d957b39ea7ff14679635
 
