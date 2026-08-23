@@ -270,6 +270,10 @@ main() {
     install_github_cli
     report_done
 
+    report_prgoress 'Building and installing FFMPEG'
+    "${DOTFILES_DIR}"/bin/install-ffmpeg-almalinux.sh
+    report_done
+
     report_progress 'Installing Powerlevel10k prompt'
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
         "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k || true
