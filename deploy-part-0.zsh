@@ -94,8 +94,12 @@ mkdir -p "$HOME/.backup/vim/undos"
 report_done
 
 # Main package installs.
-report_progress 'Installing snap'
-sudo dnf install -y -q snapd
+report_progress 'Installing Snap on Almalinux 10'
+sudo "${DOTFILES_DIR}"/bin/install-snap-almalinux.sh
+report_done
+
+report_progress 'Installing Flatpak on Almalinux 10'
+sudo "${DOTFILES_DIR}"/bin/install-flatpak-almalinux.sh
 report_done
 
 report_progress 'Download compile and install VIM9 on AlmaLinux'

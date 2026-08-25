@@ -270,8 +270,8 @@ main() {
     install_github_cli
     report_done
 
-    report_prgoress 'Building and installing FFMPEG'
-    "${DOTFILES_DIR}"/bin/install-ffmpeg-almalinux.sh
+    report_progress 'Building and installing FFMPEG'
+    sudo "${DOTFILES_DIR}"/bin/install-ffmpeg-almalinux.sh
     report_done
 
     report_progress 'Installing Powerlevel10k prompt'
