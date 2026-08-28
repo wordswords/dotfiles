@@ -5,6 +5,19 @@ set -euo pipefail
 
 readonly DOTFILES_DIR="${HOME}/.dotfiles"
 
+sudo dnf update -y
+sudo dnf install -y \
+  git \
+  curl \
+  wget \
+  tar \
+  gzip \
+  unzip \
+  openssh-clients \
+  ca-certificates \
+  procps-ng \
+  findutils
+
 # Install aider.
 curl -LsSf https://aider.chat/install.sh | sh
 

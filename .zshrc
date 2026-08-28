@@ -173,3 +173,9 @@ export TERM=xterm-256color
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Prefer Python 3.12 over the system 3.9 default
+alias python=python3.12
+alias python3=python3.12
+alias pip=pip3.12
+alias pip3=pip3.12
