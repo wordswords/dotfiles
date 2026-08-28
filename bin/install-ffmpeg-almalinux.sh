@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #
-# Build upstream FFmpeg on AlmaLinux 9.
+# Build upstream FFmpeg on AlmaLinux 9.x or 10.x (tested through AlmaLinux 10.2).
 #
 # Conditional features:
 #   - NVIDIA driver + CUDA Toolkit + NPP present:
-#       CUDA, NVENC, NVDEC, CUVID, and NPP filters are enabled.
+#       CUDA, NVENC, NVDEC/CUVID compatibility, and NPP filters are enabled.
 #   - Otherwise:
 #       Builds a CPU-only FFmpeg successfully.
 #
@@ -13,11 +13,13 @@
 #   - dav1d, libass, libvpx, opus, MP3, Vorbis, Theora, soxr, zvbi
 #
 # Examples:
-#   sudo ./build-ffmpeg-alma9.sh
-#   sudo JOBS="$(nproc)" ./build-ffmpeg-alma9.sh
-#   sudo CUDA_HOME=/usr/local/cuda-12.8 ./build-ffmpeg-alma9.sh
-#   sudo ENABLE_NVIDIA=0 ./build-ffmpeg-alma9.sh
+#   sudo ./install-ffmpeg-almalinux.sh
+#   sudo JOBS="$(nproc)" ./install-ffmpeg-almalinux.sh
+#   sudo CUDA_HOME=/usr/local/cuda-12.8 ./install-ffmpeg-almalinux.sh
+#   sudo ENABLE_NVIDIA=0 ./install-ffmpeg-almalinux.sh
 #
+# Note: This builds FFmpeg with --enable-nonfree because it includes libfdk_aac.
+# Do not redistribute the resulting FFmpeg binaries without reviewing licensing.
 
 set -Eeuo pipefail
 
@@ -39,13 +41,25 @@ fi
 
 . /etc/os-release
 
-if [[ "${ID:-}" != "almalinux" || "${VERSION_ID%%.*}" != "9" ]]; then
-    echo "This script targets AlmaLinux 9; detected: ${PRETTY_NAME:-unknown}." >&2
+ALMA_MAJOR="${VERSION_ID%%.*}"
+if [[ "${ID:-}" != "almalinux" || ! "${ALMA_MAJOR}" =~ ^(9|10)$ ]]; then
+    echo "This script targets AlmaLinux 9.x and 10.x; detected: ${PRETTY_NAME:-unknown}." >&2
     exit 1
+fi
+
+if [[ "${ALMA_MAJOR}" == "10" ]]; then
+    echo "==> Detected AlmaLinux ${VERSION_ID} (supported through 10.2)."
+else
+    echo "==> Detected AlmaLinux ${VERSION_ID}."
 fi
 
 if [[ ! "${ENABLE_NVIDIA}" =~ ^(auto|0|1)$ ]]; then
     echo "ENABLE_NVIDIA must be auto, 0, or 1." >&2
+    exit 1
+fi
+
+if [[ ! "${INSTALL_DEPS}" =~ ^(0|1)$ ]]; then
+    echo "INSTALL_DEPS must be 0 or 1." >&2
     exit 1
 fi
 
@@ -102,24 +116,14 @@ have_cuda_npp() {
 }
 
 USE_NVIDIA=0
-
 case "${ENABLE_NVIDIA}" in
     0)
         echo "==> NVIDIA support explicitly disabled."
         ;;
     1)
-        if ! have_nvidia_gpu; then
-            echo "ENABLE_NVIDIA=1 was requested, but NVIDIA driver/GPU is unavailable." >&2
-            exit 1
-        fi
-        if ! have_cuda_toolkit; then
-            echo "ENABLE_NVIDIA=1 was requested, but CUDA Toolkit was not found in ${CUDA_HOME}." >&2
-            exit 1
-        fi
-        if ! have_cuda_npp; then
-            echo "ENABLE_NVIDIA=1 was requested, but required CUDA NPP libraries are absent." >&2
-            exit 1
-        fi
+        have_nvidia_gpu || { echo "ENABLE_NVIDIA=1 was requested, but NVIDIA driver/GPU is unavailable." >&2; exit 1; }
+        have_cuda_toolkit || { echo "ENABLE_NVIDIA=1 was requested, but CUDA Toolkit was not found in ${CUDA_HOME}." >&2; exit 1; }
+        have_cuda_npp || { echo "ENABLE_NVIDIA=1 was requested, but required CUDA NPP libraries are absent." >&2; exit 1; }
         USE_NVIDIA=1
         ;;
     auto)
@@ -132,7 +136,6 @@ esac
 echo "==> FFmpeg source ref: ${REF}"
 echo "==> Install prefix:     ${PREFIX}"
 echo "==> Parallel jobs:      ${JOBS} (CPUs: ${CPU_COUNT}; RAM: $(( MEM_AVAILABLE_KIB / 1024 )) MiB)"
-
 if (( USE_NVIDIA )); then
     echo "==> NVIDIA support:     enabled"
     echo "==> CUDA Toolkit:       ${CUDA_HOME}"
@@ -140,18 +143,16 @@ if (( USE_NVIDIA )); then
     "${CUDA_HOME}/bin/nvcc" --version
 else
     echo "==> NVIDIA support:     disabled (no usable GPU/CUDA Toolkit/NPP found)"
-    echo "    To force GPU support, install driver + CUDA Toolkit/NPP and run:"
-    echo "    sudo ENABLE_NVIDIA=1 CUDA_HOME=/usr/local/cuda ./build-ffmpeg-alma9.sh"
 fi
 
 if [[ "${INSTALL_DEPS}" == "1" ]]; then
-    echo "==> Enabling EPEL and CRB"
-    dnf -y install epel-release dnf-plugins-core
-    dnf config-manager --set-enabled crb
+    echo "==> Enabling CRB and EPEL"
+    dnf -y install dnf-plugins-core epel-release
+    dnf config-manager --set-enabled crb || true
+    dnf -y makecache
 
     echo "==> Installing build dependencies"
     dnf -y groupinstall "Development Tools"
-
     dnf -y install \
         git \
         curl \
@@ -178,6 +179,7 @@ if [[ "${INSTALL_DEPS}" == "1" ]]; then
         fontconfig-devel \
         fribidi-devel \
         harfbuzz-devel \
+        libdav1d \
         libdav1d-devel \
         lame-devel \
         libogg-devel \
@@ -186,8 +188,6 @@ if [[ "${INSTALL_DEPS}" == "1" ]]; then
         libtheora-devel \
         libvorbis-devel \
         libvpx-devel \
-        libdav1d \
-        libdav1d-devel \
         zvbi \
         zvbi-devel
 fi
@@ -207,7 +207,6 @@ for library in \
     theora; do
     pkg-config --exists "${library}" || {
         echo "Missing pkg-config dependency: ${library}" >&2
-        echo "Run: pkg-config --modversion ${library}" >&2
         exit 1
     }
 done
@@ -230,28 +229,20 @@ clone_or_update() {
 
 if (( USE_NVIDIA )); then
     echo "==> Installing NVIDIA Video Codec SDK headers"
-    clone_or_update \
-        "https://git.videolan.org/git/ffmpeg/nv-codec-headers.git" \
-        "${NV_HEADERS_SRC}"
-
+    clone_or_update "https://git.videolan.org/git/ffmpeg/nv-codec-headers.git" "${NV_HEADERS_SRC}"
     make -C "${NV_HEADERS_SRC}" -j"${JOBS}"
     make -C "${NV_HEADERS_SRC}" PREFIX=/usr/local install
 fi
 
 echo "==> Building Fraunhofer FDK-AAC"
-clone_or_update \
-    "https://github.com/mstorsjo/fdk-aac.git" \
-    "${FDK_AAC_SRC}"
-
+clone_or_update "https://github.com/mstorsjo/fdk-aac.git" "${FDK_AAC_SRC}"
 cd "${FDK_AAC_SRC}"
 autoreconf -fiv
-
 ./configure \
     --prefix=/usr/local \
     --libdir=/usr/local/lib64 \
     --enable-shared \
     --disable-static
-
 make -j"${JOBS}"
 make install
 
@@ -261,12 +252,10 @@ EOF
 ldconfig
 
 export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig:/usr/local/lib/pkgconfig${PKG_CONFIG_PATH:+:${PKG_CONFIG_PATH}}"
-
 pkg-config --exists fdk-aac || {
     echo "FDK-AAC installed but pkg-config cannot locate fdk-aac.pc." >&2
     exit 1
 }
-
 echo "==> FDK-AAC version: $(pkg-config --modversion fdk-aac)"
 
 echo "==> Fetching FFmpeg source"
@@ -323,7 +312,6 @@ CONFIGURE_ARGS=(
 if (( USE_NVIDIA )); then
     export PATH="${CUDA_HOME}/bin:${PATH}"
     export LD_LIBRARY_PATH="${CUDA_HOME}/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
-
     CONFIGURE_ARGS+=(
         "--enable-cuda-nvcc"
         "--enable-cuvid"
@@ -340,7 +328,6 @@ fi
 echo "==> Configuring FFmpeg"
 printf '    %q' ./configure "${CONFIGURE_ARGS[@]}"
 printf '\n'
-
 ./configure "${CONFIGURE_ARGS[@]}"
 
 echo "==> Building FFmpeg with ${JOBS} job(s)"
@@ -356,16 +343,13 @@ make install
         echo "${CUDA_HOME}/lib64"
     fi
 } > /etc/ld.so.conf.d/ffmpeg-local.conf
-
 ldconfig
 
 ln -sfn "${PREFIX}/bin/ffmpeg" /usr/local/bin/ffmpeg
 ln -sfn "${PREFIX}/bin/ffprobe" /usr/local/bin/ffprobe
-
 if [[ -x "${PREFIX}/bin/ffplay" ]]; then
     ln -sfn "${PREFIX}/bin/ffplay" /usr/local/bin/ffplay
 fi
-
 hash -r
 
 echo
@@ -378,17 +362,16 @@ echo "==> FDK-AAC encoder"
 
 if (( USE_NVIDIA )); then
     echo
-    echo "==> NVIDIA encoders"
+echo "==> NVIDIA encoders"
     /usr/local/bin/ffmpeg -hide_banner -encoders | grep -E 'h264_nvenc|hevc_nvenc|av1_nvenc' || true
-
     echo
-    echo "==> NVIDIA decoders"
+echo "==> NVIDIA decoders"
     /usr/local/bin/ffmpeg -hide_banner -decoders | grep -E '_cuvid|nvdec' || true
-
     echo
-    echo "==> CUDA / NPP filters"
+echo "==> CUDA / NPP filters"
     /usr/local/bin/ffmpeg -hide_banner -filters | grep -E 'cuda|npp' || true
 else
     echo
-    echo "==> Built without NVIDIA support."
+echo "==> Built without NVIDIA support."
 fi
+
