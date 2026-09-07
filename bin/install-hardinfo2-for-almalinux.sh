@@ -80,14 +80,10 @@ if [[ -z "${PKG}" ]]; then
   die "No hardinfo2-*.rpm package found after build. Check the build log above for errors."
 fi
 
-if rpm -q hardinfo2 >/dev/null 2>&1; then
-  sudo dnf reinstall -y "./${PKG}"
-else
-  sudo dnf install -y "./${PKG}"
-fi
+sudo dnf install -fq "./${PKG}"
 
 log "Installing recommended runtime dependencies"
-sudo dnf install -y \
+sudo dnf install -yq \
   lm_sensors sysbench glx-utils dmidecode udisks2 xdg-utils \
   iperf3 fwupd xorg-x11-server-utils vulkan-tools gawk || \
   warn "Some optional runtime packages could not be installed. HardInfo2 will still run with reduced functionality."
